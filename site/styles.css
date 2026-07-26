@@ -444,8 +444,17 @@ img { display: block; max-width: 100%; }
   .people-grid { grid-template-columns: 1fr; }
   .professor-card { grid-template-columns: 1fr; }
   .professor-card .person-photo { border-right: 0; border-bottom: 1px solid var(--line); }
-  .toolbar { top: 64px; overflow-x: auto; flex-wrap: nowrap; }
-  .filter-button { white-space: nowrap; }
+  .toolbar {
+    top: 64px;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    overflow-x: visible;
+  }
+  .filter-button {
+    width: 100%;
+    min-width: 0;
+    white-space: nowrap;
+  }
   .footer-grid { grid-template-columns: 1fr; }
 }
 
@@ -1796,43 +1805,12 @@ img {
   }
 }
 
-/*
- * Inline icon alignment contract
- *
- * Icons align to the first line box instead of the full height of wrapped text.
- * The 1lh default follows each row's responsive font metrics; tag rows opt into
- * their control height. Small em-based optical shifts align the SVG strokes with
- * the adjacent glyphs rather than merely centering their outer layout boxes.
- */
-.project-meta-part,
+/* Publication icons follow their first responsive line box. */
 .publication-cards-view .publication-detail-row,
-.publication-cards-view .publication-meta-item,
-.seminar-title-row,
-.seminar-meta-item {
+.publication-cards-view .publication-meta-item {
   --inline-icon-line-box: 1lh;
   --inline-icon-optical-shift: 0em;
   align-items: flex-start;
-}
-
-.project-meta-part {
-  --inline-icon-size: 17px;
-}
-.project-meta-part.meta-program {
-  --inline-icon-optical-shift: -.022em;
-}
-.project-meta-part.meta-keyword {
-  --inline-icon-line-box: max(23px, var(--tag-height-min), calc(1lh + 8px));
-  --inline-icon-optical-shift: 0em;
-  font-size: max(.7rem, var(--text-tag-min));
-  line-height: 1.2;
-}
-.project-meta-part.meta-keyword .keyword {
-  font-size: inherit;
-  line-height: inherit;
-}
-.project-meta-part > svg {
-  align-self: flex-start;
-  margin-block-start: calc((var(--inline-icon-line-box) - var(--inline-icon-size)) / 2 - var(--inline-icon-optical-shift));
 }
 
 .publication-cards-view .publication-detail-row {
@@ -1874,39 +1852,117 @@ img {
   margin-block-start: calc((var(--inline-icon-line-box) - var(--inline-icon-size)) / 2 - var(--inline-icon-optical-shift));
 }
 
+/*
+ * Project and seminar metadata use control slots rather than pixel offsets.
+ * Each icon and its adjacent value share the same responsive control height;
+ * wrapped keyword groups keep the icon in the first control slot.
+ */
+.project-meta-part {
+  --project-meta-control-height: 1.4em;
+  --project-meta-icon-size: 1.15em;
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 7px;
+  max-width: 100%;
+  line-height: 1.4;
+}
+.project-meta-icon {
+  display: inline-grid;
+  flex: 0 0 var(--project-meta-icon-size);
+  place-items: center;
+  width: var(--project-meta-icon-size);
+  height: var(--project-meta-control-height);
+}
+.project-meta-icon > svg {
+  display: block;
+  width: var(--project-meta-icon-size);
+  height: var(--project-meta-icon-size);
+  margin: 0;
+}
+.project-meta-value {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--project-meta-control-height);
+}
+.project-meta-part.meta-keyword {
+  --project-meta-control-height: max(23px, var(--tag-height-min));
+  font-size: max(.7rem, var(--text-tag-min));
+  line-height: 1.2;
+}
+.project-keywords {
+  align-items: flex-start;
+}
+.project-meta-part.meta-keyword .keyword {
+  min-height: var(--project-meta-control-height);
+  font-size: inherit;
+  line-height: 1.2;
+}
+
 .seminar-title-row {
-  --inline-icon-size: 18px;
-  --inline-icon-optical-shift: .04em;
   font-size: 1rem;
   line-height: 1.45;
+}
+.seminar-title-icon {
+  display: inline-grid;
+  align-self: flex-start;
+  place-items: center;
+  width: 1.125em;
+  height: 1.45em;
+  margin: 0;
+}
+.seminar-title-icon > svg {
+  display: block;
+  width: 1.125em;
+  height: 1.125em;
 }
 .seminar-title {
   font-size: inherit;
   line-height: inherit;
 }
-.seminar-meta-item {
-  --inline-icon-size: 13px;
-  --inline-icon-optical-shift: .035em;
+.seminar-meta-row {
+  align-items: flex-start;
 }
-.seminar-speaker {
-  --inline-icon-optical-shift: .055em;
+.seminar-meta-item {
+  --seminar-meta-control-height: max(18px, var(--tag-height-min));
+  display: inline-flex;
+  align-items: flex-start;
+  min-height: var(--seminar-meta-control-height);
+  line-height: 1.2;
+}
+.seminar-meta-icon {
+  display: inline-grid;
+  flex: 0 0 1em;
+  place-items: center;
+  width: 1em;
+  height: var(--seminar-meta-control-height);
+}
+.seminar-meta-icon > svg {
+  display: block;
+  width: .93em;
+  height: .93em;
+  margin: 0;
+}
+.seminar-date > time,
+.seminar-speaker > .speaker {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--seminar-meta-control-height);
+  line-height: 1.2;
 }
 .seminar-keywords {
-  --inline-icon-line-box: max(18px, var(--tag-height-min), calc(1lh + 6px));
-  --inline-icon-optical-shift: .0125em;
-  --seminar-keyword-row-height-shift: min(0px, calc((22px - max(18px, var(--tag-height-min))) / 2));
-  --seminar-keyword-row-optical-shift: .028em;
   font-size: max(.62rem, var(--text-tag-min));
-  line-height: max(1.2em, 12px, var(--tag-line-min));
-  transform: translateY(calc(var(--seminar-keyword-row-height-shift) - var(--seminar-keyword-row-optical-shift)));
+  line-height: 1.2;
+  transform: none;
+}
+.seminar-keywords .keyword-row {
+  align-items: flex-start;
 }
 .seminar-keywords .keyword {
+  display: inline-flex;
+  align-items: center;
+  height: var(--seminar-meta-control-height);
+  min-height: var(--seminar-meta-control-height);
+  padding-block: 0;
   font-size: inherit;
-  line-height: inherit;
-}
-.seminar-title-icon,
-.seminar-meta-item > svg {
-  align-self: flex-start;
-  line-height: inherit;
-  margin-block-start: calc((var(--inline-icon-line-box) - var(--inline-icon-size)) / 2 - var(--inline-icon-optical-shift));
+  line-height: 1.2;
 }
