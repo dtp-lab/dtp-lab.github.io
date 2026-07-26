@@ -1775,3 +1775,28 @@ img {
     gap: 7px;
   }
 }
+
+/* Touch-device legibility: enlarge compact tag text without changing desktop layout. */
+@media (max-width: 1366px) and (any-pointer: coarse) {
+  .news-timeline .category-label {
+    min-height: 25px;
+    padding: 4px 10px;
+    font-size: .7rem;
+    line-height: 16px;
+  }
+
+  .publication-cards-view .publication-tag {
+    min-height: 21px;
+    padding: 3px 7px;
+    font-size: .7rem;
+    line-height: 15px;
+  }
+
+  .publication-cards-view .publication-card .keyword,
+  .seminar-card .keyword {
+    min-height: 21px;
+    padding: 3px 7px;
+    font-size: .7rem;
+    line-height: 1.15;
+  }
+}
