@@ -38,6 +38,7 @@
   --text-compact-min: 0rem;
   --tag-height-min: 0px;
   --tag-line-min: 0px;
+  --publication-author-icon-shift: .12em;
 }
 
 * { box-sizing: border-box; }
@@ -1791,6 +1792,7 @@ img {
     --text-compact-min: .84rem;
     --tag-height-min: 25px;
     --tag-line-min: 15.36px;
+    --publication-author-icon-shift: .075em;
   }
 }
 
@@ -1799,7 +1801,8 @@ img {
  *
  * Icons align to the first line box instead of the full height of wrapped text.
  * The 1lh default follows each row's responsive font metrics; tag rows opt into
- * their control height so icons remain centered beside the first pill.
+ * their control height. Small em-based optical shifts align the SVG strokes with
+ * the adjacent glyphs rather than merely centering their outer layout boxes.
  */
 .project-meta-part,
 .publication-cards-view .publication-detail-row,
@@ -1807,6 +1810,7 @@ img {
 .seminar-title-row,
 .seminar-meta-item {
   --inline-icon-line-box: 1lh;
+  --inline-icon-optical-shift: 0em;
   align-items: flex-start;
 }
 
@@ -1815,6 +1819,7 @@ img {
 }
 .project-meta-part.meta-keyword {
   --inline-icon-line-box: max(23px, var(--tag-height-min), calc(1lh + 8px));
+  --inline-icon-optical-shift: .03em;
   font-size: max(.7rem, var(--text-tag-min));
   line-height: 1.2;
 }
@@ -1824,11 +1829,12 @@ img {
 }
 .project-meta-part > svg {
   align-self: flex-start;
-  margin-block-start: calc((var(--inline-icon-line-box) - var(--inline-icon-size)) / 2);
+  margin-block-start: calc((var(--inline-icon-line-box) - var(--inline-icon-size)) / 2 - var(--inline-icon-optical-shift));
 }
 
 .publication-cards-view .publication-detail-row {
   --inline-icon-size: 15px;
+  --inline-icon-optical-shift: var(--publication-author-icon-shift);
   font-size: max(.77rem, var(--text-compact-min));
   line-height: 1.48;
 }
@@ -1838,8 +1844,10 @@ img {
 }
 .publication-cards-view .publication-meta-item {
   --inline-icon-size: 15px;
+  --inline-icon-optical-shift: .04em;
 }
 .publication-cards-view .publication-venue-item {
+  --inline-icon-optical-shift: .07em;
   font-size: max(.74rem, var(--text-meta-min));
   line-height: 1.42;
 }
@@ -1849,6 +1857,7 @@ img {
 }
 .publication-cards-view .publication-keywords-item {
   --inline-icon-line-box: max(18px, var(--tag-height-min), calc(1lh + 6px));
+  --inline-icon-optical-shift: .03em;
   font-size: max(.58rem, var(--text-tag-min));
   line-height: 1.2;
 }
@@ -1859,11 +1868,12 @@ img {
 .publication-cards-view .publication-row-icon {
   align-self: flex-start;
   line-height: inherit;
-  margin-block-start: calc((var(--inline-icon-line-box) - var(--inline-icon-size)) / 2);
+  margin-block-start: calc((var(--inline-icon-line-box) - var(--inline-icon-size)) / 2 - var(--inline-icon-optical-shift));
 }
 
 .seminar-title-row {
   --inline-icon-size: 18px;
+  --inline-icon-optical-shift: .04em;
   font-size: 1rem;
   line-height: 1.45;
 }
@@ -1873,9 +1883,14 @@ img {
 }
 .seminar-meta-item {
   --inline-icon-size: 13px;
+  --inline-icon-optical-shift: .035em;
+}
+.seminar-speaker {
+  --inline-icon-optical-shift: .055em;
 }
 .seminar-keywords {
   --inline-icon-line-box: max(18px, var(--tag-height-min), calc(1lh + 6px));
+  --inline-icon-optical-shift: .0125em;
   font-size: max(.62rem, var(--text-tag-min));
   line-height: max(1.2em, 12px, var(--tag-line-min));
 }
@@ -1887,5 +1902,5 @@ img {
 .seminar-meta-item > svg {
   align-self: flex-start;
   line-height: inherit;
-  margin-block-start: calc((var(--inline-icon-line-box) - var(--inline-icon-size)) / 2);
+  margin-block-start: calc((var(--inline-icon-line-box) - var(--inline-icon-size)) / 2 - var(--inline-icon-optical-shift));
 }
