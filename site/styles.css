@@ -1793,3 +1793,99 @@ img {
     --tag-line-min: 15.36px;
   }
 }
+
+/*
+ * Inline icon alignment contract
+ *
+ * Icons align to the first line box instead of the full height of wrapped text.
+ * The 1lh default follows each row's responsive font metrics; tag rows opt into
+ * their control height so icons remain centered beside the first pill.
+ */
+.project-meta-part,
+.publication-cards-view .publication-detail-row,
+.publication-cards-view .publication-meta-item,
+.seminar-title-row,
+.seminar-meta-item {
+  --inline-icon-line-box: 1lh;
+  align-items: flex-start;
+}
+
+.project-meta-part {
+  --inline-icon-size: 17px;
+}
+.project-meta-part.meta-keyword {
+  --inline-icon-line-box: max(23px, var(--tag-height-min), calc(1lh + 8px));
+  font-size: max(.7rem, var(--text-tag-min));
+  line-height: 1.2;
+}
+.project-meta-part.meta-keyword .keyword {
+  font-size: inherit;
+  line-height: inherit;
+}
+.project-meta-part > svg {
+  align-self: flex-start;
+  margin-block-start: calc((var(--inline-icon-line-box) - var(--inline-icon-size)) / 2);
+}
+
+.publication-cards-view .publication-detail-row {
+  --inline-icon-size: 15px;
+  font-size: max(.77rem, var(--text-compact-min));
+  line-height: 1.48;
+}
+.publication-cards-view .publication-detail-row .authors {
+  font-size: inherit;
+  line-height: inherit;
+}
+.publication-cards-view .publication-meta-item {
+  --inline-icon-size: 15px;
+}
+.publication-cards-view .publication-venue-item {
+  font-size: max(.74rem, var(--text-meta-min));
+  line-height: 1.42;
+}
+.publication-cards-view .publication-venue {
+  font-size: inherit;
+  line-height: inherit;
+}
+.publication-cards-view .publication-keywords-item {
+  --inline-icon-line-box: max(18px, var(--tag-height-min), calc(1lh + 6px));
+  font-size: max(.58rem, var(--text-tag-min));
+  line-height: 1.2;
+}
+.publication-cards-view .publication-keywords-item .keyword {
+  font-size: inherit;
+  line-height: inherit;
+}
+.publication-cards-view .publication-row-icon {
+  align-self: flex-start;
+  line-height: inherit;
+  margin-block-start: calc((var(--inline-icon-line-box) - var(--inline-icon-size)) / 2);
+}
+
+.seminar-title-row {
+  --inline-icon-size: 18px;
+  font-size: 1rem;
+  line-height: 1.45;
+}
+.seminar-title {
+  font-size: inherit;
+  line-height: inherit;
+}
+.seminar-meta-item {
+  --inline-icon-size: 13px;
+}
+.seminar-keywords {
+  --inline-icon-line-box: max(18px, var(--tag-height-min), calc(1lh + 6px));
+  font-size: max(.62rem, var(--text-tag-min));
+  line-height: max(1.2em, 12px, var(--tag-line-min));
+}
+.seminar-keywords .keyword {
+  font-size: inherit;
+  line-height: inherit;
+}
+.seminar-title-icon,
+.seminar-meta-item > svg {
+  align-self: flex-start;
+  line-height: inherit;
+  margin-block-start: calc((var(--inline-icon-line-box) - var(--inline-icon-size)) / 2);
+}
