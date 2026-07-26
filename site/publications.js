@@ -2,10 +2,8 @@
   const { escapeHtml, loadJson, dateValue, renderKeywords, showDataError } = DTPLab;
   const root = document.querySelector("#publications-content");
   const search = document.querySelector("#publication-search");
-  const layoutButtons = [...document.querySelectorAll("[data-publication-layout]")];
   let citations = { papers: {} };
   let publications = [];
-  let activeLayout = "legacy";
   const typeLabels = { journal: "Journal", conference: "Conference", patent: "Patent" };
   const icons = {
     authors: '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="4"/><path d="M2 21a7 7 0 0 1 14 0M16 4a4 4 0 0 1 0 8M17 14a7 7 0 0 1 5 7"/></svg>',
@@ -30,7 +28,7 @@
       label = `SCIE-${item.metrics.quartile}`;
       className = ["Q1", "Q2"].includes(item.metrics.quartile) ? `scie-${item.metrics.quartile.toLowerCase()}` : "scie";
     }
-    if (item.metrics?.metricYear) label += ` · ${item.metrics.metricYear}`;
+    if (item.metrics?.metricYear) label += `, ${item.metrics.metricYear}`;
     return `<span class="publication-tag evaluation evaluation-${escapeHtml(className)}">${escapeHtml(label)}</span>`;
   };
 
@@ -62,7 +60,7 @@
   const renderCitation = (item) => {
     const citation = citations.papers?.[item.id];
     return Number.isInteger(citation?.citationCount)
-      ? `<span class="publication-citation">Cited by ${citation.citationCount}${citation.checkedAt ? ` · ${escapeHtml(citation.checkedAt)}` : ""}</span>`
+      ? `<span class="publication-citation">Cited by ${citation.citationCount}${citation.checkedAt ? `, ${escapeHtml(citation.checkedAt)}` : ""}</span>`
       : "";
   };
 
@@ -70,27 +68,10 @@
     ? `<p class="authors">${item.authors.map(renderAuthor).join(", ")}</p>`
     : "";
 
-  const renderTimelineItem = (item) => {
-    const venue = [item.venue, item.details, item.publishedAt].filter(Boolean).map(escapeHtml).join(" · ");
-    return `<article class="publication-timeline-item">
-      <span class="publication-marker" aria-hidden="true"></span>
-      <div class="publication-timeline-head">
-        <div class="publication-timeline-title"><div class="publication-tags">${renderTags(item)}</div><h3>${escapeHtml(item.title)}</h3></div>
-        ${renderLinks(item)}
-      </div>
-      <div class="publication-timeline-authors">${renderAuthors(item)}</div>
-      <div class="publication-timeline-meta">
-        ${venue ? `<span class="publication-meta-item publication-venue-item"><span class="publication-row-icon">${icons.venue}</span><span class="publication-venue">${venue}</span></span>` : ""}
-        ${renderCitation(item)}
-        ${item.keywords?.length ? `<span class="publication-meta-item publication-keywords-item"><span class="publication-row-icon">${icons.keywords}</span>${renderKeywords(item.keywords)}</span>` : ""}
-      </div>
-    </article>`;
-  };
-
-  const renderLegacyCard = (item, headingLevel = 4) => {
+  const renderCard = (item, headingLevel = 4) => {
     const heading = headingLevel === 3 ? "h3" : "h4";
     const authors = item.authors?.length ? `<div class="publication-detail-row publication-authors-row"><span class="publication-row-icon">${icons.authors}</span>${renderAuthors(item)}</div>` : "";
-    const venueText = [item.venue, item.details, item.publishedAt].filter(Boolean).map(escapeHtml).join(" · ");
+    const venueText = [item.venue, item.details, item.publishedAt].filter(Boolean).map(escapeHtml).join(", ");
     const venue = venueText ? `<span class="publication-meta-item publication-venue-item"><span class="publication-row-icon">${icons.venue}</span><span class="publication-venue">${venueText}</span></span>` : "";
     const keywords = item.keywords?.length ? `<span class="publication-meta-item publication-keywords-item"><span class="publication-row-icon">${icons.keywords}</span>${renderKeywords(item.keywords)}</span>` : "";
     return `<article class="publication-card">
@@ -115,25 +96,20 @@
     }, []);
   };
 
-  const renderTimeline = (items) => `<div class="publication-timeline-view">${groupByPublicationYear(items).map((group) => `<section class="publication-timeline-year">
-    <header class="publication-year-rail"><h2>${escapeHtml(group.label)}</h2><span>${group.items.length}</span></header>
-    <div class="publication-timeline-list">${group.items.map(renderTimelineItem).join("")}</div>
-  </section>`).join("")}</div>`;
-
-  const renderLegacy = (items) => {
+  const renderCards = (items) => {
     const renderYearGroups = (records) => groupByPublicationYear(records).map((group) => `<section class="publication-year">
       <header class="publication-year-heading"><h3>${escapeHtml(group.label)}</h3><span>${group.items.length}건</span></header>
-      ${group.items.map(renderLegacyCard).join("")}
+      ${group.items.map(renderCard).join("")}
     </section>`).join("");
     const renderTypeSection = (type) => {
       const records = items.filter((item) => item.type === type);
-      const content = type === "patent" ? records.map((item) => renderLegacyCard(item, 3)).join("") : renderYearGroups(records);
+      const content = type === "patent" ? records.map((item) => renderCard(item, 3)).join("") : renderYearGroups(records);
       return `<section class="publication-type-section type-section-${type}">
         <header class="publication-section-heading"><h2>${typeLabels[type]}</h2><span>${records.length}건</span></header>
         ${content || '<p class="empty-state">등록된 실적이 없습니다.</p>'}
       </section>`;
     };
-    return `<div class="publication-legacy-view">${["journal", "conference", "patent"].map(renderTypeSection).join("")}</div>`;
+    return `<div class="publication-cards-view">${["journal", "conference", "patent"].map(renderTypeSection).join("")}</div>`;
   };
 
   const matchesSearch = (item, query) => {
@@ -158,20 +134,7 @@
       root.innerHTML = '<p class="empty-state">검색 조건에 맞는 연구 성과가 없습니다.</p>';
       return;
     }
-    root.innerHTML = renderTimeline(filtered) + renderLegacy(filtered);
-    root.querySelector(".publication-timeline-view")?.toggleAttribute("hidden", activeLayout !== "timeline");
-    root.querySelector(".publication-legacy-view")?.toggleAttribute("hidden", activeLayout !== "legacy");
-  };
-
-  const setLayout = (layout) => {
-    activeLayout = layout;
-    layoutButtons.forEach((button) => {
-      const active = button.dataset.publicationLayout === layout;
-      button.classList.toggle("active", active);
-      button.setAttribute("aria-pressed", String(active));
-    });
-    root.querySelector(".publication-timeline-view")?.toggleAttribute("hidden", layout !== "timeline");
-    root.querySelector(".publication-legacy-view")?.toggleAttribute("hidden", layout !== "legacy");
+    root.innerHTML = renderCards(filtered);
   };
 
   try {
@@ -182,7 +145,5 @@
   } catch (error) {
     showDataError(root, error);
   }
-
-  layoutButtons.forEach((button) => button.addEventListener("click", () => setLayout(button.dataset.publicationLayout)));
   search?.addEventListener("input", render);
 })();

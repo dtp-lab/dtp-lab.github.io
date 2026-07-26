@@ -1,13 +1,13 @@
 <%- include('../partials/head', { title: 'Projects | DTPLab', description: 'DTPLab 연구 프로젝트', pageKey: 'projects', scripts: ['projects.js'] }) %>
 <%- include('../partials/header') %>
 <main id="main">
-  <section class="page-hero page-hero-projects"><div class="shell"><div class="page-hero-copy"><h1>Projects</h1></div></div></section>
+  <section class="page-hero page-hero-projects"><div class="shell"><div class="page-hero-copy"><p class="page-hero-kicker">From Models to Motion</p><h1>Projects</h1></div></div></section>
   <section class="content-section">
     <div class="shell">
       <div class="toolbar" role="group" aria-label="프로젝트 카테고리">
         <button class="filter-button active" data-project-category="all" aria-pressed="true">전체</button>
-        <button class="filter-button category-industry" data-project-category="industry" aria-pressed="false">산학</button>
         <button class="filter-button category-rnd" data-project-category="rnd" aria-pressed="false">R&amp;D</button>
+        <button class="filter-button category-industry" data-project-category="industry" aria-pressed="false">산학</button>
         <button class="filter-button category-talent" data-project-category="talent" aria-pressed="false">인재</button>
       </div>
       <div id="projects-content"></div>

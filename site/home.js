@@ -5,7 +5,6 @@
   const researchOverview = document.querySelector("#research-overview");
   const research = document.querySelector("#research-grid");
   const news = document.querySelector("#news-groups");
-  const newsLayoutButtons = [...document.querySelectorAll("[data-news-layout]")];
   const categoryLabels = {
     project: "Project",
     publication: "Publication",
@@ -52,26 +51,6 @@
     </article>`).join("")}</div>
   </section>`).join("")}</div>`;
 
-  const renderNewsLegacy = (groups) => `<div class="news-legacy">${Object.entries(groups).map(([year, items]) => `<section class="year-group news-year">
-    <header class="year-heading"><h3>${escapeHtml(year.trim())}</h3><span>${items.length}건</span></header>
-    <div class="news-list">${items.map((item) => `<article class="news-item news-${escapeHtml(item.category)}">
-      <time datetime="${escapeHtml(item.date)}">${escapeHtml(item.date)}</time>
-      <span class="news-type"><span class="category-label">${escapeHtml(item.category)}</span></span>
-      <p>${escapeHtml(item.text)}</p>
-    </article>`).join("")}</div>
-  </section>`).join("")}</div>`;
-
-  const setNewsLayout = (layout) => {
-    news.dataset.layout = layout;
-    news.querySelector(".news-timeline")?.toggleAttribute("hidden", layout !== "timeline");
-    news.querySelector(".news-legacy")?.toggleAttribute("hidden", layout !== "legacy");
-    newsLayoutButtons.forEach((button) => {
-      const active = button.dataset.newsLayout === layout;
-      button.classList.toggle("active", active);
-      button.setAttribute("aria-pressed", String(active));
-    });
-  };
-
   try {
     const [homeData, researchData, newsData] = await Promise.all([
       loadJson("home.json"),
@@ -86,11 +65,8 @@
     researchOverview.innerHTML = imageMarkup(researchData.overviewImage, "연구 분야 개요");
     research.innerHTML = renderResearch(researchData.research);
     const groups = groupByYear(newsData.news);
-    news.innerHTML = renderNewsTimeline(groups) + renderNewsLegacy(groups);
-    setNewsLayout("timeline");
+    news.innerHTML = renderNewsTimeline(groups);
   } catch (error) {
     showDataError(recruitment || research || news, error);
   }
-
-  newsLayoutButtons.forEach((button) => button.addEventListener("click", () => setNewsLayout(button.dataset.newsLayout)));
 })();
