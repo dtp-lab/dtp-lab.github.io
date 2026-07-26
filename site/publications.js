@@ -5,7 +5,7 @@
   const layoutButtons = [...document.querySelectorAll("[data-publication-layout]")];
   let citations = { papers: {} };
   let publications = [];
-  let activeLayout = "timeline";
+  let activeLayout = "legacy";
   const typeLabels = { journal: "Journal", conference: "Conference", patent: "Patent" };
   const icons = {
     authors: '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="4"/><path d="M2 21a7 7 0 0 1 14 0M16 4a4 4 0 0 1 0 8M17 14a7 7 0 0 1 5 7"/></svg>',

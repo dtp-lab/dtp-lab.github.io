@@ -23,6 +23,10 @@ const validateImages = (images, location) => {
     requiredText(image.src, `${location}.images[${index}].src`); requiredText(image.alt, `${location}.images[${index}].alt`);
     if (/^https?:/i.test(image.src || "")) errors.push(`${location}.images[${index}]: remote images are not allowed`);
     else if (image.src && !fs.existsSync(path.join(siteDir, image.src))) errors.push(`${location}.images[${index}]: file does not exist (${image.src})`);
+    if (image.thumbnail !== undefined) {
+      requiredText(image.thumbnail, `${location}.images[${index}].thumbnail`);
+      validateImagePath(image.thumbnail, `${location}.images[${index}].thumbnail`);
+    }
   });
 };
 const validateImagePath = (image, location) => {
@@ -52,7 +56,7 @@ for (const group of ["professor", "phd", "ms", "undergrad", "alumni"]) {
 
 const research = read("research.json");
 validateImageObject(research.overviewImage, "research.overviewImage");
-if ((research.research || []).length !== 5) errors.push("research: one core topic and four research directions are required");
+if ((research.research || []).length !== 4) errors.push("research: four research directions are required");
 (research.research || []).forEach((topic, index) => { requiredText(topic.title, `research[${index}].title`); requiredText(topic.description, `research[${index}].description`); validateImagePath(topic.image, `research[${index}].image`); });
 
 const projects = read("projects.json").projects || [];

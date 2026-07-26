@@ -9,7 +9,7 @@
   const categoryLabels = {
     project: "Project",
     publication: "Publication",
-    member: "People",
+    member: "Member",
     award: "Award",
   };
 
@@ -43,10 +43,11 @@
   </article>`).join("");
 
   const renderNewsTimeline = (groups) => `<div class="news-timeline">${Object.entries(groups).map(([year, items]) => `<section class="news-timeline-year">
-    <header class="news-year-rail"><h3>${escapeHtml(year.trim())}</h3><span>${items.length}</span></header>
+    <header class="news-timeline-year-heading"><h3>${escapeHtml(year.trim())}</h3><span>${items.length}건</span></header>
     <div class="news-timeline-list">${items.map((item) => `<article class="news-timeline-item news-${escapeHtml(item.category)}">
       <span class="news-marker" aria-hidden="true"></span>
-      <div class="news-timeline-meta"><time datetime="${escapeHtml(item.date)}">${escapeHtml(item.date)}</time><span class="category-label">${escapeHtml(categoryLabels[item.category] || item.category)}</span></div>
+      <time datetime="${escapeHtml(item.date)}">${escapeHtml(item.date)}</time>
+      <span class="category-label">${escapeHtml(categoryLabels[item.category] || item.category)}</span>
       <p>${escapeHtml(item.text)}</p>
     </article>`).join("")}</div>
   </section>`).join("")}</div>`;

@@ -1,7 +1,7 @@
 <%- include('../partials/head', { title: 'Publications | DTPLab', description: 'DTPLab 논문, 학술발표, 특허', pageKey: 'publications', scripts: ['publications.js'] }) %>
 <%- include('../partials/header') %>
 <main id="main">
-  <section class="page-hero page-hero-publications"><div class="shell"><div class="page-hero-copy"><p class="page-hero-kicker">Research record</p><h1>Publications</h1><p>논문·학술발표·특허로 축적한 DTPLab의 연구 성과입니다.</p></div></div></section>
+  <section class="page-hero page-hero-publications"><div class="shell"><div class="page-hero-copy"><h1>Publications</h1></div></div></section>
   <section class="content-section publication-content">
     <div class="shell">
       <div class="publication-controls">
@@ -11,8 +11,8 @@
           <input id="publication-search" type="search" placeholder="제목, 저자, 학술지, 키워드 검색">
         </label>
         <div class="layout-switch" role="group" aria-label="출판물 보기 방식">
-          <button type="button" class="layout-switch-button active" data-publication-layout="timeline" aria-pressed="true">Timeline · New</button>
-          <button type="button" class="layout-switch-button" data-publication-layout="legacy" aria-pressed="false">Cards · Legacy</button>
+          <button type="button" class="layout-switch-button active" data-publication-layout="legacy" aria-pressed="true">Cards · Default</button>
+          <button type="button" class="layout-switch-button" data-publication-layout="timeline" aria-pressed="false">Timeline</button>
         </div>
       </div>
       <div class="publication-legend" aria-label="저자 표기 안내">

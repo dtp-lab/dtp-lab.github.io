@@ -9,21 +9,25 @@
       "images": [
         {
           "src": "assets/gallery/sample-digital-twin-robot.webp",
+          "thumbnail": "assets/gallery-thumbs/sample-digital-twin-robot.webp",
           "alt": "산업용 로봇 팔과 가상 디지털트윈 모델을 함께 표현한 샘플 이미지",
           "caption": "디지털트윈 로봇 연구 장면 · 임시 생성 이미지"
         },
         {
           "src": "assets/gallery/sample-mobile-robot.webp",
+          "thumbnail": "assets/gallery-thumbs/sample-mobile-robot.webp",
           "alt": "실내 시험 트랙을 주행하는 이동 로봇의 샘플 이미지",
           "caption": "이동 로봇 경로계획 연구 장면 · 임시 생성 이미지"
         },
         {
           "src": "assets/gallery/sample-ship-digital-twin.webp",
+          "thumbnail": "assets/gallery-thumbs/sample-ship-digital-twin.webp",
           "alt": "선박 블록과 가상 선체 모델을 함께 표현한 샘플 이미지",
           "caption": "선박 디지털트윈 연구 장면 · 임시 생성 이미지"
         },
         {
           "src": "assets/gallery/sample-lidar-mapping.webp",
+          "thumbnail": "assets/gallery-thumbs/sample-lidar-mapping.webp",
           "alt": "센서와 3차원 포인트클라우드 지도를 표현한 샘플 이미지",
           "caption": "LiDAR 매핑 연구 장면 · 임시 생성 이미지"
         }
@@ -48,11 +52,13 @@
       "images": [
         {
           "src": "assets/gallery/2025-07-mita/01.webp",
+          "thumbnail": "assets/gallery-thumbs/2025-07-mita/01.webp",
           "alt": "MITA 2025 국제학술대회 활동 사진 1",
           "caption": "MITA 2025 국제학술대회"
         },
         {
           "src": "assets/gallery/2025-07-mita/02.webp",
+          "thumbnail": "assets/gallery-thumbs/2025-07-mita/02.webp",
           "alt": "MITA 2025 국제학술대회 활동 사진 2",
           "caption": "MITA 2025 국제학술대회"
         }
@@ -71,26 +77,31 @@
       "images": [
         {
           "src": "assets/gallery/2025-03-lab/01.webp",
+          "thumbnail": "assets/gallery-thumbs/2025-03-lab/01.webp",
           "alt": "2025년 3월 연구실 단체 사진 1",
           "caption": "연구실 대청소 후"
         },
         {
           "src": "assets/gallery/2025-03-lab/02.webp",
+          "thumbnail": "assets/gallery-thumbs/2025-03-lab/02.webp",
           "alt": "2025년 3월 연구실 단체 사진 2",
           "caption": "연구실 대청소 후"
         },
         {
           "src": "assets/gallery/2025-03-lab/03.webp",
+          "thumbnail": "assets/gallery-thumbs/2025-03-lab/03.webp",
           "alt": "2025년 3월 연구실 단체 사진 3",
           "caption": "연구실 대청소 후"
         },
         {
           "src": "assets/gallery/2025-03-lab/04.webp",
+          "thumbnail": "assets/gallery-thumbs/2025-03-lab/04.webp",
           "alt": "2025년 3월 연구실 단체 사진 4",
           "caption": "연구실 대청소 후"
         },
         {
           "src": "assets/gallery/2025-03-lab/05.webp",
+          "thumbnail": "assets/gallery-thumbs/2025-03-lab/05.webp",
           "alt": "2025년 3월 연구실 단체 사진 5",
           "caption": "연구실 대청소 후"
         }
