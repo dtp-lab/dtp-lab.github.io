@@ -1817,9 +1817,12 @@ img {
 .project-meta-part {
   --inline-icon-size: 17px;
 }
+.project-meta-part.meta-program {
+  --inline-icon-optical-shift: -.022em;
+}
 .project-meta-part.meta-keyword {
   --inline-icon-line-box: max(23px, var(--tag-height-min), calc(1lh + 8px));
-  --inline-icon-optical-shift: .03em;
+  --inline-icon-optical-shift: 0em;
   font-size: max(.7rem, var(--text-tag-min));
   line-height: 1.2;
 }
@@ -1891,8 +1894,11 @@ img {
 .seminar-keywords {
   --inline-icon-line-box: max(18px, var(--tag-height-min), calc(1lh + 6px));
   --inline-icon-optical-shift: .0125em;
+  --seminar-keyword-row-height-shift: min(0px, calc((22px - max(18px, var(--tag-height-min))) / 2));
+  --seminar-keyword-row-optical-shift: .028em;
   font-size: max(.62rem, var(--text-tag-min));
   line-height: max(1.2em, 12px, var(--tag-line-min));
+  transform: translateY(calc(var(--seminar-keyword-row-height-shift) - var(--seminar-keyword-row-optical-shift)));
 }
 .seminar-keywords .keyword {
   font-size: inherit;
