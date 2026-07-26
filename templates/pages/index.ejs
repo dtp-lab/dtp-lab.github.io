@@ -4,8 +4,8 @@
   <section class="home-hero">
     <div class="shell">
       <div class="home-hero-heading">
-        <p class="hero-kicker">Digital Twin Physical AI Laboratory</p>
-        <h1>디지털트윈<br>피지컬AI 연구실</h1>
+        <p class="hero-kicker">Pusan National University · DTPLab</p>
+        <h1>Robotic Intelligence<br>for the Physical World</h1>
         <p class="home-subtitle">@ 부산대학교 정보컴퓨터공학부</p>
       </div>
       <div class="hero-research-topics" id="hero-research-topics" aria-label="주요 연구주제"></div>
@@ -15,7 +15,7 @@
     <div class="shell">
       <details class="recruitment-card">
         <summary>
-          <span class="recruitment-summary"><strong>2027학년도 1학기 대학원생 및 학부연구생 모집 안내</strong></span>
+          <span class="recruitment-summary"><small>JOIN THE LAB</small><strong>2027학년도 1학기 대학원생 및 학부연구생 모집</strong></span>
           <span class="details-toggle-icon" aria-hidden="true"></span>
         </summary>
         <div class="recruitment-content" id="recruitment-content"></div>
@@ -26,12 +26,18 @@
     <div class="shell">
       <div class="section-heading"><p class="section-kicker">Research</p><h2>연구 분야</h2></div>
       <div class="research-overview" id="research-overview"></div>
-      <div class="research-grid" id="research-grid"></div>
+      <div class="research-thrusts" id="research-grid"></div>
     </div>
   </section>
   <section class="content-section" id="news">
     <div class="shell">
-      <div class="section-heading"><p class="section-kicker">Lab news</p><h2>연구실 활동 뉴스</h2></div>
+      <div class="section-heading section-heading-with-tools">
+        <div><p class="section-kicker">Lab news</p><h2>연구실 활동 뉴스</h2></div>
+        <div class="layout-switch" role="group" aria-label="뉴스 보기 방식">
+          <button type="button" class="layout-switch-button active" data-news-layout="timeline" aria-pressed="true">Timeline · New</button>
+          <button type="button" class="layout-switch-button" data-news-layout="legacy" aria-pressed="false">Compact · Legacy</button>
+        </div>
+      </div>
       <div id="news-groups"></div>
     </div>
   </section>

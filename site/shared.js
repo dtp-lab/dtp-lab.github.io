@@ -27,7 +27,7 @@
     if (!image) return "";
     const source = typeof image === "string" ? image : image.src;
     const alt = typeof image === "string" ? fallbackAlt : (image.alt || fallbackAlt);
-    return source ? `<img src="${escapeHtml(source)}" alt="${escapeHtml(alt)}" loading="lazy" />` : "";
+    return source ? `<img src="${escapeHtml(source)}" alt="${escapeHtml(alt)}" loading="lazy" decoding="async" />` : "";
   };
 
   const showDataError = (container, error) => {

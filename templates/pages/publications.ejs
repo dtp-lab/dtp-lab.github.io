@@ -1,15 +1,26 @@
 <%- include('../partials/head', { title: 'Publications | DTPLab', description: 'DTPLab 논문, 학술발표, 특허', pageKey: 'publications', scripts: ['publications.js'] }) %>
 <%- include('../partials/header') %>
 <main id="main">
-  <section class="page-hero"><div class="shell"><h1>Publications</h1></div></section>
+  <section class="page-hero page-hero-publications"><div class="shell"><div class="page-hero-copy"><p class="page-hero-kicker">Research record</p><h1>Publications</h1><p>논문·학술발표·특허로 축적한 DTPLab의 연구 성과입니다.</p></div></div></section>
   <section class="content-section publication-content">
     <div class="shell">
+      <div class="publication-controls">
+        <label class="publication-search">
+          <span class="sr-only">출판물 검색</span>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
+          <input id="publication-search" type="search" placeholder="제목, 저자, 학술지, 키워드 검색">
+        </label>
+        <div class="layout-switch" role="group" aria-label="출판물 보기 방식">
+          <button type="button" class="layout-switch-button active" data-publication-layout="timeline" aria-pressed="true">Timeline · New</button>
+          <button type="button" class="layout-switch-button" data-publication-layout="legacy" aria-pressed="false">Cards · Legacy</button>
+        </div>
+      </div>
       <div class="publication-legend" aria-label="저자 표기 안내">
         <span>연구실 구성원: <span class="legend-highlight">Highlighted</span></span>
         <span>제1저자: <sup>†</sup></span>
         <span>교신저자: <sup>*</sup></span>
       </div>
-      <div id="publications-content"></div>
+      <div id="publications-content" aria-live="polite"></div>
     </div>
   </section>
 </main>

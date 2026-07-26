@@ -3,28 +3,48 @@
   "migrated": "2026-07-17",
   "overviewImage": {
     "src": "assets/research/research-overview.png",
-    "alt": "디지털트윈과 피지컬 AI 연구 분야를 설명하는 개요도"
+    "alt": "Robotic Intelligence를 중심으로 시뮬레이션 기반 로봇 학습, 물리 신경 모델링, 모델 기반 최적화, 정책 최적화를 연결한 연구 분야 개요도"
   },
   "research": [
     {
-      "title": "디지털트윈 + Sim2Real 전이학습",
-      "description": "좋은 데이터가 좋은 AI 모델을 만듭니다. 하지만 실제 산업 현장이나 로봇 제어 분야에서는 각 특수 목적용 모델 구축에 적합한 대규모 데이터셋을 구축하기 어렵고 실제 테스트가 매우 고비용이므로, 시뮬레이션 환경에서 모델 학습 후 실제 환경으로 전이하는 접근이 일반적입니다. 연구실에서는 다양한 엔진(Isaac Sim, Unity, Unreal)으로 구축된 디지털트윈 시뮬레이션 환경에서 학습된 딥러닝 모델 및 강화학습 에이전트가 실제 환경에서도 잘 동작할 수 있도록 Domain Randomization and Adaptation 등 다양한 Sim2Real 응용 기술을 연구합니다.",
-      "image": ""
+      "label": "Core",
+      "title": "Robotic Intelligence",
+      "subtitle": "Digital Twin × Physical AI",
+      "description": "DTPLab은 로봇이 물리 세계의 상태를 이해하고, 미래를 예측하며, 목적에 맞는 행동을 스스로 선택하도록 만드는 지능을 연구합니다. 디지털트윈을 단순한 시각화 도구가 아니라 학습·검증·최적화를 연결하는 계산 환경으로 활용하고, 시뮬레이션에서 얻은 지능이 실제 로봇과 산업 시스템에서 신뢰성 있게 작동하도록 모델·데이터·제어 정책을 함께 설계합니다.",
+      "focus": ["World representation", "Embodied decision-making", "Digital-to-physical transfer"],
+      "image": "assets/projects/project-06/02.webp"
     },
     {
-      "title": "디지털트윈 + Physical AI & 로봇 지능",
-      "description": "디지털트윈 시뮬레이터로 embodied model을 학습하기 위해서는 단순한 3D 센싱 데이터만으로는 부족하며, 현실 환경의 물리적 요소를 반영한 환경 구축이 요구됩니다. 본 연구실에서는 디지털트윈에 월드모델(환경·객체의 상태를 잠재공간으로 표현하는 모델)과 물리적 AI(Physical AI) 기법을 결합하여, 보다 현실적인 모델 학습 시뮬레이터의 토대를 마련합니다.",
-      "image": ""
+      "label": "Direction 01",
+      "title": "Simulation-based Robot Learning",
+      "subtitle": "Learn safely in simulation, act reliably in reality",
+      "description": "실세계 데이터 수집과 반복 실험의 비용·위험을 줄이기 위해 Isaac Sim, Unity, Unreal 기반의 물리 시뮬레이션에서 로봇 인지 및 제어 정책을 학습합니다. Domain Randomization, Domain Adaptation, 합성데이터 생성과 Sim2Real 평가를 결합하여 새로운 환경과 장비에서도 일반화되는 로봇 학습 방법을 개발합니다.",
+      "focus": ["Synthetic data generation", "Sim2Real transfer", "Reinforcement learning"],
+      "image": "assets/projects/project-01/01.webp"
     },
     {
-      "title": "디지털트윈 + 심층대체모델",
-      "description": "디지털트윈 AI 시뮬레이션은 환경 파라미터 설정부터 모델 일반화 평가에 이르기까지 복잡하고 계산량이 많은 일련의 과정을 수행하게 되며, 실시간 최적화나 반복 평가 비용이 매우 높은 경우가 많습니다. 본 연구실에서는 디지털트윈 시뮬레이션에 구축된 열/동역학 물리 모델의 고비용 연산을 신뢰성 있게 근사하는 딥러닝 기반 대체모델 구축 기술을 연구합니다. 또한, 시계열 시뮬레이터의 ultra-long-horizon trajectory 안정화를 위한 dreaming 및 uncertainty 활용 연구를 수행합니다.",
-      "image": ""
+      "label": "Direction 02",
+      "title": "Physics-informed Neural Modeling",
+      "subtitle": "Fast models that respect physical structure",
+      "description": "열·유체·동역학 시뮬레이션의 높은 계산 비용을 줄이면서도 물리적 일관성과 장기 예측 안정성을 유지하는 신경 모델을 연구합니다. 물리 법칙, 시뮬레이션 데이터, 현장 센서 데이터를 함께 학습하고 uncertainty와 long-horizon rollout을 고려하여 실시간 예측과 제어에 사용할 수 있는 신뢰도 높은 대체모델을 구축합니다.",
+      "focus": ["Deep surrogate models", "Physics-informed learning", "Long-horizon prediction"],
+      "image": "assets/projects/project-10/01.webp"
     },
     {
-      "title": "디지털트윈 + 도메인 최적화",
-      "description": "로봇 기반 산업 현장 자동화·무인화를 위해서는 정밀한 제어 정책을 학습할 수 있는 시뮬레이터가 요구됩니다. 우리는 고차원 베이지안 최적화 및 강화학습을 통해 디지털트윈 시뮬레이터의 환경 및 물리요소 충실도 강화 기술을 연구합니다. 또한, 물리모델 기반 디지털트윈 시뮬레이터와 정교한 DSM을 활용하여 태스크별 로봇 제어 정책 및 설비 운영 효율에 대한 비선형 모델, 메타휴리스틱, 강화학습 기반 최적화 기법을 연구합니다.",
-      "image": ""
+      "label": "Direction 03",
+      "title": "Model-based Optimization",
+      "subtitle": "Search, predict, and optimize complex systems",
+      "description": "실험이나 시뮬레이션 호출이 비싼 산업 문제에서 물리모델과 학습모델을 이용해 탐색 효율을 높입니다. Bayesian Optimization, surrogate-assisted search, 메타휴리스틱을 결합하여 설계 파라미터와 운영 조건을 최적화하고, 불확실성과 제약을 명시적으로 다루는 의사결정 방법을 연구합니다.",
+      "focus": ["Bayesian optimization", "Surrogate-assisted search", "Constrained decision-making"],
+      "image": "assets/projects/project-05/01.webp"
+    },
+    {
+      "label": "Direction 04",
+      "title": "Policy Optimization",
+      "subtitle": "From operational objectives to executable policies",
+      "description": "에너지 효율, 생산성, 안전성과 같은 산업 목표를 실제로 실행 가능한 제어 정책으로 변환합니다. 강화학습, 최적제어, 조합최적화를 활용해 로봇 동작과 설비 운영 정책을 학습하고, 디지털트윈에서 반복 검증한 뒤 현장 제약과 사람의 운용 지식을 반영해 배치 가능한 수준으로 고도화합니다.",
+      "focus": ["Reinforcement learning", "Optimal control", "Industrial operations"],
+      "image": "assets/projects/project-03/01.webp"
     }
   ],
   "images": []

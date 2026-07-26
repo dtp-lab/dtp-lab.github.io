@@ -4,7 +4,6 @@
   const buttons = [...document.querySelectorAll("[data-project-category]")];
   const categoryLabels = { industry: "산학", rnd: "R&D", talent: "인재" };
   let projects = [];
-  let galleryResizeFrame = 0;
   const icons = {
     program: '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 12h18M10 12v2h4v-2"/></svg>',
     agency: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21h18M5 21V9h14v12M3 9l9-6 9 6M9 13h6M9 17h6"/></svg>',
@@ -12,40 +11,15 @@
     keyword: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m20.5 13.5-7 7a2 2 0 0 1-2.8 0L3 12.8V3h9.8l7.7 7.7a2 2 0 0 1 0 2.8Z"/><circle cx="7.5" cy="7.5" r="1.2"/></svg>',
   };
   const metaPart = (kind, label, value) => value ? `<span class="project-meta-part meta-${kind}">${icons[kind]}<span class="sr-only">${label}: </span><span>${escapeHtml(value)}</span></span>` : "";
-  const sizeProjectGalleries = () => {
-    root.querySelectorAll(".record-gallery").forEach((gallery) => {
-      const figures = [...gallery.querySelectorAll(".record-image")];
-      if (!figures.length) return;
-      if (window.matchMedia("(max-width: 480px)").matches) {
-        figures.forEach((figure) => {
-          figure.style.removeProperty("width");
-          figure.style.removeProperty("height");
-        });
-        return;
-      }
-      const ratios = figures.map((figure) => {
-        const image = figure.querySelector("img");
-        return image?.naturalWidth && image?.naturalHeight ? image.naturalWidth / image.naturalHeight : 4 / 3;
-      });
-      const gap = Number.parseFloat(getComputedStyle(gallery).columnGap) || 0;
-      const availableWidth = Math.max(0, gallery.clientWidth - gap * (figures.length - 1));
-      const maxHeight = window.matchMedia("(max-width: 760px)").matches ? 180 : 230;
-      const rowHeight = Math.min(maxHeight, availableWidth / ratios.reduce((sum, ratio) => sum + ratio, 0));
-      figures.forEach((figure, index) => {
-        figure.style.width = `${Math.max(1, rowHeight * ratios[index])}px`;
-        figure.style.height = `${Math.max(1, rowHeight)}px`;
-      });
-    });
-  };
-  const scheduleGallerySizing = () => {
-    cancelAnimationFrame(galleryResizeFrame);
-    galleryResizeFrame = requestAnimationFrame(sizeProjectGalleries);
-  };
-  const bindGalleryImages = () => {
+  const bindGalleryRatios = () => {
     root.querySelectorAll(".record-gallery img").forEach((image) => {
-      if (!image.complete) image.addEventListener("load", scheduleGallerySizing, { once: true });
+      const setRatio = () => {
+        const ratio = image.naturalWidth && image.naturalHeight ? image.naturalWidth / image.naturalHeight : 1;
+        image.closest(".record-image")?.style.setProperty("--media-ratio", String(Math.max(.72, Math.min(2.2, ratio))));
+      };
+      if (image.complete) setRatio();
+      else image.addEventListener("load", setRatio, { once: true });
     });
-    scheduleGallerySizing();
   };
   const renderCard = (project) => {
     const period = [project.period?.start, project.period?.end].filter(Boolean).join(" – ");
@@ -60,9 +34,8 @@
     const completed = filtered.filter((project) => project.status === "completed").sort((a, b) => dateValue(b.period?.end) - dateValue(a.period?.end));
     const section = (title, items) => `<section class="project-section"><header class="year-heading"><h2>${title}</h2><span>${items.length}건</span></header>${items.length ? items.map(renderCard).join("") : '<p class="empty-state">해당 카테고리의 프로젝트가 없습니다.</p>'}</section>`;
     root.innerHTML = section("Current Projects", current) + section("Completed Projects", completed);
-    bindGalleryImages();
+    bindGalleryRatios();
   };
   try { const data = await loadJson("projects.json"); projects = data.projects || []; render(); } catch (error) { showDataError(root, error); }
   buttons.forEach((button) => button.addEventListener("click", () => { buttons.forEach((item) => { item.classList.toggle("active", item === button); item.setAttribute("aria-pressed", String(item === button)); }); render(button.dataset.projectCategory); }));
-  window.addEventListener("resize", scheduleGallerySizing);
 })();
