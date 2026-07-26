@@ -37,20 +37,21 @@
     if (item.doi) links.unshift({ label: "DOI", url: `https://doi.org/${item.doi}` });
     const citation = citations.papers?.[item.id];
     if (citation?.url && !links.some((link) => link.url === citation.url)) links.push({ label: "S2", url: citation.url });
-    const topTags = [
-      `<span class="publication-tag type-${escapeHtml(item.type)}">${escapeHtml(typeLabels[item.type] || item.type)}</span>`,
+    const featureTags = [
       evaluationTag(item),
       item.metrics?.award ? `<span class="publication-tag evaluation evaluation-award">${escapeHtml(item.metrics.award)}</span>` : "",
       item.patentStatus ? `<span class="publication-tag patent-status ${patentStatusClass(item.patentStatus)}">${escapeHtml(item.patentStatus)}</span>` : "",
-    ].filter(Boolean).join("");
+    ].filter(Boolean);
+    const fallbackTypeTag = `<span class="publication-tag type-${escapeHtml(item.type)}">${escapeHtml(typeLabels[item.type] || item.type)}</span>`;
+    const topTags = (featureTags.length ? featureTags : [fallbackTypeTag]).join("");
     const citationLabel = Number.isInteger(citation?.citationCount)
       ? `<span class="publication-citation">Semantic Scholar citations ${citation.citationCount}${citation.checkedAt ? ` · ${escapeHtml(citation.checkedAt)}` : ""}</span>`
       : "";
     const heading = headingLevel === 3 ? "h3" : "h4";
     const authors = item.authors?.length ? `<div class="publication-detail-row publication-authors-row"><span class="publication-row-icon">${icons.authors}</span><p class="authors">${item.authors.map(renderAuthor).join(", ")}</p></div>` : "";
-    const venue = `<div class="publication-detail-row publication-venue-row"><span class="publication-row-icon">${icons.venue}</span><div class="publication-meta"><p class="publication-venue">${[item.venue, item.details, item.publishedAt].filter(Boolean).map(escapeHtml).join(" · ")}</p>${citationLabel}</div></div>`;
-    const keywords = item.keywords?.length ? `<div class="publication-detail-row publication-keywords-row"><span class="publication-row-icon">${icons.keywords}</span>${renderKeywords(item.keywords)}</div>` : "";
-    return `<article class="publication-card"><div class="publication-top"><div class="publication-main"><div class="publication-tags">${topTags}</div><${heading}>${escapeHtml(item.title)}</${heading}></div>${links.length ? `<nav class="publication-links" aria-label="외부 링크">${links.map((link) => `<a class="icon-link" href="${escapeHtml(link.url)}" target="_blank" rel="noreferrer" title="${escapeHtml(link.label)}">${escapeHtml(link.label)}</a>`).join("")}</nav>` : ""}</div>${authors}${venue}${keywords}</article>`;
+    const venue = `<span class="publication-meta-item publication-venue-item"><span class="publication-row-icon">${icons.venue}</span><span class="publication-venue">${[item.venue, item.details, item.publishedAt].filter(Boolean).map(escapeHtml).join(" · ")}</span></span>`;
+    const keywords = item.keywords?.length ? `<span class="publication-meta-item publication-keywords-item"><span class="publication-row-icon">${icons.keywords}</span>${renderKeywords(item.keywords)}</span>` : "";
+    return `<article class="publication-card"><div class="publication-top"><div class="publication-heading-line"><div class="publication-tags">${topTags}</div><${heading}>${escapeHtml(item.title)}</${heading}></div>${links.length ? `<nav class="publication-links" aria-label="외부 링크">${links.map((link) => `<a class="icon-link" href="${escapeHtml(link.url)}" target="_blank" rel="noreferrer" title="${escapeHtml(link.label)}">${escapeHtml(link.label)}</a>`).join("")}</nav>` : ""}</div>${authors}<div class="publication-lower-row">${venue}${citationLabel}${keywords}</div></article>`;
   };
 
   const renderYearGroups = (items) => {
