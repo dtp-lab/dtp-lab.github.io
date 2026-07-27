@@ -5,12 +5,15 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="theme-color" content="#ffffff">
   <meta name="description" content="<%= description %>">
+  <% if (typeof noindex !== 'undefined' && noindex) { -%>
+  <meta name="robots" content="noindex,nofollow">
+  <% } -%>
   <title><%= title %></title>
   <link rel="icon" type="image/png" href="assets/brand/dtp-logo-icon.png">
-  <link rel="stylesheet" href="styles.css?v=18">
-  <script src="shared.js?v=18" defer></script>
+  <link rel="stylesheet" href="styles.css?v=19">
+  <script src="shared.js?v=19" defer></script>
   <% for (const script of scripts || []) { -%>
-  <script src="<%= script %>?v=18" defer></script>
+  <script src="<%= script %>?v=19" defer></script>
   <% } -%>
 </head>
 <body data-page="<%= pageKey %>">

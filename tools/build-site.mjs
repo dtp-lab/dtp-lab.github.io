@@ -15,7 +15,7 @@ await fs.cp(assetDir, outputDir, {
   filter: (source) => path.extname(source).toLowerCase() !== ".html",
 });
 
-const pages = ["index", "people", "projects", "publications", "seminars", "gallery", "archive"];
+const pages = ["index", "people", "projects", "publications", "seminars", "gallery", "archive", "alignment-lab"];
 for (const page of pages) {
   const template = path.join(templateDir, `${page}.ejs`);
   const output = path.join(outputDir, `${page}.html`);

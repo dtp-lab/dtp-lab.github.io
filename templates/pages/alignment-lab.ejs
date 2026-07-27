@@ -1,0 +1,45 @@
+<%- include('../partials/head', {
+  title: 'Metadata Alignment Lab | DTPLab',
+  description: 'DTPLab responsive metadata alignment diagnostics',
+  pageKey: 'alignment-lab',
+  noindex: true,
+  scripts: ['record-renderers.js', 'alignment-lab.js']
+}) %>
+<%- include('../partials/header') %>
+<main id="main" class="qa-main">
+  <section class="qa-hero">
+    <div class="shell">
+      <p class="page-hero-kicker">Rendered Geometry Audit</p>
+      <h1>Metadata Alignment Lab</h1>
+      <p>Projects, Publications, and Seminars use the production renderers below. Every specimen is visible at once; no content switcher is used.</p>
+      <div class="qa-environment" id="qa-environment" aria-live="polite"></div>
+    </div>
+  </section>
+  <section class="qa-summary-section">
+    <div class="shell">
+      <div class="qa-summary-head">
+        <div>
+          <p class="qa-label">Live result</p>
+          <h2>Alignment summary</h2>
+        </div>
+        <button class="qa-copy-report" id="qa-copy-report" type="button">Copy report</button>
+      </div>
+      <div class="qa-summary" id="qa-summary" aria-live="polite">
+        <p>Loading records and measuring rendered geometry…</p>
+      </div>
+    </div>
+  </section>
+  <section class="qa-suite-section">
+    <div class="shell">
+      <nav class="qa-suite-nav" aria-label="Diagnostic suites">
+        <a href="#qa-projects">Projects</a>
+        <a href="#qa-publications">Publications</a>
+        <a href="#qa-seminars">Seminars</a>
+      </nav>
+      <div id="qa-projects" class="qa-suite" data-qa-suite="project"></div>
+      <div id="qa-publications" class="qa-suite" data-qa-suite="publication"></div>
+      <div id="qa-seminars" class="qa-suite" data-qa-suite="seminar"></div>
+    </div>
+  </section>
+</main>
+<%- include('../partials/footer') %>
