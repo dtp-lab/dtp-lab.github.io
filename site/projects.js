@@ -1,5 +1,5 @@
 (async function () {
-  const { loadJson, dateValue, showDataError } = DTPLab;
+  const { loadJson, dateValue, showDataError, applyPageHeading } = DTPLab;
   const { bindProjectGalleryRatios, renderProjectCard } = DTPLab.recordRenderers;
   const root = document.querySelector("#projects-content");
   const buttons = [...document.querySelectorAll("[data-project-category]")];
@@ -12,6 +12,6 @@
     root.innerHTML = section("Current Projects", current) + section("Completed Projects", completed);
     bindProjectGalleryRatios(root);
   };
-  try { const data = await loadJson("projects.json"); projects = data.projects || []; render(); } catch (error) { showDataError(root, error); }
+  try { const data = await loadJson("projects.json"); applyPageHeading(data.page); projects = data.projects || []; render(); } catch (error) { showDataError(root, error); }
   buttons.forEach((button) => button.addEventListener("click", () => { buttons.forEach((item) => { item.classList.toggle("active", item === button); item.setAttribute("aria-pressed", String(item === button)); }); render(button.dataset.projectCategory); }));
 })();

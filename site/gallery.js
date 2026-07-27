@@ -1,5 +1,5 @@
 (async function () {
-  const { escapeHtml, sitePath, loadJson, sortByDateDesc, showDataError } = DTPLab;
+  const { escapeHtml, sitePath, loadJson, sortByDateDesc, showDataError, applyPageHeading } = DTPLab;
   const root = document.querySelector("#gallery-content");
   const dialog = document.querySelector("#gallery-lightbox");
   const dialogImage = document.querySelector("#lightbox-image");
@@ -11,6 +11,7 @@
   const open = (images, index, button) => { activeImages = images; activeIndex = index; trigger = button; showImage(); dialog.showModal(); };
   try {
     const data = await loadJson("gallery.json");
+    applyPageHeading(data.page);
     const events = sortByDateDesc(data.events);
     root.innerHTML = events.map((event, eventIndex) => {
       const images = event.images || [];

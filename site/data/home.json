@@ -1,13 +1,56 @@
 {
-  "source": "https://sites.google.com/view/dtnlab",
   "recruitment": {
+    "summaryKicker": "JOIN THE LAB",
+    "summaryTitle": "2027학년도 1학기 대학원생 및 학부연구생 모집",
+    "eyebrow": "Graduate & Undergraduate Researcher",
     "intro": "DTPLab에서는 디지털 환경에서 학습한 지능을 실제 물리 세계로 연결하는 연구를 함께 수행할 대학원생과 학부연구생을 모집합니다.",
+    "contactEmail": "wonsukkim@pusan.ac.kr",
     "sections": [
-      {"title": "수행 연구", "items": ["Robotic Intelligence", "Physics Simulation & Sim2Real", "Neural Surrogates & World Models", "Mathematical & AI Optimization"]},
-      {"title": "모집 대상", "items": ["컴퓨터공학·인공지능 및 관련 전공 대학원 진학 희망자", "Digital Twin과 Physical AI 연구에 관심 있는 학생", "자기주도적으로 연구를 수행할 수 있는 학생"]},
-      {"title": "지원 방법", "items": ["성적증명서와 자유양식 연구계획서를 이메일로 제출", "연구실 T/O 확인", "대면 또는 온라인 면담 후 합류 결정"]},
-      {"title": "지원 내역", "items": ["연구과제 참여에 따른 연구비 지원", "국내외 학술대회 발표 및 연구 활동 지원", "개인 연구공간과 연구장비 제공"]},
-      {"title": "연락처", "items": ["wonsukkim@pusan.ac.kr", "부산대학교 IT관 610호"]}
+      {
+        "title": "수행 연구",
+        "items": [
+          "Robotic Intelligence",
+          "Physics Simulation & Sim2Real",
+          "Neural Surrogates & World Models",
+          "Mathematical & AI Optimization"
+        ]
+      },
+      {
+        "title": "모집 대상",
+        "items": [
+          "컴퓨터공학·인공지능 및 관련 전공 대학원 진학 희망자",
+          "Digital Twin과 Physical AI 연구에 관심 있는 학생",
+          "자기주도적으로 연구를 수행할 수 있는 학생"
+        ]
+      },
+      {
+        "title": "지원 방법",
+        "items": [
+          "성적증명서와 자유양식 연구계획서를 이메일로 제출",
+          "연구실 T/O 확인",
+          "대면 또는 온라인 면담 후 합류 결정"
+        ]
+      },
+      {
+        "title": "지원 내역",
+        "items": [
+          "연구과제 참여에 따른 연구비 지원",
+          "국내외 학술대회 발표 및 연구 활동 지원",
+          "개인 연구공간과 연구장비 제공"
+        ]
+      },
+      {
+        "title": "연락처",
+        "items": [
+          "wonsukkim@pusan.ac.kr",
+          "부산대학교 IT관 610호"
+        ]
+      }
     ]
+  },
+  "hero": {
+    "kicker": "Pusan National University · Computer Science & Engineering",
+    "title": "Digital Twin\nPhysical AI Lab.",
+    "subtitle": "Robotic Intelligence from the Digital World to the Physical World"
   }
 }

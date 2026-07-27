@@ -1,6 +1,4 @@
 {
-  "source": "https://sites.google.com/view/dtnlab",
-  "migrated": "2026-07-17",
   "overviewImage": {
     "src": "assets/research/research-overview.png",
     "alt": "Digital Twin과 Physical AI를 중심으로 로봇 지능, 물리 시뮬레이션, 신경 예측모델, AI 최적화를 연결한 연구 분야 개요도"
@@ -11,7 +9,11 @@
       "title": "Robotic Intelligence",
       "subtitle": "Perceive, reason, and act in the physical world",
       "description": "로봇이 센서로 물리 세계의 상태를 이해하고, 미래 변화를 예측하며, 목적에 맞는 행동을 선택하는 지능을 연구합니다. 디지털트윈과 실제 환경에서 수집한 경험을 함께 활용해 인지·상태표현·의사결정·제어를 연결하고, 새로운 작업과 환경에서도 신뢰성 있게 적응하는 로봇 학습 방법을 개발합니다.",
-      "focus": ["Embodied intelligence", "World representation", "Robot learning and control"],
+      "focus": [
+        "Embodied intelligence",
+        "World representation",
+        "Robot learning and control"
+      ],
       "image": "assets/projects/project-01/02.webp"
     },
     {
@@ -19,7 +21,11 @@
       "title": "Physics Simulation & Sim2Real",
       "subtitle": "Learn safely in simulation, transfer reliably to reality",
       "description": "실세계 데이터 수집과 반복 실험의 비용·위험을 줄이기 위해 Isaac Sim, Unity, Unreal 기반 물리 시뮬레이션에서 로봇과 산업 시스템을 학습·검증합니다. 합성데이터 생성, 시뮬레이터 충실도 보정, Domain Randomization과 Domain Adaptation을 결합하여 시뮬레이션에서 얻은 지능이 실제 장비와 환경으로 안정적으로 전이되도록 합니다.",
-      "focus": ["Physics simulation", "Synthetic data generation", "Domain randomization & adaptation"],
+      "focus": [
+        "Physics simulation",
+        "Synthetic data generation",
+        "Domain randomization & adaptation"
+      ],
       "image": "assets/projects/project-04/02.webp"
     },
     {
@@ -27,7 +33,11 @@
       "title": "Neural Surrogates & World Models",
       "subtitle": "Fast predictive models for complex physical systems",
       "description": "열·유체·동역학처럼 계산 비용이 큰 시뮬레이션을 빠르게 근사하는 신경 대체모델과, 환경의 잠재 상태와 변화를 학습하는 월드모델을 연구합니다. 물리 법칙, 시뮬레이션 데이터, 현장 센서 데이터를 함께 활용하고 불확실성과 장기 rollout 안정성을 고려하여 실시간 예측·설계·제어에 사용할 수 있는 신뢰도 높은 모델을 구축합니다.",
-      "focus": ["Deep surrogate models", "World models", "Uncertainty-aware long-horizon prediction"],
+      "focus": [
+        "Deep surrogate models",
+        "World models",
+        "Uncertainty-aware long-horizon prediction"
+      ],
       "image": "assets/projects/project-10/01.webp"
     },
     {
@@ -35,9 +45,16 @@
       "title": "Mathematical & AI Optimization",
       "subtitle": "Efficient decisions under expensive models and constraints",
       "description": "실험이나 시뮬레이션 호출이 비싼 고차원 산업 문제에서 수학적 최적화와 AI 기반 탐색을 결합합니다. Bayesian Optimization, 조합최적화, 메타휴리스틱, 강화학습을 활용하여 설계 파라미터와 운영 정책을 효율적으로 찾고, 불확실성·비선형 제약·다목적 요구를 명시적으로 다루는 의사결정 방법을 연구합니다.",
-      "focus": ["Bayesian optimization", "Combinatorial & metaheuristic optimization", "Reinforcement learning"],
+      "focus": [
+        "Bayesian optimization",
+        "Combinatorial & metaheuristic optimization",
+        "Reinforcement learning"
+      ],
       "image": "assets/projects/project-05/02.webp"
     }
   ],
-  "images": []
+  "section": {
+    "kicker": "Research",
+    "title": "연구 분야"
+  }
 }

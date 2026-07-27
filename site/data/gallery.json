@@ -1,5 +1,4 @@
 {
-  "source": "https://sites.google.com/view/dtnlab/gallery",
   "events": [
     {
       "date": "2026.07",
@@ -132,5 +131,8 @@
       "images": []
     }
   ],
-  "migrated": "2026-07-17"
+  "page": {
+    "kicker": "Beyond the Bench",
+    "title": "Gallery"
+  }
 }

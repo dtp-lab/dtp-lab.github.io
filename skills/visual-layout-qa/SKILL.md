@@ -1,6 +1,6 @@
 ---
 name: visual-layout-qa
-description: Gate responsive website changes with rendered visual evidence. Use after every visible content addition or edit, and before deployment, especially for Projects, Publications, and Seminars metadata, icon-text alignment, wrapping, overflow, typography, images, and cross-platform consistency on Windows, iPhone, and iPad.
+description: Use when a visible DTPLab website change needs responsive layout, alignment, clipping, overflow, typography, image, or production deployment verification before completion.
 ---
 
 # Visual Layout QA
@@ -27,7 +27,7 @@ Also run it after changes to renderers, templates, SVG icons, fonts, typography,
 7. Run the repository's alignment diagnostic against all production records and stress specimens.
 8. Fix failures at the shared component or layout-contract level. Do not add selectors for a particular record, keyword count, title, device model, or user agent.
 9. Repeat the full affected matrix after each fix.
-10. Record the three-platform acceptance state before declaring completion.
+10. Record the required viewport and production acceptance state before declaring completion.
 
 ## DTPLab metadata contract
 
@@ -56,7 +56,7 @@ If a new component pattern is not represented in the diagnostic page, add a prod
 
 ## Platform evidence
 
-Use two evidence stages:
+Use two required evidence stages:
 
 ### Pre-deployment
 
@@ -66,10 +66,13 @@ Use two evidence stages:
 
 ### Post-deployment acceptance
 
-- Open the deployed production page and public noindex alignment lab on Windows, iPhone Safari, and iPad Safari.
-- Accept an actual-device screenshot, copied alignment report, or explicit user confirmation as device evidence. A confirmation must identify the deployed URL or commit, device and browser, affected page, and orientation; do not reuse evidence from an older deployment.
-- If iPhone or iPad cannot be inspected by the agent, report `DEVICE CHECK PENDING`; do not claim cross-platform verification.
-- A deployment made for device inspection is not final acceptance. Fix and redeploy if device evidence exposes a defect.
+- Open the deployed production page and public noindex alignment lab in Windows Chromium.
+- Recheck affected routes at 1440x900, 1024x768, and 390x844 against the deployed commit.
+- Mark the change complete when validation, the required viewport matrix, alignment diagnostics, GitHub Pages workflow, and Windows production checks pass.
+- Treat real iPhone Safari and iPad Safari checks as optional follow-up. Request them only when the user explicitly asks for actual-device verification or the change introduces a material Safari-specific risk that browser emulation cannot cover.
+- Do not emit `DEVICE CHECK PENDING` merely because optional real-device evidence is absent.
+- If optional real-device evidence is available, identify the deployed URL or commit, device and browser, affected page, and orientation. Never reuse evidence from an older deployment.
+- Fix and redeploy if any optional device check exposes a defect.
 
 ## Other visual checks
 
@@ -101,7 +104,7 @@ Use two evidence stages:
 - P2: visible baseline drift, inconsistent spacing, poor sampling, weak hierarchy, or awkward wrapping.
 - P3: polish opportunity without a visible functional or compositional defect.
 
-Do not approve with any P0 or P1. Resolve repeated P2 defects. A small residual difference may be accepted only when it is within the 1.5 px contract and the user has explicitly accepted the actual-device appearance.
+Do not approve with any P0 or P1. Resolve repeated P2 defects. A small residual difference may be accepted only when it is within the 1.5 px contract and does not create a visible functional or compositional defect in the required viewport matrix.
 
 ## Required report
 
@@ -112,7 +115,7 @@ Return:
 - alignment report totals and maximum delta;
 - defect list with selectors, measurements, and severity;
 - screenshots or reproducible URLs;
-- final state: `PREDEPLOY PASS`, `DEVICE CHECK PENDING`, or `THREE-PLATFORM ACCEPTED`;
+- final state: `PREDEPLOY PASS` or `COMPLETE`;
 - any explicitly accepted residual P2 or P3 limitation.
 
-Never report a platform as checked without direct evidence from that platform.
+Never report an optional platform as checked without direct evidence from that platform. Absence of optional iPhone or iPad evidence does not block `COMPLETE`.

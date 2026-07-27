@@ -1,5 +1,4 @@
 {
-  "source": "https://sites.google.com/view/dtnlab/seminars",
   "seminars": [
     {
       "date": "2026.03.09",
@@ -714,5 +713,9 @@
         "Deep Learning"
       ]
     }
-  ]
+  ],
+  "page": {
+    "kicker": "Open Problems",
+    "title": "Seminars"
+  }
 }

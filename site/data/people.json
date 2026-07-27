@@ -1,9 +1,7 @@
 {
-  "source": "https://sites.google.com/view/dtnlab/people",
   "groups": {
     "professor": [
       {
-        "group": "professor",
         "image": "assets/people/김원석.jpg",
         "name": "Won-Suk Kim, Ph.D.",
         "fields": {
@@ -13,273 +11,175 @@
           "2022_-_current": "Associate Professor, Pusan National University",
           "2020_-_2022": "Assistant Professor, Andong National University",
           "2016_-_2019": "CEO/Founder, PlonVei Corp. (VR/AR Tech Startup)"
-        },
-        "notes": [
-          "Associate Professor",
-          "School of Computer Science and Engineering",
-          "Pusan National University",
-          "Experiences"
-        ]
+        }
       }
     ],
     "phd": [
       {
-        "group": "phd",
         "image": "assets/people/최호진.jpg",
         "name": "Ho-Jin Choi (최호진)",
         "fields": {
           "e-mail": "tiger981228@pusan.ac.kr",
-          "research_topic": "Digital Twin Simulation, Robotics",
-          "interests": "Optimization, Synthetic Data, ML"
-        },
-        "notes": [
-          "Ph.D. Student"
-        ]
+          "research_topic": "Digital Twin Simulation, Robotics"
+        }
       },
       {
-        "group": "phd",
         "image": "assets/people/이지혜.jpg",
         "name": "Ji-Hye Lee (이지혜)",
         "fields": {
           "e-mail": "dlwlgp2920@pusan.ac.kr",
-          "research_topic": "RL, Digital Twin Simulation",
-          "interests": "Digital Twin, ML"
-        },
-        "notes": [
-          "Ph.D. Student"
-        ]
+          "research_topic": "RL, Digital Twin Simulation"
+        }
       },
       {
-        "group": "phd",
         "image": "assets/people/김준원.jpg",
         "name": "Jun-Won Kim (김준원)",
         "fields": {
           "affiliation": "국방과학연구소(ADD)",
           "e-mail": "kjw4156@naver.com",
-          "research_topic": "Unmanned Vehicle",
-          "interests": "Sensing, Digital Twin Simulation"
-        },
-        "notes": [
-          "Ph.D. Student"
-        ]
+          "research_topic": "Unmanned Vehicle"
+        }
       },
       {
-        "group": "phd",
         "image": "assets/people/최현석.png",
         "name": "Hyun-Suk Choi (최현석)",
         "fields": {
           "affiliation": "중소조선연구원(RIMS)",
           "e-mail": "hschoi@rims.re.kr",
-          "research_topic": "Autonomous Manufacturing",
-          "interests": "Digital Twin Simulation, Optimization"
-        },
-        "notes": [
-          "Ph.D. Student"
-        ]
+          "research_topic": "Autonomous Manufacturing"
+        }
       }
     ],
     "ms": [
       {
-        "group": "ms",
         "image": "assets/people/이창민.jpg",
         "name": "Chang-Min Lee (이창민)",
         "fields": {
           "e-mail": "lak0192@pusan.ac.kr",
-          "research_topic": "RL, Robotics",
-          "interests": "Computer Algorithm, Computer Network, ML"
-        },
-        "notes": [
-          "MS Student"
-        ]
+          "research_topic": "RL, Robotics"
+        }
       },
       {
-        "group": "ms",
         "image": "assets/people/고은성.png",
         "name": "Eun-Seong Ko (고은성)",
         "fields": {
           "e-mail": "eunseong624@pusan.ac.kr",
-          "research_topic": "Object Detection, Semantic Segmentation",
-          "interests": "Computer vision, Digital twin, Model compression"
-        },
-        "notes": [
-          "MS Student"
-        ]
+          "research_topic": "Object Detection, Semantic Segmentation"
+        }
       },
       {
-        "group": "ms",
         "image": "assets/people/김민재.jpg",
         "name": "Min-Jae Kim (김민재)",
         "fields": {
           "e-mail": "ysicka@pusan.ac.kr",
-          "research_topic": "RL, Robotics",
-          "interests": "World Model, Audio Generation"
-        },
-        "notes": [
-          "MS Student"
-        ]
+          "research_topic": "RL, Robotics"
+        }
       },
       {
-        "group": "ms",
         "image": "assets/people/이창주.jpg",
         "name": "Chang-Ju Lee (이창주)",
         "fields": {
           "e-mail": "busbtvi@pusan.ac.kr",
-          "research_topic": "RL, Robotics",
-          "interests": "Embedded, Digital twin"
-        },
-        "notes": [
-          "MS Student"
-        ]
+          "research_topic": "RL, Robotics"
+        }
       },
       {
-        "group": "ms",
         "image": "assets/people/하서현.jpg",
         "name": "Seo-Hyun Ha (하서현)",
         "fields": {
           "e-mail": "bluelily811@pusan.ac.kr",
-          "research_topic": "Digital Twin, RL",
-          "interests": "Digital Twin, Optimization, RL"
-        },
-        "notes": [
-          "MS Student"
-        ]
+          "research_topic": "Digital Twin, RL"
+        }
       }
     ],
     "undergrad": [
       {
-        "group": "undergrad",
         "image": "assets/people/김성민.jpg",
         "name": "Seong-Min Kim (김성민)",
         "fields": {
           "e-mail": "dan1626@pusan.ac.kr",
-          "research_topic": "Digital Twin",
-          "interests": "Digital Twin, Computer vision"
-        },
-        "notes": [
-          "Undergraduate Student"
-        ]
+          "research_topic": "Digital Twin"
+        }
       },
       {
-        "group": "undergrad",
         "image": "assets/people/여채언.jpg",
         "name": "Chae-Eon Yeo (여채언)",
         "fields": {
           "e-mail": "codjs2659@pusan.ac.kr",
-          "research_topic": "RL, Robotics",
-          "interests": "Physical AI, Digital twin"
-        },
-        "notes": [
-          "Undergraduate Student"
-        ]
+          "research_topic": "RL, Robotics"
+        }
       },
       {
-        "group": "undergrad",
         "image": "assets/people/옥소미.jpg",
         "name": "So-Mi Ok (옥소미)",
         "fields": {
           "e-mail": "osm0071@pusan.ac.kr",
-          "research_topic": "RL, Robotics",
-          "interests": "Physical AI, Digital twin, World Model"
-        },
-        "notes": [
-          "Undergraduate Student"
-        ]
+          "research_topic": "RL, Robotics"
+        }
       },
       {
-        "group": "undergrad",
         "image": "assets/people/홍석기.jpg",
         "name": "Seok-Gi Hong (홍석기)",
         "fields": {
           "e-mail": "hongseokgi00@pusan.ac.kr",
-          "research_topic": "RL, Digital twin",
-          "interests": "RL, Physical AI, Digital twin"
-        },
-        "notes": [
-          "Undergraduate Student"
-        ]
+          "research_topic": "RL, Digital twin"
+        }
       },
       {
-        "group": "undergrad",
         "image": "assets/people/홍세민.jpg",
         "name": "Se-Min Hong (홍세민)",
         "fields": {
           "e-mail": "semin73@pusan.ac.kr",
-          "research_topic": "RL, Digital twin",
-          "interests": "World Model, Digital twin"
-        },
-        "notes": [
-          "Undergraduate Student"
-        ]
+          "research_topic": "RL, Digital twin"
+        }
       },
       {
-        "group": "undergrad",
         "image": "assets/people/윤태호.jpg",
         "name": "Tae-Ho Yun (윤태호)",
         "fields": {
           "e-mail": "taeho2004@pusan.ac.kr",
-          "research_topic": "RL, Digital twin",
-          "interests": "RL, Digital twin"
-        },
-        "notes": [
-          "Undergraduate Student"
-        ]
+          "research_topic": "RL, Digital twin"
+        }
       },
       {
-        "group": "undergrad",
         "image": "assets/people/김범수.png",
         "name": "Bum-Soo Kim (김범수)",
         "fields": {
           "e-mail": "cacaki@pusan.ac.kr",
-          "research_topic": "",
-          "interests": ""
-        },
-        "notes": [
-          "Undergraduate Student"
-        ]
+          "research_topic": ""
+        }
       }
     ],
     "alumni": [
       {
-        "group": "alumni",
         "image": "assets/people/김정호.jpg",
         "name": "Jeong-Ho Kim (김정호)",
         "fields": {
           "e-mail": "touch@pusan.ac.kr",
-          "research_topic": "line detection, Unity",
-          "interests": "Metaverse, Computer Network, Game Engine"
-        },
-        "notes": [
-          "Master - 2026 Spring"
-        ]
+          "research_topic": "line detection, Unity"
+        }
       },
       {
-        "group": "alumni",
         "image": "assets/people/안현기.jpg",
         "name": "Hyun-Gi An (안현기)",
         "fields": {
           "e-mail": "tykr0001@pusan.ac.kr",
-          "research_topic": "UWB RTLS",
-          "interests": "RTLS, Sensing"
-        },
-        "notes": [
-          "Master - 2025 Spring"
-        ]
+          "research_topic": "UWB RTLS"
+        }
       },
       {
-        "group": "alumni",
         "image": "assets/people/김희준.png",
         "name": "Hee-Jun Kim (김희준)",
         "fields": {
           "affiliation": "삼성중공업(Samsung Heavy Industries)",
           "e-mail": "k20sus@naver.com",
-          "research_topic": "Data Clustering for Arc Sensing",
-          "interests": "Sensing, DT Simulation"
-        },
-        "notes": [
-          "Master - 2025 Spring"
-        ]
+          "research_topic": "Data Clustering for Arc Sensing"
+        }
       }
     ]
   },
-  "migrated": "2026-07-17"
+  "page": {
+    "kicker": "Humans in the Loop",
+    "title": "People"
+  }
 }

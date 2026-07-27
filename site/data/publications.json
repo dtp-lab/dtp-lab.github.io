@@ -1,6 +1,4 @@
 {
-  "source": "https://sites.google.com/view/dtnlab/publications",
-  "migrated": "2026-07-17",
   "items": [
     {
       "id": "journal-202607-01",
@@ -46,9 +44,7 @@
         "Computer Vision"
       ],
       "doi": "",
-      "semanticScholarId": "",
-      "links": [],
-      "rawCitation": "Kaku Muto1, Nobuyoshi Komuro*, Won-Suk Kim, Younghwan Yoo, \"A lightweight fusion localization framework integrating improved PDR and BLE location fingerprinting,\" IEICE Nonlinear Theory and Its Applications, Vol. 17, pp. -, 2026.07. (SCIE)"
+      "links": []
     },
     {
       "id": "journal-202601-02",
@@ -101,9 +97,7 @@
         "Energy Systems"
       ],
       "doi": "",
-      "semanticScholarId": "",
-      "links": [],
-      "rawCitation": "Min-Jae Kim1, Ho-Jin Choi1, Nobuyoshi Komuro, Jaeyoung Han*, Won-Suk Kim*, \"Branch-Parallel Simulated Annealing for Energy-Efficient Multi-Compressor Operation ,\" Electronics, Vol. 15, pp. 214, 2026.01. (SCIE - Q2)"
+      "links": []
     },
     {
       "id": "journal-202512-03",
@@ -143,9 +137,7 @@
         "Optimization"
       ],
       "doi": "",
-      "semanticScholarId": "",
-      "links": [],
-      "rawCitation": "Chang-Min Lee1, Hoon Lee, Won-Suk Kim*, \"Rehandling-aware stowage planning for RoRo ships using exclusive subgraph modeling and affinity-based cargo ordering,\" Scientific Reports, Vol. 15, pp. 32841, 2025.12. (SCIE - Q1)"
+      "links": []
     },
     {
       "id": "journal-202511-04",
@@ -186,9 +178,7 @@
         "Reinforcement Learning"
       ],
       "doi": "",
-      "semanticScholarId": "",
-      "links": [],
-      "rawCitation": "Chang-Min Lee1, Ji-Hye Lee, Won-Suk Kim*, \"The Impact of Privileged Information in Expert Policy throughout the Sim2Real Policy Transfer Pipeline,\" Journal of Korea Multimedia Society, Vol. 28, No. 11, pp. 1787-1799, 2025.11. (KCI)"
+      "links": []
     },
     {
       "id": "journal-202511-05",
@@ -228,9 +218,7 @@
         "Computer Vision"
       ],
       "doi": "",
-      "semanticScholarId": "",
-      "links": [],
-      "rawCitation": "Eun-Seong Ko1, Ho-Jin Choi, Won-Suk Kim*, \"Obstacle-Aware Fire Area Estimation Using Multi-View Drone Imagery,\" Journal of Korea Multimedia Society, Vol. 28, No. 11, pp. 1653-1663, 2025.11. (KCI)"
+      "links": []
     },
     {
       "id": "journal-202511-06",
@@ -270,9 +258,7 @@
         "Energy Systems"
       ],
       "doi": "",
-      "semanticScholarId": "",
-      "links": [],
-      "rawCitation": "Yebin Lee1, Won-Suk Kim*, Jaeyoung Han*, \"Comparative study of thermal management systems in electric Vehicles: Exergy and energy efficiency under cold climate conditions,\" Renewable Energy, Vol. 253, pp. 123926, 2025.11. (SCIE - Q1)"
+      "links": []
     },
     {
       "id": "journal-202510-07",
@@ -313,9 +299,7 @@
         "Energy Systems"
       ],
       "doi": "",
-      "semanticScholarId": "",
-      "links": [],
-      "rawCitation": "Daeil Hyun1, Won-Suk Kim*, Jaeyoung Han*, \"Optimization of Fuel cell Bipolar Plate Using Genetic Algorithm and Lumped Parameter Method: A Novel Approach for Large-Scale Mobility Applications,\" Energy, Vol. 334, pp. 137801, 2025.10. (SCIE - Q1(JCR 5%))"
+      "links": []
     },
     {
       "id": "journal-202509-08",
@@ -361,9 +345,7 @@
         "Computer Vision"
       ],
       "doi": "",
-      "semanticScholarId": "",
-      "links": [],
-      "rawCitation": "Jingshi Qian1, Nobuyoshi Komuro*, Won-Suk Kim, Younghwan Yoo, \"Enhanced Position Estimation via RSSI Offset Correction in BLE Fingerprinting-Based Indoor Positioning ,\" Future Internet, Vol. 17, No. 10, pp. 440, 2025.09. (ESCI)"
+      "links": []
     },
     {
       "id": "journal-202508-09",
@@ -404,9 +386,7 @@
         "Energy Systems"
       ],
       "doi": "",
-      "semanticScholarId": "",
-      "links": [],
-      "rawCitation": "Ho-Jin Choi1, Chang-Min Lee, Won-Suk Kim*, \"Simulated Annealing based Operating Flow Rate Combination Search Method for Reducing Power Consumption of Multi-Compressor Systems,\" Journal of Korea Multimedia Society, Vol. 28, No. 8, pp. 1070-1078, 2025.08. (KCI)"
+      "links": []
     },
     {
       "id": "journal-202503-10",
@@ -476,9 +456,7 @@
         "Digital Twin"
       ],
       "doi": "",
-      "semanticScholarId": "",
-      "links": [],
-      "rawCitation": "Jeong-Ho Kim1, In-Oh Park1, Chang-Min Lee, Hee-Jun Kim, Do-Hyung Jeon, Hyung-Jin Kim, Doo-Jin Choi, Won-Suk Kim*, \"Design of a Robust Digital Twin Simulator for Generating Noise-Resilient Welding Data in Shipyard Block Assembly,\" Journal of Korea Multimedia Society, Vol. 28, No. 3, pp. 395-411, 2025.03. (KCI)"
+      "links": []
     },
     {
       "id": "journal-202503-11",
@@ -528,9 +506,7 @@
       },
       "keywords": [],
       "doi": "",
-      "semanticScholarId": "",
-      "links": [],
-      "rawCitation": "Ho-Jin Choi1, Jeong-Ho Kim, Ji-Hye Lee, Jae-Young Han*, Won-Suk Kim*, \"Adaptive microservice architecture and service orchestration considering resource balance to support multi-user cloud VR,\" Electronics, Vol. 14, No. 7, pp. 1249, 2025.03. (SCIE - Q2)"
+      "links": []
     },
     {
       "id": "journal-202501-12",
@@ -570,9 +546,7 @@
         "Digital Twin"
       ],
       "doi": "",
-      "semanticScholarId": "",
-      "links": [],
-      "rawCitation": "Ho-Jin Choi1, In-Oh Park, Won-Suk Kim*, \"Estimating fire area for inaccessible wildfires using the digital twin fire simulator,\" Journal of Korea Multimedia Society, Vol. 28, No. 1, pp. 1-9, 2025.01. (KCI)"
+      "links": []
     },
     {
       "id": "journal-202410-13",
@@ -616,9 +590,7 @@
       },
       "keywords": [],
       "doi": "",
-      "semanticScholarId": "",
-      "links": [],
-      "rawCitation": "Jeong-Ho Kim1, Hyun-Gi An1, Nobuyoshi Komuro, and Won-Suk Kim*, \"Bias and Deviation Map-Based Weighted Graph Search for NLOS Indoor RTLS Calibration,\" Electronics, Vol. 13, No. 20, pp. 3993, 2024.10. (SCIE - Q2)"
+      "links": []
     },
     {
       "id": "journal-202408-14",
@@ -658,9 +630,7 @@
         "Computer Vision"
       ],
       "doi": "",
-      "semanticScholarId": "",
-      "links": [],
-      "rawCitation": "Ho-Jin Choi1, Nobuyoshi Komuro, and Won-Suk Kim*, \"Microservices-based resource provisioning for multi-user cloud VR in edge networks,\" Electronics, Vol. 13, No. 15, pp. 3077, 2024. 08. (SCIE - Q2)"
+      "links": []
     },
     {
       "id": "journal-202406-15",
@@ -710,9 +680,7 @@
       },
       "keywords": [],
       "doi": "",
-      "semanticScholarId": "",
-      "links": [],
-      "rawCitation": "Hee-Jun Kim1, Jeong-Ho Kim1, Shin-Nyeong Heo, Do-Hyung Jeon, and Won-Suk Kim*, \"Data clustering utilization technologies using medians of current values for improving arc sensing in unstructured environments,\" Sensors, Vol. 24, No. 13, pp. 4075, 2024.06. (SCIE - Q2)"
+      "links": []
     },
     {
       "id": "journal-202406-16",
@@ -764,9 +732,7 @@
         "Computer Vision"
       ],
       "doi": "",
-      "semanticScholarId": "",
-      "links": [],
-      "rawCitation": "Jingshi Qian1, Jiahe Li, Nobuyoshi Komuro*, Won-Suk Kim, and Younghwan Yoo, \"Improved particle filter in machine learning-based BLE fingerprinting method to reduce indoor location estimation errors,\" Future Internet, Vol. 16, No. 6, pp. 211, 2024.06. (ESCI)"
+      "links": []
     },
     {
       "id": "journal-202402-17",
@@ -824,9 +790,7 @@
         "Digital Twin"
       ],
       "doi": "",
-      "semanticScholarId": "",
-      "links": [],
-      "rawCitation": "Jeong-Ho Kim1, Hyun-Gi An, Ho-Jin Choi, Hyung-Jin Kim, Hee-Jun Kim, and Won-Suk Kim*, \"Object recognition and Airline-based painting automation system and digital twin simulator implementation,\" Journal of Korea Multimedia Society, Vol. 27, No. 2, pp. 218-228, 2024.02. (KCI)"
+      "links": []
     },
     {
       "id": "journal-202302-18",
@@ -864,9 +828,7 @@
       },
       "keywords": [],
       "doi": "",
-      "semanticScholarId": "",
-      "links": [],
-      "rawCitation": "Ho-Jin Choi1, Nobuyoshi Komuro, and Won-Suk Kim*, \"Single point LiDAR-based indoor map generation time reduction scheme,\" Journal of Korea Multimedia Society, Vol. 26, No. 2, pp. 166-174, 2023.02. (KCI)"
+      "links": []
     },
     {
       "id": "journal-202204-19",
@@ -910,9 +872,7 @@
       },
       "keywords": [],
       "doi": "",
-      "semanticScholarId": "",
-      "links": [],
-      "rawCitation": "Dzaky Zakiyal Fawwaz1, Sang-Hwa Chung*, Chang-Woo Ahn, and Won-Suk Kim, \"Optimal distributed MQTT broker and services placement for SDN-Edge based smart city architecture,\" Sensors, Vol. 22, No. 9, pp. 1-28, 2022.04. (SCIE)"
+      "links": []
     },
     {
       "id": "journal-202202-20",
@@ -946,9 +906,7 @@
         "Digital Twin"
       ],
       "doi": "",
-      "semanticScholarId": "",
-      "links": [],
-      "rawCitation": "Jung-Eun Yoon1 and Won-Suk Kim*, \"Implementation of real-time monitoring and remote control system testbed based on digital twin,\" Journal of Korea Multimedia Society, Vol. 24, No. 12, pp. 325-334, 2022.02. (KCI)"
+      "links": []
     },
     {
       "id": "journal-202112-21",
@@ -982,9 +940,7 @@
         "Digital Twin"
       ],
       "doi": "",
-      "semanticScholarId": "",
-      "links": [],
-      "rawCitation": "Da-Song Yu1 and Won-Suk Kim*, \"Implementation of UWB indoor positioning and real-time remote control system for disaster monitoring based on digital twin,\" Journal of Korea Multimedia Society, Vol. 24, No. 12, pp. 1682-1692, 2021.12. (KCI)"
+      "links": []
     },
     {
       "id": "journal-202108-22",
@@ -1010,9 +966,7 @@
       },
       "keywords": [],
       "doi": "",
-      "semanticScholarId": "",
-      "links": [],
-      "rawCitation": "Won-Suk Kim1, \"Edge computing server deployment technique for cloud VR-based multi-user metaverse content,\" Journal of Korea Multimedia Society, Vol. 24, No. 8, pp. 1090-1100, 2021.08. (KCI)"
+      "links": []
     },
     {
       "id": "journal-202105-23",
@@ -1038,9 +992,7 @@
       },
       "keywords": [],
       "doi": "",
-      "semanticScholarId": "",
-      "links": [],
-      "rawCitation": "Won-Suk Kim1, \"Progressive traffic-oriented resource management for reducing network congestion in edge computing,\" Entropy, Vol. 23, No. 5, pp. 532-551, 2021.05. (SCIE)"
+      "links": []
     },
     {
       "id": "journal-202104-24",
@@ -1078,9 +1030,7 @@
       },
       "keywords": [],
       "doi": "",
-      "semanticScholarId": "",
-      "links": [],
-      "rawCitation": "Won-Suk Kim1, Sang-Hwa Chung*, and Chang-Woo Ahn, \"Joint resource allocation based on traffic flow virtualization for edge computing,\" IEEE Access, Vol. 9, pp. 57989-58008, 2021.04. (SCIE)"
+      "links": []
     },
     {
       "id": "journal-201901-25",
@@ -1118,9 +1068,7 @@
       },
       "keywords": [],
       "doi": "",
-      "semanticScholarId": "",
-      "links": [],
-      "rawCitation": "Jung-Hoon Lee1, Sang-Hwa Chung*, and Won-Suk Kim, \"Fog server deployment technique: An approach based on computing resource usage,\" International Journal of Distributed Sensor Networks, Vol. 15, No. 1, pp. 1-19, 2019.01. (SCIE)"
+      "links": []
     },
     {
       "id": "journal-201811-26",
@@ -1154,9 +1102,7 @@
         "Optimization"
       ],
       "doi": "",
-      "semanticScholarId": "",
-      "links": [],
-      "rawCitation": "Won-Suk Kim1 and Sang-Hwa Chung*, \"User incentive model and its optimization scheme in user-participatory fog computing environment,\" Computer Networks, Vol. 145, pp. 76-88, 2018.11. (SCIE)"
+      "links": []
     },
     {
       "id": "journal-201806-27",
@@ -1194,9 +1140,7 @@
       },
       "keywords": [],
       "doi": "",
-      "semanticScholarId": "",
-      "links": [],
-      "rawCitation": "Min-Sik Son1, Sang-Hwa Chung*, and Won-Suk Kim, \"Fog-server placement technique based on network edge area traffic for a fog-computing environment,\" Journal of KIISE, Vol. 45, No. 6, pp. 598-610, 2018.06. (KCI)"
+      "links": []
     },
     {
       "id": "journal-201803-28",
@@ -1228,9 +1172,7 @@
       },
       "keywords": [],
       "doi": "",
-      "semanticScholarId": "",
-      "links": [],
-      "rawCitation": "Won-Suk Kim1 and Sang-Hwa Chung*, \"User-participatory fog computing architecture and its management schemes for improving feasibility,\" IEEE Access, Vol. 6, pp. 20262-20278, 2018.03. (SCIE)"
+      "links": []
     },
     {
       "id": "journal-201712-29",
@@ -1274,9 +1216,7 @@
       },
       "keywords": [],
       "doi": "",
-      "semanticScholarId": "",
-      "links": [],
-      "rawCitation": "Moon-Yong Jung1, Won-Suk Kim, Sang-Hwa Chung, and Ju-Wook Jang*, \"A blockchain-based ID/IP mapping and user-friendly fog computing for hyper-connected IoT architecture,\" International Journal of Information Communication Technology and Digital Convergence, Vol. 2, No. 2, pp. 12-19, 2017.12."
+      "links": []
     },
     {
       "id": "journal-201608-30",
@@ -1308,9 +1248,7 @@
       },
       "keywords": [],
       "doi": "",
-      "semanticScholarId": "",
-      "links": [],
-      "rawCitation": "Won-Suk Kim1 and Sang-Hwa Chung*, \"Proxy SDN controller for wireless networks,\" Mobile Information Systems, Vol. 2016, pp. 1-14, 2016.08. (SCIE)"
+      "links": []
     },
     {
       "id": "journal-201512-31",
@@ -1348,9 +1286,7 @@
       },
       "keywords": [],
       "doi": "",
-      "semanticScholarId": "",
-      "links": [],
-      "rawCitation": "Won-Suk Kim1, Sang-Hwa Chung*, and Jae-Won Moon, \"Improved content management for information-centric networking in SDN-based wireless mesh network,\" Computer Networks, Vol. 92, pp. 316-329, 2015.12. (SCIE)"
+      "links": []
     },
     {
       "id": "journal-201502-32",
@@ -1382,9 +1318,7 @@
       },
       "keywords": [],
       "doi": "",
-      "semanticScholarId": "",
-      "links": [],
-      "rawCitation": "Won-Suk Kim1 and Sang-Hwa Chung*, \"Interface assignment-based aodv routing protocol to improve reliability in multi-interface multichannel wireless mesh networks,\" Mobile Information Systems, Vol. 2015, pp. 1-16, 2015.02. (SCIE)"
+      "links": []
     },
     {
       "id": "journal-201410-33",
@@ -1428,9 +1362,7 @@
       },
       "keywords": [],
       "doi": "",
-      "semanticScholarId": "",
-      "links": [],
-      "rawCitation": "Won-Suk Kim1, Sang-Hwa Chung*, Hyun-Suk Choi, and Mi-Rim Do, \"Contents routing in the OpenFlow-based wireless mesh network environment,\" Journal of KIISE, Vol. 41, No. 10, pp. 810-823, 2014.10. (KCI)"
+      "links": []
     },
     {
       "id": "journal-201312-34",
@@ -1476,9 +1408,7 @@
         "Computer Vision"
       ],
       "doi": "",
-      "semanticScholarId": "",
-      "links": [],
-      "rawCitation": "Prasanthi Sreekumari1, Sang-Hwa Chung*, Meejeong Lee, and Won-Suk Kim, \"T-DLRP: detection of fast retransmission losses using TCP timestamp for improving the end-to-end performance of TCP over wireless networks,\" International Journal of Distributed Sensor Networks, Vol. 9, No. 12, pp. 1-16, 2013.12. (SCIE)"
+      "links": []
     },
     {
       "id": "conference-202507-01",
@@ -1526,9 +1456,7 @@
         "Energy Systems"
       ],
       "doi": "",
-      "semanticScholarId": "",
-      "links": [],
-      "rawCitation": "Ji-Hye Lee1, Jae-Hyun Bae, Jae-Young Han, and Won-Suk Kim*, \"Implementation of a Deep Surrogate Model Prototype for a Integrated Thermal Management System Simulator-based Digital Twin,\" MITA 2025, 2025.07."
+      "links": []
     },
     {
       "id": "conference-202507-02",
@@ -1563,9 +1491,7 @@
         "Energy Systems"
       ],
       "doi": "",
-      "semanticScholarId": "",
-      "links": [],
-      "rawCitation": "Ho-Jin Choi1, and Won-Suk Kim*, \"Simulated Annealing-Based Operating Condition Search Method for Power Consumption Reduction in Multi-Compressor Systems,\" MITA 2025, 2025.07."
+      "links": []
     },
     {
       "id": "conference-202410-03",
@@ -1621,9 +1547,7 @@
       },
       "keywords": [],
       "doi": "",
-      "semanticScholarId": "",
-      "links": [],
-      "rawCitation": "Hee-Jun Kim1, Dohyung Jeon, Hyungjin Kim, Doojin Choi, Jeong-Ho Kim, and Won-Suk Kim*, \"Arc Sensing with DBSCAN for Digital Inverter Welding Machine,\" ICCAS 2024, 2024.10."
+      "links": []
     },
     {
       "id": "conference-202409-04",
@@ -1655,9 +1579,7 @@
       },
       "keywords": [],
       "doi": "",
-      "semanticScholarId": "",
-      "links": [],
-      "rawCitation": "Ho-Jin Choi1 and Won-Suk Kim*, \"화재면적 산출 딥러닝 모델 훈련 데이터셋 생성을 위한 디지털트윈 시뮬레이터 구축,\" 한국청정기술학회, 2024.09."
+      "links": []
     },
     {
       "id": "conference-202406-05",
@@ -1697,9 +1619,7 @@
         "Reinforcement Learning"
       ],
       "doi": "",
-      "semanticScholarId": "",
-      "links": [],
-      "rawCitation": "Ho-Jin Choi1, Jeong-Ho Kim, and Won-Suk Kim*, \"Orchestration research to maximize contributor rewards in user-participatory edge-native infrastructure deployment models,\" 한국정보과학회 한국컴퓨터종합학술대회, 2024.06. (Best Paper Awarded)"
+      "links": []
     },
     {
       "id": "conference-202406-06",
@@ -1739,9 +1659,7 @@
         "Computer Vision"
       ],
       "doi": "",
-      "semanticScholarId": "",
-      "links": [],
-      "rawCitation": "Jeong-Ho Kim1, Ho-Jin Choi, and Won-Suk Kim*, \"Post-processing Techniques for Line Segment Detection Based on Airline Using Object Detection,\" 2024 한국정보과학회 한국컴퓨터종합학술대회, 2024.06."
+      "links": []
     },
     {
       "id": "conference-202401-07",
@@ -1785,9 +1703,7 @@
       },
       "keywords": [],
       "doi": "",
-      "semanticScholarId": "",
-      "links": [],
-      "rawCitation": "Hyun-Gi An1, Jeong-Ho Kim, Nobuyoshi Komuro, and Won-Suk Kim*, \"Natural Neighbor Interpolation based Error and Deviation Mapping for Enhancing UWB Indoor Positioning,\" KJCCS 2024, 2024.01. (Best Paper Awarded)"
+      "links": []
     },
     {
       "id": "conference-202401-08",
@@ -1833,9 +1749,7 @@
         "Computer Vision"
       ],
       "doi": "",
-      "semanticScholarId": "",
-      "links": [],
-      "rawCitation": "Jingshi Qian1, Nobuyoshi Komuro*, Younghwan Yoo, and Won-Suk Kim, \"Improving Position Estimation Accuracy by Filtering Processes in Fingerprinting-based Indoor Positioning,\" KJCCS 2024, 2024.01."
+      "links": []
     },
     {
       "id": "conference-202310-09",
@@ -1875,9 +1789,7 @@
         "Computer Vision"
       ],
       "doi": "",
-      "semanticScholarId": "",
-      "links": [],
-      "rawCitation": "Jingshi Qian1, Nobuyoshi Komuro*, and Won-Suk Kim, \"Improving Position Estimation Accuracy Method by Reducing RSSI Offsets in BLE Fingerprinting-Based Indoor Positioning,\" IEEE GCCE 2023, 2023.10."
+      "links": []
     },
     {
       "id": "conference-202304-10",
@@ -1917,9 +1829,7 @@
         "Computer Vision"
       ],
       "doi": "",
-      "semanticScholarId": "",
-      "links": [],
-      "rawCitation": "Jingshi Qian1, Nobuyoshi Komuro*, and Won-Suk Kim, \"Improving Position Estimation Accuracy Method by Reducing RSSI Fluctuations in BLE Fingerprinting-Based Indoor Positioning,\" ITIOT 2023, 2023.04."
+      "links": []
     },
     {
       "id": "conference-202301-11",
@@ -1957,9 +1867,7 @@
       },
       "keywords": [],
       "doi": "",
-      "semanticScholarId": "",
-      "links": [],
-      "rawCitation": "Sorato Mochizuki1, Nobuyoshi Komuro*, and Won-Suk Kim, \"Study on the Effectiveness of Distributed Compressed Sensing in Wireless Sensor Networks,\" JKCCS 2023, 2023.01."
+      "links": []
     },
     {
       "id": "conference-202301-12",
@@ -1997,9 +1905,7 @@
       },
       "keywords": [],
       "doi": "",
-      "semanticScholarId": "",
-      "links": [],
-      "rawCitation": "Isao Kurebayashi1, Nobuyoshi Komuro*, and Won-Suk Kim, \"Study on Emotion Estimation by Machine Learning using Time-series Sensor Data,\" JKCCS 2023, 2023.01."
+      "links": []
     },
     {
       "id": "conference-202301-13",
@@ -2043,9 +1949,7 @@
       },
       "keywords": [],
       "doi": "",
-      "semanticScholarId": "",
-      "links": [],
-      "rawCitation": "Ho-Jin Choi1, Hyun-Gi An, Nobuyoshi Komuro and Won-Suk Kim*, \"Single Point LiDAR Based Feature Extraction Techniques for 2D Map Generation,\" JKCCS 2023, 2023.01."
+      "links": []
     },
     {
       "id": "conference-202207-14",
@@ -2083,9 +1987,7 @@
       },
       "keywords": [],
       "doi": "",
-      "semanticScholarId": "",
-      "links": [],
-      "rawCitation": "Hyun-Gi An1, Ho-Jin Choi, and Won-Suk Kim*, \"Various Constraints of MTP Latency-Aware Cloud VR in Edge Computing Environment,\" MITA 2022, 2022.07. (Best Paper Awarded)"
+      "links": []
     },
     {
       "id": "conference-202107-15",
@@ -2123,9 +2025,7 @@
       },
       "keywords": [],
       "doi": "",
-      "semanticScholarId": "",
-      "links": [],
-      "rawCitation": "Jung-Eun Yoon1, Da-Song Yu, and Won-Suk Kim*, \"Evolution to cloud VR and various considerations in edge computing supporting it,\" MITA 2021, 2021.07. (Best Paper Awarded)"
+      "links": []
     },
     {
       "id": "conference-202104-16",
@@ -2157,9 +2057,7 @@
       },
       "keywords": [],
       "doi": "",
-      "semanticScholarId": "",
-      "links": [],
-      "rawCitation": "Jung-Eun Yoon1 and Won-Suk Kim*, \"Design and implementation of prevention and notification device for fall accident,\" 2021 한국멀티미디어학회 춘계학술발표대회, 2021.04."
+      "links": []
     },
     {
       "id": "conference-202104-17",
@@ -2193,9 +2091,7 @@
         "Computer Vision"
       ],
       "doi": "",
-      "semanticScholarId": "",
-      "links": [],
-      "rawCitation": "Da-Song Yu1 and Won-Suk Kim*, \"Design and implementation of carbon monoxide detection system in cooking room,\" 2021 한국멀티미디어학회 춘계학술발표대회, 2021.04."
+      "links": []
     },
     {
       "id": "conference-201905-18",
@@ -2227,9 +2123,7 @@
       },
       "keywords": [],
       "doi": "",
-      "semanticScholarId": "",
-      "links": [],
-      "rawCitation": "Seong-Jae Hwang1 and Won-Suk Kim*, \"A study on interaction schemes of virtual reality by making history interactive movie,\" 2019 한국멀티미디어학회 춘계학술발표대회, 2019.05."
+      "links": []
     },
     {
       "id": "conference-201707-19",
@@ -2267,9 +2161,7 @@
       },
       "keywords": [],
       "doi": "",
-      "semanticScholarId": "",
-      "links": [],
-      "rawCitation": "Jung-Hoon Lee1, Sang-Hwa Chung*, and Won-Suk Kim, \"Fog server deployment considering network topology and flow state in local area networks,\" IEEE ICUFN 2017, 2017.07."
+      "links": []
     },
     {
       "id": "conference-201701-20",
@@ -2301,9 +2193,7 @@
       },
       "keywords": [],
       "doi": "",
-      "semanticScholarId": "",
-      "links": [],
-      "rawCitation": "Won-Suk Kim1 and Sang-Hwa Chung*, \"Fog portal based centralized control architecture for practical operation of fog computing,\" 2017 한국통신학회 동계종합학술발표회, 2017.01."
+      "links": []
     },
     {
       "id": "conference-201701-21",
@@ -2341,9 +2231,7 @@
       },
       "keywords": [],
       "doi": "",
-      "semanticScholarId": "",
-      "links": [],
-      "rawCitation": "Min-Sik Son1, Sang-Hwa Chung*, and Won-Suk Kim, \"Fog server deployment technique based on service traffic pattern in fog computing environment,\" 2017 한국통신학회 동계종합학술발표회, 2017.01."
+      "links": []
     },
     {
       "id": "conference-201701-22",
@@ -2381,9 +2269,7 @@
       },
       "keywords": [],
       "doi": "",
-      "semanticScholarId": "",
-      "links": [],
-      "rawCitation": "Jung-Hoon Lee1, Sang-Hwa Chung*, and Won-Suk Kim, \"A dynamic algorithm for deployment of fog server in LAN,\" 2017 한국통신학회 동계종합학술발표회, 2017.01."
+      "links": []
     },
     {
       "id": "conference-201701-23",
@@ -2421,9 +2307,7 @@
       },
       "keywords": [],
       "doi": "",
-      "semanticScholarId": "",
-      "links": [],
-      "rawCitation": "Soon-Woong Min1, Sang-Hwa Chung*, and Won-Suk Kim, \"Building and performance evaluation of clustering using Docker Swarm in fog computing,\" 2017 한국통신학회 동계종합학술발표회, 2017.01."
+      "links": []
     },
     {
       "id": "conference-201501-24",
@@ -2455,9 +2339,7 @@
       },
       "keywords": [],
       "doi": "",
-      "semanticScholarId": "",
-      "links": [],
-      "rawCitation": "Won-Suk Kim1 and Sang-Hwa Chung*, \"Actual constraints of BSSID masking for the client handoff on the enterprise networks,\" 2015 한국통신학회 동계종합학술발표회, 2015.01."
+      "links": []
     },
     {
       "id": "conference-201412-25",
@@ -2495,9 +2377,7 @@
       },
       "keywords": [],
       "doi": "",
-      "semanticScholarId": "",
-      "links": [],
-      "rawCitation": "Won-Suk Kim1, Sang-Hwa Chung*, and Jiameng Shi, \"WiPCon: A proxied control plane for wireless access points in software defined networks,\" IEEE CSE 2014, 2014.12."
+      "links": []
     },
     {
       "id": "conference-201405-26",
@@ -2541,9 +2421,7 @@
       },
       "keywords": [],
       "doi": "",
-      "semanticScholarId": "",
-      "links": [],
-      "rawCitation": "Won-Suk Kim1, Sang-Hwa Chung*, Chang-Woo Ahn, and Mi-Rim Do, \"Seamless handoff and performance anomaly reduction schemes based on OpenFlow access points,\" IEEE WAINA 2014, 2014.05."
+      "links": []
     },
     {
       "id": "conference-201401-27",
@@ -2575,9 +2453,7 @@
       },
       "keywords": [],
       "doi": "",
-      "semanticScholarId": "",
-      "links": [],
-      "rawCitation": "Won-Suk Kim1 and Sang-Hwa Chung*, \"Design of the control overhead reduction scheme for OpenFlow-based WLAN,\" 2014 한국통신학회 동계종합학술발표회, 2014.01."
+      "links": []
     },
     {
       "id": "conference-201401-28",
@@ -2615,9 +2491,7 @@
       },
       "keywords": [],
       "doi": "",
-      "semanticScholarId": "",
-      "links": [],
-      "rawCitation": "Mi-Rim Do1, Sang-Hwa Chung*, and Won-Suk Kim, \"An improvement of the packet forwarding method between virtual APs for WLAN based on OpenFlow,\" 2014 한국통신학회 동계종합학술발표회, 2014.01."
+      "links": []
     },
     {
       "id": "conference-201303-29",
@@ -2651,9 +2525,7 @@
         "Optimization"
       ],
       "doi": "",
-      "semanticScholarId": "",
-      "links": [],
-      "rawCitation": "Won-Suk Kim1 and Sang-Hwa Chung*, \"Design of optimized AODV routing protocol for multi-interface multi-channel wireless mesh networks,\" IEEE AINA 2013, 2013.03."
+      "links": []
     },
     {
       "id": "conference-201206-30",
@@ -2685,9 +2557,7 @@
       },
       "keywords": [],
       "doi": "",
-      "semanticScholarId": "",
-      "links": [],
-      "rawCitation": "Won-Suk Kim1 and Sang-Hwa Chung*, \"Design and implementation of IEEE 802.11 n in multi-hop over wireless mesh networks with multi-channel multi-interface,\" IEEE HPCC 2012, 2012.06."
+      "links": []
     },
     {
       "id": "conference-201110-31",
@@ -2727,9 +2597,7 @@
         "Computer Vision"
       ],
       "doi": "",
-      "semanticScholarId": "",
-      "links": [],
-      "rawCitation": "Prasanthi Sreekumari1, Sang-Hwa Chung*, and Won-Suk Kim, \"A Timestamp based Detection of fast retransmission loss for improving the performance of TCP NewReno over wireless networks,\" IEEE WIMOB 2011, 2011.10."
+      "links": []
     },
     {
       "id": "conference-201110-32",
@@ -2773,9 +2641,7 @@
       },
       "keywords": [],
       "doi": "",
-      "semanticScholarId": "",
-      "links": [],
-      "rawCitation": "Jeong-Soo Kim1, Sang-Hwa Chung*, Chang-Woo Ahn, and Won-Suk Kim, \"Implementing channel-load aware routing scheme for IEEE 802.11 mesh networks,\" IEEE WIMOB 2011, 2011.10."
+      "links": []
     },
     {
       "id": "conference-201109-33",
@@ -2813,9 +2679,7 @@
       },
       "keywords": [],
       "doi": "",
-      "semanticScholarId": "",
-      "links": [],
-      "rawCitation": "Prasanthi Sreekumari1, Sang-Hwa Chung*, and Won-Suk Kim, \"An enhanced TCP scheme for distinguishing non-congestion losses from packet reordering over wireless mesh networks,\" IEEE HPCC 2011, 2011.09."
+      "links": []
     },
     {
       "id": "conference-201101-34",
@@ -2871,9 +2735,7 @@
       },
       "keywords": [],
       "doi": "",
-      "semanticScholarId": "",
-      "links": [],
-      "rawCitation": "Jeong-Soo Kim1, Sang-Hwa Chung*, Yun-Sung Lee, Chang-Woo Ahn, Won-Suk Kim, and Min-Su Jung, \"Design and implementation of a WLAN mesh router based on multipath routing,\" IEEE ICOIN 2011, 2011.01."
+      "links": []
     },
     {
       "id": "patent-202603-01",
@@ -2884,13 +2746,10 @@
       "venue": "대한민국 특허",
       "details": "10-2941109",
       "patentStatus": "등록",
-      "patentNumber": "10-2941109",
       "metrics": {},
       "keywords": [],
       "doi": "",
-      "semanticScholarId": "",
-      "links": [],
-      "rawCitation": "[등록] 강화학습을 이용해 전기차 통합 열관리 시스템을 제어하기 위한 장치, 10-2941109, 2026.03."
+      "links": []
     },
     {
       "id": "patent-202501-02",
@@ -2901,13 +2760,10 @@
       "venue": "대한민국 특허",
       "details": "10-2025-0160466",
       "patentStatus": "출원",
-      "patentNumber": "10-2025-0160466",
       "metrics": {},
       "keywords": [],
       "doi": "",
-      "semanticScholarId": "",
-      "links": [],
-      "rawCitation": "[출원] 베이지안 최적화 기반 멀티모델 선 검출 방법 및 장치, 10-2025-0160466, 2025.10."
+      "links": []
     },
     {
       "id": "patent-202501-03",
@@ -2918,13 +2774,10 @@
       "venue": "대한민국 특허",
       "details": "10-2025-0157390",
       "patentStatus": "출원",
-      "patentNumber": "10-2025-0157390",
       "metrics": {},
       "keywords": [],
       "doi": "",
-      "semanticScholarId": "",
-      "links": [],
-      "rawCitation": "[출원] 다중 압축기 시스템 소모전력 절감을 위한 시뮬레이티드 어닐링 기반 운전 유량 조합 탐색 방법 및 장치, 10-2025-0157390, 2025.10"
+      "links": []
     },
     {
       "id": "patent-202507-04",
@@ -2935,13 +2788,10 @@
       "venue": "대한민국 특허",
       "details": "10-2836870",
       "patentStatus": "등록",
-      "patentNumber": "10-2836870",
       "metrics": {},
       "keywords": [],
       "doi": "",
-      "semanticScholarId": "",
-      "links": [],
-      "rawCitation": "[등록] 클라우드 VR의 성능 향상을 위한 프로비저닝 방법 및 장치, 10-2836870, 2025.07."
+      "links": []
     },
     {
       "id": "patent-202401-05",
@@ -2952,13 +2802,10 @@
       "venue": "대한민국 특허",
       "details": "10-2024-0180301",
       "patentStatus": "출원",
-      "patentNumber": "10-2024-0180301",
       "metrics": {},
       "keywords": [],
       "doi": "",
-      "semanticScholarId": "",
-      "links": [],
-      "rawCitation": "[출원] 디지털 트윈 화재 시뮬레이터를 활용한 화재면적 산출방법, 10-2024-0180301, 2024.12."
+      "links": []
     },
     {
       "id": "patent-202400-06",
@@ -2969,13 +2816,10 @@
       "venue": "대한민국 특허",
       "details": "10-2024-0011983",
       "patentStatus": "출원",
-      "patentNumber": "10-2024-0011983",
       "metrics": {},
       "keywords": [],
       "doi": "",
-      "semanticScholarId": "",
-      "links": [],
-      "rawCitation": "[출원] 측위 정확도 향상을 위한 위치 보정 방법 및 장치, 10-2024-0011983, 2024.01."
+      "links": []
     },
     {
       "id": "patent-202408-07",
@@ -2986,13 +2830,10 @@
       "venue": "대한민국 특허",
       "details": "10-2693387",
       "patentStatus": "등록",
-      "patentNumber": "10-2693387",
       "metrics": {},
       "keywords": [],
       "doi": "",
-      "semanticScholarId": "",
-      "links": [],
-      "rawCitation": "[등록] 실내 측위 및 실시간 원격제어를 이용한 재난 감시 디지털 트윈 시스템 및 이의 제어 방법, 10-2693387, 2024.08."
+      "links": []
     },
     {
       "id": "patent-202007-08",
@@ -3003,13 +2844,10 @@
       "venue": "대한민국 특허",
       "details": "10-2133509",
       "patentStatus": "등록",
-      "patentNumber": "10-2133509",
       "metrics": {},
       "keywords": [],
       "doi": "",
-      "semanticScholarId": "",
-      "links": [],
-      "rawCitation": "[등록] 사용자 참여형 포그 컴퓨팅 환경에서 사용자 인센티브 제공을 위한 장치 및 방법, 10-2133509, 2020.07."
+      "links": []
     },
     {
       "id": "patent-201811-09",
@@ -3020,13 +2858,10 @@
       "venue": "대한민국 특허",
       "details": "10-1924491",
       "patentStatus": "등록",
-      "patentNumber": "10-1924491",
       "metrics": {},
       "keywords": [],
       "doi": "",
-      "semanticScholarId": "",
-      "links": [],
-      "rawCitation": "[등록] GIS 데이터 기반 증강현실 물체의 폐색 처리를 위한 장치 및 방법, 10-1924491, 2018.11."
+      "links": []
     },
     {
       "id": "patent-201701-10",
@@ -3037,13 +2872,10 @@
       "venue": "대한민국 특허",
       "details": "PCT/KR2017/013362",
       "patentStatus": "PCT",
-      "patentNumber": "PCT/KR2017/013362",
       "metrics": {},
       "keywords": [],
       "doi": "",
-      "semanticScholarId": "",
-      "links": [],
-      "rawCitation": "[PCT] 중앙 집중식 제어 구조 서버를 갖는 포그 컴퓨팅 운용을 위한 시스템 및 그의 제어 방법, PCT/KR2017/013362, 2017.11."
+      "links": []
     },
     {
       "id": "patent-201707-11",
@@ -3054,13 +2886,10 @@
       "venue": "대한민국 특허",
       "details": "10-1884404",
       "patentStatus": "등록",
-      "patentNumber": "10-1884404",
       "metrics": {},
       "keywords": [],
       "doi": "",
-      "semanticScholarId": "",
-      "links": [],
-      "rawCitation": "[등록] 중앙 집중식 제어 구조 서버를 갖는 포그 컴퓨팅 운용을 위한 시스템 및 그의 제어 방법, 10-1884404, 2017.07."
+      "links": []
     },
     {
       "id": "patent-201703-12",
@@ -3071,13 +2900,10 @@
       "venue": "대한민국 특허",
       "details": "10-1720710",
       "patentStatus": "등록",
-      "patentNumber": "10-1720710",
       "metrics": {},
       "keywords": [],
       "doi": "",
-      "semanticScholarId": "",
-      "links": [],
-      "rawCitation": "[등록] 무선 메쉬 네트워크에서 SDN 기반 정보 캐시 및 캐시 대상 라우터 선택 방법, 10-1720710, 2017.03."
+      "links": []
     },
     {
       "id": "patent-201602-13",
@@ -3088,13 +2914,10 @@
       "venue": "대한민국 특허",
       "details": "10-1596412",
       "patentStatus": "등록",
-      "patentNumber": "10-1596412",
       "metrics": {},
       "keywords": [],
       "doi": "",
-      "semanticScholarId": "",
-      "links": [],
-      "rawCitation": "[등록] 오픈플로우 기반 무선 네트워크의 혼합형 제어 시스템 및 방법, 10-1596412, 2016.02."
+      "links": []
     },
     {
       "id": "patent-201501-14",
@@ -3105,13 +2928,10 @@
       "venue": "대한민국 특허",
       "details": "10-1489799",
       "patentStatus": "등록",
-      "patentNumber": "10-1489799",
       "metrics": {},
       "keywords": [],
       "doi": "",
-      "semanticScholarId": "",
-      "links": [],
-      "rawCitation": "[등록] 오픈플로우로 제어되는 무선랜 액세스 포인트 시스템의 모바일 단말기 핸드오프 방법, 10-1489799, 2015.01."
+      "links": []
     },
     {
       "id": "patent-201312-15",
@@ -3122,13 +2942,10 @@
       "venue": "대한민국 특허",
       "details": "10-1338331",
       "patentStatus": "등록",
-      "patentNumber": "10-1338331",
       "metrics": {},
       "keywords": [],
       "doi": "",
-      "semanticScholarId": "",
-      "links": [],
-      "rawCitation": "[등록] 무선랜 멀티홉 네트워크에서의 프레임 통합 방법, 10-1338331, 2013.12."
+      "links": []
     },
     {
       "id": "patent-201310-16",
@@ -3139,13 +2956,14 @@
       "venue": "대한민국 특허",
       "details": "10-1325338",
       "patentStatus": "등록",
-      "patentNumber": "10-1325338",
       "metrics": {},
       "keywords": [],
       "doi": "",
-      "semanticScholarId": "",
-      "links": [],
-      "rawCitation": "[등록] 무선통신 네트워크에서 적응적 크레디트 제공 방법 및 시스템, 10-1325338, 2013.10."
+      "links": []
     }
-  ]
+  ],
+  "page": {
+    "kicker": "On the Record",
+    "title": "Publications"
+  }
 }

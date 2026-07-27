@@ -1,5 +1,5 @@
 (async function () {
-  const { escapeHtml, loadJson, dateValue, showDataError } = DTPLab;
+  const { escapeHtml, loadJson, dateValue, showDataError, applyPageHeading } = DTPLab;
   const { publicationTypeLabels: typeLabels, renderPublicationCard } = DTPLab.recordRenderers;
   const root = document.querySelector("#publications-content");
   const search = document.querySelector("#publication-search");
@@ -62,6 +62,7 @@
 
   try {
     const [data, cache] = await Promise.all([loadJson("publications.json"), loadJson("citations.json")]);
+    applyPageHeading(data.page);
     citations = cache;
     publications = data.items || [];
     render();
