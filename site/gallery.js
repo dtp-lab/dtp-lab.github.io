@@ -1,12 +1,12 @@
 (async function () {
-  const { escapeHtml, loadJson, sortByDateDesc, showDataError } = DTPLab;
+  const { escapeHtml, sitePath, loadJson, sortByDateDesc, showDataError } = DTPLab;
   const root = document.querySelector("#gallery-content");
   const dialog = document.querySelector("#gallery-lightbox");
   const dialogImage = document.querySelector("#lightbox-image");
   const dialogCaption = document.querySelector("#lightbox-caption");
   let activeImages = [], activeIndex = 0, trigger = null;
-  const thumbnailMarkup = (image, fallbackAlt) => `<img src="${escapeHtml(image.thumbnail || image.src)}" alt="${escapeHtml(image.alt || fallbackAlt || "")}" width="640" height="360" loading="lazy" decoding="async">`;
-  const showImage = () => { const image = activeImages[activeIndex]; dialogImage.src = image.src; dialogImage.alt = image.alt || ""; dialogCaption.textContent = image.caption || image.alt || ""; };
+  const thumbnailMarkup = (image, fallbackAlt) => `<img src="${escapeHtml(sitePath(image.thumbnail || image.src))}" alt="${escapeHtml(image.alt || fallbackAlt || "")}" width="640" height="360" loading="lazy" decoding="async">`;
+  const showImage = () => { const image = activeImages[activeIndex]; dialogImage.src = sitePath(image.src); dialogImage.alt = image.alt || ""; dialogCaption.textContent = image.caption || image.alt || ""; };
   const move = (direction) => { activeIndex = (activeIndex + direction + activeImages.length) % activeImages.length; showImage(); };
   const open = (images, index, button) => { activeImages = images; activeIndex = index; trigger = button; showImage(); dialog.showModal(); };
   try {

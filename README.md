@@ -1,6 +1,6 @@
 # DTPLab website
 
-부산대학교 Digital Twin Physical AI Laboratory의 정적 멀티페이지 홈페이지입니다. 기존 Google Sites의 내용을 `Home / People / Projects / Publications / Seminars / Gallery`로 이전했으며, EJS 공통 템플릿을 정적 HTML로 빌드해 GitHub Pages에 배포합니다.
+부산대학교 Digital Twin Physical AI Laboratory의 정적 멀티페이지 홈페이지입니다. 기존 Google Sites의 내용을 `Home / People / Projects / Publications / Seminars / Gallery`로 이전했으며, EJS 공통 템플릿을 정적 HTML로 빌드해 [https://dtp-lab.github.io/](https://dtp-lab.github.io/)에 배포합니다.
 
 ## 공개 페이지
 
@@ -8,10 +8,13 @@
 - `templates/partials/`: 공통 head, header, footer
 - `site/`: CSS, JavaScript, JSON, 로컬 이미지 등 정적 자산
 - `_site/`: `npm run build`가 생성하는 배포 결과물로 Git에는 포함하지 않음
+- 공개 경로는 `/people/`, `/projects/`처럼 디렉터리 기반의 확장자 없는 URL을 사용
 
 ## 데이터
 
 콘텐츠는 `site/data/` 아래의 JSON으로 관리합니다. 실제 프로필·행사 이미지는 추후 로컬 파일로 추가하며, 외부 Google Sites 이미지 URL은 사용하지 않습니다.
+
+`tools/content-model.mjs`는 구조화된 편집기에서 사용할 수 있는 직렬화 가능한 필드 계약과 저장 전 검증 함수를 제공합니다. 실제 편집 UI는 별도 Private 저장소 `dtp-lab/lab-website-builder`에서 관리합니다.
 
 - `home.json`: 모집 안내
 - `news.json`: 48건의 연구실 뉴스
@@ -30,16 +33,13 @@
 ```powershell
 npm ci
 npm run build
-python -m http.server 8765 --directory _site
+npm run serve
 ```
 
 검증 명령:
 
 ```powershell
-node tools/test-refresh-citations.mjs
-node tools/validate-content.mjs
-npm run build
-node tools/check-links.mjs _site
+npm run validate
 ```
 
 ## 배포

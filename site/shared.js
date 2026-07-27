@@ -3,8 +3,14 @@
     "&": "&amp;", "<": "&lt;", ">": "&gt;", "'": "&#39;", '"': "&quot;",
   })[character]);
 
+  const sitePath = (value = "") => {
+    const stringValue = String(value);
+    if (!stringValue || /^(?:[a-z]+:|\/|#)/i.test(stringValue)) return stringValue;
+    return `/${stringValue.replace(/^\.?\//, "")}`;
+  };
+
   const loadJson = async (name) => {
-    const response = await fetch(`data/${name}`);
+    const response = await fetch(`/data/${name}`);
     if (!response.ok) throw new Error(`${name}: HTTP ${response.status}`);
     return response.json();
   };
@@ -27,7 +33,7 @@
     if (!image) return "";
     const source = typeof image === "string" ? image : image.src;
     const alt = typeof image === "string" ? fallbackAlt : (image.alt || fallbackAlt);
-    return source ? `<img src="${escapeHtml(source)}" alt="${escapeHtml(alt)}" loading="lazy" decoding="async" />` : "";
+    return source ? `<img src="${escapeHtml(sitePath(source))}" alt="${escapeHtml(alt)}" loading="lazy" decoding="async" />` : "";
   };
 
   const showDataError = (container, error) => {
@@ -69,6 +75,6 @@
     });
   };
 
-  window.DTPLab = { escapeHtml, loadJson, dateValue, sortByDateDesc, groupByYear, renderKeywords, imageMarkup, showDataError };
+  window.DTPLab = { escapeHtml, sitePath, loadJson, dateValue, sortByDateDesc, groupByYear, renderKeywords, imageMarkup, showDataError };
   document.addEventListener("DOMContentLoaded", setupShell);
 })();
