@@ -584,9 +584,9 @@
     const projectCases = [...projectActual, ...createProjectStressCases()];
     const publicationCases = [...publicationActual, ...createPublicationStressCases()];
     const seminarCases = [...seminarActual, ...createSeminarStressCases()];
-    renderSuite(suiteRoots.project, "Projects", "18 production records plus program-length, keyword-count, and fixed-width stress combinations.", "project", projectCases);
-    renderSuite(suiteRoots.publication, "Publications", "84 production records plus author, venue, type, keyword, and fixed-width stress combinations.", "publication", publicationCases);
-    renderSuite(suiteRoots.seminar, "Seminars", "73 production records plus title, speaker, keyword, and fixed-width stress combinations.", "seminar", seminarCases);
+    renderSuite(suiteRoots.project, "Projects", `${projectActual.length} production records plus program-length, keyword-count, and fixed-width stress combinations.`, "project", projectCases);
+    renderSuite(suiteRoots.publication, "Publications", `${publicationActual.length} production records plus author, venue, type, keyword, and fixed-width stress combinations.`, "publication", publicationCases);
+    renderSuite(suiteRoots.seminar, "Seminars", `${seminarActual.length} production records plus title, speaker, keyword, and fixed-width stress combinations.`, "seminar", seminarCases);
     await document.fonts?.ready;
     requestAnimationFrame(() => requestAnimationFrame(measureAll));
   };

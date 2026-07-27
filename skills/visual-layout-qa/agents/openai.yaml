@@ -1,4 +1,7 @@
 interface:
   display_name: "Visual Layout QA"
-  short_description: "Pixel-level web layout and responsive QA"
-  default_prompt: "Use $visual-layout-qa to audit this site for alignment, overflow, responsive layout, and image-rendering defects."
+  short_description: "Gate content alignment across desktop and iOS"
+  default_prompt: "Use $visual-layout-qa to verify this website content change with rendered geometry and Windows, iPhone, and iPad evidence."
+
+policy:
+  allow_implicit_invocation: true
