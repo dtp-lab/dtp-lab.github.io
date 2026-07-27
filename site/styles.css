@@ -1752,79 +1752,90 @@ img {
 }
 
 /*
- * One metadata geometry for Projects, Publications, and Seminars.
- * Every icon slot and first adjacent control occupies the same 25px track.
- * Multiline text and wrapped keywords grow only below that first track.
+ * One baseline geometry for Projects, Publications, and Seminars.
+ * Icons, text, and the first keyword label share the same typographic baseline.
+ * Multiline text and wrapped keywords grow only below that first baseline.
  */
 .record-meta-row {
-  align-items: flex-start;
+  align-items: first baseline;
 }
 .record-meta-item.record-meta-item {
   --record-meta-icon-slot: 18px;
-  --record-meta-icon-size: 16px;
-  --record-meta-line-box: 1.4em;
-  --record-meta-control-height: max(25px, var(--record-meta-line-box));
-  display: grid;
-  grid-template-columns: var(--record-meta-icon-slot) minmax(0, 1fr);
-  align-items: start;
+  --record-meta-icon-size: 1em;
+  display: inline-flex;
+  align-items: first baseline;
   column-gap: 8px;
   min-width: 0;
   max-width: 100%;
-  min-height: var(--record-meta-control-height);
 }
 .record-meta-icon.record-meta-icon {
-  display: grid;
-  grid-column: 1;
-  align-self: start;
-  place-items: center;
+  display: inline-block;
+  flex: 0 0 var(--record-meta-icon-slot);
   width: var(--record-meta-icon-slot);
-  height: var(--record-meta-control-height);
+  height: var(--record-meta-icon-size);
   margin: 0;
   line-height: 0;
+  /* Older WebKit fallback: approximate the cap-centered shift from x-height. */
+  transform: translateY(calc((1em - 1ex) / 4 + .015em));
+}
+@supports (height: 1cap) {
+  .record-meta-icon.record-meta-icon {
+    transform: translateY(calc((1em - 1cap) / 2 + .015em));
+  }
 }
 .record-meta-icon.record-meta-icon > svg {
   display: block;
   width: var(--record-meta-icon-size);
   height: var(--record-meta-icon-size);
-  margin: 0;
+  margin-inline: auto;
 }
 .record-meta-control.record-meta-control {
-  grid-column: 2;
+  flex: 0 1 auto;
   min-width: 0;
-  min-height: var(--record-meta-control-height);
 }
 .record-meta-text.record-meta-text {
   display: block;
-  box-sizing: border-box;
-  padding-block: max(0px, calc((var(--record-meta-control-height) - var(--record-meta-line-box)) / 2));
-  line-height: var(--record-meta-line-box);
+  padding: 0;
 }
 .record-meta-keywords.record-meta-keywords {
-  display: flex;
-  align-items: flex-start;
-  min-height: var(--record-meta-control-height);
+  display: inline-flex;
+  align-items: first baseline;
+  min-width: 0;
+  max-width: 100%;
 }
 .record-meta-keywords > .keyword-row,
 .record-meta-keywords.project-keywords {
-  align-items: flex-start;
+  align-items: first baseline;
+  min-width: 0;
+  max-width: 100%;
 }
 .record-meta-keywords .keyword {
   display: inline-flex;
-  align-items: center;
-  height: var(--record-meta-control-height);
-  min-height: var(--record-meta-control-height);
-  padding-block: 0;
+  align-items: first baseline;
+  height: auto;
+  min-height: 0;
+  padding-block: .34em;
   line-height: 1;
+}
+.record-meta-baseline-probe {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  vertical-align: baseline;
+}
+.keyword-label {
+  display: inline;
 }
 .record-meta-standalone {
   display: inline-flex;
-  align-items: center;
-  align-self: flex-start;
-  min-height: 25px;
+  align-items: first baseline;
+  align-self: first baseline;
 }
 
 .project-meta-part.record-meta-item {
-  --record-meta-line-box: 1.4em;
   line-height: 1.4;
 }
 .project-meta-part.meta-keyword {
@@ -1836,25 +1847,21 @@ img {
 
 .publication-cards-view .publication-detail-row.record-meta-item,
 .publication-cards-view .publication-meta-item.record-meta-item {
-  grid-template-columns: var(--record-meta-icon-slot) minmax(0, 1fr);
-  align-items: start;
   gap: 0 8px;
 }
 .publication-cards-view .publication-detail-row.record-meta-item {
-  --record-meta-line-box: 1.48em;
   font-size: max(.77rem, var(--text-compact-min));
 }
 .publication-cards-view .publication-detail-row .authors {
   font-size: inherit;
-  line-height: var(--record-meta-line-box);
+  line-height: 1.48;
 }
 .publication-cards-view .publication-venue-item {
-  --record-meta-line-box: 1.42em;
   font-size: max(.74rem, var(--text-meta-min));
 }
 .publication-cards-view .publication-venue {
   font-size: inherit;
-  line-height: var(--record-meta-line-box);
+  line-height: 1.42;
 }
 .publication-cards-view .publication-keywords-item {
   font-size: max(.58rem, var(--text-tag-min));
@@ -1885,7 +1892,6 @@ img {
   line-height: inherit;
 }
 .seminar-meta-item.record-meta-item {
-  --record-meta-line-box: 1.2em;
   gap: 0 8px;
   line-height: 1.2;
 }
@@ -1895,6 +1901,27 @@ img {
 }
 .seminar-keywords .keyword {
   font-size: inherit;
+}
+
+@media (max-width: 760px) {
+  .toolbar {
+    position: static;
+  }
+  .project-head h3,
+  .seminar-title {
+    overflow-wrap: anywhere;
+  }
+  .project-meta-line,
+  .seminar-meta-row,
+  .publication-lower-row {
+    max-width: 100%;
+  }
+  .project-meta-part.meta-keyword,
+  .seminar-keywords,
+  .publication-keywords-item {
+    flex: 1 1 100%;
+    width: auto;
+  }
 }
 
 /* Metadata alignment lab: isolated diagnostic presentation, not production layout overrides. */

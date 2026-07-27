@@ -170,18 +170,60 @@
     Object.entries(rect).map(([key, value]) => [key, rounded(value)]),
   );
 
-  const firstTextRect = (element) => {
+  const firstTextNode = (element) => {
     if (!element) return null;
-    if (element.matches(".keyword, .publication-tag")) return rectFromDomRect(element.getBoundingClientRect());
     const walker = document.createTreeWalker(element, NodeFilter.SHOW_TEXT, {
       acceptNode: (node) => node.textContent.trim() ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT,
     });
-    const textNode = walker.nextNode();
+    return walker.nextNode();
+  };
+
+  const firstTextRect = (element) => {
+    if (!element) return null;
+    const textNode = firstTextNode(element);
     if (!textNode) return rectFromDomRect(element.getBoundingClientRect());
     const range = document.createRange();
     range.selectNodeContents(textNode);
     const rect = [...range.getClientRects()].find((candidate) => candidate.width > 0 && candidate.height > 0);
     return rect ? rectFromDomRect(rect) : rectFromDomRect(element.getBoundingClientRect());
+  };
+
+  const textCanvas = document.createElement("canvas").getContext("2d");
+  const glyphMetrics = (element) => {
+    const probe = element?.querySelector(".record-meta-baseline-probe");
+    const textNode = firstTextNode(element);
+    if (!probe || !textNode || !textCanvas) return null;
+    const textElement = textNode.parentElement || element;
+    const style = getComputedStyle(textElement);
+    textCanvas.font = style.font;
+    textCanvas.direction = style.direction;
+    const text = textNode.textContent.trim();
+    const measured = textCanvas.measureText(text);
+    const fallbackRect = firstTextRect(element);
+    const ascent = measured.actualBoundingBoxAscent || (fallbackRect?.height || 0) * .8;
+    const descent = measured.actualBoundingBoxDescent || (fallbackRect?.height || 0) * .2;
+    const baseline = probe.getBoundingClientRect().top;
+    const rect = {
+      top: baseline - ascent,
+      right: fallbackRect?.right || 0,
+      bottom: baseline + descent,
+      left: fallbackRect?.left || 0,
+      width: fallbackRect?.width || measured.width,
+      height: ascent + descent,
+    };
+    return {
+      baseline,
+      rect,
+      text,
+      ascent,
+      descent,
+      style: {
+        fontFamily: style.fontFamily,
+        fontSize: style.fontSize,
+        fontWeight: style.fontWeight,
+        lineHeight: style.lineHeight,
+      },
+    };
   };
 
   const transformPoint = (matrix, x, y) => ({
@@ -239,18 +281,27 @@
 
   const makePair = (label, wrapper, iconSelector, targetSelector) => {
     const svg = wrapper?.querySelector(iconSelector);
+    const iconWrapper = svg?.closest(".record-meta-icon");
     const target = wrapper?.querySelector(targetSelector);
     const painted = paintedSvgRect(svg);
     const iconRect = painted?.rect;
-    const targetRect = firstTextRect(target);
-    if (!iconRect || !targetRect) return null;
-    const targetStyle = getComputedStyle(target);
+    const glyph = glyphMetrics(target);
+    if (!iconRect || !glyph || !iconWrapper) return null;
+    const iconWrapperRect = iconWrapper.getBoundingClientRect();
+    const iconWrapperStyle = getComputedStyle(iconWrapper);
+    const transformValues = iconWrapperStyle.transform.match(/^matrix\(([^)]+)\)$/)?.[1].split(",").map(Number);
+    const opticalShift = transformValues?.[5] || 0;
+    const iconBaseline = iconWrapperRect.bottom - opticalShift;
+    const targetRect = glyph.rect;
     const iconCenter = centerY(iconRect);
     const targetCenter = centerY(targetRect);
+    const baselineDelta = Math.abs(iconBaseline - glyph.baseline);
+    const inkDelta = Math.abs(iconCenter - targetCenter);
     return {
       label,
       wrapper,
       wrapperRect: rectFromDomRect(wrapper.getBoundingClientRect()),
+      iconWrapperRect: rectFromDomRect(iconWrapperRect),
       svgRect: rectFromDomRect(svg.getBoundingClientRect()),
       svgViewBox: svg.getAttribute("viewBox") || "",
       measurementDegraded: painted.degraded,
@@ -258,14 +309,18 @@
       failedShapes: painted.failedShapes,
       iconRect,
       targetRect,
-      targetStyle: {
-        fontFamily: targetStyle.fontFamily,
-        fontSize: targetStyle.fontSize,
-        lineHeight: targetStyle.lineHeight,
-      },
+      targetStyle: glyph.style,
+      measuredText: glyph.text,
+      glyphAscent: glyph.ascent,
+      glyphDescent: glyph.descent,
+      iconBaseline,
+      targetBaseline: glyph.baseline,
+      opticalShift,
+      baselineDelta,
+      inkDelta,
       iconCenter,
       targetCenter,
-      delta: Math.abs(iconCenter - targetCenter),
+      delta: Math.max(baselineDelta, inkDelta),
       left: wrapper.getBoundingClientRect().left,
     };
   };
@@ -332,16 +387,16 @@
       : pairs;
     const groups = [];
     relevant.forEach((pair) => {
-      const top = pair.wrapperRect.top;
-      const group = groups.find((candidate) => Math.abs(candidate.top - top) <= 1);
+      const baseline = pair.targetBaseline;
+      const group = groups.find((candidate) => Math.abs(candidate.baseline - baseline) <= 1);
       if (group) group.pairs.push(pair);
-      else groups.push({ top, pairs: [pair] });
+      else groups.push({ baseline, pairs: [pair] });
     });
     return groups.filter((group) => group.pairs.length > 1).map((group, index) => {
-      const centers = group.pairs.flatMap((pair) => [pair.iconCenter, pair.targetCenter]);
+      const baselines = group.pairs.flatMap((pair) => [pair.iconBaseline, pair.targetBaseline]);
       return {
         label: `row-${index + 1}`,
-        spread: Math.max(...centers) - Math.min(...centers),
+        spread: Math.max(...baselines) - Math.min(...baselines),
         members: group.pairs.map((pair) => pair.label),
       };
     });
@@ -388,6 +443,19 @@
     specimen.querySelector("[data-qa-rows]").textContent = rows.map((row) => `${row.label}:${rounded(row.spread)}`).join(" · ") || "n/a";
     specimen.querySelector("[data-qa-wraps]").textContent = wraps.join(" · ") || "n/a";
     specimen.querySelector("[data-qa-overflow]").textContent = `${rounded(internalOverflow)}px`;
+    specimen.dataset.qaDetail = JSON.stringify(pairs.map((pair) => ({
+      label: pair.label,
+      baselineDelta: rounded(pair.baselineDelta),
+      inkDelta: rounded(pair.inkDelta),
+      iconBaseline: rounded(pair.iconBaseline),
+      targetBaseline: rounded(pair.targetBaseline),
+      opticalShift: rounded(pair.opticalShift),
+      iconCenter: rounded(pair.iconCenter),
+      targetCenter: rounded(pair.targetCenter),
+      glyphAscent: rounded(pair.glyphAscent),
+      glyphDescent: rounded(pair.glyphDescent),
+      measuredText: pair.measuredText,
+    })));
     drawWorstPair(specimen, worstPair);
     return {
       id: specimen.dataset.qaCase,
@@ -404,10 +472,18 @@
         delta: rounded(pair.delta),
         iconCenter: rounded(pair.iconCenter),
         targetCenter: rounded(pair.targetCenter),
+        iconBaseline: rounded(pair.iconBaseline),
+        targetBaseline: rounded(pair.targetBaseline),
+        baselineDelta: rounded(pair.baselineDelta),
+        inkDelta: rounded(pair.inkDelta),
         wrapperRect: roundedRect(pair.wrapperRect),
+        iconWrapperRect: roundedRect(pair.iconWrapperRect),
         svgViewportRect: roundedRect(pair.svgRect),
         paintedRect: roundedRect(pair.iconRect),
-        targetFirstLineRect: roundedRect(pair.targetRect),
+        targetInkRect: roundedRect(pair.targetRect),
+        measuredText: pair.measuredText,
+        glyphAscent: rounded(pair.glyphAscent),
+        glyphDescent: rounded(pair.glyphDescent),
         svgViewBox: pair.svgViewBox,
         measurementDegraded: pair.measurementDegraded,
         measuredShapes: pair.measuredShapes,
@@ -468,6 +544,7 @@
       degradedMeasurements: degradedMeasurements.length,
       results,
     };
+    window.__alignmentReport = latestReport;
   };
 
   const measureAll = () => {

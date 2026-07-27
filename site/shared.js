@@ -19,8 +19,8 @@
     return groups;
   }, {});
 
-  const renderKeywords = (keywords = []) => keywords.length
-    ? `<div class="keyword-row">${keywords.map((keyword) => `<span class="keyword">${escapeHtml(keyword)}</span>`).join("")}</div>`
+  const renderKeywords = (keywords = [], { baselineProbe = false } = {}) => keywords.length
+    ? `<div class="keyword-row">${keywords.map((keyword) => `<span class="keyword">${baselineProbe ? '<span class="record-meta-baseline-probe" aria-hidden="true"></span>' : ""}<span class="keyword-label">${escapeHtml(keyword)}</span></span>`).join("")}</div>`
     : "";
 
   const imageMarkup = (image, fallbackAlt = "") => {
