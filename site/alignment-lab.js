@@ -289,8 +289,6 @@
 
   const seminarPairs = (specimen) => {
     const pairs = [];
-    const title = specimen.querySelector(".seminar-title-row");
-    if (title) pairs.push(makePair("title", title, ".seminar-title-icon svg", ".seminar-title"));
     specimen.querySelectorAll(".seminar-meta-item").forEach((item) => {
       let target = ".speaker";
       let label = "speaker";
@@ -329,24 +327,22 @@
   };
 
   const rowSpreads = (specimen, kind, pairs) => {
-    const groups = [];
     const relevant = kind === "publication"
       ? pairs.filter((pair) => pair.label === "venue" || pair.label === "keywords")
-      : kind === "seminar"
-        ? pairs.filter((pair) => pair.label !== "title")
-        : pairs;
-    let previousLeft = -Infinity;
+      : pairs;
+    const groups = [];
     relevant.forEach((pair) => {
-      if (!groups.length || pair.left <= previousLeft + 1) groups.push([]);
-      groups[groups.length - 1].push(pair);
-      previousLeft = pair.left;
+      const top = pair.wrapperRect.top;
+      const group = groups.find((candidate) => Math.abs(candidate.top - top) <= 1);
+      if (group) group.pairs.push(pair);
+      else groups.push({ top, pairs: [pair] });
     });
-    return groups.filter((group) => group.length > 1).map((group, index) => {
-      const centers = group.map((pair) => pair.targetCenter);
+    return groups.filter((group) => group.pairs.length > 1).map((group, index) => {
+      const centers = group.pairs.flatMap((pair) => [pair.iconCenter, pair.targetCenter]);
       return {
         label: `row-${index + 1}`,
         spread: Math.max(...centers) - Math.min(...centers),
-        members: group.map((pair) => pair.label),
+        members: group.pairs.map((pair) => pair.label),
       };
     });
   };
