@@ -17,12 +17,20 @@ const mimeTypes = {
 };
 
 http.createServer((request, response) => {
-  let pathname = decodeURIComponent(new URL(request.url, "http://localhost").pathname);
+  const url = new URL(request.url, "http://localhost");
+  let pathname = decodeURIComponent(url.pathname);
   if (pathname === "/") pathname = "/index.html";
+  else if (pathname.endsWith("/")) pathname = `${pathname}index.html`;
   const filePath = path.resolve(rootDir, `.${pathname}`);
-  if (!filePath.startsWith(rootDir)) {
+  const rootPrefix = `${rootDir}${path.sep}`;
+  if (filePath !== rootDir && !filePath.startsWith(rootPrefix)) {
     response.writeHead(403);
     response.end("Forbidden");
+    return;
+  }
+  if (!path.extname(filePath) && fs.existsSync(filePath) && fs.statSync(filePath).isDirectory()) {
+    response.writeHead(308, { Location: `${url.pathname}/${url.search}` });
+    response.end();
     return;
   }
   fs.readFile(filePath, (error, data) => {
@@ -35,7 +43,8 @@ http.createServer((request, response) => {
       "Cache-Control": "no-store",
       "Content-Type": mimeTypes[path.extname(filePath).toLowerCase()] || "application/octet-stream",
     });
-    response.end(data);
+    if (request.method === "HEAD") response.end();
+    else response.end(data);
   });
 }).listen(port, "127.0.0.1", () => {
   console.log(`Serving ${rootDir} at http://127.0.0.1:${port}`);

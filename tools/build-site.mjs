@@ -15,12 +15,35 @@ await fs.cp(assetDir, outputDir, {
   filter: (source) => path.extname(source).toLowerCase() !== ".html",
 });
 
-const pages = ["index", "people", "projects", "publications", "seminars", "gallery", "archive", "alignment-lab"];
-for (const page of pages) {
+const pages = new Map([
+  ["index", "index.html"],
+  ["people", "people/index.html"],
+  ["projects", "projects/index.html"],
+  ["publications", "publications/index.html"],
+  ["seminars", "seminars/index.html"],
+  ["gallery", "gallery/index.html"],
+  ["archive", "archive.html"],
+  ["alignment-lab", "alignment-lab.html"],
+]);
+for (const [page, outputPath] of pages) {
   const template = path.join(templateDir, `${page}.ejs`);
-  const output = path.join(outputDir, `${page}.html`);
+  const output = path.join(outputDir, outputPath);
   const html = await ejs.renderFile(template, {});
+  await fs.mkdir(path.dirname(output), { recursive: true });
   await fs.writeFile(output, html, "utf8");
 }
 
-console.log(`Built ${pages.length} pages in ${path.relative(rootDir, outputDir)}.`);
+const expectedHtml = new Set(pages.values());
+const pruneStaleHtml = async (directory) => {
+  for (const entry of await fs.readdir(directory, { withFileTypes: true })) {
+    const absolute = path.join(directory, entry.name);
+    if (entry.isDirectory()) await pruneStaleHtml(absolute);
+    else if (entry.isFile() && entry.name.endsWith(".html")) {
+      const relative = path.relative(outputDir, absolute).replaceAll("\\", "/");
+      if (!expectedHtml.has(relative)) await fs.rm(absolute, { force: true });
+    }
+  }
+};
+await pruneStaleHtml(outputDir);
+
+console.log(`Built ${pages.size} pages in ${path.relative(rootDir, outputDir)}.`);

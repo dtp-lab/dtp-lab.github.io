@@ -6,10 +6,10 @@
   <meta name="robots" content="noindex">
   <title>페이지 이동 | DTPLab</title>
   <script>
-    const routes = { history: "index.html#news", people: "people.html", projects: "projects.html", publications: "publications.html", seminars: "seminars.html", gallery: "gallery.html" };
-    const target = routes[new URLSearchParams(location.search).get("view")] || "index.html";
+    const routes = { history: "/#news", people: "/people/", projects: "/projects/", publications: "/publications/", seminars: "/seminars/", gallery: "/gallery/" };
+    const target = routes[new URLSearchParams(location.search).get("view")] || "/";
     location.replace(target);
   </script>
 </head>
-<body><p>새 페이지로 이동하고 있습니다. <a href="index.html">홈으로 이동</a></p></body>
+<body><p>새 페이지로 이동하고 있습니다. <a href="/">홈으로 이동</a></p></body>
 </html>
