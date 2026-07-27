@@ -41,6 +41,13 @@
     if (container) container.innerHTML = '<p class="data-error">콘텐츠를 불러오지 못했습니다.</p>';
   };
 
+  const applyPageHeading = (page = {}) => {
+    const kicker = document.querySelector("#page-kicker");
+    const title = document.querySelector("#page-title");
+    if (kicker && page.kicker) kicker.textContent = page.kicker;
+    if (title && page.title) title.textContent = page.title;
+  };
+
   const setupShell = () => {
     const page = document.body.dataset.page;
     document.querySelectorAll("[data-nav]").forEach((link) => {
@@ -75,6 +82,6 @@
     });
   };
 
-  window.DTPLab = { escapeHtml, sitePath, loadJson, dateValue, sortByDateDesc, groupByYear, renderKeywords, imageMarkup, showDataError };
+  window.DTPLab = { escapeHtml, sitePath, loadJson, dateValue, sortByDateDesc, groupByYear, renderKeywords, imageMarkup, showDataError, applyPageHeading };
   document.addEventListener("DOMContentLoaded", setupShell);
 })();

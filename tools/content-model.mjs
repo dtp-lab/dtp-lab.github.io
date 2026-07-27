@@ -34,7 +34,12 @@ const listField = (name, label, item, extra = {}) => ({ name, label, type: "list
 const objectField = (name, label, fields, extra = {}) => ({ name, label, type: "object", fields, ...extra });
 const selectField = (name, label, options, extra = {}) => ({ name, label, type: "select", options, ...extra });
 
-const imageFields = [
+const projectImageFields = [
+  stringField("src", "이미지 경로", { required: true, input: "image" }),
+  stringField("alt", "대체 텍스트", { required: true }),
+];
+
+const galleryImageFields = [
   stringField("src", "이미지 경로", { required: true, input: "image" }),
   stringField("thumbnail", "썸네일 경로", { input: "image", optional: true }),
   stringField("alt", "대체 텍스트", { required: true }),
@@ -42,11 +47,9 @@ const imageFields = [
 ];
 
 const personFields = [
-  stringField("group", "그룹", { readonly: true }),
   stringField("image", "프로필 이미지", { input: "image", optional: true }),
   stringField("name", "이름", { required: true }),
   { name: "fields", label: "상세 정보", type: "map", valueType: "string" },
-  listField("notes", "직책·메모", { type: "string" }),
 ];
 
 const publicationFields = [
@@ -66,7 +69,6 @@ const publicationFields = [
   stringField("venue", "학술지·학회·관할", { optional: true }),
   textField("details", "상세 정보", { optional: true }),
   stringField("patentStatus", "특허 상태", { optional: true }),
-  stringField("patentNumber", "특허 번호", { optional: true }),
   objectField("metrics", "지표", [
     selectField("indexing", "색인", ["", "SCIE", "ESCI", "KCI"]),
     selectField("quartile", "Quartile", ["", "Q1", "Q2", "Q3", "Q4"]),
@@ -76,7 +78,6 @@ const publicationFields = [
   ]),
   listField("keywords", "키워드", { type: "select", options: controlledKeywords }, { maximum: 5 }),
   stringField("doi", "DOI", { optional: true }),
-  stringField("semanticScholarId", "Semantic Scholar ID", { optional: true }),
   listField("links", "외부 링크", {
     type: "object",
     fields: [
@@ -84,23 +85,110 @@ const publicationFields = [
       stringField("url", "HTTPS URL", { required: true, input: "url" }),
     ],
   }),
-  textField("rawCitation", "원본 인용문", { required: true }),
 ];
 
 export const contentContract = {
-  version: 1,
+  version: 2,
   site: "dtp-lab.github.io",
   controlledKeywords,
+  views: [
+    { key: "home-title", label: "Home-Title", file: "home.json", route: "/", records: [{ type: "object", path: ["hero"], label: "홈 타이틀" }] },
+    { key: "home-recruit", label: "Home-Recruit", file: "home.json", route: "/#recruitment", records: [{ type: "object", path: ["recruitment"], label: "모집 안내" }] },
+    {
+      key: "home-research",
+      label: "Home-Research",
+      file: "research.json",
+      route: "/#research",
+      records: [
+        { type: "object", path: ["section"], label: "섹션 제목" },
+        { type: "object", path: ["overviewImage"], label: "연구 개요 이미지" },
+        { type: "collection", path: ["research"], label: "연구 분야", mutable: false },
+      ],
+    },
+    {
+      key: "home-news",
+      label: "Home-News",
+      file: "news.json",
+      route: "/#news",
+      records: [
+        { type: "object", path: ["section"], label: "섹션 제목" },
+        { type: "collection", path: ["news"], label: "소식", mutable: true },
+      ],
+    },
+    {
+      key: "people",
+      label: "People",
+      file: "people.json",
+      route: "/people/",
+      records: [
+        { type: "object", path: ["page"], label: "페이지 제목" },
+        { type: "collection", path: ["groups", "professor"], label: "Professor", mutable: true, group: "professor" },
+        { type: "collection", path: ["groups", "phd"], label: "Ph.D.", mutable: true, group: "phd" },
+        { type: "collection", path: ["groups", "ms"], label: "M.S.", mutable: true, group: "ms" },
+        { type: "collection", path: ["groups", "undergrad"], label: "Undergraduate", mutable: true, group: "undergrad" },
+        { type: "collection", path: ["groups", "alumni"], label: "Alumni", mutable: true, group: "alumni" },
+      ],
+    },
+    {
+      key: "projects",
+      label: "Projects",
+      file: "projects.json",
+      route: "/projects/",
+      records: [
+        { type: "object", path: ["page"], label: "페이지 제목" },
+        { type: "collection", path: ["projects"], label: "프로젝트", mutable: true },
+      ],
+    },
+    {
+      key: "publications",
+      label: "Publications",
+      file: "publications.json",
+      route: "/publications/",
+      records: [
+        { type: "object", path: ["page"], label: "페이지 제목" },
+        { type: "collection", path: ["items"], label: "연구 성과", mutable: true },
+      ],
+    },
+    {
+      key: "seminars",
+      label: "Seminars",
+      file: "seminars.json",
+      route: "/seminars/",
+      records: [
+        { type: "object", path: ["page"], label: "페이지 제목" },
+        { type: "collection", path: ["seminars"], label: "세미나", mutable: true },
+      ],
+    },
+    {
+      key: "gallery",
+      label: "Gallery",
+      file: "gallery.json",
+      route: "/gallery/",
+      records: [
+        { type: "object", path: ["page"], label: "페이지 제목" },
+        { type: "collection", path: ["events"], label: "행사", mutable: true },
+      ],
+    },
+  ],
   files: {
     home: {
       file: "home.json",
       label: "Home",
       route: "/",
       editable: true,
-      lockedPaths: ["source"],
+      lockedPaths: [],
       fields: [
+        objectField("hero", "홈 타이틀", [
+          stringField("kicker", "상단 문구", { required: true }),
+          textField("title", "제목", { required: true }),
+          stringField("subtitle", "부제", { required: true }),
+        ]),
         objectField("recruitment", "모집 안내", [
+          stringField("summaryKicker", "요약 분류", { required: true }),
+          stringField("summaryTitle", "요약 제목", { required: true }),
+          stringField("eyebrow", "소개 문구", { required: true }),
           textField("intro", "소개", { required: true }),
+          stringField("contactEmail", "연락 이메일", { required: true }),
           listField("sections", "안내 섹션", {
             type: "object",
             fields: [
@@ -116,8 +204,12 @@ export const contentContract = {
       label: "News",
       route: "/",
       editable: true,
-      lockedPaths: ["source", "migrated"],
+      lockedPaths: [],
       fields: [
+        objectField("section", "섹션 제목", [
+          stringField("kicker", "상단 문구", { required: true }),
+          stringField("title", "제목", { required: true }),
+        ]),
         listField("news", "소식", {
           type: "object",
           fields: [
@@ -133,8 +225,12 @@ export const contentContract = {
       label: "People",
       route: "/people/",
       editable: true,
-      lockedPaths: ["source", "migrated"],
+      lockedPaths: [],
       fields: [
+        objectField("page", "페이지 제목", [
+          stringField("kicker", "상단 문구", { required: true }),
+          stringField("title", "제목", { required: true }),
+        ]),
         objectField("groups", "구성원 그룹", [
           listField("professor", "Professor", { type: "object", fields: personFields }),
           listField("phd", "Ph.D.", { type: "object", fields: personFields }),
@@ -149,9 +245,13 @@ export const contentContract = {
       label: "Research",
       route: "/",
       editable: true,
-      lockedPaths: ["source", "migrated"],
+      lockedPaths: [],
       fields: [
-        objectField("overviewImage", "연구 개요 이미지", imageFields),
+        objectField("section", "섹션 제목", [
+          stringField("kicker", "상단 문구", { required: true }),
+          stringField("title", "제목", { required: true }),
+        ]),
+        objectField("overviewImage", "연구 개요 이미지", projectImageFields),
         listField("research", "연구 분야", {
           type: "object",
           fields: [
@@ -170,8 +270,12 @@ export const contentContract = {
       label: "Projects",
       route: "/projects/",
       editable: true,
-      lockedPaths: ["source", "migrated"],
+      lockedPaths: [],
       fields: [
+        objectField("page", "페이지 제목", [
+          stringField("kicker", "상단 문구", { required: true }),
+          stringField("title", "제목", { required: true }),
+        ]),
         listField("projects", "프로젝트", {
           type: "object",
           fields: [
@@ -180,21 +284,14 @@ export const contentContract = {
             selectField("category", "분류", ["industry", "rnd", "talent"], { required: true }),
             stringField("title", "과제명", { required: true }),
             stringField("program", "사업명", { optional: true }),
-            stringField("sponsor", "지원·발주기관", { optional: true }),
-            stringField("managingAgency", "전담·관리기관", { optional: true }),
             objectField("period", "기간", [
               stringField("start", "시작", { required: true, input: "month", pattern: "YYYY.MM" }),
               stringField("end", "종료", { required: true, input: "month", pattern: "YYYY.MM" }),
             ]),
-            objectField("budget", "예산", [
-              stringField("amount", "금액", { optional: true }),
-              stringField("unit", "단위", { optional: true }),
-            ]),
             listField("keywords", "키워드", { type: "select", options: controlledKeywords }, { maximum: 5 }),
             textField("description", "개요", { optional: true }),
             listField("details", "세부 연구내용", { type: "string" }),
-            listField("images", "이미지", { type: "object", fields: imageFields }),
-            stringField("rawMeta", "원본 메타데이터", { optional: true }),
+            listField("images", "이미지", { type: "object", fields: projectImageFields }),
           ],
         }),
       ],
@@ -204,16 +301,26 @@ export const contentContract = {
       label: "Publications",
       route: "/publications/",
       editable: true,
-      lockedPaths: ["source", "migrated"],
-      fields: [listField("items", "연구 성과", { type: "object", fields: publicationFields })],
+      lockedPaths: [],
+      fields: [
+        objectField("page", "페이지 제목", [
+          stringField("kicker", "상단 문구", { required: true }),
+          stringField("title", "제목", { required: true }),
+        ]),
+        listField("items", "연구 성과", { type: "object", fields: publicationFields }),
+      ],
     },
     seminars: {
       file: "seminars.json",
       label: "Seminars",
       route: "/seminars/",
       editable: true,
-      lockedPaths: ["source"],
+      lockedPaths: [],
       fields: [
+        objectField("page", "페이지 제목", [
+          stringField("kicker", "상단 문구", { required: true }),
+          stringField("title", "제목", { required: true }),
+        ]),
         listField("seminars", "세미나", {
           type: "object",
           fields: [
@@ -231,8 +338,12 @@ export const contentContract = {
       label: "Gallery",
       route: "/gallery/",
       editable: true,
-      lockedPaths: ["source", "migrated"],
+      lockedPaths: [],
       fields: [
+        objectField("page", "페이지 제목", [
+          stringField("kicker", "상단 문구", { required: true }),
+          stringField("title", "제목", { required: true }),
+        ]),
         listField("events", "행사", {
           type: "object",
           fields: [
@@ -240,7 +351,7 @@ export const contentContract = {
             stringField("title", "제목", { required: true }),
             textField("description", "설명", { optional: true }),
             booleanField("isSample", "레이아웃 점검 샘플", { optional: true }),
-            listField("images", "이미지", { type: "object", fields: imageFields }),
+            listField("images", "이미지", { type: "object", fields: galleryImageFields }),
           ],
         }),
       ],
@@ -249,14 +360,6 @@ export const contentContract = {
       file: "citations.json",
       label: "Citation cache",
       route: "/publications/",
-      editable: false,
-      lockedPaths: ["*"],
-      fields: [],
-    },
-    assetMigration: {
-      file: "asset-migration.json",
-      label: "Asset migration ledger",
-      route: "/",
       editable: false,
       lockedPaths: ["*"],
       fields: [],
@@ -276,7 +379,6 @@ export function validateContent({
   const errors = [];
   const warnings = [];
   const virtualAssetSet = new Set([...virtualAssets].map((value) => String(value).replaceAll("\\", "/")));
-  const keywordSet = new Set(controlledKeywords);
   const read = (name) => {
     try {
       if (Object.prototype.hasOwnProperty.call(overrides, name)) return structuredClone(overrides[name]);
@@ -289,12 +391,22 @@ export function validateContent({
   const requiredText = (value, location) => {
     if (typeof value !== "string" || !value.trim()) errors.push(`${location}: required text is missing`);
   };
+  const rejectKeys = (value, keys, location) => {
+    if (!value || typeof value !== "object") return;
+    for (const key of keys) {
+      if (Object.prototype.hasOwnProperty.call(value, key)) errors.push(`${location}.${key}: field is not part of the public content model`);
+    }
+  };
+  const validateHeading = (value, location) => {
+    requiredText(value?.kicker, `${location}.kicker`);
+    requiredText(value?.title, `${location}.title`);
+  };
   const validateKeywords = (keywords, location, maximum = 5) => {
     if (!Array.isArray(keywords)) return errors.push(`${location}: keywords must be an array`);
     if (keywords.length > maximum) errors.push(`${location}: use at most ${maximum} keywords`);
     if (new Set(keywords).size !== keywords.length) errors.push(`${location}: duplicate keyword`);
     keywords.forEach((keyword) => {
-      if (!keywordSet.has(keyword)) errors.push(`${location}: unsupported keyword (${keyword})`);
+      if (typeof keyword !== "string" || !keyword.trim()) errors.push(`${location}: keywords must be non-empty text`);
     });
   };
   const validateImagePath = (image, location) => {
@@ -314,7 +426,7 @@ export function validateContent({
   const validateImages = (images, location) => {
     if (!Array.isArray(images)) return errors.push(`${location}.images: must be an array`);
     images.forEach((image, index) => {
-      if (!image || typeof image !== "object") return errors.push(`${location}.images[${index}]: use {src, alt, caption}`);
+      if (!image || typeof image !== "object") return errors.push(`${location}.images[${index}]: use an image object`);
       requiredText(image.src, `${location}.images[${index}].src`);
       requiredText(image.alt, `${location}.images[${index}].alt`);
       validateImagePath(image.src, `${location}.images[${index}].src`);
@@ -332,29 +444,46 @@ export function validateContent({
   };
 
   const home = read("home.json");
+  rejectKeys(home, ["source", "migrated"], "home");
+  validateHeading(home.hero, "home.hero");
+  requiredText(home.hero?.subtitle, "home.hero.subtitle");
+  requiredText(home.recruitment?.summaryKicker, "home.recruitment.summaryKicker");
+  requiredText(home.recruitment?.summaryTitle, "home.recruitment.summaryTitle");
+  requiredText(home.recruitment?.eyebrow, "home.recruitment.eyebrow");
   requiredText(home.recruitment?.intro, "home.recruitment.intro");
+  requiredText(home.recruitment?.contactEmail, "home.recruitment.contactEmail");
   (home.recruitment?.sections || []).forEach((section, index) => {
     requiredText(section.title, `home.sections[${index}].title`);
     if (!section.items?.length) errors.push(`home.sections[${index}].items: at least one item required`);
   });
 
-  const news = read("news.json").news || [];
+  const newsDocument = read("news.json");
+  rejectKeys(newsDocument, ["source", "migrated"], "news");
+  validateHeading(newsDocument.section, "news.section");
+  const news = newsDocument.news || [];
   news.forEach((item, index) => {
     if (!validDate(item.date)) errors.push(`news[${index}].date: use YYYY.MM`);
     if (!["project", "publication", "award", "member"].includes(item.category)) errors.push(`news[${index}].category: unsupported category`);
     requiredText(item.text, `news[${index}].text`);
   });
 
-  const people = read("people.json").groups || {};
+  const peopleDocument = read("people.json");
+  rejectKeys(peopleDocument, ["source", "migrated"], "people");
+  validateHeading(peopleDocument.page, "people.page");
+  const people = peopleDocument.groups || {};
   for (const group of ["professor", "phd", "ms", "undergrad", "alumni"]) {
     if (!Array.isArray(people[group])) errors.push(`people.${group}: group is missing`);
     (people[group] || []).forEach((member, index) => {
+      rejectKeys(member, ["group", "notes"], `people.${group}[${index}]`);
+      rejectKeys(member.fields, ["interests"], `people.${group}[${index}].fields`);
       requiredText(member.name, `people.${group}[${index}].name`);
       validateImagePath(member.image, `people.${group}[${index}].image`);
     });
   }
 
   const research = read("research.json");
+  rejectKeys(research, ["source", "migrated", "images"], "research");
+  validateHeading(research.section, "research.section");
   validateImageObject(research.overviewImage, "research.overviewImage");
   if ((research.research || []).length !== 4) errors.push("research: four research directions are required");
   (research.research || []).forEach((topic, index) => {
@@ -363,12 +492,16 @@ export function validateContent({
     validateImagePath(topic.image, `research[${index}].image`);
   });
 
-  const projects = read("projects.json").projects || [];
+  const projectsDocument = read("projects.json");
+  rejectKeys(projectsDocument, ["source", "migrated"], "projects");
+  validateHeading(projectsDocument.page, "projects.page");
+  const projects = projectsDocument.projects || [];
   const projectIds = new Set();
   projects.forEach((project, index) => {
     const at = `projects[${index}]`;
     requiredText(project.id, `${at}.id`);
     requiredText(project.title, `${at}.title`);
+    rejectKeys(project, ["sponsor", "managingAgency", "budget", "rawMeta"], at);
     if (projectIds.has(project.id)) errors.push(`${at}.id: duplicate`);
     projectIds.add(project.id);
     if (!["current", "completed"].includes(project.status)) errors.push(`${at}.status: unsupported status`);
@@ -382,13 +515,16 @@ export function validateContent({
     }
   });
 
-  const publications = read("publications.json").items || [];
+  const publicationsDocument = read("publications.json");
+  rejectKeys(publicationsDocument, ["source", "migrated"], "publications");
+  validateHeading(publicationsDocument.page, "publications.page");
+  const publications = publicationsDocument.items || [];
   const publicationIds = new Set();
   publications.forEach((item, index) => {
     const at = `publications[${index}]`;
     requiredText(item.id, `${at}.id`);
     requiredText(item.title, `${at}.title`);
-    requiredText(item.rawCitation, `${at}.rawCitation`);
+    rejectKeys(item, ["rawCitation", "semanticScholarId", "patentNumber"], at);
     if (publicationIds.has(item.id)) errors.push(`${at}.id: duplicate`);
     publicationIds.add(item.id);
     if (!["journal", "conference", "patent"].includes(item.type)) errors.push(`${at}.type: unsupported type`);
@@ -412,7 +548,10 @@ export function validateContent({
     });
   });
 
-  const seminars = read("seminars.json").seminars || [];
+  const seminarsDocument = read("seminars.json");
+  rejectKeys(seminarsDocument, ["source", "migrated"], "seminars");
+  validateHeading(seminarsDocument.page, "seminars.page");
+  const seminars = seminarsDocument.seminars || [];
   seminars.forEach((seminar, index) => {
     const at = `seminars[${index}]`;
     if (!validDate(seminar.date, true)) errors.push(`${at}.date: use YYYY.MM.DD`);
@@ -423,13 +562,24 @@ export function validateContent({
     if (!seminar.keywords?.length) errors.push(`${at}.keywords: at least one keyword required`);
   });
 
-  const gallery = read("gallery.json").events || [];
+  const galleryDocument = read("gallery.json");
+  rejectKeys(galleryDocument, ["source", "migrated"], "gallery");
+  validateHeading(galleryDocument.page, "gallery.page");
+  const gallery = galleryDocument.events || [];
   gallery.forEach((event, index) => {
     if (!validDate(event.date)) errors.push(`gallery[${index}].date: use YYYY.MM`);
     requiredText(event.title, `gallery[${index}].title`);
     if (event.isSample !== undefined && typeof event.isSample !== "boolean") errors.push(`gallery[${index}].isSample: boolean required`);
     validateImages(event.images, `gallery[${index}]`);
   });
+
+  const citations = read("citations.json");
+  rejectKeys(citations, ["source", "updatedAt"], "citations");
+  for (const [id, citation] of Object.entries(citations.papers || {})) {
+    rejectKeys(citation, ["paperId", "checkedAt"], `citations.papers.${id}`);
+    if (!Number.isInteger(citation?.citationCount)) errors.push(`citations.papers.${id}.citationCount: integer required`);
+    if (citation?.url && !/^https:\/\//.test(citation.url)) errors.push(`citations.papers.${id}.url: HTTPS required`);
+  }
 
   return {
     ok: errors.length === 0,

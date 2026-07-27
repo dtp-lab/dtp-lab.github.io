@@ -1,5 +1,5 @@
 (async function () {
-  const { escapeHtml, loadJson, imageMarkup, showDataError } = DTPLab;
+  const { escapeHtml, loadJson, imageMarkup, showDataError, applyPageHeading } = DTPLab;
   const root = document.querySelector("#people-content");
   const labels = { professor: "Professor", phd: "Ph.D. Students", ms: "M.S. Students", undergrad: "Undergraduate Researchers", alumni: "Alumni" };
   const fieldLabels = { "e-mail": "Email", email: "Email", affiliation: "Affiliation", research_topic: "Research topic", interests: "Interests", office: "Office", "tel.": "Tel." };
@@ -11,6 +11,7 @@
   const renderPerson = (person) => `<article class="person-card">${renderPhoto(person)}<div class="person-body"><h3>${escapeHtml(person.name)}</h3><dl>${renderFields(person)}</dl></div></article>`;
   try {
     const data = await loadJson("people.json");
+    applyPageHeading(data.page);
     const professor = data.groups.professor?.[0];
     const careerItems = Object.entries(professor?.fields || {}).filter(([key]) => /^\d{4}_/.test(key));
     const careerHtml = careerItems.length ? `<section class="career-section"><h4 class="career-title">Career</h4><div class="career-list">${careerItems.map(([key, value]) => `<div><time>${escapeHtml(key.replaceAll("_", " "))}</time><span>${escapeHtml(value)}</span></div>`).join("")}</div></section>` : "";

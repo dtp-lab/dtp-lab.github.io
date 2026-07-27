@@ -26,17 +26,25 @@ const controlledKeywords = [
 const keywordsFor = (text) => controlledKeywords.filter(([, pattern]) => pattern.test(text)).map(([keyword]) => keyword).slice(0, 5);
 
 const people = await read("people.json");
-for (const group of Object.values(people.groups || {})) for (const person of group) person.image = "";
-people.migrated = "2026-07-17";
+for (const group of Object.values(people.groups || {})) {
+  for (const person of group) {
+    person.image = "";
+    delete person.group;
+    delete person.notes;
+    if (person.fields) delete person.fields.interests;
+  }
+}
+people.page ||= { kicker: "Humans in the Loop", title: "People" };
 await write("people.json", people);
 
 const research = await read("research.json");
 for (const item of research.research || []) item.image = "";
-research.images = [];
+delete research.images;
+research.section ||= { kicker: "Research", title: "연구 분야" };
 await write("research.json", research);
 
 const gallery = await read("gallery.json");
-gallery.migrated = "2026-07-17";
+gallery.page ||= { kicker: "Beyond the Bench", title: "Gallery" };
 gallery.events = (gallery.events || []).map((event) => {
   if (event.date) return { ...event, images: (event.images || []).filter((image) => typeof image === "object" && image.src) };
   return { date: normalizeDate(event.title), title: String(event.title || "").replace(/^20\d{2}[.\-/]\d{1,2}\s*/, "").trim(), description: event.description || "", images: [] };
@@ -50,17 +58,17 @@ if (!rawProjects.projects) {
     const parts = String(project.meta || "").split("|").map((part) => part.trim()).filter(Boolean);
     const dates = [...String(project.meta || "").matchAll(/20\d{2}[.]\d{1,2}/g)].map((match) => normalizeDate(match[0]));
     const budgetPart = parts.find((part) => /^\s*[\d,]+\s*\(/.test(part));
-    const amount = budgetPart?.match(/[\d,]+/)?.[0] || "";
     const institution = parts.find((part) => part !== budgetPart && !/20\d{2}[.]\d{1,2}/.test(part)) || "";
     const text = `${project.title || ""} ${project.description || ""} ${(project.details || []).join(" ")}`;
     let category = "rnd";
     if (/RISE|LG|Samsung|한화|산학|Electronics|Heavy Industries/i.test(`${project.meta} ${project.title}`)) category = "industry";
     if (/AI.*대학원|인재|교육|양성/i.test(`${project.meta} ${project.title}`)) category = "talent";
-    return { id: `project-${String(index + 1).padStart(2, "0")}`, status: project.status === "completed" ? "completed" : "current", category, title: project.title || "", program: institution, sponsor: "", managingAgency: "", period: { start: dates[0] || "", end: dates[1] || "" }, budget: amount ? { amount, unit: "천원" } : null, keywords: keywordsFor(text), description: project.description || "", details: project.details || [], images: [], rawMeta: project.meta || "" };
+    return { id: `project-${String(index + 1).padStart(2, "0")}`, status: project.status === "completed" ? "completed" : "current", category, title: project.title || "", program: institution, period: { start: dates[0] || "", end: dates[1] || "" }, keywords: keywordsFor(text), description: project.description || "", details: project.details || [], images: [] };
   });
-  await write("projects.json", { source: rawProjects.source, migrated: "2026-07-17", projects });
+  await write("projects.json", { page: { kicker: "From Models to Motion", title: "Projects" }, projects });
 }
 const structuredProjects = await read("projects.json");
+structuredProjects.page ||= { kicker: "From Models to Motion", title: "Projects" };
 for (const project of structuredProjects.projects || []) {
   const categoryText = `${project.program || ""} ${project.title || ""}`;
   project.category = /인재양성|AI대학원/i.test(categoryText) ? "talent" : /RISE|LG|Samsung|삼성|한화|토탈소프트|산학|Electronics|Heavy Industries/i.test(categoryText) ? "industry" : "rnd";
@@ -93,7 +101,7 @@ if (!publications.items) {
     const cleanAfter = afterTitle.replace(/\s*\([^()]*\)\s*$/, "").replace(/,?\s*20\d{2}[.]\d{1,2}[.]?\s*$/, "");
     const parts = cleanAfter.split(",").map((part) => part.trim()).filter(Boolean);
     const venue = parts.shift() || "";
-    return { id: `${type}-${publishedAt.replaceAll(".", "")}-${String(index + 1).padStart(2, "0")}`, type, publishedAt, title, authors: parseAuthors(beforeTitle), venue, details: parts.join(", "), metrics: parseMetrics(citation), keywords: keywordsFor(`${title} ${venue}`), doi: "", semanticScholarId: "", links: [], rawCitation: citation };
+    return { id: `${type}-${publishedAt.replaceAll(".", "")}-${String(index + 1).padStart(2, "0")}`, type, publishedAt, title, authors: parseAuthors(beforeTitle), venue, details: parts.join(", "), metrics: parseMetrics(citation), keywords: keywordsFor(`${title} ${venue}`), doi: "", links: [] };
   };
   const journal = (publications.articles || []).map((record, index) => parsePaper(record, "journal", index));
   const conference = (publications.conferences || []).map((record, index) => parsePaper(record, "conference", index));
@@ -103,17 +111,17 @@ if (!publications.items) {
     const withoutStatus = citation.replace(/^\[[^\]]+\]\s*/, "");
     const parts = withoutStatus.split(",").map((part) => part.trim()).filter(Boolean);
     const date = lastDate(citation) || `${record.year || ""}.01`;
-    return { id: `patent-${date.replaceAll(".", "")}-${String(index + 1).padStart(2, "0")}`, type: "patent", publishedAt: date, title: parts[0] || withoutStatus, authors: [], venue: "대한민국 특허", details: parts.slice(1, -1).join(", "), patentStatus: status, patentNumber: parts[1] || "", metrics: {}, keywords: keywordsFor(parts[0] || ""), doi: "", semanticScholarId: "", links: [], rawCitation: citation };
+    return { id: `patent-${date.replaceAll(".", "")}-${String(index + 1).padStart(2, "0")}`, type: "patent", publishedAt: date, title: parts[0] || withoutStatus, authors: [], venue: "대한민국 특허", details: parts.slice(1, -1).join(", "), patentStatus: status, metrics: {}, keywords: keywordsFor(parts[0] || ""), doi: "", links: [] };
   });
-  await write("publications.json", { source: publications.source, migrated: "2026-07-17", items: [...journal, ...conference, ...patent] });
+  await write("publications.json", { page: { kicker: "On the Record", title: "Publications" }, items: [...journal, ...conference, ...patent] });
 }
 else {
+  publications.page ||= { kicker: "On the Record", title: "Publications" };
   for (const item of publications.items) {
-    if (item.type === "patent") item.publishedAt = lastDate(item.rawCitation) || item.publishedAt;
     item.title = String(item.title || "").replace(/,\s*$/, "");
   }
   await write("publications.json", publications);
 }
 
-try { await read("citations.json"); } catch { await write("citations.json", { source: "Semantic Scholar", updatedAt: null, papers: {} }); }
+try { await read("citations.json"); } catch { await write("citations.json", { papers: {} }); }
 console.log("Structured people, research, gallery, projects, and publications data.");

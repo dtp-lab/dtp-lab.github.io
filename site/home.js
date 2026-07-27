@@ -5,6 +5,10 @@
   const researchOverview = document.querySelector("#research-overview");
   const research = document.querySelector("#research-grid");
   const news = document.querySelector("#news-groups");
+  const setText = (selector, value) => {
+    const element = document.querySelector(selector);
+    if (element && value) element.textContent = value;
+  };
   const categoryLabels = {
     project: "Project",
     publication: "Publication",
@@ -16,9 +20,9 @@
     const sections = data.sections || [];
     return `<div class="recruitment-editorial">
       <header class="recruitment-intro-panel">
-        <p class="recruitment-eyebrow">Graduate & Undergraduate Researcher</p>
+        <p class="recruitment-eyebrow">${escapeHtml(data.eyebrow)}</p>
         <p class="recruitment-intro">${escapeHtml(data.intro)}</p>
-        <a class="recruitment-mail" href="mailto:wonsukkim@pusan.ac.kr">wonsukkim@pusan.ac.kr <span aria-hidden="true">↗</span></a>
+        <a class="recruitment-mail" href="mailto:${escapeHtml(data.contactEmail)}">${escapeHtml(data.contactEmail)} <span aria-hidden="true">↗</span></a>
       </header>
       <div class="recruitment-list">${sections.map((section, index) => `<section class="recruitment-row">
         <span class="recruitment-number">${String(index + 1).padStart(2, "0")}</span>
@@ -57,6 +61,16 @@
       loadJson("research.json"),
       loadJson("news.json"),
     ]);
+    setText("#home-hero-kicker", homeData.hero.kicker);
+    const heroTitle = document.querySelector("#home-hero-title");
+    if (heroTitle) heroTitle.innerHTML = String(homeData.hero.title || "").split("\n").map(escapeHtml).join("<br>");
+    setText("#home-hero-subtitle", homeData.hero.subtitle);
+    setText("#recruitment-summary-kicker", homeData.recruitment.summaryKicker);
+    setText("#recruitment-summary-title", homeData.recruitment.summaryTitle);
+    setText("#research-section-kicker", researchData.section.kicker);
+    setText("#research-section-title", researchData.section.title);
+    setText("#news-section-kicker", newsData.section.kicker);
+    setText("#news-section-title", newsData.section.title);
     heroTopics.innerHTML = researchData.research.map((item, index) => `<article class="hero-research-topic">
       <span>${String(index + 1).padStart(2, "0")}</span>
       <strong>${escapeHtml(item.title)}</strong>

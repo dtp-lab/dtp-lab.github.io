@@ -44,8 +44,6 @@
           category: "industry",
           title: "디지털트윈·강화학습 기반 메타데이터 정렬 진단",
           program: program.value,
-          sponsor: "",
-          managingAgency: "",
           period: { start: "2025.06", end: "2026.02" },
           keywords: keywords.value,
         }, { diagnostic: true }),

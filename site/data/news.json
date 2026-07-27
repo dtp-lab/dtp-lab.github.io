@@ -1,6 +1,4 @@
 {
-  "source": "https://sites.google.com/view/dtnlab",
-  "migrated": "2026-07-17",
   "news": [
     {
       "date": "2026.04",
@@ -242,5 +240,9 @@
       "category": "member",
       "text": "홈페이지 개설"
     }
-  ]
+  ],
+  "section": {
+    "kicker": "What’s New at DTPLab",
+    "title": "Lab News"
+  }
 }

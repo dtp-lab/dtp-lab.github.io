@@ -10,7 +10,6 @@ publications.html, seminars.html, and gallery.html.
 from __future__ import annotations
 
 from dataclasses import dataclass
-from datetime import date
 from hashlib import sha256
 from io import BytesIO
 import json
@@ -179,16 +178,15 @@ def parse_people(events: list[Event], assets: AssetStore) -> dict[str, Any]:
         lines = current.pop("lines")
         current["name"] = lines[0] if lines else ""
         fields: dict[str, str] = {}
-        notes: list[str] = []
         for line in lines[1:]:
             if ":" in line:
                 key, value = line.split(":", 1)
-                fields[key.strip().lower().replace(" ", "_")] = value.strip()
-            else:
-                notes.append(line)
+                normalized_key = key.strip().lower().replace(" ", "_")
+                if normalized_key != "interests":
+                    fields[normalized_key] = value.strip()
         current["fields"] = fields
-        current["notes"] = notes
-        groups[current["group"]].append(current)
+        current_group = current.pop("_group")
+        groups[current_group].append(current)
         current = None
 
     for event in events:
@@ -197,11 +195,11 @@ def parse_people(events: list[Event], assets: AssetStore) -> dict[str, Any]:
             group = headings[event.text]
         elif event.kind == "image" and group:
             finish()
-            current = {"group": group, "image": assets.save(event.url, "people"), "lines": []}
+            current = {"_group": group, "image": assets.save(event.url, "people"), "lines": []}
         elif event.kind == "p" and current is not None:
             current["lines"].append(event.text)
     finish()
-    return {"source": f"{SOURCE_URL}/people", "groups": groups}
+    return {"groups": groups}
 
 
 def parse_projects(events: list[Event], assets: AssetStore) -> dict[str, Any]:
@@ -243,7 +241,7 @@ def parse_projects(events: list[Event], assets: AssetStore) -> dict[str, Any]:
             if image not in current["images"]:
                 current["images"].append(image)
     finish()
-    return {"source": f"{SOURCE_URL}/projects", **collections}
+    return collections
 
 
 def parse_publications(events: list[Event]) -> dict[str, Any]:
@@ -263,7 +261,7 @@ def parse_publications(events: list[Event]) -> dict[str, Any]:
         elif event.kind == "li" and section and not event.text.startswith("Notation"):
             item = {"year": year, "citation": event.text}
             result[section].append(item)
-    return {"source": f"{SOURCE_URL}/publications", **result}
+    return result
 
 
 def parse_seminars(events: list[Event]) -> dict[str, Any]:
@@ -283,7 +281,7 @@ def parse_seminars(events: list[Event]) -> dict[str, Any]:
                 seminars.append(current)
         elif event.kind == "li" and current is not None:
             current["summary"] = event.text.removeprefix("요약:").strip()
-    return {"source": f"{SOURCE_URL}/seminars", "seminars": seminars}
+    return {"seminars": seminars}
 
 
 def parse_gallery(events: list[Event], assets: AssetStore) -> dict[str, Any]:
@@ -301,7 +299,7 @@ def parse_gallery(events: list[Event], assets: AssetStore) -> dict[str, Any]:
             image = assets.save(event.url, "gallery")
             if image not in current["images"]:
                 current["images"].append(image)
-    return {"source": f"{SOURCE_URL}/gallery", "events": gallery}
+    return {"events": gallery}
 
 
 def write_json(path: Path, data: Any) -> None:
@@ -329,24 +327,16 @@ def main() -> None:
             if image not in research_images:
                 research_images.append(image)
 
-    metadata = {"source": SOURCE_URL, "migrated": date.today().isoformat()}
     data_dir = site_dir / "data"
-    write_json(data_dir / "news.json", {**metadata, "news": news})
-    write_json(data_dir / "research.json", {**metadata, "research": research, "images": research_images})
+    write_json(data_dir / "news.json", {"news": news})
+    write_json(data_dir / "research.json", {"research": research, "images": research_images})
     write_json(data_dir / "people.json", parse_people(events["people"], assets))
     write_json(data_dir / "projects.json", parse_projects(events["projects"], assets))
     write_json(data_dir / "publications.json", parse_publications(events["publications"]))
     write_json(data_dir / "seminars.json", parse_seminars(events["seminars"]))
     write_json(data_dir / "gallery.json", parse_gallery(events["gallery"], assets))
-    write_json(
-        data_dir / "asset-migration.json",
-        {
-            **metadata,
-            "status": "complete" if not assets.failures else "remote-fallback",
-            "downloaded": len([value for value in assets.cache.values() if not value.startswith("http")]),
-            "failed": assets.failures,
-        },
-    )
+    if assets.failures:
+        print(f"warning: {len(assets.failures)} asset downloads failed")
 
 
 if __name__ == "__main__":

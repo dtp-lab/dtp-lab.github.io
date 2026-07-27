@@ -14,7 +14,7 @@
 
 콘텐츠는 `site/data/` 아래의 JSON으로 관리합니다. 실제 프로필·행사 이미지는 추후 로컬 파일로 추가하며, 외부 Google Sites 이미지 URL은 사용하지 않습니다.
 
-`tools/content-model.mjs`는 구조화된 편집기에서 사용할 수 있는 직렬화 가능한 필드 계약과 저장 전 검증 함수를 제공합니다. 실제 편집 UI는 별도 Private 저장소 `dtp-lab/lab-website-builder`에서 관리합니다.
+`tools/content-model.mjs`는 구조화된 편집기에서 사용할 수 있는 직렬화 가능한 필드·관리 화면 계약과 저장 전 검증 함수를 제공합니다. 실제 편집 UI는 별도 Private 저장소 `dtp-lab/lab-website-studio`에서 관리합니다.
 
 - `home.json`: 모집 안내
 - `news.json`: 48건의 연구실 뉴스

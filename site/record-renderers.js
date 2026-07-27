@@ -5,7 +5,6 @@
   const projectCategoryLabels = { industry: "산학", rnd: "R&D", talent: "인재" };
   const projectIcons = {
     program: '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 12h18M10 12v2h4v-2"/></svg>',
-    agency: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21h18M5 21V9h14v12M3 9l9-6 9 6M9 13h6M9 17h6"/></svg>',
     period: '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18"/></svg>',
     keyword: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m20.5 13.5-7 7a2 2 0 0 1-2.8 0L3 12.8V3h9.8l7.7 7.7a2 2 0 0 1 0 2.8Z"/><circle cx="7.5" cy="7.5" r="1.2"/></svg>',
   };
@@ -20,7 +19,7 @@
     const keywordChips = project.keywords?.length
       ? `<span class="project-meta-part record-meta-item meta-keyword">${projectIconSlot("keyword")}<span class="sr-only">키워드: </span><span class="project-keywords record-meta-control record-meta-keywords">${project.keywords.map((keyword) => `<span class="keyword">${baselineProbe}<span class="keyword-label">${escapeHtml(keyword)}</span></span>`).join("")}</span></span>`
       : "";
-    const meta = `${projectMetaPart("program", "사업명 및 과제유형", project.program)}${projectMetaPart("agency", "지원 및 발주기관", project.sponsor)}${projectMetaPart("agency", "전담 및 관리기관", project.managingAgency)}${projectMetaPart("period", "연구기간", period)}${keywordChips}`;
+    const meta = `${projectMetaPart("program", "사업명 및 과제유형", project.program)}${projectMetaPart("period", "연구기간", period)}${keywordChips}`;
     const body = diagnostic ? "" : `${project.description ? `<p class="project-description">${escapeHtml(project.description)}</p>` : ""}${project.details?.length ? `<section class="project-details-section"><h4>세부 연구내용</h4><ol class="project-details">${project.details.map((detail) => `<li>${escapeHtml(detail)}</li>`).join("")}</ol></section>` : ""}${images.length ? `<div class="record-gallery image-count-${images.length}">${images.map((image) => `<figure class="record-image">${imageMarkup(image, project.title)}</figure>`).join("")}</div>` : ""}`;
     return `<article class="project-card"><header class="project-head"><div><div class="chip-row"><span class="chip category-${escapeHtml(project.category)}">${projectCategoryLabels[project.category] || escapeHtml(project.category)}</span></div><h3>${escapeHtml(project.title)}</h3></div></header>${meta ? `<div class="project-meta-line record-meta-row">${meta}</div>` : ""}${body}</article>`;
   };
@@ -91,7 +90,7 @@
   const renderPublicationCitation = (item, citations) => {
     const citation = citations.papers?.[item.id];
     return Number.isInteger(citation?.citationCount)
-      ? `<span class="publication-citation record-meta-standalone">Cited by ${citation.citationCount}${citation.checkedAt ? `, ${escapeHtml(citation.checkedAt)}` : ""}</span>`
+      ? `<span class="publication-citation record-meta-standalone">Cited by ${citation.citationCount}</span>`
       : "";
   };
 

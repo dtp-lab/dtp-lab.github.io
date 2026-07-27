@@ -1,6 +1,4 @@
 {
-  "source": "https://sites.google.com/view/dtnlab/projects",
-  "migrated": "2026-07-17",
   "projects": [
     {
       "id": "project-01",
@@ -8,15 +6,9 @@
       "category": "industry",
       "title": "디지털트윈 모델 기반 강화학습을 활용한 특수목적용 로봇 제어 기술 연구",
       "program": "RISE 산학공동 기술개발과제",
-      "sponsor": "",
-      "managingAgency": "",
       "period": {
         "start": "2025.09",
         "end": "2030.01"
-      },
-      "budget": {
-        "amount": "302,000",
-        "unit": "천원"
       },
       "keywords": [
         "Digital Twin",
@@ -33,11 +25,19 @@
         "도메인 특화 DT-월드모델 기반 자율로봇 Sim2Real 전이학습 프레임워크 구축"
       ],
       "images": [
-        { "src": "assets/projects/project-01/01.webp", "alt": "특수목적용 로봇 제어 프로젝트 연구 이미지 1", "caption": "" },
-        { "src": "assets/projects/project-01/02.webp", "alt": "특수목적용 로봇 제어 프로젝트 연구 이미지 2", "caption": "" },
-        { "src": "assets/projects/project-01/03.webp", "alt": "특수목적용 로봇 제어 프로젝트 연구 이미지 3", "caption": "" }
-      ],
-      "rawMeta": "RISE 산학공동 기술개발과제 | 302,000 (천원) | 2025.09. - 2030.01."
+        {
+          "src": "assets/projects/project-01/01.webp",
+          "alt": "특수목적용 로봇 제어 프로젝트 연구 이미지 1"
+        },
+        {
+          "src": "assets/projects/project-01/02.webp",
+          "alt": "특수목적용 로봇 제어 프로젝트 연구 이미지 2"
+        },
+        {
+          "src": "assets/projects/project-01/03.webp",
+          "alt": "특수목적용 로봇 제어 프로젝트 연구 이미지 3"
+        }
+      ]
     },
     {
       "id": "project-02",
@@ -45,15 +45,9 @@
       "category": "rnd",
       "title": "드론 영상 기반 산불 정보 인식을 위한 디지털트윈 시뮬레이터 및 합성데이터 생성·활용 기술 연구",
       "program": "산자부-KEIT(산기평)",
-      "sponsor": "",
-      "managingAgency": "",
       "period": {
         "start": "2023.06",
         "end": "2027.12"
-      },
-      "budget": {
-        "amount": "32,808,108",
-        "unit": "천원"
       },
       "keywords": [
         "Digital Twin",
@@ -68,10 +62,15 @@
         "GIS 기반 산불 지역 디지털트윈 공간 구축 및 이를 활용한 투척지점 좌표 도출 연구"
       ],
       "images": [
-        { "src": "assets/projects/project-02/01.webp", "alt": "드론 기반 산불 정보 인식 프로젝트 연구 이미지 1", "caption": "" },
-        { "src": "assets/projects/project-02/02.webp", "alt": "드론 기반 산불 정보 인식 프로젝트 연구 이미지 2", "caption": "" }
-      ],
-      "rawMeta": "산자부-KEIT(산기평) | 32,808,108 (천원) | 2023.06. - 2027.12."
+        {
+          "src": "assets/projects/project-02/01.webp",
+          "alt": "드론 기반 산불 정보 인식 프로젝트 연구 이미지 1"
+        },
+        {
+          "src": "assets/projects/project-02/02.webp",
+          "alt": "드론 기반 산불 정보 인식 프로젝트 연구 이미지 2"
+        }
+      ]
     },
     {
       "id": "project-03",
@@ -79,15 +78,9 @@
       "category": "rnd",
       "title": "디지털트윈 및 강화학습 기반 스마트팩토리 소모전력 최적화 기법 연구",
       "program": "과기부-이노폴리스(연구특구진흥재단)",
-      "sponsor": "",
-      "managingAgency": "",
       "period": {
         "start": "2024.04",
         "end": "2025.12"
-      },
-      "budget": {
-        "amount": "630,000",
-        "unit": "천원"
       },
       "keywords": [
         "Digital Twin",
@@ -104,10 +97,15 @@
         "CDA 시스템 수집 데이터 기반 online deep surrogate model 구축"
       ],
       "images": [
-        { "src": "assets/projects/project-03/01.webp", "alt": "스마트팩토리 소모전력 최적화 프로젝트 연구 이미지 1", "caption": "" },
-        { "src": "assets/projects/project-03/02.webp", "alt": "스마트팩토리 소모전력 최적화 프로젝트 연구 이미지 2", "caption": "" }
-      ],
-      "rawMeta": "과기부-이노폴리스(연구특구진흥재단) | 630,000 (천원) | 2024.04. - 2025.12."
+        {
+          "src": "assets/projects/project-03/01.webp",
+          "alt": "스마트팩토리 소모전력 최적화 프로젝트 연구 이미지 1"
+        },
+        {
+          "src": "assets/projects/project-03/02.webp",
+          "alt": "스마트팩토리 소모전력 최적화 프로젝트 연구 이미지 2"
+        }
+      ]
     },
     {
       "id": "project-04",
@@ -115,15 +113,9 @@
       "category": "industry",
       "title": "조선소 용접로봇 자동화를 위한 디지털트윈 비전 합성데이터 생성·활용 고도화 기술 연구",
       "program": "삼성중공업",
-      "sponsor": "",
-      "managingAgency": "",
       "period": {
         "start": "2024.03",
         "end": "2025.08"
-      },
-      "budget": {
-        "amount": "66,000",
-        "unit": "천원"
       },
       "keywords": [
         "Digital Twin",
@@ -139,10 +131,15 @@
         "Depth Camera 기반 Camera Pose Estimation"
       ],
       "images": [
-        { "src": "assets/projects/project-04/01.webp", "alt": "조선소 비전 합성데이터 프로젝트 연구 이미지 1", "caption": "" },
-        { "src": "assets/projects/project-04/02.webp", "alt": "조선소 비전 합성데이터 프로젝트 연구 이미지 2", "caption": "" }
-      ],
-      "rawMeta": "삼성중공업 | 66,000 (천원) | 2024.03. - 2025.08."
+        {
+          "src": "assets/projects/project-04/01.webp",
+          "alt": "조선소 비전 합성데이터 프로젝트 연구 이미지 1"
+        },
+        {
+          "src": "assets/projects/project-04/02.webp",
+          "alt": "조선소 비전 합성데이터 프로젝트 연구 이미지 2"
+        }
+      ]
     },
     {
       "id": "project-05",
@@ -150,15 +147,9 @@
       "category": "industry",
       "title": "디지털트윈·강화학습 기반 자항선 3D 블록 배치 최적화 기술 연구",
       "program": "한화오션",
-      "sponsor": "",
-      "managingAgency": "",
       "period": {
         "start": "2025.06",
         "end": "2026.02"
-      },
-      "budget": {
-        "amount": "66,000",
-        "unit": "천원"
       },
       "keywords": [
         "Digital Twin",
@@ -173,10 +164,15 @@
         "실제 환경을 반영한 디지털트윈 시뮬레이터 구축을 통한 합성 데이터 생성 및 강화학습 학습 효율 향상"
       ],
       "images": [
-        { "src": "assets/projects/project-05/01.webp", "alt": "자항선 3D 블록 배치 최적화 프로젝트 연구 이미지 1", "caption": "" },
-        { "src": "assets/projects/project-05/02.webp", "alt": "자항선 3D 블록 배치 최적화 프로젝트 연구 이미지 2", "caption": "" }
-      ],
-      "rawMeta": "한화오션 | 66,000 (천원) | 2025.06. - 2026.02."
+        {
+          "src": "assets/projects/project-05/01.webp",
+          "alt": "자항선 3D 블록 배치 최적화 프로젝트 연구 이미지 1"
+        },
+        {
+          "src": "assets/projects/project-05/02.webp",
+          "alt": "자항선 3D 블록 배치 최적화 프로젝트 연구 이미지 2"
+        }
+      ]
     },
     {
       "id": "project-06",
@@ -184,15 +180,9 @@
       "category": "industry",
       "title": "디지털트윈 기반 실시간 스마트야드 모니터링·원격제어 시스템 개발",
       "program": "삼성중공업",
-      "sponsor": "",
-      "managingAgency": "",
       "period": {
         "start": "2023.05",
         "end": "2025.12"
-      },
-      "budget": {
-        "amount": "114,400",
-        "unit": "천원"
       },
       "keywords": [
         "Digital Twin",
@@ -207,12 +197,23 @@
         "서드파티 제어 애플리케이션 통합 임베딩 및 성능 최적화"
       ],
       "images": [
-        { "src": "assets/projects/project-06/01.webp", "alt": "스마트야드 모니터링 프로젝트 화면 1", "caption": "" },
-        { "src": "assets/projects/project-06/02.webp", "alt": "스마트야드 모니터링 프로젝트 화면 2", "caption": "" },
-        { "src": "assets/projects/project-06/03.webp", "alt": "스마트야드 모니터링 프로젝트 화면 3", "caption": "" },
-        { "src": "assets/projects/project-06/04.webp", "alt": "스마트야드 모니터링 프로젝트 화면 4", "caption": "" }
-      ],
-      "rawMeta": "삼성중공업 | 114,400 (천원) | 2023.05. - 2025.12."
+        {
+          "src": "assets/projects/project-06/01.webp",
+          "alt": "스마트야드 모니터링 프로젝트 화면 1"
+        },
+        {
+          "src": "assets/projects/project-06/02.webp",
+          "alt": "스마트야드 모니터링 프로젝트 화면 2"
+        },
+        {
+          "src": "assets/projects/project-06/03.webp",
+          "alt": "스마트야드 모니터링 프로젝트 화면 3"
+        },
+        {
+          "src": "assets/projects/project-06/04.webp",
+          "alt": "스마트야드 모니터링 프로젝트 화면 4"
+        }
+      ]
     },
     {
       "id": "project-07",
@@ -220,20 +221,16 @@
       "category": "talent",
       "title": "인공지능 융합혁신 인재양성 (AI대학원)",
       "program": "과기부",
-      "sponsor": "",
-      "managingAgency": "",
       "period": {
         "start": "2023.07",
         "end": "2026.12"
       },
-      "budget": null,
       "keywords": [
         "AI Education"
       ],
       "description": "",
       "details": [],
-      "images": [],
-      "rawMeta": "과기부 | 2023.07. - 2026.12."
+      "images": []
     },
     {
       "id": "project-08",
@@ -241,20 +238,16 @@
       "category": "talent",
       "title": "산업융합형 멀티모달 생성 인공지능 인재양성",
       "program": "과기부",
-      "sponsor": "",
-      "managingAgency": "",
       "period": {
         "start": "2024.04",
         "end": "2027.12"
       },
-      "budget": null,
       "keywords": [
         "AI Education"
       ],
       "description": "",
       "details": [],
-      "images": [],
-      "rawMeta": "과기부 | 2024.04. - 2027.12."
+      "images": []
     },
     {
       "id": "project-09",
@@ -262,18 +255,14 @@
       "category": "rnd",
       "title": "스마트야드 전문인력양성",
       "program": "산자부",
-      "sponsor": "",
-      "managingAgency": "",
       "period": {
         "start": "2022.03",
         "end": "2026.02"
       },
-      "budget": null,
       "keywords": [],
       "description": "",
       "details": [],
-      "images": [],
-      "rawMeta": "산자부 | 2022.03. - 2026.02."
+      "images": []
     },
     {
       "id": "project-10",
@@ -281,15 +270,9 @@
       "category": "rnd",
       "title": "강화학습 기반 전기차 통합열관리 PI/MRAC 제어시스템 효율 최적화 기법 연구",
       "program": "산자부-KIAT",
-      "sponsor": "",
-      "managingAgency": "",
       "period": {
         "start": "2023.04",
         "end": "2024.12"
-      },
-      "budget": {
-        "amount": "901,351",
-        "unit": "천원"
       },
       "keywords": [
         "Digital Twin",
@@ -306,10 +289,15 @@
         "Transformer 기반 통합열관리 시뮬레이터 Deep Surrogate Model 구축"
       ],
       "images": [
-        { "src": "assets/projects/project-10/01.webp", "alt": "전기차 통합열관리 최적화 프로젝트 연구 이미지 1", "caption": "" },
-        { "src": "assets/projects/project-10/02.webp", "alt": "전기차 통합열관리 최적화 프로젝트 연구 이미지 2", "caption": "" }
-      ],
-      "rawMeta": "산자부-KIAT | 901,351 (천원) | 2023.04. - 2024.12."
+        {
+          "src": "assets/projects/project-10/01.webp",
+          "alt": "전기차 통합열관리 최적화 프로젝트 연구 이미지 1"
+        },
+        {
+          "src": "assets/projects/project-10/02.webp",
+          "alt": "전기차 통합열관리 최적화 프로젝트 연구 이미지 2"
+        }
+      ]
     },
     {
       "id": "project-11",
@@ -317,15 +305,9 @@
       "category": "rnd",
       "title": "디지털트윈 공간 기반 3D 교육훈련 VR·AR 콘텐츠 저작기술 개발",
       "program": "부산테크노파크",
-      "sponsor": "",
-      "managingAgency": "",
       "period": {
         "start": "2024.05",
         "end": "2024.11"
-      },
-      "budget": {
-        "amount": "85,000",
-        "unit": "천원"
       },
       "keywords": [
         "Digital Twin",
@@ -335,8 +317,7 @@
       "details": [
         "VPS 기반 위치 측위 기술 및 미디어 콘텐츠 디지털트윈 가시화 기술 개발"
       ],
-      "images": [],
-      "rawMeta": "부산테크노파크 | 85,000 (천원) | 2024.05. - 2024.11."
+      "images": []
     },
     {
       "id": "project-12",
@@ -344,15 +325,9 @@
       "category": "industry",
       "title": "RoRo 선박 화물 선적 계획을 위한 화물 배치 최적화 알고리즘 개발",
       "program": "토탈소프트뱅크",
-      "sponsor": "",
-      "managingAgency": "",
       "period": {
         "start": "2024.03",
         "end": "2024.09"
-      },
-      "budget": {
-        "amount": "27,500",
-        "unit": "천원"
       },
       "keywords": [
         "Optimization"
@@ -365,10 +340,15 @@
         "높이, 무게 등 다양한 메트릭을 적용 가능한 범용 휴리스틱 알고리즘 제안"
       ],
       "images": [
-        { "src": "assets/projects/project-12/01.webp", "alt": "RoRo 선박 화물 배치 최적화 프로젝트 연구 이미지 1", "caption": "" },
-        { "src": "assets/projects/project-12/02.webp", "alt": "RoRo 선박 화물 배치 최적화 프로젝트 연구 이미지 2", "caption": "" }
-      ],
-      "rawMeta": "토탈소프트뱅크 | 27,500 (천원) | 2024.03. - 2024.09."
+        {
+          "src": "assets/projects/project-12/01.webp",
+          "alt": "RoRo 선박 화물 배치 최적화 프로젝트 연구 이미지 1"
+        },
+        {
+          "src": "assets/projects/project-12/02.webp",
+          "alt": "RoRo 선박 화물 배치 최적화 프로젝트 연구 이미지 2"
+        }
+      ]
     },
     {
       "id": "project-13",
@@ -376,15 +356,9 @@
       "category": "industry",
       "title": "디지털트윈 비전 시뮬레이터 기반 선박 조립블록 하부도장 경로생성 기술 연구",
       "program": "삼성중공업",
-      "sponsor": "",
-      "managingAgency": "",
       "period": {
         "start": "2023.03",
         "end": "2023.11"
-      },
-      "budget": {
-        "amount": "27,500",
-        "unit": "천원"
       },
       "keywords": [
         "Digital Twin",
@@ -399,10 +373,15 @@
         "실제 도장차량 모터에 대한 디지털트윈화 및 디지털트윈 제어신호 기반 시뮬레이션 수행"
       ],
       "images": [
-        { "src": "assets/projects/project-13/01.webp", "alt": "선박 조립블록 하부도장 프로젝트 연구 이미지 1", "caption": "" },
-        { "src": "assets/projects/project-13/02.webp", "alt": "선박 조립블록 하부도장 프로젝트 연구 이미지 2", "caption": "" }
-      ],
-      "rawMeta": "삼성중공업 | 27,500 (천원) | 2023.03. - 2023.11."
+        {
+          "src": "assets/projects/project-13/01.webp",
+          "alt": "선박 조립블록 하부도장 프로젝트 연구 이미지 1"
+        },
+        {
+          "src": "assets/projects/project-13/02.webp",
+          "alt": "선박 조립블록 하부도장 프로젝트 연구 이미지 2"
+        }
+      ]
     },
     {
       "id": "project-14",
@@ -410,15 +389,9 @@
       "category": "rnd",
       "title": "건설기계 초저지연 원격제어 기술 개발",
       "program": "건설기계부품연구원",
-      "sponsor": "",
-      "managingAgency": "",
       "period": {
         "start": "2021.09",
         "end": "2023.10"
-      },
-      "budget": {
-        "amount": "31,000",
-        "unit": "천원"
       },
       "keywords": [
         "Computer Vision"
@@ -430,10 +403,15 @@
         "초광대역 영상 실시간 스트리밍을 위한 프로토콜 및 게이트웨이 구현"
       ],
       "images": [
-        { "src": "assets/projects/project-14/01.webp", "alt": "건설기계 초저지연 원격제어 프로젝트 연구 이미지 1", "caption": "" },
-        { "src": "assets/projects/project-14/02.webp", "alt": "건설기계 초저지연 원격제어 프로젝트 연구 이미지 2", "caption": "" }
-      ],
-      "rawMeta": "건설기계부품연구원 | 31,000 (천원) | 2021.09. - 2023.10."
+        {
+          "src": "assets/projects/project-14/01.webp",
+          "alt": "건설기계 초저지연 원격제어 프로젝트 연구 이미지 1"
+        },
+        {
+          "src": "assets/projects/project-14/02.webp",
+          "alt": "건설기계 초저지연 원격제어 프로젝트 연구 이미지 2"
+        }
+      ]
     },
     {
       "id": "project-15",
@@ -441,15 +419,9 @@
       "category": "rnd",
       "title": "UWB RTLS 기반 디지털트윈 반려동물 모니터링 기술 개발",
       "program": "중기부-TIPA",
-      "sponsor": "",
-      "managingAgency": "",
       "period": {
         "start": "2022.07",
         "end": "2023.06"
-      },
-      "budget": {
-        "amount": "123,340",
-        "unit": "천원"
       },
       "keywords": [
         "Digital Twin",
@@ -463,11 +435,19 @@
         "디지털트윈 구현 및 실시간 위치 동기화 기법 연구"
       ],
       "images": [
-        { "src": "assets/projects/project-15/01.webp", "alt": "디지털트윈 반려동물 모니터링 프로젝트 연구 이미지 1", "caption": "" },
-        { "src": "assets/projects/project-15/02.webp", "alt": "디지털트윈 반려동물 모니터링 프로젝트 연구 이미지 2", "caption": "" },
-        { "src": "assets/projects/project-15/03.webp", "alt": "디지털트윈 반려동물 모니터링 프로젝트 연구 이미지 3", "caption": "" }
-      ],
-      "rawMeta": "중기부-TIPA | 123,340 (천원) | 2022.07. - 2023.06."
+        {
+          "src": "assets/projects/project-15/01.webp",
+          "alt": "디지털트윈 반려동물 모니터링 프로젝트 연구 이미지 1"
+        },
+        {
+          "src": "assets/projects/project-15/02.webp",
+          "alt": "디지털트윈 반려동물 모니터링 프로젝트 연구 이미지 2"
+        },
+        {
+          "src": "assets/projects/project-15/03.webp",
+          "alt": "디지털트윈 반려동물 모니터링 프로젝트 연구 이미지 3"
+        }
+      ]
     },
     {
       "id": "project-16",
@@ -475,15 +455,9 @@
       "category": "rnd",
       "title": "클라우드 VR의 MTP 지연 감소를 위한 서비스 지향 엣지 컴퓨팅 프로비저닝 알고리즘 연구",
       "program": "한국연구재단",
-      "sponsor": "",
-      "managingAgency": "",
       "period": {
         "start": "2020.03",
         "end": "2023.02"
-      },
-      "budget": {
-        "amount": "90,000",
-        "unit": "천원"
       },
       "keywords": [],
       "description": "본 연구에서는 엣지 컴퓨팅 환경에서 클라우드 VR 서비스들의 MTP 지연 감소를 위한 서비스 지향 리소스 프로비저닝 알고리즘을 연구하였다. VR 서비스는 다양한 트래픽 패턴(고화질, HMD/컨트롤러/시선 등 입력 신호 주기, 지연시간), 서비스 요구사항(3DoF/6DoF, 입력 장치 종류, 다중 사용자), 사용자 경험(지연시간 및 해상도 임계점)과 같은 다양한 특성을 가지므로, 이러한 서비스별 컨텍스트를 분석하여 서버 인스턴스를 계층화/분산화하고 MTP Latency를 최소화하도록 리소스를 프로비저닝하는 알고리즘을 연구하였다.",
@@ -493,11 +467,19 @@
         "다중 사용자 클라우드 VR 프로세스 동작 연구"
       ],
       "images": [
-        { "src": "assets/projects/project-16/01.webp", "alt": "클라우드 VR 엣지 컴퓨팅 프로젝트 연구 이미지 1", "caption": "" },
-        { "src": "assets/projects/project-16/02.webp", "alt": "클라우드 VR 엣지 컴퓨팅 프로젝트 연구 이미지 2", "caption": "" },
-        { "src": "assets/projects/project-16/03.webp", "alt": "클라우드 VR 엣지 컴퓨팅 프로젝트 연구 이미지 3", "caption": "" }
-      ],
-      "rawMeta": "한국연구재단 | 90,000 (천원) | 2020.03. - 2023.02."
+        {
+          "src": "assets/projects/project-16/01.webp",
+          "alt": "클라우드 VR 엣지 컴퓨팅 프로젝트 연구 이미지 1"
+        },
+        {
+          "src": "assets/projects/project-16/02.webp",
+          "alt": "클라우드 VR 엣지 컴퓨팅 프로젝트 연구 이미지 2"
+        },
+        {
+          "src": "assets/projects/project-16/03.webp",
+          "alt": "클라우드 VR 엣지 컴퓨팅 프로젝트 연구 이미지 3"
+        }
+      ]
     },
     {
       "id": "project-17",
@@ -505,15 +487,9 @@
       "category": "industry",
       "title": "디지털트윈 기반 조선소 야드 통합관제 시스템 구축",
       "program": "삼성중공업",
-      "sponsor": "",
-      "managingAgency": "",
       "period": {
         "start": "2020.05",
         "end": "2022.06"
-      },
-      "budget": {
-        "amount": "114,000",
-        "unit": "천원"
       },
       "keywords": [
         "Digital Twin",
@@ -527,10 +503,15 @@
         "설비 운용현황, 에너지 사용량 등 현장지표 모니터링"
       ],
       "images": [
-        { "src": "assets/projects/project-17/01.webp", "alt": "조선소 야드 통합관제 프로젝트 연구 이미지 1", "caption": "" },
-        { "src": "assets/projects/project-17/02.webp", "alt": "조선소 야드 통합관제 프로젝트 연구 이미지 2", "caption": "" }
-      ],
-      "rawMeta": "삼성중공업 | 114,000 (천원) | 2020.05. - 2022.06."
+        {
+          "src": "assets/projects/project-17/01.webp",
+          "alt": "조선소 야드 통합관제 프로젝트 연구 이미지 1"
+        },
+        {
+          "src": "assets/projects/project-17/02.webp",
+          "alt": "조선소 야드 통합관제 프로젝트 연구 이미지 2"
+        }
+      ]
     },
     {
       "id": "project-18",
@@ -538,15 +519,9 @@
       "category": "rnd",
       "title": "오픈소스 기반 디지털트윈 시스템 개발",
       "program": "포항테크노파크",
-      "sponsor": "",
-      "managingAgency": "",
       "period": {
         "start": "2020.07",
         "end": "2021.12"
-      },
-      "budget": {
-        "amount": "479,600",
-        "unit": "천원"
       },
       "keywords": [
         "Digital Twin"
@@ -557,10 +532,19 @@
         "목조 건물 화재 위험도 예측 지수 개발"
       ],
       "images": [
-        { "src": "assets/projects/project-18/01.webp", "alt": "오픈소스 기반 디지털트윈 시스템 프로젝트 연구 이미지 1", "caption": "" },
-        { "src": "assets/projects/project-18/02.webp", "alt": "오픈소스 기반 디지털트윈 시스템 프로젝트 연구 이미지 2", "caption": "" }
-      ],
-      "rawMeta": "포항테크노파크 | 479,600 (천원) | 2020.07. - 2021.12."
+        {
+          "src": "assets/projects/project-18/01.webp",
+          "alt": "오픈소스 기반 디지털트윈 시스템 프로젝트 연구 이미지 1"
+        },
+        {
+          "src": "assets/projects/project-18/02.webp",
+          "alt": "오픈소스 기반 디지털트윈 시스템 프로젝트 연구 이미지 2"
+        }
+      ]
     }
-  ]
+  ],
+  "page": {
+    "kicker": "From Models to Motion",
+    "title": "Projects"
+  }
 }
