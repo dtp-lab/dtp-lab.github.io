@@ -72,7 +72,6 @@
     }
     if (item.type === "conference") {
       const metrics = item.conferenceMetrics || {};
-      if (metrics.conferenceType === "미분류") return [{ label: "Conference", className: "type-conference" }];
       if (metrics.conferenceType === "국내") return [{ label: "국내", className: "evaluation evaluation-kci" }];
       if (metrics.bk21 && metrics.bk21 !== "해당없음") {
         const className = { IF4: "evaluation-scie-top5", IF3: "evaluation-scie-top10", IF2: "evaluation-scie-q1", IF1: "evaluation-scie-q2" }[metrics.bk21];

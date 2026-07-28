@@ -88,7 +88,7 @@
       { indexing: "없음", quartile: "해당없음", award: "" },
     ];
     const conferenceMetrics = [
-      { conferenceType: "미분류", bk21: "해당없음", kiise: "해당없음" },
+      { conferenceType: "국제", bk21: "해당없음", kiise: "해당없음" },
       { conferenceType: "국제", bk21: "IF4", kiise: "최우수" },
       { conferenceType: "국제", bk21: "해당없음", kiise: "최우수" },
       { conferenceType: "국내", bk21: "해당없음", kiise: "해당없음" },

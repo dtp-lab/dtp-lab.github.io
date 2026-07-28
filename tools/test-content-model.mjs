@@ -9,7 +9,7 @@ const siteDir = path.resolve("site");
 
 test("content contract is serializable and exposes only known files", () => {
   const serialized = JSON.parse(JSON.stringify(contentContract));
-  assert.equal(serialized.version, 2);
+  assert.equal(serialized.version, 3);
   assert.deepEqual(
     Object.values(serialized.files).map((entry) => entry.file).sort(),
     fs.readdirSync(path.join(siteDir, "data")).filter((name) => name.endsWith(".json")).sort(),
@@ -26,6 +26,33 @@ test("content contract is serializable and exposes only known files", () => {
     "Seminars",
     "Gallery",
   ]);
+});
+
+test("People contract and migrated data use structured member categories without losing records", () => {
+  const people = JSON.parse(fs.readFileSync(path.join(siteDir, "data", "people.json"), "utf8"));
+  assert.equal(people.professor.name, "Won-Suk Kim, Ph.D.");
+  assert.equal(people.professor.career.length, 3);
+  assert.equal(people.members.length, 19);
+  assert.deepEqual(
+    Object.fromEntries(["phd", "master", "undergraduate", "alumni", "staff"].map((category) => [
+      category,
+      people.members.filter((person) => person.category === category).length,
+    ])),
+    { phd: 4, master: 5, undergraduate: 7, alumni: 3, staff: 0 },
+  );
+  assert.equal("groups" in people, false);
+  assert.ok(people.members.every((person) => !("fields" in person)));
+
+  const fields = contentContract.files.people.fields;
+  const members = fields.find((field) => field.name === "members");
+  assert.deepEqual(
+    members.item.fields.map((field) => field.name),
+    ["image", "name", "category", "affiliation", "email", "researchTopic"],
+  );
+  assert.deepEqual(
+    members.item.fields.find((field) => field.name === "category").options,
+    ["phd", "master", "undergraduate", "alumni", "staff"],
+  );
 });
 
 test("current repository content passes the reusable validator", () => {
@@ -65,11 +92,22 @@ test("publication contract exposes type-specific conditional metrics", () => {
     equals: "SCIE",
   });
   assert.deepEqual(conference.visibleWhen, { path: ["type"], equals: "conference" });
+  assert.deepEqual(conference.fields.find((field) => field.name === "conferenceType").options, ["국제", "국내"]);
   assert.deepEqual(conference.fields.find((field) => field.name === "bk21").enabledWhen, {
     path: ["conferenceMetrics", "conferenceType"],
     equals: "국제",
   });
   assert.deepEqual(patent.visibleWhen, { path: ["type"], equals: "patent" });
+  assert.deepEqual(fields.slice(0, 7).map((field) => field.name), [
+    "id",
+    "type",
+    "journalMetrics",
+    "conferenceMetrics",
+    "patentMetrics",
+    "publishedAt",
+    "title",
+  ]);
+  assert.equal(fields.find((field) => field.name === "publishedAt").label, "발표연월");
 });
 
 test("publication metric normalization removes stale groups and resets disabled values", () => {
@@ -129,7 +167,23 @@ test("publication public badges apply precedence, labels, and color classes", ()
     [{ label: "정보과학회 우수", className: "evaluation evaluation-scie-q1" }],
   );
   assert.deepEqual(
+    JSON.parse(JSON.stringify(tags({ type: "conference", conferenceMetrics: { conferenceType: "국내", bk21: "해당없음", kiise: "해당없음" } }))),
+    [{ label: "국내", className: "evaluation evaluation-kci" }],
+  );
+  assert.deepEqual(
     JSON.parse(JSON.stringify(tags({ type: "patent", patentMetrics: { jurisdiction: "PCT", status: "출원" } }))),
     [{ label: "PCT 출원", className: "patent-status patent-pct" }],
   );
+});
+
+test("Conference migration is explicit and the public project icon contract stays unchanged", () => {
+  const publications = JSON.parse(fs.readFileSync(path.join(siteDir, "data", "publications.json"), "utf8"));
+  const conference = publications.items.filter((item) => item.type === "conference");
+  assert.equal(conference.filter((item) => item.conferenceMetrics.conferenceType === "국제").length, 21);
+  assert.equal(conference.filter((item) => item.conferenceMetrics.conferenceType === "국내").length, 13);
+  assert.equal(conference.some((item) => item.conferenceMetrics.conferenceType === "미분류"), false);
+
+  const renderer = fs.readFileSync(path.join(siteDir, "record-renderers.js"), "utf8");
+  assert.match(renderer, /projectMetaPart\("program", "사업명 및 과제유형", project\.program\)/);
+  assert.match(renderer, /project-meta-icon record-meta-icon/);
 });

@@ -18,9 +18,6 @@ for (const name of ["people.json", "projects.json", "publications.json", "semina
     const legacyPatentStatus = item.patentStatus || "";
     delete item.metrics;
     delete item.patentStatus;
-    delete item.journalMetrics;
-    delete item.conferenceMetrics;
-    delete item.patentMetrics;
 
     if (item.type === "journal") {
       const quartile = legacyMetrics.topPercent === "5"
@@ -28,23 +25,36 @@ for (const name of ["people.json", "projects.json", "publications.json", "semina
         : legacyMetrics.topPercent === "10"
           ? "Top-10%"
           : legacyMetrics.quartile || "해당없음";
-      item.journalMetrics = {
+      item.journalMetrics ||= {
         indexing: legacyMetrics.indexing || "없음",
         quartile: legacyMetrics.indexing === "SCIE" ? quartile : "해당없음",
         award: legacyMetrics.award || "",
       };
+      delete item.conferenceMetrics;
+      delete item.patentMetrics;
     } else if (item.type === "conference") {
-      item.conferenceMetrics = {
-        conferenceType: "미분류",
+      item.conferenceMetrics ||= {
+        conferenceType: /[가-힣]/.test(item.venue || "") ? "국내" : "국제",
         bk21: "해당없음",
         kiise: "해당없음",
       };
+      if (!["국제", "국내"].includes(item.conferenceMetrics.conferenceType)) {
+        item.conferenceMetrics.conferenceType = /[가-힣]/.test(item.venue || "") ? "국내" : "국제";
+      }
+      if (item.conferenceMetrics.conferenceType === "국내") {
+        item.conferenceMetrics.bk21 = "해당없음";
+        item.conferenceMetrics.kiise = "해당없음";
+      }
+      delete item.journalMetrics;
+      delete item.patentMetrics;
     } else if (item.type === "patent") {
       const pct = legacyPatentStatus === "PCT" || /\bPCT\b/i.test(`${item.venue || ""} ${item.details || ""}`);
-      item.patentMetrics = {
+      item.patentMetrics ||= {
         jurisdiction: pct ? "PCT" : "국내",
         status: pct ? "출원" : (["등록", "출원", "공개"].includes(legacyPatentStatus) ? legacyPatentStatus : "출원"),
       };
+      delete item.journalMetrics;
+      delete item.conferenceMetrics;
     }
   }
   write(name, document);

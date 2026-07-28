@@ -46,15 +46,37 @@ const galleryImageFields = [
   stringField("caption", "캡션", { optional: true }),
 ];
 
-const personFields = [
+const memberCategoryOptions = ["phd", "master", "undergraduate", "alumni", "staff"];
+
+const memberFields = [
   stringField("image", "프로필 이미지", { input: "image", optional: true }),
   stringField("name", "이름", { required: true }),
-  { name: "fields", label: "상세 정보", type: "map", valueType: "string" },
+  selectField("category", "Category", memberCategoryOptions, { required: true }),
+  stringField("affiliation", "소속", { optional: true }),
+  stringField("email", "이메일", { optional: true, input: "email" }),
+  textField("researchTopic", "연구 주제", { optional: true }),
+];
+
+const professorFields = [
+  stringField("image", "프로필 이미지", { input: "image", optional: true }),
+  stringField("name", "이름", { required: true }),
+  stringField("affiliation", "소속", { optional: true }),
+  stringField("email", "이메일", { optional: true, input: "email" }),
+  textField("researchTopic", "연구 주제", { optional: true }),
+  stringField("office", "연구실", { optional: true }),
+  stringField("telephone", "전화", { optional: true }),
+  listField("career", "경력", {
+    type: "object",
+    fields: [
+      stringField("period", "기간", { required: true }),
+      stringField("role", "직위·소속", { required: true }),
+    ],
+  }),
 ];
 
 export const publicationMetricDefaults = {
   journal: { journalMetrics: { indexing: "없음", quartile: "해당없음", award: "" } },
-  conference: { conferenceMetrics: { conferenceType: "미분류", bk21: "해당없음", kiise: "해당없음" } },
+  conference: { conferenceMetrics: { conferenceType: "국제", bk21: "해당없음", kiise: "해당없음" } },
   patent: { patentMetrics: { jurisdiction: "국내", status: "출원" } },
 };
 
@@ -86,7 +108,27 @@ export function normalizePublicationMetrics(item) {
 const publicationFields = [
   stringField("id", "ID", { required: true, generated: "publication-id" }),
   selectField("type", "종류", ["journal", "conference", "patent"], { required: true }),
-  stringField("publishedAt", "발표일", { required: true, input: "month", pattern: "YYYY.MM" }),
+  objectField("journalMetrics", "Journal 지표", [
+    selectField("indexing", "색인", ["없음", "SCIE", "ESCI", "KCI"]),
+    selectField("quartile", "Quartile", ["해당없음", "Top-5%", "Top-10%", "Q1", "Q2", "Q3", "Q4"], {
+      enabledWhen: { path: ["journalMetrics", "indexing"], equals: "SCIE" },
+    }),
+    stringField("award", "수상", { optional: true }),
+  ], { visibleWhen: { path: ["type"], equals: "journal" } }),
+  objectField("conferenceMetrics", "Conference 지표", [
+    selectField("conferenceType", "학회 종류", ["국제", "국내"], { required: true }),
+    selectField("bk21", "BK21 우수학술대회", ["해당없음", "IF4", "IF3", "IF2", "IF1"], {
+      enabledWhen: { path: ["conferenceMetrics", "conferenceType"], equals: "국제" },
+    }),
+    selectField("kiise", "정보과학회 우수학술대회", ["해당없음", "최우수", "우수"], {
+      enabledWhen: { path: ["conferenceMetrics", "conferenceType"], equals: "국제" },
+    }),
+  ], { visibleWhen: { path: ["type"], equals: "conference" } }),
+  objectField("patentMetrics", "Patent 지표", [
+    selectField("jurisdiction", "관할", ["국내", "국제", "PCT"]),
+    selectField("status", "상태", ["등록", "출원", "공개"]),
+  ], { visibleWhen: { path: ["type"], equals: "patent" } }),
+  stringField("publishedAt", "발표연월", { required: true, input: "month", pattern: "YYYY.MM" }),
   stringField("title", "제목", { required: true }),
   listField("authors", "저자", {
     type: "object",
@@ -99,26 +141,6 @@ const publicationFields = [
   }),
   stringField("venue", "학술지·학회·관할", { optional: true }),
   textField("details", "상세 정보", { optional: true }),
-  objectField("journalMetrics", "Journal 지표", [
-    selectField("indexing", "색인", ["없음", "SCIE", "ESCI", "KCI"]),
-    selectField("quartile", "Quartile", ["해당없음", "Top-5%", "Top-10%", "Q1", "Q2", "Q3", "Q4"], {
-      enabledWhen: { path: ["journalMetrics", "indexing"], equals: "SCIE" },
-    }),
-    stringField("award", "수상", { optional: true }),
-  ], { visibleWhen: { path: ["type"], equals: "journal" } }),
-  objectField("conferenceMetrics", "Conference 지표", [
-    selectField("conferenceType", "학회 종류", ["미분류", "국제", "국내"]),
-    selectField("bk21", "BK21 우수학술대회", ["해당없음", "IF4", "IF3", "IF2", "IF1"], {
-      enabledWhen: { path: ["conferenceMetrics", "conferenceType"], equals: "국제" },
-    }),
-    selectField("kiise", "정보과학회 우수학술대회", ["해당없음", "최우수", "우수"], {
-      enabledWhen: { path: ["conferenceMetrics", "conferenceType"], equals: "국제" },
-    }),
-  ], { visibleWhen: { path: ["type"], equals: "conference" } }),
-  objectField("patentMetrics", "Patent 지표", [
-    selectField("jurisdiction", "관할", ["국내", "국제", "PCT"]),
-    selectField("status", "상태", ["등록", "출원", "공개"]),
-  ], { visibleWhen: { path: ["type"], equals: "patent" } }),
   listField("keywords", "키워드", { type: "select", options: controlledKeywords }, { maximum: 5 }),
   stringField("doi", "DOI", { optional: true }),
   listField("links", "외부 링크", {
@@ -131,7 +153,7 @@ const publicationFields = [
 ];
 
 export const contentContract = {
-  version: 2,
+  version: 3,
   site: "dtp-lab.github.io",
   controlledKeywords,
   views: [
@@ -165,11 +187,8 @@ export const contentContract = {
       route: "/people/",
       records: [
         { type: "object", path: ["page"], label: "페이지 제목" },
-        { type: "collection", path: ["groups", "professor"], label: "Professor", mutable: true, group: "professor" },
-        { type: "collection", path: ["groups", "phd"], label: "Ph.D.", mutable: true, group: "phd" },
-        { type: "collection", path: ["groups", "ms"], label: "M.S.", mutable: true, group: "ms" },
-        { type: "collection", path: ["groups", "undergrad"], label: "Undergraduate", mutable: true, group: "undergrad" },
-        { type: "collection", path: ["groups", "alumni"], label: "Alumni", mutable: true, group: "alumni" },
+        { type: "object", path: ["professor"], label: "Professor" },
+        { type: "collection", path: ["members"], label: "구성원", mutable: true },
       ],
     },
     {
@@ -275,13 +294,8 @@ export const contentContract = {
           stringField("title", "제목", { required: true }),
           stringField("subtitle", "부제", { optional: true }),
         ]),
-        objectField("groups", "구성원 그룹", [
-          listField("professor", "Professor", { type: "object", fields: personFields }),
-          listField("phd", "Ph.D.", { type: "object", fields: personFields }),
-          listField("ms", "M.S.", { type: "object", fields: personFields }),
-          listField("undergrad", "Undergraduate", { type: "object", fields: personFields }),
-          listField("alumni", "Alumni", { type: "object", fields: personFields }),
-        ]),
+        objectField("professor", "Professor", professorFields),
+        listField("members", "구성원", { type: "object", fields: memberFields }),
       ],
     },
     research: {
@@ -328,7 +342,7 @@ export const contentContract = {
             selectField("status", "상태", ["current", "completed"], { required: true }),
             selectField("category", "분류", ["industry", "rnd", "talent"], { required: true }),
             stringField("title", "과제명", { required: true }),
-            stringField("program", "사업명", { optional: true }),
+            stringField("program", "사업명/지원기관", { optional: true }),
             objectField("period", "기간", [
               stringField("start", "시작", { required: true, input: "month", pattern: "YYYY.MM" }),
               stringField("end", "종료", { required: true, input: "month", pattern: "YYYY.MM" }),
@@ -439,6 +453,9 @@ export function validateContent({
   const requiredText = (value, location) => {
     if (typeof value !== "string" || !value.trim()) errors.push(`${location}: required text is missing`);
   };
+  const optionalText = (value, location) => {
+    if (value !== undefined && typeof value !== "string") errors.push(`${location}: text required`);
+  };
   const rejectKeys = (value, keys, location) => {
     if (!value || typeof value !== "object") return;
     for (const key of keys) {
@@ -517,18 +534,33 @@ export function validateContent({
   });
 
   const peopleDocument = read("people.json");
-  rejectKeys(peopleDocument, ["source", "migrated"], "people");
+  rejectKeys(peopleDocument, ["source", "migrated", "groups"], "people");
   validateHeading(peopleDocument.page, "people.page");
-  const people = peopleDocument.groups || {};
-  for (const group of ["professor", "phd", "ms", "undergrad", "alumni"]) {
-    if (!Array.isArray(people[group])) errors.push(`people.${group}: group is missing`);
-    (people[group] || []).forEach((member, index) => {
-      rejectKeys(member, ["group", "notes"], `people.${group}[${index}]`);
-      rejectKeys(member.fields, ["interests"], `people.${group}[${index}].fields`);
-      requiredText(member.name, `people.${group}[${index}].name`);
-      validateImagePath(member.image, `people.${group}[${index}].image`);
+  const professor = peopleDocument.professor;
+  if (!professor || typeof professor !== "object") {
+    errors.push("people.professor: professor profile is missing");
+  } else {
+    rejectKeys(professor, ["fields", "group", "notes"], "people.professor");
+    requiredText(professor.name, "people.professor.name");
+    validateImagePath(professor.image, "people.professor.image");
+    for (const key of ["affiliation", "email", "researchTopic", "office", "telephone"]) {
+      optionalText(professor[key], `people.professor.${key}`);
+    }
+    if (!Array.isArray(professor.career)) errors.push("people.professor.career: list required");
+    (professor.career || []).forEach((career, index) => {
+      requiredText(career?.period, `people.professor.career[${index}].period`);
+      requiredText(career?.role, `people.professor.career[${index}].role`);
     });
   }
+  if (!Array.isArray(peopleDocument.members)) errors.push("people.members: list required");
+  (peopleDocument.members || []).forEach((member, index) => {
+    const at = `people.members[${index}]`;
+    rejectKeys(member, ["fields", "group", "notes"], at);
+    requiredText(member.name, `${at}.name`);
+    if (!memberCategoryOptions.includes(member.category)) errors.push(`${at}.category: unsupported category`);
+    validateImagePath(member.image, `${at}.image`);
+    for (const key of ["affiliation", "email", "researchTopic"]) optionalText(member[key], `${at}.${key}`);
+  });
 
   const research = read("research.json");
   rejectKeys(research, ["source", "migrated", "images"], "research");
@@ -604,7 +636,7 @@ export function validateContent({
       if (typeof metrics.award !== "string") errors.push(`${at}.journalMetrics.award: text required`);
     } else if (item.type === "conference") {
       const metrics = item.conferenceMetrics;
-      if (!["미분류", "국제", "국내"].includes(metrics.conferenceType)) errors.push(`${at}.conferenceMetrics.conferenceType: unsupported value`);
+      if (!["국제", "국내"].includes(metrics.conferenceType)) errors.push(`${at}.conferenceMetrics.conferenceType: unsupported value`);
       if (!["해당없음", "IF4", "IF3", "IF2", "IF1"].includes(metrics.bk21)) errors.push(`${at}.conferenceMetrics.bk21: unsupported value`);
       if (!["해당없음", "최우수", "우수"].includes(metrics.kiise)) errors.push(`${at}.conferenceMetrics.kiise: unsupported value`);
       if (metrics.conferenceType !== "국제" && (metrics.bk21 !== "해당없음" || metrics.kiise !== "해당없음")) errors.push(`${at}.conferenceMetrics: grades require 국제`);

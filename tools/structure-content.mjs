@@ -26,14 +26,7 @@ const controlledKeywords = [
 const keywordsFor = (text) => controlledKeywords.filter(([, pattern]) => pattern.test(text)).map(([keyword]) => keyword).slice(0, 5);
 
 const people = await read("people.json");
-for (const group of Object.values(people.groups || {})) {
-  for (const person of group) {
-    person.image = "";
-    delete person.group;
-    delete person.notes;
-    if (person.fields) delete person.fields.interests;
-  }
-}
+if (people.groups) throw new Error("Legacy people.groups detected; run tools/migrate-studio-content-v3.mjs first.");
 people.page ||= { kicker: "Humans in the Loop", title: "People" };
 await write("people.json", people);
 
@@ -79,7 +72,9 @@ await write("projects.json", structuredProjects);
 const publications = await read("publications.json");
 if (!publications.items) {
   const labNames = new Set(["Won-Suk Kim"]);
-  for (const group of Object.values(people.groups || {})) for (const person of group) labNames.add(String(person.name || "").split("(")[0].trim().replace(/, Ph[.]D[.]?$/i, ""));
+  for (const person of [people.professor, ...(people.members || [])].filter(Boolean)) {
+    labNames.add(String(person.name || "").split("(")[0].trim().replace(/, Ph[.]D[.]?$/i, ""));
+  }
   const parseAuthors = (value) => String(value || "").replace(/,?\s+and\s+/g, ", ").split(",").map((raw) => raw.trim()).filter(Boolean).map((raw) => {
     const isCorrespondingAuthor = raw.endsWith("*");
     const withoutCorresponding = raw.replace(/\*+$/, "").trim();
@@ -118,7 +113,7 @@ if (!publications.items) {
       details: parts.join(", "),
       ...(type === "journal"
         ? { journalMetrics: parseMetrics(citation) }
-        : { conferenceMetrics: { conferenceType: "미분류", bk21: "해당없음", kiise: "해당없음" } }),
+        : { conferenceMetrics: { conferenceType: /[가-힣]/.test(venue) ? "국내" : "국제", bk21: "해당없음", kiise: "해당없음" } }),
       keywords: keywordsFor(`${title} ${venue}`),
       doi: "",
       links: [],
@@ -145,24 +140,34 @@ else {
     const legacyPatentStatus = item.patentStatus || "";
     delete item.metrics;
     delete item.patentStatus;
-    delete item.journalMetrics;
-    delete item.conferenceMetrics;
-    delete item.patentMetrics;
     if (item.type === "journal") {
       const quartile = legacyMetrics.topPercent === "5" ? "Top-5%" : legacyMetrics.topPercent === "10" ? "Top-10%" : legacyMetrics.quartile || "해당없음";
-      item.journalMetrics = {
+      item.journalMetrics ||= {
         indexing: legacyMetrics.indexing || "없음",
         quartile: legacyMetrics.indexing === "SCIE" ? quartile : "해당없음",
         award: legacyMetrics.award || "",
       };
+      delete item.conferenceMetrics;
+      delete item.patentMetrics;
     } else if (item.type === "conference") {
-      item.conferenceMetrics = { conferenceType: "미분류", bk21: "해당없음", kiise: "해당없음" };
+      item.conferenceMetrics ||= { conferenceType: /[가-힣]/.test(item.venue || "") ? "국내" : "국제", bk21: "해당없음", kiise: "해당없음" };
+      if (!["국제", "국내"].includes(item.conferenceMetrics.conferenceType)) {
+        item.conferenceMetrics.conferenceType = /[가-힣]/.test(item.venue || "") ? "국내" : "국제";
+      }
+      if (item.conferenceMetrics.conferenceType === "국내") {
+        item.conferenceMetrics.bk21 = "해당없음";
+        item.conferenceMetrics.kiise = "해당없음";
+      }
+      delete item.journalMetrics;
+      delete item.patentMetrics;
     } else if (item.type === "patent") {
       const pct = legacyPatentStatus === "PCT" || /\bPCT\b/i.test(`${item.venue || ""} ${item.details || ""}`);
-      item.patentMetrics = {
+      item.patentMetrics ||= {
         jurisdiction: pct ? "PCT" : "국내",
         status: pct ? "출원" : (["등록", "출원", "공개"].includes(legacyPatentStatus) ? legacyPatentStatus : "출원"),
       };
+      delete item.journalMetrics;
+      delete item.conferenceMetrics;
     }
   }
   await write("publications.json", publications);

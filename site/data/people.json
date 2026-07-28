@@ -1,183 +1,181 @@
 {
-  "groups": {
-    "professor": [
+  "professor": {
+    "image": "assets/people/김원석.jpg",
+    "name": "Won-Suk Kim, Ph.D.",
+    "affiliation": "",
+    "email": "wonsukkim @ pusan.ac.kr",
+    "researchTopic": "",
+    "office": "IT관 610호",
+    "telephone": "+82-51-510-2777",
+    "career": [
       {
-        "image": "assets/people/김원석.jpg",
-        "name": "Won-Suk Kim, Ph.D.",
-        "fields": {
-          "e-mail": "wonsukkim @ pusan.ac.kr",
-          "office": "IT관 610호",
-          "tel.": "+82-51-510-2777",
-          "2022_-_current": "Associate Professor, Pusan National University",
-          "2020_-_2022": "Assistant Professor, Andong National University",
-          "2016_-_2019": "CEO/Founder, PlonVei Corp. (VR/AR Tech Startup)"
-        }
-      }
-    ],
-    "phd": [
-      {
-        "image": "assets/people/최호진.jpg",
-        "name": "Ho-Jin Choi (최호진)",
-        "fields": {
-          "e-mail": "tiger981228@pusan.ac.kr",
-          "research_topic": "Digital Twin Simulation, Robotics"
-        }
+        "period": "2022 - current",
+        "role": "Associate Professor, Pusan National University"
       },
       {
-        "image": "assets/people/이지혜.jpg",
-        "name": "Ji-Hye Lee (이지혜)",
-        "fields": {
-          "e-mail": "dlwlgp2920@pusan.ac.kr",
-          "research_topic": "RL, Digital Twin Simulation"
-        }
+        "period": "2020 - 2022",
+        "role": "Assistant Professor, Andong National University"
       },
       {
-        "image": "assets/people/김준원.jpg",
-        "name": "Jun-Won Kim (김준원)",
-        "fields": {
-          "affiliation": "국방과학연구소(ADD)",
-          "e-mail": "kjw4156@naver.com",
-          "research_topic": "Unmanned Vehicle"
-        }
-      },
-      {
-        "image": "assets/people/최현석.png",
-        "name": "Hyun-Suk Choi (최현석)",
-        "fields": {
-          "affiliation": "중소조선연구원(RIMS)",
-          "e-mail": "hschoi@rims.re.kr",
-          "research_topic": "Autonomous Manufacturing"
-        }
-      }
-    ],
-    "ms": [
-      {
-        "image": "assets/people/이창민.jpg",
-        "name": "Chang-Min Lee (이창민)",
-        "fields": {
-          "e-mail": "lak0192@pusan.ac.kr",
-          "research_topic": "RL, Robotics"
-        }
-      },
-      {
-        "image": "assets/people/고은성.png",
-        "name": "Eun-Seong Ko (고은성)",
-        "fields": {
-          "e-mail": "eunseong624@pusan.ac.kr",
-          "research_topic": "Object Detection, Semantic Segmentation"
-        }
-      },
-      {
-        "image": "assets/people/김민재.jpg",
-        "name": "Min-Jae Kim (김민재)",
-        "fields": {
-          "e-mail": "ysicka@pusan.ac.kr",
-          "research_topic": "RL, Robotics"
-        }
-      },
-      {
-        "image": "assets/people/이창주.jpg",
-        "name": "Chang-Ju Lee (이창주)",
-        "fields": {
-          "e-mail": "busbtvi@pusan.ac.kr",
-          "research_topic": "RL, Robotics"
-        }
-      },
-      {
-        "image": "assets/people/하서현.jpg",
-        "name": "Seo-Hyun Ha (하서현)",
-        "fields": {
-          "e-mail": "bluelily811@pusan.ac.kr",
-          "research_topic": "Digital Twin, RL"
-        }
-      }
-    ],
-    "undergrad": [
-      {
-        "image": "assets/people/김성민.jpg",
-        "name": "Seong-Min Kim (김성민)",
-        "fields": {
-          "e-mail": "dan1626@pusan.ac.kr",
-          "research_topic": "Digital Twin"
-        }
-      },
-      {
-        "image": "assets/people/여채언.jpg",
-        "name": "Chae-Eon Yeo (여채언)",
-        "fields": {
-          "e-mail": "codjs2659@pusan.ac.kr",
-          "research_topic": "RL, Robotics"
-        }
-      },
-      {
-        "image": "assets/people/옥소미.jpg",
-        "name": "So-Mi Ok (옥소미)",
-        "fields": {
-          "e-mail": "osm0071@pusan.ac.kr",
-          "research_topic": "RL, Robotics"
-        }
-      },
-      {
-        "image": "assets/people/홍석기.jpg",
-        "name": "Seok-Gi Hong (홍석기)",
-        "fields": {
-          "e-mail": "hongseokgi00@pusan.ac.kr",
-          "research_topic": "RL, Digital twin"
-        }
-      },
-      {
-        "image": "assets/people/홍세민.jpg",
-        "name": "Se-Min Hong (홍세민)",
-        "fields": {
-          "e-mail": "semin73@pusan.ac.kr",
-          "research_topic": "RL, Digital twin"
-        }
-      },
-      {
-        "image": "assets/people/윤태호.jpg",
-        "name": "Tae-Ho Yun (윤태호)",
-        "fields": {
-          "e-mail": "taeho2004@pusan.ac.kr",
-          "research_topic": "RL, Digital twin"
-        }
-      },
-      {
-        "image": "assets/people/김범수.png",
-        "name": "Bum-Soo Kim (김범수)",
-        "fields": {
-          "e-mail": "cacaki@pusan.ac.kr",
-          "research_topic": ""
-        }
-      }
-    ],
-    "alumni": [
-      {
-        "image": "assets/people/김정호.jpg",
-        "name": "Jeong-Ho Kim (김정호)",
-        "fields": {
-          "e-mail": "touch@pusan.ac.kr",
-          "research_topic": "line detection, Unity"
-        }
-      },
-      {
-        "image": "assets/people/안현기.jpg",
-        "name": "Hyun-Gi An (안현기)",
-        "fields": {
-          "e-mail": "tykr0001@pusan.ac.kr",
-          "research_topic": "UWB RTLS"
-        }
-      },
-      {
-        "image": "assets/people/김희준.png",
-        "name": "Hee-Jun Kim (김희준)",
-        "fields": {
-          "affiliation": "삼성중공업(Samsung Heavy Industries)",
-          "e-mail": "k20sus@naver.com",
-          "research_topic": "Data Clustering for Arc Sensing"
-        }
+        "period": "2016 - 2019",
+        "role": "CEO/Founder, PlonVei Corp. (VR/AR Tech Startup)"
       }
     ]
   },
+  "members": [
+    {
+      "image": "assets/people/최호진.jpg",
+      "name": "Ho-Jin Choi (최호진)",
+      "affiliation": "",
+      "email": "tiger981228@pusan.ac.kr",
+      "researchTopic": "Digital Twin Simulation, Robotics",
+      "category": "phd"
+    },
+    {
+      "image": "assets/people/이지혜.jpg",
+      "name": "Ji-Hye Lee (이지혜)",
+      "affiliation": "",
+      "email": "dlwlgp2920@pusan.ac.kr",
+      "researchTopic": "RL, Digital Twin Simulation",
+      "category": "phd"
+    },
+    {
+      "image": "assets/people/김준원.jpg",
+      "name": "Jun-Won Kim (김준원)",
+      "affiliation": "국방과학연구소(ADD)",
+      "email": "kjw4156@naver.com",
+      "researchTopic": "Unmanned Vehicle",
+      "category": "phd"
+    },
+    {
+      "image": "assets/people/최현석.png",
+      "name": "Hyun-Suk Choi (최현석)",
+      "affiliation": "중소조선연구원(RIMS)",
+      "email": "hschoi@rims.re.kr",
+      "researchTopic": "Autonomous Manufacturing",
+      "category": "phd"
+    },
+    {
+      "image": "assets/people/이창민.jpg",
+      "name": "Chang-Min Lee (이창민)",
+      "affiliation": "",
+      "email": "lak0192@pusan.ac.kr",
+      "researchTopic": "RL, Robotics",
+      "category": "master"
+    },
+    {
+      "image": "assets/people/고은성.png",
+      "name": "Eun-Seong Ko (고은성)",
+      "affiliation": "",
+      "email": "eunseong624@pusan.ac.kr",
+      "researchTopic": "Object Detection, Semantic Segmentation",
+      "category": "master"
+    },
+    {
+      "image": "assets/people/김민재.jpg",
+      "name": "Min-Jae Kim (김민재)",
+      "affiliation": "",
+      "email": "ysicka@pusan.ac.kr",
+      "researchTopic": "RL, Robotics",
+      "category": "master"
+    },
+    {
+      "image": "assets/people/이창주.jpg",
+      "name": "Chang-Ju Lee (이창주)",
+      "affiliation": "",
+      "email": "busbtvi@pusan.ac.kr",
+      "researchTopic": "RL, Robotics",
+      "category": "master"
+    },
+    {
+      "image": "assets/people/하서현.jpg",
+      "name": "Seo-Hyun Ha (하서현)",
+      "affiliation": "",
+      "email": "bluelily811@pusan.ac.kr",
+      "researchTopic": "Digital Twin, RL",
+      "category": "master"
+    },
+    {
+      "image": "assets/people/김성민.jpg",
+      "name": "Seong-Min Kim (김성민)",
+      "affiliation": "",
+      "email": "dan1626@pusan.ac.kr",
+      "researchTopic": "Digital Twin",
+      "category": "undergraduate"
+    },
+    {
+      "image": "assets/people/여채언.jpg",
+      "name": "Chae-Eon Yeo (여채언)",
+      "affiliation": "",
+      "email": "codjs2659@pusan.ac.kr",
+      "researchTopic": "RL, Robotics",
+      "category": "undergraduate"
+    },
+    {
+      "image": "assets/people/옥소미.jpg",
+      "name": "So-Mi Ok (옥소미)",
+      "affiliation": "",
+      "email": "osm0071@pusan.ac.kr",
+      "researchTopic": "RL, Robotics",
+      "category": "undergraduate"
+    },
+    {
+      "image": "assets/people/홍석기.jpg",
+      "name": "Seok-Gi Hong (홍석기)",
+      "affiliation": "",
+      "email": "hongseokgi00@pusan.ac.kr",
+      "researchTopic": "RL, Digital twin",
+      "category": "undergraduate"
+    },
+    {
+      "image": "assets/people/홍세민.jpg",
+      "name": "Se-Min Hong (홍세민)",
+      "affiliation": "",
+      "email": "semin73@pusan.ac.kr",
+      "researchTopic": "RL, Digital twin",
+      "category": "undergraduate"
+    },
+    {
+      "image": "assets/people/윤태호.jpg",
+      "name": "Tae-Ho Yun (윤태호)",
+      "affiliation": "",
+      "email": "taeho2004@pusan.ac.kr",
+      "researchTopic": "RL, Digital twin",
+      "category": "undergraduate"
+    },
+    {
+      "image": "assets/people/김범수.png",
+      "name": "Bum-Soo Kim (김범수)",
+      "affiliation": "",
+      "email": "cacaki@pusan.ac.kr",
+      "researchTopic": "",
+      "category": "undergraduate"
+    },
+    {
+      "image": "assets/people/김정호.jpg",
+      "name": "Jeong-Ho Kim (김정호)",
+      "affiliation": "",
+      "email": "touch@pusan.ac.kr",
+      "researchTopic": "line detection, Unity",
+      "category": "alumni"
+    },
+    {
+      "image": "assets/people/안현기.jpg",
+      "name": "Hyun-Gi An (안현기)",
+      "affiliation": "",
+      "email": "tykr0001@pusan.ac.kr",
+      "researchTopic": "UWB RTLS",
+      "category": "alumni"
+    },
+    {
+      "image": "assets/people/김희준.png",
+      "name": "Hee-Jun Kim (김희준)",
+      "affiliation": "삼성중공업(Samsung Heavy Industries)",
+      "email": "k20sus@naver.com",
+      "researchTopic": "Data Clustering for Arc Sensing",
+      "category": "alumni"
+    }
+  ],
   "page": {
     "kicker": "Humans in the Loop",
     "title": "People",
