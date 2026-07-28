@@ -1,38 +1,6 @@
 {
   "events": [
     {
-      "date": "2026.07",
-      "title": "Gallery 레이아웃 점검용 샘플",
-      "description": "썸네일과 라이트박스 동작을 확인하기 위한 임시 생성 이미지입니다. 실제 연구실 활동 사진으로 교체될 예정입니다.",
-      "isSample": true,
-      "images": [
-        {
-          "src": "assets/gallery/sample-digital-twin-robot.webp",
-          "thumbnail": "assets/gallery-thumbs/sample-digital-twin-robot.webp",
-          "alt": "산업용 로봇 팔과 가상 디지털트윈 모델을 함께 표현한 샘플 이미지",
-          "caption": "디지털트윈 로봇 연구 장면 · 임시 생성 이미지"
-        },
-        {
-          "src": "assets/gallery/sample-mobile-robot.webp",
-          "thumbnail": "assets/gallery-thumbs/sample-mobile-robot.webp",
-          "alt": "실내 시험 트랙을 주행하는 이동 로봇의 샘플 이미지",
-          "caption": "이동 로봇 경로계획 연구 장면 · 임시 생성 이미지"
-        },
-        {
-          "src": "assets/gallery/sample-ship-digital-twin.webp",
-          "thumbnail": "assets/gallery-thumbs/sample-ship-digital-twin.webp",
-          "alt": "선박 블록과 가상 선체 모델을 함께 표현한 샘플 이미지",
-          "caption": "선박 디지털트윈 연구 장면 · 임시 생성 이미지"
-        },
-        {
-          "src": "assets/gallery/sample-lidar-mapping.webp",
-          "thumbnail": "assets/gallery-thumbs/sample-lidar-mapping.webp",
-          "alt": "센서와 3차원 포인트클라우드 지도를 표현한 샘플 이미지",
-          "caption": "LiDAR 매핑 연구 장면 · 임시 생성 이미지"
-        }
-      ]
-    },
-    {
       "date": "2025.11",
       "title": "연구실 이사",
       "description": "자연대연구실험동 → IT관 이사한 후",

@@ -16,8 +16,8 @@
     root.innerHTML = events.map((event, eventIndex) => {
       const images = event.images || [];
       const thumbnailImages = images.slice(0, 4);
-      const classes = ["gallery-event", images.length ? "has-images" : "", event.isSample ? "gallery-sample" : ""].filter(Boolean).join(" ");
-      return `<article class="${classes}"><div class="gallery-event-meta"><time datetime="${escapeHtml(event.date)}">${escapeHtml(event.date)}</time>${event.isSample ? '<span class="sample-label">임시 샘플</span>' : ""}</div><h2>${escapeHtml(event.title)}</h2>${event.description ? `<p>${escapeHtml(event.description)}</p>` : ""}${images.length ? `<div class="gallery-grid">${thumbnailImages.map((image, imageIndex) => `<button class="gallery-thumb" type="button" data-event="${eventIndex}" data-image="${imageIndex}" aria-label="${escapeHtml(image.alt || event.title)} 크게 보기">${thumbnailMarkup(image, event.title)}</button>`).join("")}</div>` : ""}</article>`;
+      const classes = ["gallery-event", images.length ? "has-images" : ""].filter(Boolean).join(" ");
+      return `<article class="${classes}"><div class="gallery-event-meta"><time datetime="${escapeHtml(event.date)}">${escapeHtml(event.date)}</time></div><h2>${escapeHtml(event.title)}</h2>${event.description ? `<p>${escapeHtml(event.description)}</p>` : ""}${images.length ? `<div class="gallery-grid">${thumbnailImages.map((image, imageIndex) => `<button class="gallery-thumb" type="button" data-event="${eventIndex}" data-image="${imageIndex}" aria-label="${escapeHtml(image.alt || event.title)} 크게 보기">${thumbnailMarkup(image, event.title)}</button>`).join("")}</div>` : ""}</article>`;
     }).join("") || '<p class="empty-state">등록된 행사가 없습니다.</p>';
     root.querySelectorAll(".gallery-thumb").forEach((button) => button.addEventListener("click", () => open(events[Number(button.dataset.event)].images, Number(button.dataset.image), button)));
   } catch (error) { showDataError(root, error); }

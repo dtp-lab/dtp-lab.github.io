@@ -24,7 +24,7 @@
 - `publications.json`: 구조화된 논문·학술발표·특허 84건
 - `citations.json`: Semantic Scholar 인용수 캐시
 - `seminars.json`: 키워드를 포함한 73건의 세미나
-- `gallery.json`: 9건의 행사와 레이아웃 점검용 샘플 이벤트
+- `gallery.json`: 9건의 실제 행사
 
 ## 로컬 확인
 

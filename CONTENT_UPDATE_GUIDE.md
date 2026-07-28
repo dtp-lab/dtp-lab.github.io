@@ -12,7 +12,7 @@
 { "src": "assets/gallery/example.webp", "alt": "행사 사진 설명", "caption": "선택적 캡션" }
 ```
 
-People과 Research의 단일 이미지 필드는 로컬 경로 문자열을 사용합니다. 값이 비어 있으면 People은 1:1 빈 프레임을 유지하고, Research·Project·Gallery는 미디어 영역을 렌더링하지 않습니다. Gallery 레이아웃 점검용 이벤트는 `isSample: true`를 사용하며 실제 사진 업로드 시 해당 이벤트 전체를 제거합니다.
+People과 Research의 단일 이미지 필드는 로컬 경로 문자열을 사용합니다. 값이 비어 있으면 People은 1:1 빈 프레임을 유지하고, Research·Project·Gallery는 미디어 영역을 렌더링하지 않습니다. Studio에서 Gallery 원본 이미지를 선택하면 WebP 본이미지와 640×360 썸네일을 함께 생성합니다.
 
 ## 프로젝트
 

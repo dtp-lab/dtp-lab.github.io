@@ -61,7 +61,12 @@
           Q3: "evaluation-scie",
           Q4: "evaluation-scie",
         })[quartile] || "evaluation-scie";
-        tags.push({ label: quartile ? `SCIE-${quartile}` : "SCIE", className: `evaluation ${className}` });
+        const label = quartile?.startsWith("Top-")
+          ? `SCIE-Top ${quartile.slice(4)}`
+          : quartile
+            ? `SCIE-${quartile}`
+            : "SCIE";
+        tags.push({ label, className: `evaluation ${className}` });
       } else if (["ESCI", "KCI"].includes(metrics.indexing)) {
         tags.push({ label: metrics.indexing, className: `evaluation evaluation-${metrics.indexing.toLowerCase()}` });
       } else {

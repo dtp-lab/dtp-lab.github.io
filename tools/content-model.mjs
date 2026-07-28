@@ -40,8 +40,8 @@ const projectImageFields = [
 ];
 
 const galleryImageFields = [
-  stringField("src", "이미지 경로", { required: true, input: "image" }),
-  stringField("thumbnail", "썸네일 경로", { input: "image", optional: true }),
+  stringField("src", "원본 이미지 (썸네일 자동 생성)", { required: true, input: "image" }),
+  stringField("thumbnail", "썸네일 경로", { input: "image", optional: true, formHidden: true }),
   stringField("alt", "대체 텍스트", { required: true }),
   stringField("caption", "캡션", { optional: true }),
 ];
@@ -106,7 +106,7 @@ export function normalizePublicationMetrics(item) {
 }
 
 const publicationFields = [
-  stringField("id", "ID", { required: true, generated: "publication-id" }),
+  stringField("id", "ID", { required: true, generated: "publication-id", formHidden: true }),
   selectField("type", "종류", ["journal", "conference", "patent"], { required: true }),
   objectField("journalMetrics", "Journal 지표", [
     selectField("indexing", "색인", ["없음", "SCIE", "ESCI", "KCI"]),
@@ -338,7 +338,7 @@ export const contentContract = {
         listField("projects", "프로젝트", {
           type: "object",
           fields: [
-            stringField("id", "ID", { required: true, generated: "project-id" }),
+            stringField("id", "ID", { required: true, generated: "project-id", formHidden: true }),
             selectField("status", "상태", ["current", "completed"], { required: true }),
             selectField("category", "분류", ["industry", "rnd", "talent"], { required: true }),
             stringField("title", "과제명", { required: true }),
@@ -412,7 +412,6 @@ export const contentContract = {
             stringField("date", "날짜", { required: true, input: "month", pattern: "YYYY.MM" }),
             stringField("title", "제목", { required: true }),
             textField("description", "설명", { optional: true }),
-            booleanField("isSample", "레이아웃 점검 샘플", { optional: true }),
             listField("images", "이미지", { type: "object", fields: galleryImageFields }),
           ],
         }),
@@ -672,7 +671,6 @@ export function validateContent({
   gallery.forEach((event, index) => {
     if (!validDate(event.date)) errors.push(`gallery[${index}].date: use YYYY.MM`);
     requiredText(event.title, `gallery[${index}].title`);
-    if (event.isSample !== undefined && typeof event.isSample !== "boolean") errors.push(`gallery[${index}].isSample: boolean required`);
     validateImages(event.images, `gallery[${index}]`);
   });
 

@@ -343,7 +343,7 @@ img { display: block; max-width: 100%; }
 .type-patent { color: #fff; background: #3f6d87; }
 .evaluation-scie { color: white; background: var(--navy); }
 .evaluation-scie-q2 { color: white; background: var(--blue); }
-.evaluation-scie-q1 { color: #063e33; background: var(--green); }
+.evaluation-scie-q1 { color: white; background: var(--green); }
 .evaluation-scie-top10 { color: #463600; background: var(--yellow); }
 .evaluation-scie-top5 { color: white; background: var(--orange); }
 .evaluation-kci { color: var(--navy); background: #dfeaf1; }
@@ -390,9 +390,7 @@ img { display: block; max-width: 100%; }
 .gallery-event h2 { margin: 7px 0; color: var(--navy); font-size: 1.35rem; }
 .gallery-event p { margin: 0; color: var(--muted); }
 .gallery-event-meta { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
-.sample-label { padding: 3px 8px; border-radius: 999px; color: var(--tag-orange-text); background: var(--tag-orange-bg); font-size: max(.68rem, var(--text-tag-min)); font-weight: 850; }
 .gallery-event.has-images { border-color: #8bc8da; box-shadow: 0 12px 32px rgba(44,84,120,.09); }
-.gallery-sample { background: linear-gradient(135deg, #fff, #eff9fb); }
 .gallery-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; margin-top: 20px; }
 .gallery-thumb { width: 100%; aspect-ratio: 16/9; margin: 0; padding: 0; border: 0; border-radius: 12px; background: transparent; overflow: hidden; cursor: zoom-in; }
 .gallery-thumb img { width: 100%; height: 100%; object-fit: cover; transition: transform .22s ease; }
@@ -1760,7 +1758,7 @@ img {
 }
 .record-meta-item.record-meta-item {
   --record-meta-icon-slot: 18px;
-  --record-meta-icon-size: 1em;
+  --record-meta-icon-size: 16px;
   display: inline-flex;
   align-items: first baseline;
   column-gap: 8px;
@@ -1775,11 +1773,19 @@ img {
   margin: 0;
   line-height: 0;
   /* Older WebKit fallback: approximate the cap-centered shift from x-height. */
-  transform: translateY(calc((1em - 1ex) / 4 + .015em));
+  transform: translateY(calc(
+    (var(--record-meta-icon-size) - 1em) / 2
+    + (1em - 1ex) / 4
+    + .015em
+  ));
 }
 @supports (height: 1cap) {
   .record-meta-icon.record-meta-icon {
-    transform: translateY(calc((1em - 1cap) / 2 + .015em));
+    transform: translateY(calc(
+      (var(--record-meta-icon-size) - 1em) / 2
+      + (1em - 1cap) / 2
+      + .015em
+    ));
   }
 }
 .record-meta-icon.record-meta-icon > svg {

@@ -28,6 +28,29 @@ test("content contract is serializable and exposes only known files", () => {
   ]);
 });
 
+test("technical IDs and generated Gallery thumbnails stay out of the Studio form", () => {
+  const projectFields = contentContract.files.projects.fields
+    .find((field) => field.name === "projects").item.fields;
+  const publicationFields = contentContract.files.publications.fields
+    .find((field) => field.name === "items").item.fields;
+  const galleryFields = contentContract.files.gallery.fields
+    .find((field) => field.name === "events").item.fields;
+  const galleryImageFields = galleryFields.find((field) => field.name === "images").item.fields;
+
+  assert.equal(projectFields.find((field) => field.name === "id").formHidden, true);
+  assert.equal(publicationFields.find((field) => field.name === "id").formHidden, true);
+  assert.equal(galleryImageFields.find((field) => field.name === "thumbnail").formHidden, true);
+  assert.equal(galleryImageFields.find((field) => field.name === "src").label, "원본 이미지 (썸네일 자동 생성)");
+  assert.equal(galleryFields.some((field) => field.name === "isSample"), false);
+});
+
+test("Gallery contains only actual events and no sample asset references", () => {
+  const gallery = JSON.parse(fs.readFileSync(path.join(siteDir, "data", "gallery.json"), "utf8"));
+  assert.equal(gallery.events.length, 9);
+  assert.equal(gallery.events.some((event) => event.isSample || /샘플/.test(event.title)), false);
+  assert.equal(JSON.stringify(gallery).includes("sample-"), false);
+});
+
 test("People contract and migrated data use structured member categories without losing records", () => {
   const people = JSON.parse(fs.readFileSync(path.join(siteDir, "data", "people.json"), "utf8"));
   assert.equal(people.professor.name, "Won-Suk Kim, Ph.D.");
@@ -156,7 +179,15 @@ test("publication public badges apply precedence, labels, and color classes", ()
 
   assert.deepEqual(
     JSON.parse(JSON.stringify(tags({ type: "journal", journalMetrics: { indexing: "SCIE", quartile: "Top-5%", award: "" } }))),
-    [{ label: "SCIE-Top-5%", className: "evaluation evaluation-scie-top5" }],
+    [{ label: "SCIE-Top 5%", className: "evaluation evaluation-scie-top5" }],
+  );
+  assert.deepEqual(
+    JSON.parse(JSON.stringify(tags({ type: "journal", journalMetrics: { indexing: "SCIE", quartile: "Top-10%", award: "" } }))),
+    [{ label: "SCIE-Top 10%", className: "evaluation evaluation-scie-top10" }],
+  );
+  assert.deepEqual(
+    JSON.parse(JSON.stringify(tags({ type: "journal", journalMetrics: { indexing: "SCIE", quartile: "Q1", award: "" } }))),
+    [{ label: "SCIE-Q1", className: "evaluation evaluation-scie-q1" }],
   );
   assert.deepEqual(
     JSON.parse(JSON.stringify(tags({ type: "conference", conferenceMetrics: { conferenceType: "국제", bk21: "IF4", kiise: "최우수" } }))),
@@ -186,4 +217,11 @@ test("Conference migration is explicit and the public project icon contract stay
   const renderer = fs.readFileSync(path.join(siteDir, "record-renderers.js"), "utf8");
   assert.match(renderer, /projectMetaPart\("program", "사업명 및 과제유형", project\.program\)/);
   assert.match(renderer, /project-meta-icon record-meta-icon/);
+});
+
+test("shared metadata icons are fixed at 16px and SCIE Q1 uses white text", () => {
+  const styles = fs.readFileSync(path.join(siteDir, "styles.css"), "utf8");
+  assert.match(styles, /--record-meta-icon-size:\s*16px/);
+  assert.match(styles, /\(var\(--record-meta-icon-size\) - 1em\) \/ 2/);
+  assert.match(styles, /\.evaluation-scie-q1\s*\{\s*color:\s*white;/);
 });
