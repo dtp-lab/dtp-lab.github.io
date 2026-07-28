@@ -80,6 +80,24 @@
       ["Digital Twin", "Reinforcement Learning", "Surrogate Modeling"],
     ];
     const types = ["journal", "conference", "patent"];
+    const journalMetrics = [
+      { indexing: "SCIE", quartile: "Top-5%", award: "" },
+      { indexing: "SCIE", quartile: "Top-10%", award: "최우수 논문상" },
+      { indexing: "SCIE", quartile: "Q1", award: "" },
+      { indexing: "KCI", quartile: "해당없음", award: "" },
+      { indexing: "없음", quartile: "해당없음", award: "" },
+    ];
+    const conferenceMetrics = [
+      { conferenceType: "미분류", bk21: "해당없음", kiise: "해당없음" },
+      { conferenceType: "국제", bk21: "IF4", kiise: "최우수" },
+      { conferenceType: "국제", bk21: "해당없음", kiise: "최우수" },
+      { conferenceType: "국내", bk21: "해당없음", kiise: "해당없음" },
+    ];
+    const patentMetrics = [
+      { jurisdiction: "국내", status: "등록" },
+      { jurisdiction: "PCT", status: "출원" },
+      { jurisdiction: "국제", status: "공개" },
+    ];
     let typeIndex = 0;
     return authorSets.flatMap((authors, authorIndex) => venues.flatMap((venue) => keywordSets.flatMap((keywords, keywordIndex) => compactWidths.map((width) => {
       const type = types[typeIndex++ % types.length];
@@ -92,8 +110,9 @@
         authors,
         venue: venue.venue,
         details: venue.details,
-        metrics: type === "journal" ? { indexing: "SCIE", quartile: "Q1", topPercent: "", award: "", metricYear: "" } : {},
-        patentStatus: type === "patent" ? "등록" : "",
+        ...(type === "journal" ? { journalMetrics: journalMetrics[typeIndex % journalMetrics.length] } : {}),
+        ...(type === "conference" ? { conferenceMetrics: conferenceMetrics[typeIndex % conferenceMetrics.length] } : {}),
+        ...(type === "patent" ? { patentMetrics: patentMetrics[typeIndex % patentMetrics.length] } : {}),
         keywords,
         links: [],
       };

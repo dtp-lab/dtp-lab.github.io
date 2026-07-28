@@ -47,31 +47,57 @@
     return `<span class="author${author.isLabMember ? " lab-member" : ""}">${escapeHtml(author.name)}${symbols}</span>`;
   };
 
-  const renderPublicationEvaluationTag = (item) => {
-    const indexing = item.metrics?.indexing;
-    if (!indexing) return "";
-    let label = indexing;
-    let className = indexing.toLowerCase();
-    if (indexing === "SCIE" && item.metrics?.topPercent) {
-      label = `SCIE-TOP${item.metrics.topPercent}%`;
-      className = `scie-top${String(item.metrics.topPercent).replace(/[^0-9]/g, "")}`;
-    } else if (indexing === "SCIE" && item.metrics?.quartile) {
-      label = `SCIE-${item.metrics.quartile}`;
-      className = ["Q1", "Q2"].includes(item.metrics.quartile) ? `scie-${item.metrics.quartile.toLowerCase()}` : "scie";
+  const publicationTagDescriptors = (item) => {
+    if (item.type === "journal") {
+      const metrics = item.journalMetrics || {};
+      const tags = [];
+      if (metrics.indexing === "SCIE") {
+        const quartile = metrics.quartile && metrics.quartile !== "해당없음" ? metrics.quartile : "";
+        const className = ({
+          "Top-5%": "evaluation-scie-top5",
+          "Top-10%": "evaluation-scie-top10",
+          Q1: "evaluation-scie-q1",
+          Q2: "evaluation-scie-q2",
+          Q3: "evaluation-scie",
+          Q4: "evaluation-scie",
+        })[quartile] || "evaluation-scie";
+        tags.push({ label: quartile ? `SCIE-${quartile}` : "SCIE", className: `evaluation ${className}` });
+      } else if (["ESCI", "KCI"].includes(metrics.indexing)) {
+        tags.push({ label: metrics.indexing, className: `evaluation evaluation-${metrics.indexing.toLowerCase()}` });
+      } else {
+        tags.push({ label: "Journal", className: "type-journal" });
+      }
+      if (metrics.award) tags.push({ label: metrics.award, className: "evaluation evaluation-award" });
+      return tags;
     }
-    if (item.metrics?.metricYear) label += `, ${item.metrics.metricYear}`;
-    return `<span class="publication-tag evaluation evaluation-${escapeHtml(className)}">${escapeHtml(label)}</span>`;
+    if (item.type === "conference") {
+      const metrics = item.conferenceMetrics || {};
+      if (metrics.conferenceType === "미분류") return [{ label: "Conference", className: "type-conference" }];
+      if (metrics.conferenceType === "국내") return [{ label: "국내", className: "evaluation evaluation-kci" }];
+      if (metrics.bk21 && metrics.bk21 !== "해당없음") {
+        const className = { IF4: "evaluation-scie-top5", IF3: "evaluation-scie-top10", IF2: "evaluation-scie-q1", IF1: "evaluation-scie-q2" }[metrics.bk21];
+        return [{ label: `BK ${metrics.bk21}`, className: `evaluation ${className}` }];
+      }
+      if (metrics.kiise && metrics.kiise !== "해당없음") {
+        const className = metrics.kiise === "최우수" ? "evaluation-scie-top5" : "evaluation-scie-q1";
+        return [{ label: `정보과학회 ${metrics.kiise}`, className: `evaluation ${className}` }];
+      }
+      return [{ label: "국제", className: "evaluation evaluation-kci" }];
+    }
+    if (item.type === "patent") {
+      const metrics = item.patentMetrics || {};
+      const jurisdiction = metrics.jurisdiction || "국내";
+      const status = metrics.status || "출원";
+      const className = { 국제: "patent-international", PCT: "patent-pct", 국내: "patent-domestic" }[jurisdiction] || "patent-domestic";
+      return [{ label: `${jurisdiction} ${status}`, className: `patent-status ${className}` }];
+    }
+    return [{ label: publicationTypeLabels[item.type] || item.type, className: `type-${item.type}` }];
   };
 
-  const patentStatusClass = (status) => ({ "등록": "patent-registered", "출원": "patent-applied", PCT: "patent-pct" })[status] || "patent-other";
   const renderPublicationTags = (item) => {
-    const featureTags = [
-      renderPublicationEvaluationTag(item),
-      item.metrics?.award ? `<span class="publication-tag evaluation evaluation-award">${escapeHtml(item.metrics.award)}</span>` : "",
-      item.patentStatus ? `<span class="publication-tag patent-status ${patentStatusClass(item.patentStatus)}">${escapeHtml(item.patentStatus)}</span>` : "",
-    ].filter(Boolean);
-    const fallback = `<span class="publication-tag type-${escapeHtml(item.type)}">${escapeHtml(publicationTypeLabels[item.type] || item.type)}</span>`;
-    return (featureTags.length ? featureTags : [fallback]).join("");
+    return publicationTagDescriptors(item)
+      .map((tag) => `<span class="publication-tag ${escapeHtml(tag.className)}">${escapeHtml(tag.label)}</span>`)
+      .join("");
   };
 
   const getPublicationLinks = (item, citations) => {
@@ -125,6 +151,7 @@
 
   DTPLab.recordRenderers = {
     bindProjectGalleryRatios,
+    publicationTagDescriptors,
     publicationTypeLabels,
     renderProjectCard,
     renderPublicationCard,

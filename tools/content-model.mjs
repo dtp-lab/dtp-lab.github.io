@@ -52,6 +52,37 @@ const personFields = [
   { name: "fields", label: "상세 정보", type: "map", valueType: "string" },
 ];
 
+export const publicationMetricDefaults = {
+  journal: { journalMetrics: { indexing: "없음", quartile: "해당없음", award: "" } },
+  conference: { conferenceMetrics: { conferenceType: "미분류", bk21: "해당없음", kiise: "해당없음" } },
+  patent: { patentMetrics: { jurisdiction: "국내", status: "출원" } },
+};
+
+export function normalizePublicationMetrics(item) {
+  const normalized = structuredClone(item);
+  delete normalized.metrics;
+  delete normalized.patentStatus;
+  for (const key of ["journalMetrics", "conferenceMetrics", "patentMetrics"]) {
+    if (key !== Object.keys(publicationMetricDefaults[normalized.type] || {})[0]) delete normalized[key];
+  }
+  const expectedKey = `${normalized.type}Metrics`;
+  if (publicationMetricDefaults[normalized.type] && !normalized[expectedKey]) {
+    Object.assign(normalized, structuredClone(publicationMetricDefaults[normalized.type]));
+  }
+  if (normalized.type === "journal") {
+    normalized.journalMetrics ||= structuredClone(publicationMetricDefaults.journal.journalMetrics);
+    if (normalized.journalMetrics.indexing !== "SCIE") normalized.journalMetrics.quartile = "해당없음";
+  }
+  if (normalized.type === "conference") {
+    normalized.conferenceMetrics ||= structuredClone(publicationMetricDefaults.conference.conferenceMetrics);
+    if (normalized.conferenceMetrics.conferenceType !== "국제") {
+      normalized.conferenceMetrics.bk21 = "해당없음";
+      normalized.conferenceMetrics.kiise = "해당없음";
+    }
+  }
+  return normalized;
+}
+
 const publicationFields = [
   stringField("id", "ID", { required: true, generated: "publication-id" }),
   selectField("type", "종류", ["journal", "conference", "patent"], { required: true }),
@@ -68,14 +99,26 @@ const publicationFields = [
   }),
   stringField("venue", "학술지·학회·관할", { optional: true }),
   textField("details", "상세 정보", { optional: true }),
-  stringField("patentStatus", "특허 상태", { optional: true }),
-  objectField("metrics", "지표", [
-    selectField("indexing", "색인", ["", "SCIE", "ESCI", "KCI"]),
-    selectField("quartile", "Quartile", ["", "Q1", "Q2", "Q3", "Q4"]),
-    stringField("topPercent", "상위 백분율", { optional: true }),
+  objectField("journalMetrics", "Journal 지표", [
+    selectField("indexing", "색인", ["없음", "SCIE", "ESCI", "KCI"]),
+    selectField("quartile", "Quartile", ["해당없음", "Top-5%", "Top-10%", "Q1", "Q2", "Q3", "Q4"], {
+      enabledWhen: { path: ["journalMetrics", "indexing"], equals: "SCIE" },
+    }),
     stringField("award", "수상", { optional: true }),
-    stringField("metricYear", "지표 연도", { optional: true }),
-  ]),
+  ], { visibleWhen: { path: ["type"], equals: "journal" } }),
+  objectField("conferenceMetrics", "Conference 지표", [
+    selectField("conferenceType", "학회 종류", ["미분류", "국제", "국내"]),
+    selectField("bk21", "BK21 우수학술대회", ["해당없음", "IF4", "IF3", "IF2", "IF1"], {
+      enabledWhen: { path: ["conferenceMetrics", "conferenceType"], equals: "국제" },
+    }),
+    selectField("kiise", "정보과학회 우수학술대회", ["해당없음", "최우수", "우수"], {
+      enabledWhen: { path: ["conferenceMetrics", "conferenceType"], equals: "국제" },
+    }),
+  ], { visibleWhen: { path: ["type"], equals: "conference" } }),
+  objectField("patentMetrics", "Patent 지표", [
+    selectField("jurisdiction", "관할", ["국내", "국제", "PCT"]),
+    selectField("status", "상태", ["등록", "출원", "공개"]),
+  ], { visibleWhen: { path: ["type"], equals: "patent" } }),
   listField("keywords", "키워드", { type: "select", options: controlledKeywords }, { maximum: 5 }),
   stringField("doi", "DOI", { optional: true }),
   listField("links", "외부 링크", {
@@ -230,6 +273,7 @@ export const contentContract = {
         objectField("page", "페이지 제목", [
           stringField("kicker", "상단 문구", { required: true }),
           stringField("title", "제목", { required: true }),
+          stringField("subtitle", "부제", { optional: true }),
         ]),
         objectField("groups", "구성원 그룹", [
           listField("professor", "Professor", { type: "object", fields: personFields }),
@@ -275,6 +319,7 @@ export const contentContract = {
         objectField("page", "페이지 제목", [
           stringField("kicker", "상단 문구", { required: true }),
           stringField("title", "제목", { required: true }),
+          stringField("subtitle", "부제", { optional: true }),
         ]),
         listField("projects", "프로젝트", {
           type: "object",
@@ -306,6 +351,7 @@ export const contentContract = {
         objectField("page", "페이지 제목", [
           stringField("kicker", "상단 문구", { required: true }),
           stringField("title", "제목", { required: true }),
+          stringField("subtitle", "부제", { optional: true }),
         ]),
         listField("items", "연구 성과", { type: "object", fields: publicationFields }),
       ],
@@ -320,6 +366,7 @@ export const contentContract = {
         objectField("page", "페이지 제목", [
           stringField("kicker", "상단 문구", { required: true }),
           stringField("title", "제목", { required: true }),
+          stringField("subtitle", "부제", { optional: true }),
         ]),
         listField("seminars", "세미나", {
           type: "object",
@@ -343,6 +390,7 @@ export const contentContract = {
         objectField("page", "페이지 제목", [
           stringField("kicker", "상단 문구", { required: true }),
           stringField("title", "제목", { required: true }),
+          stringField("subtitle", "부제", { optional: true }),
         ]),
         listField("events", "행사", {
           type: "object",
@@ -400,6 +448,7 @@ export function validateContent({
   const validateHeading = (value, location) => {
     requiredText(value?.kicker, `${location}.kicker`);
     requiredText(value?.title, `${location}.title`);
+    if (value?.subtitle !== undefined && typeof value.subtitle !== "string") errors.push(`${location}.subtitle: text required`);
   };
   const validateKeywords = (keywords, location, maximum = 5) => {
     if (!Array.isArray(keywords)) return errors.push(`${location}: keywords must be an array`);
@@ -524,7 +573,7 @@ export function validateContent({
     const at = `publications[${index}]`;
     requiredText(item.id, `${at}.id`);
     requiredText(item.title, `${at}.title`);
-    rejectKeys(item, ["rawCitation", "semanticScholarId", "patentNumber"], at);
+    rejectKeys(item, ["rawCitation", "semanticScholarId", "patentNumber", "metrics", "patentStatus"], at);
     if (publicationIds.has(item.id)) errors.push(`${at}.id: duplicate`);
     publicationIds.add(item.id);
     if (!["journal", "conference", "patent"].includes(item.type)) errors.push(`${at}.type: unsupported type`);
@@ -539,9 +588,31 @@ export function validateContent({
     if (item.type !== "patent" && item.authors?.length && !item.authors.some((author) => author.isFirstAuthor)) {
       warnings.push(`${at}: no first author marker in source`);
     }
-    if (item.metrics?.indexing && !["SCIE", "ESCI", "KCI"].includes(item.metrics.indexing)) errors.push(`${at}.metrics.indexing: unsupported value`);
-    if (item.metrics?.quartile && !/^Q[1-4]$/.test(item.metrics.quartile)) errors.push(`${at}.metrics.quartile: use Q1-Q4`);
-    if (item.metrics?.topPercent && !/^\d+(?:[.]\d+)?$/.test(item.metrics.topPercent)) errors.push(`${at}.metrics.topPercent: numeric value required`);
+    const metricKeys = ["journalMetrics", "conferenceMetrics", "patentMetrics"];
+    const expectedMetricKey = `${item.type}Metrics`;
+    metricKeys.filter((key) => key !== expectedMetricKey).forEach((key) => {
+      if (Object.prototype.hasOwnProperty.call(item, key)) errors.push(`${at}.${key}: metrics do not match publication type`);
+    });
+    if (!item[expectedMetricKey] || typeof item[expectedMetricKey] !== "object") {
+      errors.push(`${at}.${expectedMetricKey}: required for publication type`);
+    } else if (item.type === "journal") {
+      const metrics = item.journalMetrics;
+      rejectKeys(metrics, ["topPercent", "metricYear"], `${at}.journalMetrics`);
+      if (!["없음", "SCIE", "ESCI", "KCI"].includes(metrics.indexing)) errors.push(`${at}.journalMetrics.indexing: unsupported value`);
+      if (!["해당없음", "Top-5%", "Top-10%", "Q1", "Q2", "Q3", "Q4"].includes(metrics.quartile)) errors.push(`${at}.journalMetrics.quartile: unsupported value`);
+      if (metrics.indexing !== "SCIE" && metrics.quartile !== "해당없음") errors.push(`${at}.journalMetrics.quartile: SCIE only`);
+      if (typeof metrics.award !== "string") errors.push(`${at}.journalMetrics.award: text required`);
+    } else if (item.type === "conference") {
+      const metrics = item.conferenceMetrics;
+      if (!["미분류", "국제", "국내"].includes(metrics.conferenceType)) errors.push(`${at}.conferenceMetrics.conferenceType: unsupported value`);
+      if (!["해당없음", "IF4", "IF3", "IF2", "IF1"].includes(metrics.bk21)) errors.push(`${at}.conferenceMetrics.bk21: unsupported value`);
+      if (!["해당없음", "최우수", "우수"].includes(metrics.kiise)) errors.push(`${at}.conferenceMetrics.kiise: unsupported value`);
+      if (metrics.conferenceType !== "국제" && (metrics.bk21 !== "해당없음" || metrics.kiise !== "해당없음")) errors.push(`${at}.conferenceMetrics: grades require 국제`);
+    } else if (item.type === "patent") {
+      const metrics = item.patentMetrics;
+      if (!["국내", "국제", "PCT"].includes(metrics.jurisdiction)) errors.push(`${at}.patentMetrics.jurisdiction: unsupported value`);
+      if (!["등록", "출원", "공개"].includes(metrics.status)) errors.push(`${at}.patentMetrics.status: unsupported value`);
+    }
     (item.links || []).forEach((link, linkIndex) => {
       requiredText(link.label, `${at}.links[${linkIndex}].label`);
       if (!/^https:\/\//.test(link.url || "")) errors.push(`${at}.links[${linkIndex}].url: HTTPS required`);

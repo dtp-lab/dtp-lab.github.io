@@ -89,7 +89,14 @@ if (!publications.items) {
   });
   const parseMetrics = (citation) => {
     const note = citation.match(/\(([^()]*(?:\([^()]*\)[^()]*)*)\)\s*$/)?.[1] || "";
-    return { indexing: note.match(/\b(SCIE|ESCI|KCI)\b/i)?.[1]?.toUpperCase() || "", quartile: note.match(/\bQ[1-4]\b/i)?.[0]?.toUpperCase() || "", topPercent: note.match(/(?:JCR\s*)?(\d+(?:[.]\d+)?)\s*%/i)?.[1] || "", award: note.match(/BK[^,)]*|IF\s*\d+/i)?.[0] || "", metricYear: "" };
+    const indexing = note.match(/\b(SCIE|ESCI|KCI)\b/i)?.[1]?.toUpperCase() || "없음";
+    const topPercent = note.match(/(?:JCR\s*)?(\d+(?:[.]\d+)?)\s*%/i)?.[1] || "";
+    const quartile = topPercent === "5"
+      ? "Top-5%"
+      : topPercent === "10"
+        ? "Top-10%"
+        : note.match(/\bQ[1-4]\b/i)?.[0]?.toUpperCase() || "해당없음";
+    return { indexing, quartile: indexing === "SCIE" ? quartile : "해당없음", award: "" };
   };
   const parsePaper = (record, type, index) => {
     const citation = record.citation || "";
@@ -101,7 +108,21 @@ if (!publications.items) {
     const cleanAfter = afterTitle.replace(/\s*\([^()]*\)\s*$/, "").replace(/,?\s*20\d{2}[.]\d{1,2}[.]?\s*$/, "");
     const parts = cleanAfter.split(",").map((part) => part.trim()).filter(Boolean);
     const venue = parts.shift() || "";
-    return { id: `${type}-${publishedAt.replaceAll(".", "")}-${String(index + 1).padStart(2, "0")}`, type, publishedAt, title, authors: parseAuthors(beforeTitle), venue, details: parts.join(", "), metrics: parseMetrics(citation), keywords: keywordsFor(`${title} ${venue}`), doi: "", links: [] };
+    return {
+      id: `${type}-${publishedAt.replaceAll(".", "")}-${String(index + 1).padStart(2, "0")}`,
+      type,
+      publishedAt,
+      title,
+      authors: parseAuthors(beforeTitle),
+      venue,
+      details: parts.join(", "),
+      ...(type === "journal"
+        ? { journalMetrics: parseMetrics(citation) }
+        : { conferenceMetrics: { conferenceType: "미분류", bk21: "해당없음", kiise: "해당없음" } }),
+      keywords: keywordsFor(`${title} ${venue}`),
+      doi: "",
+      links: [],
+    };
   };
   const journal = (publications.articles || []).map((record, index) => parsePaper(record, "journal", index));
   const conference = (publications.conferences || []).map((record, index) => parsePaper(record, "conference", index));
@@ -111,7 +132,8 @@ if (!publications.items) {
     const withoutStatus = citation.replace(/^\[[^\]]+\]\s*/, "");
     const parts = withoutStatus.split(",").map((part) => part.trim()).filter(Boolean);
     const date = lastDate(citation) || `${record.year || ""}.01`;
-    return { id: `patent-${date.replaceAll(".", "")}-${String(index + 1).padStart(2, "0")}`, type: "patent", publishedAt: date, title: parts[0] || withoutStatus, authors: [], venue: "대한민국 특허", details: parts.slice(1, -1).join(", "), patentStatus: status, metrics: {}, keywords: keywordsFor(parts[0] || ""), doi: "", links: [] };
+    const isPct = /\bPCT\b/i.test(citation);
+    return { id: `patent-${date.replaceAll(".", "")}-${String(index + 1).padStart(2, "0")}`, type: "patent", publishedAt: date, title: parts[0] || withoutStatus, authors: [], venue: "대한민국 특허", details: parts.slice(1, -1).join(", "), patentMetrics: { jurisdiction: isPct ? "PCT" : "국내", status: isPct ? "출원" : (["등록", "출원", "공개"].includes(status) ? status : "출원") }, keywords: keywordsFor(parts[0] || ""), doi: "", links: [] };
   });
   await write("publications.json", { page: { kicker: "On the Record", title: "Publications" }, items: [...journal, ...conference, ...patent] });
 }
@@ -119,6 +141,29 @@ else {
   publications.page ||= { kicker: "On the Record", title: "Publications" };
   for (const item of publications.items) {
     item.title = String(item.title || "").replace(/,\s*$/, "");
+    const legacyMetrics = item.metrics || {};
+    const legacyPatentStatus = item.patentStatus || "";
+    delete item.metrics;
+    delete item.patentStatus;
+    delete item.journalMetrics;
+    delete item.conferenceMetrics;
+    delete item.patentMetrics;
+    if (item.type === "journal") {
+      const quartile = legacyMetrics.topPercent === "5" ? "Top-5%" : legacyMetrics.topPercent === "10" ? "Top-10%" : legacyMetrics.quartile || "해당없음";
+      item.journalMetrics = {
+        indexing: legacyMetrics.indexing || "없음",
+        quartile: legacyMetrics.indexing === "SCIE" ? quartile : "해당없음",
+        award: legacyMetrics.award || "",
+      };
+    } else if (item.type === "conference") {
+      item.conferenceMetrics = { conferenceType: "미분류", bk21: "해당없음", kiise: "해당없음" };
+    } else if (item.type === "patent") {
+      const pct = legacyPatentStatus === "PCT" || /\bPCT\b/i.test(`${item.venue || ""} ${item.details || ""}`);
+      item.patentMetrics = {
+        jurisdiction: pct ? "PCT" : "국내",
+        status: pct ? "출원" : (["등록", "출원", "공개"].includes(legacyPatentStatus) ? legacyPatentStatus : "출원"),
+      };
+    }
   }
   await write("publications.json", publications);
 }

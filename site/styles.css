@@ -338,8 +338,8 @@ img { display: block; max-width: 100%; }
 .publication-heading-line { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 9px; min-width: 0; }
 .publication-tags { display: inline-flex; flex: 0 0 auto; flex-wrap: wrap; gap: 4px; }
 .publication-tag { display: inline-flex; align-items: center; justify-content: center; min-height: 19px; padding: 2px 7px; border-radius: 999px; font-size: .61rem; font-weight: 850; line-height: 1; letter-spacing: .025em; text-align: center; text-transform: uppercase; }
-.type-journal { color: #fff; background: #2c5478; }
-.type-conference { color: #fff; background: #35617f; }
+.type-journal,
+.type-conference { color: var(--navy); background: #dfeaf1; }
 .type-patent { color: #fff; background: #3f6d87; }
 .evaluation-scie { color: white; background: var(--navy); }
 .evaluation-scie-q2 { color: white; background: var(--blue); }
@@ -349,10 +349,9 @@ img { display: block; max-width: 100%; }
 .evaluation-kci { color: var(--navy); background: #dfeaf1; }
 .evaluation-esci { color: var(--cyan-deep); background: #cff4f5; }
 .evaluation-award { color: var(--tag-yellow-text); background: var(--yellow); }
-.patent-registered { color: var(--tag-green-text); background: var(--green); }
-.patent-applied { color: var(--tag-yellow-text); background: var(--yellow); }
+.patent-domestic { color: var(--navy); background: #dfeaf1; }
 .patent-pct { color: white; background: var(--orange-deep); }
-.patent-other { color: white; background: var(--navy); }
+.patent-international { color: white; background: var(--navy); }
 .publication-card h3, .publication-card h4 { flex: 1 1 360px; margin: 0; color: var(--navy); font-size: .98rem; line-height: 1.35; }
 .publication-links { display: flex; gap: 5px; flex: 0 0 auto; }
 .icon-link { min-width: 29px; height: 29px; padding: 0 6px; display: grid; place-items: center; border: 1px solid var(--line); border-radius: 8px; color: var(--blue); font-size: .7rem; font-weight: 800; text-decoration: none; }

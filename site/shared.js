@@ -44,8 +44,13 @@
   const applyPageHeading = (page = {}) => {
     const kicker = document.querySelector("#page-kicker");
     const title = document.querySelector("#page-title");
+    const subtitle = document.querySelector("#page-subtitle");
     if (kicker && page.kicker) kicker.textContent = page.kicker;
     if (title && page.title) title.textContent = page.title;
+    if (subtitle) {
+      subtitle.textContent = page.subtitle || "";
+      subtitle.hidden = !page.subtitle;
+    }
   };
 
   const setupShell = () => {

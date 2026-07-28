@@ -33,18 +33,16 @@
       ],
       "venue": "IEICE Nonlinear Theory and Its Applications",
       "details": "Vol. 17, pp. -",
-      "metrics": {
-        "indexing": "SCIE",
-        "quartile": "",
-        "topPercent": "",
-        "award": "",
-        "metricYear": ""
-      },
       "keywords": [
         "Computer Vision"
       ],
       "doi": "",
-      "links": []
+      "links": [],
+      "journalMetrics": {
+        "indexing": "SCIE",
+        "quartile": "해당없음",
+        "award": ""
+      }
     },
     {
       "id": "journal-202601-02",
@@ -85,19 +83,17 @@
       ],
       "venue": "Electronics",
       "details": "Vol. 15, pp. 214",
-      "metrics": {
-        "indexing": "SCIE",
-        "quartile": "Q2",
-        "topPercent": "",
-        "award": "",
-        "metricYear": ""
-      },
       "keywords": [
         "Optimization",
         "Energy Systems"
       ],
       "doi": "",
-      "links": []
+      "links": [],
+      "journalMetrics": {
+        "indexing": "SCIE",
+        "quartile": "Q2",
+        "award": ""
+      }
     },
     {
       "id": "journal-202512-03",
@@ -126,18 +122,16 @@
       ],
       "venue": "Scientific Reports",
       "details": "Vol. 15, pp. 32841",
-      "metrics": {
-        "indexing": "SCIE",
-        "quartile": "Q1",
-        "topPercent": "",
-        "award": "",
-        "metricYear": ""
-      },
       "keywords": [
         "Optimization"
       ],
       "doi": "",
-      "links": []
+      "links": [],
+      "journalMetrics": {
+        "indexing": "SCIE",
+        "quartile": "Q1",
+        "award": ""
+      }
     },
     {
       "id": "journal-202511-04",
@@ -166,19 +160,17 @@
       ],
       "venue": "Journal of Korea Multimedia Society",
       "details": "Vol. 28, No. 11, pp. 1787-1799",
-      "metrics": {
-        "indexing": "KCI",
-        "quartile": "",
-        "topPercent": "",
-        "award": "",
-        "metricYear": ""
-      },
       "keywords": [
         "Sim2Real",
         "Reinforcement Learning"
       ],
       "doi": "",
-      "links": []
+      "links": [],
+      "journalMetrics": {
+        "indexing": "KCI",
+        "quartile": "해당없음",
+        "award": ""
+      }
     },
     {
       "id": "journal-202511-05",
@@ -207,18 +199,16 @@
       ],
       "venue": "Journal of Korea Multimedia Society",
       "details": "Vol. 28, No. 11, pp. 1653-1663",
-      "metrics": {
-        "indexing": "KCI",
-        "quartile": "",
-        "topPercent": "",
-        "award": "",
-        "metricYear": ""
-      },
       "keywords": [
         "Computer Vision"
       ],
       "doi": "",
-      "links": []
+      "links": [],
+      "journalMetrics": {
+        "indexing": "KCI",
+        "quartile": "해당없음",
+        "award": ""
+      }
     },
     {
       "id": "journal-202511-06",
@@ -247,18 +237,16 @@
       ],
       "venue": "Renewable Energy",
       "details": "Vol. 253, pp. 123926",
-      "metrics": {
-        "indexing": "SCIE",
-        "quartile": "Q1",
-        "topPercent": "",
-        "award": "",
-        "metricYear": ""
-      },
       "keywords": [
         "Energy Systems"
       ],
       "doi": "",
-      "links": []
+      "links": [],
+      "journalMetrics": {
+        "indexing": "SCIE",
+        "quartile": "Q1",
+        "award": ""
+      }
     },
     {
       "id": "journal-202510-07",
@@ -287,19 +275,17 @@
       ],
       "venue": "Energy",
       "details": "Vol. 334, pp. 137801, 2025.10. (SCIE - Q1(JCR 5%))",
-      "metrics": {
-        "indexing": "SCIE",
-        "quartile": "Q1",
-        "topPercent": "5",
-        "award": "",
-        "metricYear": ""
-      },
       "keywords": [
         "Optimization",
         "Energy Systems"
       ],
       "doi": "",
-      "links": []
+      "links": [],
+      "journalMetrics": {
+        "indexing": "SCIE",
+        "quartile": "Top-5%",
+        "award": ""
+      }
     },
     {
       "id": "journal-202509-08",
@@ -334,18 +320,16 @@
       ],
       "venue": "Future Internet",
       "details": "Vol. 17, No. 10, pp. 440",
-      "metrics": {
-        "indexing": "ESCI",
-        "quartile": "",
-        "topPercent": "",
-        "award": "",
-        "metricYear": ""
-      },
       "keywords": [
         "Computer Vision"
       ],
       "doi": "",
-      "links": []
+      "links": [],
+      "journalMetrics": {
+        "indexing": "ESCI",
+        "quartile": "해당없음",
+        "award": ""
+      }
     },
     {
       "id": "journal-202508-09",
@@ -374,19 +358,17 @@
       ],
       "venue": "Journal of Korea Multimedia Society",
       "details": "Vol. 28, No. 8, pp. 1070-1078",
-      "metrics": {
-        "indexing": "KCI",
-        "quartile": "",
-        "topPercent": "",
-        "award": "",
-        "metricYear": ""
-      },
       "keywords": [
         "Optimization",
         "Energy Systems"
       ],
       "doi": "",
-      "links": []
+      "links": [],
+      "journalMetrics": {
+        "indexing": "KCI",
+        "quartile": "해당없음",
+        "award": ""
+      }
     },
     {
       "id": "journal-202503-10",
@@ -445,18 +427,16 @@
       ],
       "venue": "Journal of Korea Multimedia Society",
       "details": "Vol. 28, No. 3, pp. 395-411",
-      "metrics": {
-        "indexing": "KCI",
-        "quartile": "",
-        "topPercent": "",
-        "award": "",
-        "metricYear": ""
-      },
       "keywords": [
         "Digital Twin"
       ],
       "doi": "",
-      "links": []
+      "links": [],
+      "journalMetrics": {
+        "indexing": "KCI",
+        "quartile": "해당없음",
+        "award": ""
+      }
     },
     {
       "id": "journal-202503-11",
@@ -497,16 +477,14 @@
       ],
       "venue": "Electronics",
       "details": "Vol. 14, No. 7, pp. 1249",
-      "metrics": {
-        "indexing": "SCIE",
-        "quartile": "Q2",
-        "topPercent": "",
-        "award": "",
-        "metricYear": ""
-      },
       "keywords": [],
       "doi": "",
-      "links": []
+      "links": [],
+      "journalMetrics": {
+        "indexing": "SCIE",
+        "quartile": "Q2",
+        "award": ""
+      }
     },
     {
       "id": "journal-202501-12",
@@ -535,18 +513,16 @@
       ],
       "venue": "Journal of Korea Multimedia Society",
       "details": "Vol. 28, No. 1, pp. 1-9",
-      "metrics": {
-        "indexing": "KCI",
-        "quartile": "",
-        "topPercent": "",
-        "award": "",
-        "metricYear": ""
-      },
       "keywords": [
         "Digital Twin"
       ],
       "doi": "",
-      "links": []
+      "links": [],
+      "journalMetrics": {
+        "indexing": "KCI",
+        "quartile": "해당없음",
+        "award": ""
+      }
     },
     {
       "id": "journal-202410-13",
@@ -581,16 +557,14 @@
       ],
       "venue": "Electronics",
       "details": "Vol. 13, No. 20, pp. 3993",
-      "metrics": {
-        "indexing": "SCIE",
-        "quartile": "Q2",
-        "topPercent": "",
-        "award": "",
-        "metricYear": ""
-      },
       "keywords": [],
       "doi": "",
-      "links": []
+      "links": [],
+      "journalMetrics": {
+        "indexing": "SCIE",
+        "quartile": "Q2",
+        "award": ""
+      }
     },
     {
       "id": "journal-202408-14",
@@ -619,18 +593,16 @@
       ],
       "venue": "Electronics",
       "details": "Vol. 13, No. 15, pp. 3077, 2024. 08.",
-      "metrics": {
-        "indexing": "SCIE",
-        "quartile": "Q2",
-        "topPercent": "",
-        "award": "",
-        "metricYear": ""
-      },
       "keywords": [
         "Computer Vision"
       ],
       "doi": "",
-      "links": []
+      "links": [],
+      "journalMetrics": {
+        "indexing": "SCIE",
+        "quartile": "Q2",
+        "award": ""
+      }
     },
     {
       "id": "journal-202406-15",
@@ -671,16 +643,14 @@
       ],
       "venue": "Sensors",
       "details": "Vol. 24, No. 13, pp. 4075",
-      "metrics": {
-        "indexing": "SCIE",
-        "quartile": "Q2",
-        "topPercent": "",
-        "award": "",
-        "metricYear": ""
-      },
       "keywords": [],
       "doi": "",
-      "links": []
+      "links": [],
+      "journalMetrics": {
+        "indexing": "SCIE",
+        "quartile": "Q2",
+        "award": ""
+      }
     },
     {
       "id": "journal-202406-16",
@@ -721,18 +691,16 @@
       ],
       "venue": "Future Internet",
       "details": "Vol. 16, No. 6, pp. 211",
-      "metrics": {
-        "indexing": "ESCI",
-        "quartile": "",
-        "topPercent": "",
-        "award": "",
-        "metricYear": ""
-      },
       "keywords": [
         "Computer Vision"
       ],
       "doi": "",
-      "links": []
+      "links": [],
+      "journalMetrics": {
+        "indexing": "ESCI",
+        "quartile": "해당없음",
+        "award": ""
+      }
     },
     {
       "id": "journal-202402-17",
@@ -779,18 +747,16 @@
       ],
       "venue": "Journal of Korea Multimedia Society",
       "details": "Vol. 27, No. 2, pp. 218-228",
-      "metrics": {
-        "indexing": "KCI",
-        "quartile": "",
-        "topPercent": "",
-        "award": "",
-        "metricYear": ""
-      },
       "keywords": [
         "Digital Twin"
       ],
       "doi": "",
-      "links": []
+      "links": [],
+      "journalMetrics": {
+        "indexing": "KCI",
+        "quartile": "해당없음",
+        "award": ""
+      }
     },
     {
       "id": "journal-202302-18",
@@ -819,16 +785,14 @@
       ],
       "venue": "Journal of Korea Multimedia Society",
       "details": "Vol. 26, No. 2, pp. 166-174",
-      "metrics": {
-        "indexing": "KCI",
-        "quartile": "",
-        "topPercent": "",
-        "award": "",
-        "metricYear": ""
-      },
       "keywords": [],
       "doi": "",
-      "links": []
+      "links": [],
+      "journalMetrics": {
+        "indexing": "KCI",
+        "quartile": "해당없음",
+        "award": ""
+      }
     },
     {
       "id": "journal-202204-19",
@@ -863,16 +827,14 @@
       ],
       "venue": "Sensors",
       "details": "Vol. 22, No. 9, pp. 1-28",
-      "metrics": {
-        "indexing": "SCIE",
-        "quartile": "",
-        "topPercent": "",
-        "award": "",
-        "metricYear": ""
-      },
       "keywords": [],
       "doi": "",
-      "links": []
+      "links": [],
+      "journalMetrics": {
+        "indexing": "SCIE",
+        "quartile": "해당없음",
+        "award": ""
+      }
     },
     {
       "id": "journal-202202-20",
@@ -895,18 +857,16 @@
       ],
       "venue": "Journal of Korea Multimedia Society",
       "details": "Vol. 24, No. 12, pp. 325-334",
-      "metrics": {
-        "indexing": "KCI",
-        "quartile": "",
-        "topPercent": "",
-        "award": "",
-        "metricYear": ""
-      },
       "keywords": [
         "Digital Twin"
       ],
       "doi": "",
-      "links": []
+      "links": [],
+      "journalMetrics": {
+        "indexing": "KCI",
+        "quartile": "해당없음",
+        "award": ""
+      }
     },
     {
       "id": "journal-202112-21",
@@ -929,18 +889,16 @@
       ],
       "venue": "Journal of Korea Multimedia Society",
       "details": "Vol. 24, No. 12, pp. 1682-1692",
-      "metrics": {
-        "indexing": "KCI",
-        "quartile": "",
-        "topPercent": "",
-        "award": "",
-        "metricYear": ""
-      },
       "keywords": [
         "Digital Twin"
       ],
       "doi": "",
-      "links": []
+      "links": [],
+      "journalMetrics": {
+        "indexing": "KCI",
+        "quartile": "해당없음",
+        "award": ""
+      }
     },
     {
       "id": "journal-202108-22",
@@ -957,16 +915,14 @@
       ],
       "venue": "Journal of Korea Multimedia Society",
       "details": "Vol. 24, No. 8, pp. 1090-1100",
-      "metrics": {
-        "indexing": "KCI",
-        "quartile": "",
-        "topPercent": "",
-        "award": "",
-        "metricYear": ""
-      },
       "keywords": [],
       "doi": "",
-      "links": []
+      "links": [],
+      "journalMetrics": {
+        "indexing": "KCI",
+        "quartile": "해당없음",
+        "award": ""
+      }
     },
     {
       "id": "journal-202105-23",
@@ -983,16 +939,14 @@
       ],
       "venue": "Entropy",
       "details": "Vol. 23, No. 5, pp. 532-551",
-      "metrics": {
-        "indexing": "SCIE",
-        "quartile": "",
-        "topPercent": "",
-        "award": "",
-        "metricYear": ""
-      },
       "keywords": [],
       "doi": "",
-      "links": []
+      "links": [],
+      "journalMetrics": {
+        "indexing": "SCIE",
+        "quartile": "해당없음",
+        "award": ""
+      }
     },
     {
       "id": "journal-202104-24",
@@ -1021,16 +975,14 @@
       ],
       "venue": "IEEE Access",
       "details": "Vol. 9, pp. 57989-58008",
-      "metrics": {
-        "indexing": "SCIE",
-        "quartile": "",
-        "topPercent": "",
-        "award": "",
-        "metricYear": ""
-      },
       "keywords": [],
       "doi": "",
-      "links": []
+      "links": [],
+      "journalMetrics": {
+        "indexing": "SCIE",
+        "quartile": "해당없음",
+        "award": ""
+      }
     },
     {
       "id": "journal-201901-25",
@@ -1059,16 +1011,14 @@
       ],
       "venue": "International Journal of Distributed Sensor Networks",
       "details": "Vol. 15, No. 1, pp. 1-19",
-      "metrics": {
-        "indexing": "SCIE",
-        "quartile": "",
-        "topPercent": "",
-        "award": "",
-        "metricYear": ""
-      },
       "keywords": [],
       "doi": "",
-      "links": []
+      "links": [],
+      "journalMetrics": {
+        "indexing": "SCIE",
+        "quartile": "해당없음",
+        "award": ""
+      }
     },
     {
       "id": "journal-201811-26",
@@ -1091,18 +1041,16 @@
       ],
       "venue": "Computer Networks",
       "details": "Vol. 145, pp. 76-88",
-      "metrics": {
-        "indexing": "SCIE",
-        "quartile": "",
-        "topPercent": "",
-        "award": "",
-        "metricYear": ""
-      },
       "keywords": [
         "Optimization"
       ],
       "doi": "",
-      "links": []
+      "links": [],
+      "journalMetrics": {
+        "indexing": "SCIE",
+        "quartile": "해당없음",
+        "award": ""
+      }
     },
     {
       "id": "journal-201806-27",
@@ -1131,16 +1079,14 @@
       ],
       "venue": "Journal of KIISE",
       "details": "Vol. 45, No. 6, pp. 598-610",
-      "metrics": {
-        "indexing": "KCI",
-        "quartile": "",
-        "topPercent": "",
-        "award": "",
-        "metricYear": ""
-      },
       "keywords": [],
       "doi": "",
-      "links": []
+      "links": [],
+      "journalMetrics": {
+        "indexing": "KCI",
+        "quartile": "해당없음",
+        "award": ""
+      }
     },
     {
       "id": "journal-201803-28",
@@ -1163,16 +1109,14 @@
       ],
       "venue": "IEEE Access",
       "details": "Vol. 6, pp. 20262-20278",
-      "metrics": {
-        "indexing": "SCIE",
-        "quartile": "",
-        "topPercent": "",
-        "award": "",
-        "metricYear": ""
-      },
       "keywords": [],
       "doi": "",
-      "links": []
+      "links": [],
+      "journalMetrics": {
+        "indexing": "SCIE",
+        "quartile": "해당없음",
+        "award": ""
+      }
     },
     {
       "id": "journal-201712-29",
@@ -1207,16 +1151,14 @@
       ],
       "venue": "International Journal of Information Communication Technology and Digital Convergence",
       "details": "Vol. 2, No. 2, pp. 12-19",
-      "metrics": {
-        "indexing": "",
-        "quartile": "",
-        "topPercent": "",
-        "award": "",
-        "metricYear": ""
-      },
       "keywords": [],
       "doi": "",
-      "links": []
+      "links": [],
+      "journalMetrics": {
+        "indexing": "없음",
+        "quartile": "해당없음",
+        "award": ""
+      }
     },
     {
       "id": "journal-201608-30",
@@ -1239,16 +1181,14 @@
       ],
       "venue": "Mobile Information Systems",
       "details": "Vol. 2016, pp. 1-14",
-      "metrics": {
-        "indexing": "SCIE",
-        "quartile": "",
-        "topPercent": "",
-        "award": "",
-        "metricYear": ""
-      },
       "keywords": [],
       "doi": "",
-      "links": []
+      "links": [],
+      "journalMetrics": {
+        "indexing": "SCIE",
+        "quartile": "해당없음",
+        "award": ""
+      }
     },
     {
       "id": "journal-201512-31",
@@ -1277,16 +1217,14 @@
       ],
       "venue": "Computer Networks",
       "details": "Vol. 92, pp. 316-329",
-      "metrics": {
-        "indexing": "SCIE",
-        "quartile": "",
-        "topPercent": "",
-        "award": "",
-        "metricYear": ""
-      },
       "keywords": [],
       "doi": "",
-      "links": []
+      "links": [],
+      "journalMetrics": {
+        "indexing": "SCIE",
+        "quartile": "해당없음",
+        "award": ""
+      }
     },
     {
       "id": "journal-201502-32",
@@ -1309,16 +1247,14 @@
       ],
       "venue": "Mobile Information Systems",
       "details": "Vol. 2015, pp. 1-16",
-      "metrics": {
-        "indexing": "SCIE",
-        "quartile": "",
-        "topPercent": "",
-        "award": "",
-        "metricYear": ""
-      },
       "keywords": [],
       "doi": "",
-      "links": []
+      "links": [],
+      "journalMetrics": {
+        "indexing": "SCIE",
+        "quartile": "해당없음",
+        "award": ""
+      }
     },
     {
       "id": "journal-201410-33",
@@ -1353,16 +1289,14 @@
       ],
       "venue": "Journal of KIISE",
       "details": "Vol. 41, No. 10, pp. 810-823",
-      "metrics": {
-        "indexing": "KCI",
-        "quartile": "",
-        "topPercent": "",
-        "award": "",
-        "metricYear": ""
-      },
       "keywords": [],
       "doi": "",
-      "links": []
+      "links": [],
+      "journalMetrics": {
+        "indexing": "KCI",
+        "quartile": "해당없음",
+        "award": ""
+      }
     },
     {
       "id": "journal-201312-34",
@@ -1397,18 +1331,16 @@
       ],
       "venue": "International Journal of Distributed Sensor Networks",
       "details": "Vol. 9, No. 12, pp. 1-16",
-      "metrics": {
-        "indexing": "SCIE",
-        "quartile": "",
-        "topPercent": "",
-        "award": "",
-        "metricYear": ""
-      },
       "keywords": [
         "Computer Vision"
       ],
       "doi": "",
-      "links": []
+      "links": [],
+      "journalMetrics": {
+        "indexing": "SCIE",
+        "quartile": "해당없음",
+        "award": ""
+      }
     },
     {
       "id": "conference-202507-01",
@@ -1443,20 +1375,18 @@
       ],
       "venue": "MITA 2025",
       "details": "",
-      "metrics": {
-        "indexing": "",
-        "quartile": "",
-        "topPercent": "",
-        "award": "",
-        "metricYear": ""
-      },
       "keywords": [
         "Digital Twin",
         "Surrogate Modeling",
         "Energy Systems"
       ],
       "doi": "",
-      "links": []
+      "links": [],
+      "conferenceMetrics": {
+        "conferenceType": "미분류",
+        "bk21": "해당없음",
+        "kiise": "해당없음"
+      }
     },
     {
       "id": "conference-202507-02",
@@ -1479,19 +1409,17 @@
       ],
       "venue": "MITA 2025",
       "details": "",
-      "metrics": {
-        "indexing": "",
-        "quartile": "",
-        "topPercent": "",
-        "award": "",
-        "metricYear": ""
-      },
       "keywords": [
         "Optimization",
         "Energy Systems"
       ],
       "doi": "",
-      "links": []
+      "links": [],
+      "conferenceMetrics": {
+        "conferenceType": "미분류",
+        "bk21": "해당없음",
+        "kiise": "해당없음"
+      }
     },
     {
       "id": "conference-202410-03",
@@ -1538,16 +1466,14 @@
       ],
       "venue": "ICCAS 2024",
       "details": "",
-      "metrics": {
-        "indexing": "",
-        "quartile": "",
-        "topPercent": "",
-        "award": "",
-        "metricYear": ""
-      },
       "keywords": [],
       "doi": "",
-      "links": []
+      "links": [],
+      "conferenceMetrics": {
+        "conferenceType": "미분류",
+        "bk21": "해당없음",
+        "kiise": "해당없음"
+      }
     },
     {
       "id": "conference-202409-04",
@@ -1570,16 +1496,14 @@
       ],
       "venue": "한국청정기술학회",
       "details": "",
-      "metrics": {
-        "indexing": "",
-        "quartile": "",
-        "topPercent": "",
-        "award": "",
-        "metricYear": ""
-      },
       "keywords": [],
       "doi": "",
-      "links": []
+      "links": [],
+      "conferenceMetrics": {
+        "conferenceType": "미분류",
+        "bk21": "해당없음",
+        "kiise": "해당없음"
+      }
     },
     {
       "id": "conference-202406-05",
@@ -1608,18 +1532,16 @@
       ],
       "venue": "한국정보과학회 한국컴퓨터종합학술대회",
       "details": "",
-      "metrics": {
-        "indexing": "",
-        "quartile": "",
-        "topPercent": "",
-        "award": "",
-        "metricYear": ""
-      },
       "keywords": [
         "Reinforcement Learning"
       ],
       "doi": "",
-      "links": []
+      "links": [],
+      "conferenceMetrics": {
+        "conferenceType": "미분류",
+        "bk21": "해당없음",
+        "kiise": "해당없음"
+      }
     },
     {
       "id": "conference-202406-06",
@@ -1648,18 +1570,16 @@
       ],
       "venue": "2024 한국정보과학회 한국컴퓨터종합학술대회",
       "details": "",
-      "metrics": {
-        "indexing": "",
-        "quartile": "",
-        "topPercent": "",
-        "award": "",
-        "metricYear": ""
-      },
       "keywords": [
         "Computer Vision"
       ],
       "doi": "",
-      "links": []
+      "links": [],
+      "conferenceMetrics": {
+        "conferenceType": "미분류",
+        "bk21": "해당없음",
+        "kiise": "해당없음"
+      }
     },
     {
       "id": "conference-202401-07",
@@ -1694,16 +1614,14 @@
       ],
       "venue": "KJCCS 2024",
       "details": "",
-      "metrics": {
-        "indexing": "",
-        "quartile": "",
-        "topPercent": "",
-        "award": "",
-        "metricYear": ""
-      },
       "keywords": [],
       "doi": "",
-      "links": []
+      "links": [],
+      "conferenceMetrics": {
+        "conferenceType": "미분류",
+        "bk21": "해당없음",
+        "kiise": "해당없음"
+      }
     },
     {
       "id": "conference-202401-08",
@@ -1738,18 +1656,16 @@
       ],
       "venue": "KJCCS 2024",
       "details": "",
-      "metrics": {
-        "indexing": "",
-        "quartile": "",
-        "topPercent": "",
-        "award": "",
-        "metricYear": ""
-      },
       "keywords": [
         "Computer Vision"
       ],
       "doi": "",
-      "links": []
+      "links": [],
+      "conferenceMetrics": {
+        "conferenceType": "미분류",
+        "bk21": "해당없음",
+        "kiise": "해당없음"
+      }
     },
     {
       "id": "conference-202310-09",
@@ -1778,18 +1694,16 @@
       ],
       "venue": "IEEE GCCE 2023",
       "details": "",
-      "metrics": {
-        "indexing": "",
-        "quartile": "",
-        "topPercent": "",
-        "award": "",
-        "metricYear": ""
-      },
       "keywords": [
         "Computer Vision"
       ],
       "doi": "",
-      "links": []
+      "links": [],
+      "conferenceMetrics": {
+        "conferenceType": "미분류",
+        "bk21": "해당없음",
+        "kiise": "해당없음"
+      }
     },
     {
       "id": "conference-202304-10",
@@ -1818,18 +1732,16 @@
       ],
       "venue": "ITIOT 2023",
       "details": "",
-      "metrics": {
-        "indexing": "",
-        "quartile": "",
-        "topPercent": "",
-        "award": "",
-        "metricYear": ""
-      },
       "keywords": [
         "Computer Vision"
       ],
       "doi": "",
-      "links": []
+      "links": [],
+      "conferenceMetrics": {
+        "conferenceType": "미분류",
+        "bk21": "해당없음",
+        "kiise": "해당없음"
+      }
     },
     {
       "id": "conference-202301-11",
@@ -1858,16 +1770,14 @@
       ],
       "venue": "JKCCS 2023",
       "details": "",
-      "metrics": {
-        "indexing": "",
-        "quartile": "",
-        "topPercent": "",
-        "award": "",
-        "metricYear": ""
-      },
       "keywords": [],
       "doi": "",
-      "links": []
+      "links": [],
+      "conferenceMetrics": {
+        "conferenceType": "미분류",
+        "bk21": "해당없음",
+        "kiise": "해당없음"
+      }
     },
     {
       "id": "conference-202301-12",
@@ -1896,16 +1806,14 @@
       ],
       "venue": "JKCCS 2023",
       "details": "",
-      "metrics": {
-        "indexing": "",
-        "quartile": "",
-        "topPercent": "",
-        "award": "",
-        "metricYear": ""
-      },
       "keywords": [],
       "doi": "",
-      "links": []
+      "links": [],
+      "conferenceMetrics": {
+        "conferenceType": "미분류",
+        "bk21": "해당없음",
+        "kiise": "해당없음"
+      }
     },
     {
       "id": "conference-202301-13",
@@ -1940,16 +1848,14 @@
       ],
       "venue": "JKCCS 2023",
       "details": "",
-      "metrics": {
-        "indexing": "",
-        "quartile": "",
-        "topPercent": "",
-        "award": "",
-        "metricYear": ""
-      },
       "keywords": [],
       "doi": "",
-      "links": []
+      "links": [],
+      "conferenceMetrics": {
+        "conferenceType": "미분류",
+        "bk21": "해당없음",
+        "kiise": "해당없음"
+      }
     },
     {
       "id": "conference-202207-14",
@@ -1978,16 +1884,14 @@
       ],
       "venue": "MITA 2022",
       "details": "",
-      "metrics": {
-        "indexing": "",
-        "quartile": "",
-        "topPercent": "",
-        "award": "",
-        "metricYear": ""
-      },
       "keywords": [],
       "doi": "",
-      "links": []
+      "links": [],
+      "conferenceMetrics": {
+        "conferenceType": "미분류",
+        "bk21": "해당없음",
+        "kiise": "해당없음"
+      }
     },
     {
       "id": "conference-202107-15",
@@ -2016,16 +1920,14 @@
       ],
       "venue": "MITA 2021",
       "details": "",
-      "metrics": {
-        "indexing": "",
-        "quartile": "",
-        "topPercent": "",
-        "award": "",
-        "metricYear": ""
-      },
       "keywords": [],
       "doi": "",
-      "links": []
+      "links": [],
+      "conferenceMetrics": {
+        "conferenceType": "미분류",
+        "bk21": "해당없음",
+        "kiise": "해당없음"
+      }
     },
     {
       "id": "conference-202104-16",
@@ -2048,16 +1950,14 @@
       ],
       "venue": "2021 한국멀티미디어학회 춘계학술발표대회",
       "details": "",
-      "metrics": {
-        "indexing": "",
-        "quartile": "",
-        "topPercent": "",
-        "award": "",
-        "metricYear": ""
-      },
       "keywords": [],
       "doi": "",
-      "links": []
+      "links": [],
+      "conferenceMetrics": {
+        "conferenceType": "미분류",
+        "bk21": "해당없음",
+        "kiise": "해당없음"
+      }
     },
     {
       "id": "conference-202104-17",
@@ -2080,18 +1980,16 @@
       ],
       "venue": "2021 한국멀티미디어학회 춘계학술발표대회",
       "details": "",
-      "metrics": {
-        "indexing": "",
-        "quartile": "",
-        "topPercent": "",
-        "award": "",
-        "metricYear": ""
-      },
       "keywords": [
         "Computer Vision"
       ],
       "doi": "",
-      "links": []
+      "links": [],
+      "conferenceMetrics": {
+        "conferenceType": "미분류",
+        "bk21": "해당없음",
+        "kiise": "해당없음"
+      }
     },
     {
       "id": "conference-201905-18",
@@ -2114,16 +2012,14 @@
       ],
       "venue": "2019 한국멀티미디어학회 춘계학술발표대회",
       "details": "",
-      "metrics": {
-        "indexing": "",
-        "quartile": "",
-        "topPercent": "",
-        "award": "",
-        "metricYear": ""
-      },
       "keywords": [],
       "doi": "",
-      "links": []
+      "links": [],
+      "conferenceMetrics": {
+        "conferenceType": "미분류",
+        "bk21": "해당없음",
+        "kiise": "해당없음"
+      }
     },
     {
       "id": "conference-201707-19",
@@ -2152,16 +2048,14 @@
       ],
       "venue": "IEEE ICUFN 2017",
       "details": "",
-      "metrics": {
-        "indexing": "",
-        "quartile": "",
-        "topPercent": "",
-        "award": "",
-        "metricYear": ""
-      },
       "keywords": [],
       "doi": "",
-      "links": []
+      "links": [],
+      "conferenceMetrics": {
+        "conferenceType": "미분류",
+        "bk21": "해당없음",
+        "kiise": "해당없음"
+      }
     },
     {
       "id": "conference-201701-20",
@@ -2184,16 +2078,14 @@
       ],
       "venue": "2017 한국통신학회 동계종합학술발표회",
       "details": "",
-      "metrics": {
-        "indexing": "",
-        "quartile": "",
-        "topPercent": "",
-        "award": "",
-        "metricYear": ""
-      },
       "keywords": [],
       "doi": "",
-      "links": []
+      "links": [],
+      "conferenceMetrics": {
+        "conferenceType": "미분류",
+        "bk21": "해당없음",
+        "kiise": "해당없음"
+      }
     },
     {
       "id": "conference-201701-21",
@@ -2222,16 +2114,14 @@
       ],
       "venue": "2017 한국통신학회 동계종합학술발표회",
       "details": "",
-      "metrics": {
-        "indexing": "",
-        "quartile": "",
-        "topPercent": "",
-        "award": "",
-        "metricYear": ""
-      },
       "keywords": [],
       "doi": "",
-      "links": []
+      "links": [],
+      "conferenceMetrics": {
+        "conferenceType": "미분류",
+        "bk21": "해당없음",
+        "kiise": "해당없음"
+      }
     },
     {
       "id": "conference-201701-22",
@@ -2260,16 +2150,14 @@
       ],
       "venue": "2017 한국통신학회 동계종합학술발표회",
       "details": "",
-      "metrics": {
-        "indexing": "",
-        "quartile": "",
-        "topPercent": "",
-        "award": "",
-        "metricYear": ""
-      },
       "keywords": [],
       "doi": "",
-      "links": []
+      "links": [],
+      "conferenceMetrics": {
+        "conferenceType": "미분류",
+        "bk21": "해당없음",
+        "kiise": "해당없음"
+      }
     },
     {
       "id": "conference-201701-23",
@@ -2298,16 +2186,14 @@
       ],
       "venue": "2017 한국통신학회 동계종합학술발표회",
       "details": "",
-      "metrics": {
-        "indexing": "",
-        "quartile": "",
-        "topPercent": "",
-        "award": "",
-        "metricYear": ""
-      },
       "keywords": [],
       "doi": "",
-      "links": []
+      "links": [],
+      "conferenceMetrics": {
+        "conferenceType": "미분류",
+        "bk21": "해당없음",
+        "kiise": "해당없음"
+      }
     },
     {
       "id": "conference-201501-24",
@@ -2330,16 +2216,14 @@
       ],
       "venue": "2015 한국통신학회 동계종합학술발표회",
       "details": "",
-      "metrics": {
-        "indexing": "",
-        "quartile": "",
-        "topPercent": "",
-        "award": "",
-        "metricYear": ""
-      },
       "keywords": [],
       "doi": "",
-      "links": []
+      "links": [],
+      "conferenceMetrics": {
+        "conferenceType": "미분류",
+        "bk21": "해당없음",
+        "kiise": "해당없음"
+      }
     },
     {
       "id": "conference-201412-25",
@@ -2368,16 +2252,14 @@
       ],
       "venue": "IEEE CSE 2014",
       "details": "",
-      "metrics": {
-        "indexing": "",
-        "quartile": "",
-        "topPercent": "",
-        "award": "",
-        "metricYear": ""
-      },
       "keywords": [],
       "doi": "",
-      "links": []
+      "links": [],
+      "conferenceMetrics": {
+        "conferenceType": "미분류",
+        "bk21": "해당없음",
+        "kiise": "해당없음"
+      }
     },
     {
       "id": "conference-201405-26",
@@ -2412,16 +2294,14 @@
       ],
       "venue": "IEEE WAINA 2014",
       "details": "",
-      "metrics": {
-        "indexing": "",
-        "quartile": "",
-        "topPercent": "",
-        "award": "",
-        "metricYear": ""
-      },
       "keywords": [],
       "doi": "",
-      "links": []
+      "links": [],
+      "conferenceMetrics": {
+        "conferenceType": "미분류",
+        "bk21": "해당없음",
+        "kiise": "해당없음"
+      }
     },
     {
       "id": "conference-201401-27",
@@ -2444,16 +2324,14 @@
       ],
       "venue": "2014 한국통신학회 동계종합학술발표회",
       "details": "",
-      "metrics": {
-        "indexing": "",
-        "quartile": "",
-        "topPercent": "",
-        "award": "",
-        "metricYear": ""
-      },
       "keywords": [],
       "doi": "",
-      "links": []
+      "links": [],
+      "conferenceMetrics": {
+        "conferenceType": "미분류",
+        "bk21": "해당없음",
+        "kiise": "해당없음"
+      }
     },
     {
       "id": "conference-201401-28",
@@ -2482,16 +2360,14 @@
       ],
       "venue": "2014 한국통신학회 동계종합학술발표회",
       "details": "",
-      "metrics": {
-        "indexing": "",
-        "quartile": "",
-        "topPercent": "",
-        "award": "",
-        "metricYear": ""
-      },
       "keywords": [],
       "doi": "",
-      "links": []
+      "links": [],
+      "conferenceMetrics": {
+        "conferenceType": "미분류",
+        "bk21": "해당없음",
+        "kiise": "해당없음"
+      }
     },
     {
       "id": "conference-201303-29",
@@ -2514,18 +2390,16 @@
       ],
       "venue": "IEEE AINA 2013",
       "details": "",
-      "metrics": {
-        "indexing": "",
-        "quartile": "",
-        "topPercent": "",
-        "award": "",
-        "metricYear": ""
-      },
       "keywords": [
         "Optimization"
       ],
       "doi": "",
-      "links": []
+      "links": [],
+      "conferenceMetrics": {
+        "conferenceType": "미분류",
+        "bk21": "해당없음",
+        "kiise": "해당없음"
+      }
     },
     {
       "id": "conference-201206-30",
@@ -2548,16 +2422,14 @@
       ],
       "venue": "IEEE HPCC 2012",
       "details": "",
-      "metrics": {
-        "indexing": "",
-        "quartile": "",
-        "topPercent": "",
-        "award": "",
-        "metricYear": ""
-      },
       "keywords": [],
       "doi": "",
-      "links": []
+      "links": [],
+      "conferenceMetrics": {
+        "conferenceType": "미분류",
+        "bk21": "해당없음",
+        "kiise": "해당없음"
+      }
     },
     {
       "id": "conference-201110-31",
@@ -2586,18 +2458,16 @@
       ],
       "venue": "IEEE WIMOB 2011",
       "details": "",
-      "metrics": {
-        "indexing": "",
-        "quartile": "",
-        "topPercent": "",
-        "award": "",
-        "metricYear": ""
-      },
       "keywords": [
         "Computer Vision"
       ],
       "doi": "",
-      "links": []
+      "links": [],
+      "conferenceMetrics": {
+        "conferenceType": "미분류",
+        "bk21": "해당없음",
+        "kiise": "해당없음"
+      }
     },
     {
       "id": "conference-201110-32",
@@ -2632,16 +2502,14 @@
       ],
       "venue": "IEEE WIMOB 2011",
       "details": "",
-      "metrics": {
-        "indexing": "",
-        "quartile": "",
-        "topPercent": "",
-        "award": "",
-        "metricYear": ""
-      },
       "keywords": [],
       "doi": "",
-      "links": []
+      "links": [],
+      "conferenceMetrics": {
+        "conferenceType": "미분류",
+        "bk21": "해당없음",
+        "kiise": "해당없음"
+      }
     },
     {
       "id": "conference-201109-33",
@@ -2670,16 +2538,14 @@
       ],
       "venue": "IEEE HPCC 2011",
       "details": "",
-      "metrics": {
-        "indexing": "",
-        "quartile": "",
-        "topPercent": "",
-        "award": "",
-        "metricYear": ""
-      },
       "keywords": [],
       "doi": "",
-      "links": []
+      "links": [],
+      "conferenceMetrics": {
+        "conferenceType": "미분류",
+        "bk21": "해당없음",
+        "kiise": "해당없음"
+      }
     },
     {
       "id": "conference-201101-34",
@@ -2726,16 +2592,14 @@
       ],
       "venue": "IEEE ICOIN 2011",
       "details": "",
-      "metrics": {
-        "indexing": "",
-        "quartile": "",
-        "topPercent": "",
-        "award": "",
-        "metricYear": ""
-      },
       "keywords": [],
       "doi": "",
-      "links": []
+      "links": [],
+      "conferenceMetrics": {
+        "conferenceType": "미분류",
+        "bk21": "해당없음",
+        "kiise": "해당없음"
+      }
     },
     {
       "id": "patent-202603-01",
@@ -2745,11 +2609,13 @@
       "authors": [],
       "venue": "대한민국 특허",
       "details": "10-2941109",
-      "patentStatus": "등록",
-      "metrics": {},
       "keywords": [],
       "doi": "",
-      "links": []
+      "links": [],
+      "patentMetrics": {
+        "jurisdiction": "국내",
+        "status": "등록"
+      }
     },
     {
       "id": "patent-202501-02",
@@ -2759,11 +2625,13 @@
       "authors": [],
       "venue": "대한민국 특허",
       "details": "10-2025-0160466",
-      "patentStatus": "출원",
-      "metrics": {},
       "keywords": [],
       "doi": "",
-      "links": []
+      "links": [],
+      "patentMetrics": {
+        "jurisdiction": "국내",
+        "status": "출원"
+      }
     },
     {
       "id": "patent-202501-03",
@@ -2773,11 +2641,13 @@
       "authors": [],
       "venue": "대한민국 특허",
       "details": "10-2025-0157390",
-      "patentStatus": "출원",
-      "metrics": {},
       "keywords": [],
       "doi": "",
-      "links": []
+      "links": [],
+      "patentMetrics": {
+        "jurisdiction": "국내",
+        "status": "출원"
+      }
     },
     {
       "id": "patent-202507-04",
@@ -2787,11 +2657,13 @@
       "authors": [],
       "venue": "대한민국 특허",
       "details": "10-2836870",
-      "patentStatus": "등록",
-      "metrics": {},
       "keywords": [],
       "doi": "",
-      "links": []
+      "links": [],
+      "patentMetrics": {
+        "jurisdiction": "국내",
+        "status": "등록"
+      }
     },
     {
       "id": "patent-202401-05",
@@ -2801,11 +2673,13 @@
       "authors": [],
       "venue": "대한민국 특허",
       "details": "10-2024-0180301",
-      "patentStatus": "출원",
-      "metrics": {},
       "keywords": [],
       "doi": "",
-      "links": []
+      "links": [],
+      "patentMetrics": {
+        "jurisdiction": "국내",
+        "status": "출원"
+      }
     },
     {
       "id": "patent-202400-06",
@@ -2815,11 +2689,13 @@
       "authors": [],
       "venue": "대한민국 특허",
       "details": "10-2024-0011983",
-      "patentStatus": "출원",
-      "metrics": {},
       "keywords": [],
       "doi": "",
-      "links": []
+      "links": [],
+      "patentMetrics": {
+        "jurisdiction": "국내",
+        "status": "출원"
+      }
     },
     {
       "id": "patent-202408-07",
@@ -2829,11 +2705,13 @@
       "authors": [],
       "venue": "대한민국 특허",
       "details": "10-2693387",
-      "patentStatus": "등록",
-      "metrics": {},
       "keywords": [],
       "doi": "",
-      "links": []
+      "links": [],
+      "patentMetrics": {
+        "jurisdiction": "국내",
+        "status": "등록"
+      }
     },
     {
       "id": "patent-202007-08",
@@ -2843,11 +2721,13 @@
       "authors": [],
       "venue": "대한민국 특허",
       "details": "10-2133509",
-      "patentStatus": "등록",
-      "metrics": {},
       "keywords": [],
       "doi": "",
-      "links": []
+      "links": [],
+      "patentMetrics": {
+        "jurisdiction": "국내",
+        "status": "등록"
+      }
     },
     {
       "id": "patent-201811-09",
@@ -2857,11 +2737,13 @@
       "authors": [],
       "venue": "대한민국 특허",
       "details": "10-1924491",
-      "patentStatus": "등록",
-      "metrics": {},
       "keywords": [],
       "doi": "",
-      "links": []
+      "links": [],
+      "patentMetrics": {
+        "jurisdiction": "국내",
+        "status": "등록"
+      }
     },
     {
       "id": "patent-201701-10",
@@ -2871,11 +2753,13 @@
       "authors": [],
       "venue": "대한민국 특허",
       "details": "PCT/KR2017/013362",
-      "patentStatus": "PCT",
-      "metrics": {},
       "keywords": [],
       "doi": "",
-      "links": []
+      "links": [],
+      "patentMetrics": {
+        "jurisdiction": "PCT",
+        "status": "출원"
+      }
     },
     {
       "id": "patent-201707-11",
@@ -2885,11 +2769,13 @@
       "authors": [],
       "venue": "대한민국 특허",
       "details": "10-1884404",
-      "patentStatus": "등록",
-      "metrics": {},
       "keywords": [],
       "doi": "",
-      "links": []
+      "links": [],
+      "patentMetrics": {
+        "jurisdiction": "국내",
+        "status": "등록"
+      }
     },
     {
       "id": "patent-201703-12",
@@ -2899,11 +2785,13 @@
       "authors": [],
       "venue": "대한민국 특허",
       "details": "10-1720710",
-      "patentStatus": "등록",
-      "metrics": {},
       "keywords": [],
       "doi": "",
-      "links": []
+      "links": [],
+      "patentMetrics": {
+        "jurisdiction": "국내",
+        "status": "등록"
+      }
     },
     {
       "id": "patent-201602-13",
@@ -2913,11 +2801,13 @@
       "authors": [],
       "venue": "대한민국 특허",
       "details": "10-1596412",
-      "patentStatus": "등록",
-      "metrics": {},
       "keywords": [],
       "doi": "",
-      "links": []
+      "links": [],
+      "patentMetrics": {
+        "jurisdiction": "국내",
+        "status": "등록"
+      }
     },
     {
       "id": "patent-201501-14",
@@ -2927,11 +2817,13 @@
       "authors": [],
       "venue": "대한민국 특허",
       "details": "10-1489799",
-      "patentStatus": "등록",
-      "metrics": {},
       "keywords": [],
       "doi": "",
-      "links": []
+      "links": [],
+      "patentMetrics": {
+        "jurisdiction": "국내",
+        "status": "등록"
+      }
     },
     {
       "id": "patent-201312-15",
@@ -2941,11 +2833,13 @@
       "authors": [],
       "venue": "대한민국 특허",
       "details": "10-1338331",
-      "patentStatus": "등록",
-      "metrics": {},
       "keywords": [],
       "doi": "",
-      "links": []
+      "links": [],
+      "patentMetrics": {
+        "jurisdiction": "국내",
+        "status": "등록"
+      }
     },
     {
       "id": "patent-201310-16",
@@ -2955,15 +2849,18 @@
       "authors": [],
       "venue": "대한민국 특허",
       "details": "10-1325338",
-      "patentStatus": "등록",
-      "metrics": {},
       "keywords": [],
       "doi": "",
-      "links": []
+      "links": [],
+      "patentMetrics": {
+        "jurisdiction": "국내",
+        "status": "등록"
+      }
     }
   ],
   "page": {
     "kicker": "On the Record",
-    "title": "Publications"
+    "title": "Publications",
+    "subtitle": ""
   }
 }
