@@ -26,8 +26,11 @@
     </section>`).join("");
     const renderTypeSection = (type) => {
       const records = items.filter((item) => item.type === type);
-      const content = type === "patent" ? records.map((item) => renderCard(item, 3)).join("") : renderYearGroups(records);
-      return `<section class="publication-type-section type-section-${type}">
+      const orderedRecords = type === "patent"
+        ? [...records].sort((a, b) => dateValue(b.publishedAt) - dateValue(a.publishedAt))
+        : records;
+      const content = type === "patent" ? orderedRecords.map((item) => renderCard(item, 3)).join("") : renderYearGroups(orderedRecords);
+      return `<section id="${type}" class="publication-type-section type-section-${type}">
         <header class="publication-section-heading"><h2>${typeLabels[type]}</h2><span>${records.length}건</span></header>
         ${content || '<p class="empty-state">등록된 실적이 없습니다.</p>'}
       </section>`;

@@ -47,6 +47,11 @@ const galleryImageFields = [
 ];
 
 const memberCategoryOptions = ["phd", "master", "undergraduate", "alumni", "staff"];
+const publicationTypeLabels = {
+  journal: "Journal",
+  conference: "Conference",
+  patent: "Patent",
+};
 
 const memberFields = [
   stringField("image", "프로필 이미지", { input: "image", optional: true }),
@@ -153,7 +158,7 @@ const publicationFields = [
 ];
 
 export const contentContract = {
-  version: 3,
+  version: 4,
   site: "dtp-lab.github.io",
   controlledKeywords,
   views: [
@@ -177,7 +182,13 @@ export const contentContract = {
       route: "/#news",
       records: [
         { type: "object", path: ["section"], label: "섹션 제목" },
-        { type: "collection", path: ["news"], label: "소식", mutable: true },
+        {
+          type: "collection",
+          path: ["news"],
+          label: "소식",
+          mutable: true,
+          orderPolicy: { mode: "sorted-ties", path: ["date"], direction: "desc", empty: "first" },
+        },
       ],
     },
     {
@@ -188,7 +199,18 @@ export const contentContract = {
       records: [
         { type: "object", path: ["page"], label: "페이지 제목" },
         { type: "object", path: ["professor"], label: "Professor" },
-        { type: "collection", path: ["members"], label: "구성원", mutable: true },
+        {
+          type: "collection",
+          path: ["members"],
+          label: "구성원",
+          mutable: true,
+          orderPolicy: {
+            mode: "grouped-ties",
+            path: ["category"],
+            values: memberCategoryOptions,
+            empty: "first",
+          },
+        },
       ],
     },
     {
@@ -198,19 +220,44 @@ export const contentContract = {
       route: "/projects/",
       records: [
         { type: "object", path: ["page"], label: "페이지 제목" },
-        { type: "collection", path: ["projects"], label: "프로젝트", mutable: true },
+        {
+          type: "collection",
+          path: ["projects"],
+          label: "프로젝트",
+          mutable: true,
+          orderPolicy: {
+            mode: "manual-buckets",
+            path: ["status"],
+            values: ["current", "completed"],
+            empty: "first",
+          },
+        },
       ],
     },
     {
-      key: "publications",
-      label: "Publications",
+      key: "pub-title",
+      label: "Publications-Title",
       file: "publications.json",
       route: "/publications/",
       records: [
         { type: "object", path: ["page"], label: "페이지 제목" },
-        { type: "collection", path: ["items"], label: "연구 성과", mutable: true },
       ],
     },
+    ...["journal", "conference", "patent"].map((type) => ({
+      key: `pub-${type}`,
+      label: `Publications-${type[0].toUpperCase()}${type.slice(1)}`,
+      file: "publications.json",
+      route: `/publications/#${type}`,
+      records: [{
+        type: "collection",
+        path: ["items"],
+        label: publicationTypeLabels[type],
+        mutable: true,
+        filter: { path: ["type"], equals: type },
+        defaults: { type },
+        orderPolicy: { mode: "sorted-ties", path: ["publishedAt"], direction: "desc", empty: "first" },
+      }],
+    })),
     {
       key: "seminars",
       label: "Seminars",
@@ -218,7 +265,13 @@ export const contentContract = {
       route: "/seminars/",
       records: [
         { type: "object", path: ["page"], label: "페이지 제목" },
-        { type: "collection", path: ["seminars"], label: "세미나", mutable: true },
+        {
+          type: "collection",
+          path: ["seminars"],
+          label: "세미나",
+          mutable: true,
+          orderPolicy: { mode: "sorted-ties", path: ["date"], direction: "desc", empty: "first" },
+        },
       ],
     },
     {
@@ -228,7 +281,13 @@ export const contentContract = {
       route: "/gallery/",
       records: [
         { type: "object", path: ["page"], label: "페이지 제목" },
-        { type: "collection", path: ["events"], label: "행사", mutable: true },
+        {
+          type: "collection",
+          path: ["events"],
+          label: "행사",
+          mutable: true,
+          orderPolicy: { mode: "manual" },
+        },
       ],
     },
   ],

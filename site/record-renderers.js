@@ -86,12 +86,18 @@
         const className = metrics.kiise === "최우수" ? "evaluation-scie-top5" : "evaluation-scie-q1";
         return [{ label: `정보과학회 ${metrics.kiise}`, className: `evaluation ${className}` }];
       }
-      return [{ label: "국제", className: "evaluation evaluation-kci" }];
+      return [{ label: "국제", className: "evaluation evaluation-esci" }];
     }
     if (item.type === "patent") {
       const metrics = item.patentMetrics || {};
       const jurisdiction = metrics.jurisdiction || "국내";
       const status = metrics.status || "출원";
+      if (jurisdiction === "국내" && status === "등록") {
+        return [{ label: "국내 등록", className: "evaluation evaluation-scie-q2" }];
+      }
+      if (jurisdiction === "국내" && status === "출원") {
+        return [{ label: "국내 출원", className: "evaluation evaluation-scie" }];
+      }
       const className = { 국제: "patent-international", PCT: "patent-pct", 국내: "patent-domestic" }[jurisdiction] || "patent-domestic";
       return [{ label: `${jurisdiction} ${status}`, className: `patent-status ${className}` }];
     }

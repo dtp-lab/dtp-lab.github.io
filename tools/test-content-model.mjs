@@ -9,7 +9,7 @@ const siteDir = path.resolve("site");
 
 test("content contract is serializable and exposes only known files", () => {
   const serialized = JSON.parse(JSON.stringify(contentContract));
-  assert.equal(serialized.version, 3);
+  assert.equal(serialized.version, 4);
   assert.deepEqual(
     Object.values(serialized.files).map((entry) => entry.file).sort(),
     fs.readdirSync(path.join(siteDir, "data")).filter((name) => name.endsWith(".json")).sort(),
@@ -22,10 +22,24 @@ test("content contract is serializable and exposes only known files", () => {
     "Home-News",
     "People",
     "Projects",
-    "Publications",
+    "Publications-Title",
+    "Publications-Journal",
+    "Publications-Conference",
+    "Publications-Patent",
     "Seminars",
     "Gallery",
   ]);
+  const publicationViews = serialized.views.filter((view) => view.key.startsWith("pub-"));
+  assert.deepEqual(publicationViews.map((view) => view.route), [
+    "/publications/",
+    "/publications/#journal",
+    "/publications/#conference",
+    "/publications/#patent",
+  ]);
+  assert.deepEqual(
+    publicationViews.slice(1).map((view) => view.records[0].defaults.type),
+    ["journal", "conference", "patent"],
+  );
 });
 
 test("technical IDs and generated Gallery thumbnails stay out of the Studio form", () => {
@@ -202,6 +216,18 @@ test("publication public badges apply precedence, labels, and color classes", ()
     [{ label: "국내", className: "evaluation evaluation-kci" }],
   );
   assert.deepEqual(
+    JSON.parse(JSON.stringify(tags({ type: "conference", conferenceMetrics: { conferenceType: "국제", bk21: "해당없음", kiise: "해당없음" } }))),
+    [{ label: "국제", className: "evaluation evaluation-esci" }],
+  );
+  assert.deepEqual(
+    JSON.parse(JSON.stringify(tags({ type: "patent", patentMetrics: { jurisdiction: "국내", status: "등록" } }))),
+    [{ label: "국내 등록", className: "evaluation evaluation-scie-q2" }],
+  );
+  assert.deepEqual(
+    JSON.parse(JSON.stringify(tags({ type: "patent", patentMetrics: { jurisdiction: "국내", status: "출원" } }))),
+    [{ label: "국내 출원", className: "evaluation evaluation-scie" }],
+  );
+  assert.deepEqual(
     JSON.parse(JSON.stringify(tags({ type: "patent", patentMetrics: { jurisdiction: "PCT", status: "출원" } }))),
     [{ label: "PCT 출원", className: "patent-status patent-pct" }],
   );
@@ -217,6 +243,16 @@ test("Conference migration is explicit and the public project icon contract stay
   const renderer = fs.readFileSync(path.join(siteDir, "record-renderers.js"), "utf8");
   assert.match(renderer, /projectMetaPart\("program", "사업명 및 과제유형", project\.program\)/);
   assert.match(renderer, /project-meta-icon record-meta-icon/);
+});
+
+test("public ordering keeps project JSON order and exposes publication anchors", () => {
+  const projects = fs.readFileSync(path.join(siteDir, "projects.js"), "utf8");
+  const publications = fs.readFileSync(path.join(siteDir, "publications.js"), "utf8");
+  assert.match(projects, /filtered\.filter\(\(project\) => project\.status === "current"\);/);
+  assert.match(projects, /filtered\.filter\(\(project\) => project\.status === "completed"\);/);
+  assert.doesNotMatch(projects, /\.period\?\.(?:start|end)\) - dateValue/);
+  assert.match(publications, /id="\$\{type\}"/);
+  assert.match(publications, /type === "patent"[\s\S]*dateValue\(b\.publishedAt\) - dateValue\(a\.publishedAt\)/);
 });
 
 test("shared metadata icons are fixed at 16px and SCIE Q1 uses white text", () => {
