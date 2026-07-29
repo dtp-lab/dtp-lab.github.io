@@ -96,7 +96,7 @@
     const patentMetrics = [
       { jurisdiction: "국내", status: "등록" },
       { jurisdiction: "PCT", status: "출원" },
-      { jurisdiction: "국제", status: "공개" },
+      { jurisdiction: "국제", status: "출원" },
     ];
     let typeIndex = 0;
     return authorSets.flatMap((authors, authorIndex) => venues.flatMap((venue) => keywordSets.flatMap((keywords, keywordIndex) => compactWidths.map((width) => {
@@ -105,13 +105,18 @@
       const item = {
         id,
         type,
-        publishedAt: "2026.07",
         title: "Content-independent icon and text alignment under multiline metadata wrapping",
+        ...(type !== "patent" ? { publishedAt: "2026.07" } : {}),
         ...(type === "journal" ? { journalMetrics: journalMetrics[typeIndex % journalMetrics.length] } : {}),
         ...(type === "conference" ? { conferenceMetrics: conferenceMetrics[typeIndex % conferenceMetrics.length] } : {}),
         ...(type === "patent" ? { patentMetrics: patentMetrics[typeIndex % patentMetrics.length] } : {}),
         ...(type === "patent"
-          ? { patentNumber: venue.id === "long" ? "PCT/KR2026/0123456789" : "10-2941109" }
+          ? {
+              applicationDate: "2024.12.06",
+              registrationDate: "2026.03.24",
+              applicationNumber: venue.id === "long" ? "PCT/KR2026/0123456789" : "10-2024-0180306",
+              registrationNumber: "10-2941109",
+            }
           : {
               authors,
               venue: venue.venue,

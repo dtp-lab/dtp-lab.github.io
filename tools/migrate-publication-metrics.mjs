@@ -33,6 +33,7 @@ for (const name of ["people.json", "projects.json", "publications.json", "semina
       delete item.conferenceMetrics;
       delete item.patentMetrics;
       delete item.patentNumber;
+      for (const key of ["applicationDate", "registrationDate", "applicationNumber", "registrationNumber"]) delete item[key];
     } else if (item.type === "conference") {
       item.conferenceMetrics ||= {
         conferenceType: /[가-힣]/.test(item.venue || "") ? "국내" : "국제",
@@ -49,13 +50,22 @@ for (const name of ["people.json", "projects.json", "publications.json", "semina
       delete item.journalMetrics;
       delete item.patentMetrics;
       delete item.patentNumber;
+      for (const key of ["applicationDate", "registrationDate", "applicationNumber", "registrationNumber"]) delete item[key];
     } else if (item.type === "patent") {
       const pct = legacyPatentStatus === "PCT" || /\bPCT\b/i.test(`${item.venue || ""} ${item.details || ""}`);
-      item.patentNumber ??= item.details || "";
+      const legacyNumber = item.patentNumber || item.details || "";
+      const legacyDate = /^\d{4}\.\d{2}\.\d{2}$/.test(item.publishedAt || "") ? item.publishedAt : "";
       item.patentMetrics ||= {
         jurisdiction: pct ? "PCT" : "국내",
-        status: pct ? "출원" : (["등록", "출원", "공개"].includes(legacyPatentStatus) ? legacyPatentStatus : "출원"),
+        status: pct ? "출원" : (legacyPatentStatus === "등록" ? "등록" : "출원"),
       };
+      if (item.patentMetrics.status === "공개") item.patentMetrics.status = "출원";
+      item.applicationDate ??= legacyDate;
+      item.registrationDate ??= "";
+      item.applicationNumber ??= item.patentMetrics.status === "출원" ? legacyNumber : "";
+      item.registrationNumber ??= item.patentMetrics.status === "등록" ? legacyNumber : "";
+      delete item.publishedAt;
+      delete item.patentNumber;
       delete item.journalMetrics;
       delete item.conferenceMetrics;
       for (const key of ["authors", "venue", "details", "keywords", "doi", "links"]) delete item[key];

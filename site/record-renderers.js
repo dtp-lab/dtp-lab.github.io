@@ -140,14 +140,29 @@
     PCT: "PCT",
   };
 
+  const patentDetailText = (item) => {
+    const jurisdiction = patentVenueLabels[item.patentMetrics?.jurisdiction] || "특허";
+    const details = [
+      jurisdiction,
+      `출원번호: ${item.applicationNumber || ""}`,
+      `출원일자: ${item.applicationDate || ""}`,
+    ];
+    if (item.patentMetrics?.status === "등록") {
+      details.push(
+        `등록번호: ${item.registrationNumber || ""}`,
+        `등록일자: ${item.registrationDate || ""}`,
+      );
+    }
+    return details.join(", ");
+  };
+
   const renderPublicationCard = (item, { headingLevel = 4, citations = { papers: {} } } = {}) => {
     const heading = headingLevel === 3 ? "h3" : "h4";
     const isPatent = item.type === "patent";
     const authors = !isPatent && item.authors?.length ? `<div class="publication-detail-row publication-authors-row record-meta-item"><span class="publication-row-icon record-meta-icon">${publicationIcons.authors}</span>${renderPublicationAuthors(item)}</div>` : "";
-    const venueParts = isPatent
-      ? [patentVenueLabels[item.patentMetrics?.jurisdiction] || "특허", item.patentNumber, item.publishedAt]
-      : [item.venue, item.details, item.publishedAt];
-    const venueText = venueParts.filter(Boolean).map(escapeHtml).join(", ");
+    const venueText = isPatent
+      ? escapeHtml(patentDetailText(item))
+      : [item.venue, item.details, item.publishedAt].filter(Boolean).map(escapeHtml).join(", ");
     const venue = venueText ? `<span class="publication-meta-item publication-venue-item record-meta-item"><span class="publication-row-icon record-meta-icon">${publicationIcons.venue}</span><span class="publication-venue record-meta-control record-meta-text">${baselineProbe}${venueText}</span></span>` : "";
     const keywords = !isPatent && item.keywords?.length ? `<span class="publication-meta-item publication-keywords-item record-meta-item"><span class="publication-row-icon record-meta-icon">${publicationIcons.keywords}</span><span class="record-meta-control record-meta-keywords">${renderKeywords(item.keywords, { baselineProbe: true })}</span></span>` : "";
     return `<article class="publication-card">

@@ -13,7 +13,7 @@ const siteDir = path.resolve("site");
 
 test("content contract is serializable and exposes only known files", () => {
   const serialized = JSON.parse(JSON.stringify(contentContract));
-  assert.equal(serialized.version, 5);
+  assert.equal(serialized.version, 6);
   assert.deepEqual(
     Object.values(serialized.files).map((entry) => entry.file).sort(),
     fs.readdirSync(path.join(siteDir, "data")).filter((name) => name.endsWith(".json")).sort(),
@@ -67,6 +67,10 @@ test("content contract exposes raw list subtitles without technical ID fallbacks
   assert.deepEqual(descriptor("projects").listSubtitle, { parts: [{ path: ["status"] }] });
   assert.deepEqual(descriptor("pub-journal").listSubtitle, {
     parts: [{ path: ["type"] }, { path: ["publishedAt"] }],
+    separator: " · ",
+  });
+  assert.deepEqual(descriptor("pub-patent").listSubtitle, {
+    parts: [{ path: ["type"] }, { path: ["applicationDate"] }],
     separator: " · ",
   });
   assert.deepEqual(descriptor("seminars").listSubtitle, { parts: [{ path: ["date"] }] });
@@ -166,21 +170,35 @@ test("publication contract exposes type-specific conditional metrics", () => {
     equals: "국제",
   });
   assert.deepEqual(patent.visibleWhen, { path: ["type"], equals: "patent" });
-  assert.deepEqual(fields.slice(0, 8).map((field) => field.name), [
+  assert.deepEqual(fields.slice(0, 12).map((field) => field.name), [
     "id",
     "type",
     "journalMetrics",
     "conferenceMetrics",
     "patentMetrics",
     "publishedAt",
+    "applicationDate",
+    "registrationDate",
     "title",
-    "patentNumber",
+    "applicationNumber",
+    "registrationNumber",
+    "authors",
   ]);
   assert.deepEqual(fields.find((field) => field.name === "authors").visibleWhen, {
     path: ["type"],
     oneOf: ["journal", "conference"],
   });
-  assert.equal(fields.find((field) => field.name === "patentNumber").required, true);
+  assert.deepEqual(patent.fields.find((field) => field.name === "status").options, ["등록", "출원"]);
+  assert.equal(fields.find((field) => field.name === "applicationDate").required, true);
+  assert.equal(fields.find((field) => field.name === "applicationNumber").required, true);
+  assert.deepEqual(fields.find((field) => field.name === "registrationDate").visibleWhen, {
+    path: ["patentMetrics", "status"],
+    equals: "등록",
+  });
+  assert.deepEqual(fields.find((field) => field.name === "registrationNumber").visibleWhen, {
+    path: ["patentMetrics", "status"],
+    equals: "등록",
+  });
   assert.equal(fields.find((field) => field.name === "publishedAt").label, "발표연월");
 });
 
@@ -219,7 +237,6 @@ test("publication normalization preserves only fields compatible with the target
   const patent = normalizePublicationRecord({
     id: "pub-1",
     type: "patent",
-    publishedAt: "2026.07",
     title: "Patent",
     journalMetrics: { indexing: "SCIE", quartile: "Q1", award: "" },
     ...bibliographic,
@@ -227,17 +244,21 @@ test("publication normalization preserves only fields compatible with the target
   assert.deepEqual(patent, {
     id: "pub-1",
     type: "patent",
-    publishedAt: "2026.07",
     title: "Patent",
     patentMetrics: { jurisdiction: "국내", status: "출원" },
-    patentNumber: "",
+    applicationDate: "",
+    registrationDate: "",
+    applicationNumber: "",
+    registrationNumber: "",
   });
 
   const backToConference = normalizePublicationRecord({
     ...patent,
     type: "conference",
   }, { previousType: "patent" });
-  assert.equal("patentNumber" in backToConference, false);
+  assert.equal("applicationDate" in backToConference, false);
+  assert.equal("applicationNumber" in backToConference, false);
+  assert.equal(backToConference.publishedAt, "");
   assert.deepEqual(backToConference.conferenceMetrics, {
     conferenceType: "국제",
     bk21: "해당없음",
@@ -247,6 +268,23 @@ test("publication normalization preserves only fields compatible with the target
     Object.fromEntries(Object.keys(bibliographic).map((key) => [key, backToConference[key]])),
     { authors: [], venue: "", details: "", keywords: [], doi: "", links: [] },
   );
+
+  const registeredPatent = normalizePublicationRecord({
+    id: "pub-registered",
+    type: "patent",
+    title: "Registered patent",
+    patentMetrics: { jurisdiction: "국내", status: "등록" },
+    applicationDate: "2024.12.06",
+    registrationDate: "2026.03.24",
+    applicationNumber: "10-2024-0180306",
+    registrationNumber: "10-2941109",
+  });
+  registeredPatent.patentMetrics.status = "출원";
+  const applicationOnly = normalizePublicationRecord(registeredPatent);
+  applicationOnly.patentMetrics.status = "등록";
+  const registeredAgain = normalizePublicationRecord(applicationOnly);
+  assert.equal(registeredAgain.registrationDate, "2026.03.24");
+  assert.equal(registeredAgain.registrationNumber, "10-2941109");
 });
 
 test("publication validator rejects retired, mismatched, and type-incompatible fields", () => {
@@ -280,17 +318,45 @@ test("publication validator rejects retired, mismatched, and type-incompatible f
   result = validateContent({ siteDir, overrides: { "publications.json": publications } });
   assert.equal(result.ok, false);
   assert.ok(result.errors.some((error) => error.includes(".patentNumber")));
+
+  delete patent.patentNumber;
+  patent.applicationNumber = "";
+  result = validateContent({ siteDir, overrides: { "publications.json": publications } });
+  assert.equal(result.ok, false);
+  assert.ok(result.errors.some((error) => error.includes(".applicationNumber")));
+
+  patent.applicationNumber = "10-2024-0180306";
+  patent.patentMetrics.status = "공개";
+  result = validateContent({ siteDir, overrides: { "publications.json": publications } });
+  assert.equal(result.ok, false);
+  assert.ok(result.errors.some((error) => error.includes(".patentMetrics.status")));
+
+  patent.patentMetrics.status = "등록";
+  patent.registrationDate = "";
+  patent.registrationNumber = "";
+  result = validateContent({ siteDir, overrides: { "publications.json": publications } });
+  assert.equal(result.ok, false);
+  assert.ok(result.errors.some((error) => error.includes(".registrationDate")));
+  assert.ok(result.errors.some((error) => error.includes(".registrationNumber")));
+
+  patent.patentMetrics.status = "출원";
+  patent.applicationDate = "2025.02.30";
+  result = validateContent({ siteDir, overrides: { "publications.json": publications } });
+  assert.equal(result.ok, false);
+  assert.ok(result.errors.some((error) => error.includes(".applicationDate")));
 });
 
-test("migrated Patent records preserve identity and use the v5 field set", () => {
+test("migrated Patent records preserve identity and use the v6 field set", () => {
   const publications = JSON.parse(fs.readFileSync(path.join(siteDir, "data", "publications.json"), "utf8"));
   const patents = publications.items.filter((item) => item.type === "patent");
   assert.equal(patents.length, 16);
   assert.deepEqual(Object.keys(patents[0]).sort(), [
+    "applicationDate",
+    "applicationNumber",
     "id",
     "patentMetrics",
-    "patentNumber",
-    "publishedAt",
+    "registrationDate",
+    "registrationNumber",
     "title",
     "type",
   ]);
@@ -298,20 +364,27 @@ test("migrated Patent records preserve identity and use the v5 field set", () =>
     {
       id: patents[0].id,
       title: patents[0].title,
-      publishedAt: patents[0].publishedAt,
-      patentNumber: patents[0].patentNumber,
+      applicationDate: patents[0].applicationDate,
+      registrationDate: patents[0].registrationDate,
+      applicationNumber: patents[0].applicationNumber,
+      registrationNumber: patents[0].registrationNumber,
       patentMetrics: patents[0].patentMetrics,
     },
     {
       id: "patent-202603-01",
       title: "강화학습을 이용해 전기차 통합 열관리 시스템을 제어하기 위한 장치",
-      publishedAt: "2026.03",
-      patentNumber: "10-2941109",
+      applicationDate: "2024.12.06",
+      registrationDate: "2026.03.24",
+      applicationNumber: "10-2024-0180306",
+      registrationNumber: "10-2941109",
       patentMetrics: { jurisdiction: "국내", status: "등록" },
     },
   );
-  const pct = patents.find((item) => item.patentNumber === "PCT/KR2017/013362");
+  const pct = patents.find((item) => item.applicationNumber === "PCT/KR2017/013362");
   assert.deepEqual(pct.patentMetrics, { jurisdiction: "PCT", status: "출원" });
+  assert.equal(patents.find((item) => item.id === "patent-202501-02").applicationDate, "2025.10.30");
+  assert.equal(patents.find((item) => item.id === "patent-202501-03").applicationDate, "2025.10.28");
+  assert.equal(patents.some((item) => "publishedAt" in item || "patentNumber" in item), false);
 });
 
 test("publication public badges apply precedence, labels, and color classes", () => {
@@ -371,12 +444,30 @@ test("publication public badges apply precedence, labels, and color classes", ()
     id: "patent-1",
     type: "patent",
     title: "Patent",
-    publishedAt: "2026.07",
-    patentNumber: "10-1234567",
+    applicationDate: "2024.12.06",
+    registrationDate: "2026.03.24",
+    applicationNumber: "10-2024-0180306",
+    registrationNumber: "10-2941109",
     patentMetrics: { jurisdiction: "국내", status: "등록" },
   });
-  assert.match(patentHtml, /대한민국 특허, 10-1234567, 2026\.07/);
+  assert.match(
+    patentHtml,
+    /대한민국 특허, 출원번호: 10-2024-0180306, 출원일자: 2024\.12\.06, 등록번호: 10-2941109, 등록일자: 2026\.03\.24/,
+  );
   assert.doesNotMatch(patentHtml, /publication-authors-row|publication-keywords-item|publication-links/);
+
+  const applicationHtml = render({
+    id: "patent-2",
+    type: "patent",
+    title: "Application",
+    applicationDate: "2024.01.26",
+    registrationDate: "2026.02.01",
+    applicationNumber: "10-2024-0011983",
+    registrationNumber: "10-2999999",
+    patentMetrics: { jurisdiction: "국내", status: "출원" },
+  });
+  assert.match(applicationHtml, /대한민국 특허, 출원번호: 10-2024-0011983, 출원일자: 2024\.01\.26/);
+  assert.doesNotMatch(applicationHtml, /등록번호|등록일자/);
 });
 
 test("Conference migration is explicit and the public project icon contract stays unchanged", () => {
@@ -398,8 +489,9 @@ test("public ordering keeps project JSON order and exposes publication anchors",
   assert.match(projects, /filtered\.filter\(\(project\) => project\.status === "completed"\);/);
   assert.doesNotMatch(projects, /\.period\?\.(?:start|end)\) - dateValue/);
   assert.match(publications, /id="\$\{type\}"/);
-  assert.match(publications, /type === "patent"[\s\S]*dateValue\(b\.publishedAt\) - dateValue\(a\.publishedAt\)/);
-  assert.match(publications, /item\.patentNumber/);
+  assert.match(publications, /type === "patent"[\s\S]*dateValue\(b\.applicationDate\) - dateValue\(a\.applicationDate\)/);
+  assert.match(publications, /item\.applicationNumber/);
+  assert.match(publications, /item\.registrationNumber/);
 });
 
 test("shared metadata icons are fixed at 16px and SCIE Q1 uses white text", () => {

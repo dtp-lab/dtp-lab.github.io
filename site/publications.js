@@ -27,7 +27,7 @@
     const renderTypeSection = (type) => {
       const records = items.filter((item) => item.type === type);
       const orderedRecords = type === "patent"
-        ? [...records].sort((a, b) => dateValue(b.publishedAt) - dateValue(a.publishedAt))
+        ? [...records].sort((a, b) => dateValue(b.applicationDate) - dateValue(a.applicationDate))
         : records;
       const content = type === "patent" ? orderedRecords.map((item) => renderCard(item, 3)).join("") : renderYearGroups(orderedRecords);
       return `<section id="${type}" class="publication-type-section type-section-${type}">
@@ -44,7 +44,10 @@
       item.title,
       item.venue,
       item.details,
-      item.patentNumber,
+      item.applicationNumber,
+      item.registrationNumber,
+      item.applicationDate,
+      item.registrationDate,
       item.patentMetrics?.jurisdiction,
       item.patentMetrics?.status,
       item.publishedAt,

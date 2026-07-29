@@ -2604,178 +2604,210 @@
     {
       "id": "patent-202603-01",
       "type": "patent",
-      "publishedAt": "2026.03",
       "title": "강화학습을 이용해 전기차 통합 열관리 시스템을 제어하기 위한 장치",
       "patentMetrics": {
         "jurisdiction": "국내",
         "status": "등록"
       },
-      "patentNumber": "10-2941109"
+      "applicationDate": "2024.12.06",
+      "registrationDate": "2026.03.24",
+      "applicationNumber": "10-2024-0180306",
+      "registrationNumber": "10-2941109"
     },
     {
       "id": "patent-202501-02",
       "type": "patent",
-      "publishedAt": "2025.10",
       "title": "베이지안 최적화 기반 멀티모델 선 검출 방법 및 장치",
       "patentMetrics": {
         "jurisdiction": "국내",
         "status": "출원"
       },
-      "patentNumber": "10-2025-0160466"
+      "applicationDate": "2025.10.30",
+      "registrationDate": "",
+      "applicationNumber": "10-2025-0160466",
+      "registrationNumber": ""
     },
     {
       "id": "patent-202501-03",
       "type": "patent",
-      "publishedAt": "2025.10",
       "title": "다중 압축기 시스템 소모전력 절감을 위한 시뮬레이티드 어닐링 기반 운전 유량 조합 탐색 방법 및 장치",
       "patentMetrics": {
         "jurisdiction": "국내",
         "status": "출원"
       },
-      "patentNumber": "10-2025-0157390"
+      "applicationDate": "2025.10.28",
+      "registrationDate": "",
+      "applicationNumber": "10-2025-0157390",
+      "registrationNumber": ""
     },
     {
       "id": "patent-202507-04",
       "type": "patent",
-      "publishedAt": "2025.07",
       "title": "클라우드 VR의 성능 향상을 위한 프로비저닝 방법 및 장치",
       "patentMetrics": {
         "jurisdiction": "국내",
         "status": "등록"
       },
-      "patentNumber": "10-2836870"
+      "applicationDate": "2024.03.11",
+      "registrationDate": "2025.07.23",
+      "applicationNumber": "10-2024-0033702",
+      "registrationNumber": "10-2836870"
     },
     {
       "id": "patent-202401-05",
       "type": "patent",
-      "publishedAt": "2024.12",
       "title": "디지털 트윈 화재 시뮬레이터를 활용한 화재면적 산출방법",
       "patentMetrics": {
         "jurisdiction": "국내",
         "status": "출원"
       },
-      "patentNumber": "10-2024-0180301"
+      "applicationDate": "2024.12.06",
+      "registrationDate": "",
+      "applicationNumber": "10-2024-0180301",
+      "registrationNumber": ""
     },
     {
       "id": "patent-202400-06",
       "type": "patent",
-      "publishedAt": "2024.01",
       "title": "측위 정확도 향상을 위한 위치 보정 방법 및 장치",
       "patentMetrics": {
         "jurisdiction": "국내",
         "status": "출원"
       },
-      "patentNumber": "10-2024-0011983"
+      "applicationDate": "2024.01.26",
+      "registrationDate": "",
+      "applicationNumber": "10-2024-0011983",
+      "registrationNumber": ""
     },
     {
       "id": "patent-202408-07",
       "type": "patent",
-      "publishedAt": "2024.08",
       "title": "실내 측위 및 실시간 원격제어를 이용한 재난 감시 디지털 트윈 시스템 및 이의 제어 방법",
       "patentMetrics": {
         "jurisdiction": "국내",
         "status": "등록"
       },
-      "patentNumber": "10-2693387"
+      "applicationDate": "2021.12.17",
+      "registrationDate": "2024.08.12",
+      "applicationNumber": "10-2021-0182181",
+      "registrationNumber": "10-2693387"
     },
     {
       "id": "patent-202007-08",
       "type": "patent",
-      "publishedAt": "2020.07",
       "title": "사용자 참여형 포그 컴퓨팅 환경에서 사용자 인센티브 제공을 위한 장치 및 방법",
       "patentMetrics": {
         "jurisdiction": "국내",
         "status": "등록"
       },
-      "patentNumber": "10-2133509"
+      "applicationDate": "2018.01.16",
+      "registrationDate": "2020.07.13",
+      "applicationNumber": "10-2018-0005620",
+      "registrationNumber": "10-2133509"
     },
     {
       "id": "patent-201811-09",
       "type": "patent",
-      "publishedAt": "2018.11",
       "title": "GIS 데이터 기반 증강현실 물체의 폐색 처리를 위한 장치 및 방법",
       "patentMetrics": {
         "jurisdiction": "국내",
         "status": "등록"
       },
-      "patentNumber": "10-1924491"
+      "applicationDate": "2018.04.30",
+      "registrationDate": "2018.12.05",
+      "applicationNumber": "10-2018-0050023",
+      "registrationNumber": "10-1924491"
     },
     {
       "id": "patent-201701-10",
       "type": "patent",
-      "publishedAt": "2017.11",
       "title": "중앙 집중식 제어 구조 서버를 갖는 포그 컴퓨팅 운용을 위한 시스템 및 그의 제어 방법",
       "patentMetrics": {
         "jurisdiction": "PCT",
         "status": "출원"
       },
-      "patentNumber": "PCT/KR2017/013362"
+      "applicationDate": "2017.11.22",
+      "registrationDate": "",
+      "applicationNumber": "PCT/KR2017/013362",
+      "registrationNumber": ""
     },
     {
       "id": "patent-201707-11",
       "type": "patent",
-      "publishedAt": "2017.07",
       "title": "중앙 집중식 제어 구조 서버를 갖는 포그 컴퓨팅 운용을 위한 시스템 및 그의 제어 방법",
       "patentMetrics": {
         "jurisdiction": "국내",
         "status": "등록"
       },
-      "patentNumber": "10-1884404"
+      "applicationDate": "2017.01.17",
+      "registrationDate": "2018.08.02",
+      "applicationNumber": "10-2017-0008195",
+      "registrationNumber": "10-1884404"
     },
     {
       "id": "patent-201703-12",
       "type": "patent",
-      "publishedAt": "2017.03",
       "title": "무선 메쉬 네트워크에서 SDN 기반 정보 캐시 및 캐시 대상 라우터 선택 방법",
       "patentMetrics": {
         "jurisdiction": "국내",
         "status": "등록"
       },
-      "patentNumber": "10-1720710"
+      "applicationDate": "2016.02.19",
+      "registrationDate": "2017.03.28",
+      "applicationNumber": "10-2016-0019912",
+      "registrationNumber": "10-1720710"
     },
     {
       "id": "patent-201602-13",
       "type": "patent",
-      "publishedAt": "2016.02",
       "title": "오픈플로우 기반 무선 네트워크의 혼합형 제어 시스템 및 방법",
       "patentMetrics": {
         "jurisdiction": "국내",
         "status": "등록"
       },
-      "patentNumber": "10-1596412"
+      "applicationDate": "2014.06.16",
+      "registrationDate": "2016.02.22",
+      "applicationNumber": "10-2014-0073038",
+      "registrationNumber": "10-1596412"
     },
     {
       "id": "patent-201501-14",
       "type": "patent",
-      "publishedAt": "2015.01",
       "title": "오픈플로우로 제어되는 무선랜 액세스 포인트 시스템의 모바일 단말기 핸드오프 방법",
       "patentMetrics": {
         "jurisdiction": "국내",
         "status": "등록"
       },
-      "patentNumber": "10-1489799"
+      "applicationDate": "2014.02.12",
+      "registrationDate": "2015.02.04",
+      "applicationNumber": "10-2014-0015858",
+      "registrationNumber": "10-1489799"
     },
     {
       "id": "patent-201312-15",
       "type": "patent",
-      "publishedAt": "2013.12",
       "title": "무선랜 멀티홉 네트워크에서의 프레임 통합 방법",
       "patentMetrics": {
         "jurisdiction": "국내",
         "status": "등록"
       },
-      "patentNumber": "10-1338331"
+      "applicationDate": "2012.01.31",
+      "registrationDate": "2013.12.06",
+      "applicationNumber": "10-2012-0009790",
+      "registrationNumber": "10-1338331"
     },
     {
       "id": "patent-201310-16",
       "type": "patent",
-      "publishedAt": "2013.10",
       "title": "무선통신 네트워크에서 적응적 크레디트 제공 방법 및 시스템",
       "patentMetrics": {
         "jurisdiction": "국내",
         "status": "등록"
       },
-      "patentNumber": "10-1325338"
+      "applicationDate": "2011.10.18",
+      "registrationDate": "2013.11.08",
+      "applicationNumber": "10-2011-0106260",
+      "registrationNumber": "10-1325338"
     }
   ],
   "page": {

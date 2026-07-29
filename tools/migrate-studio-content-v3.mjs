@@ -59,7 +59,15 @@ for (const item of publications.items || []) {
       item.conferenceMetrics.kiise = "해당없음";
     }
   } else if (item.type === "patent") {
-    item.patentNumber ??= item.details || "";
+    const legacyNumber = item.patentNumber || item.details || "";
+    const legacyDate = /^\d{4}\.\d{2}\.\d{2}$/.test(item.publishedAt || "") ? item.publishedAt : "";
+    if (item.patentMetrics?.status === "공개") item.patentMetrics.status = "출원";
+    item.applicationDate ??= legacyDate;
+    item.registrationDate ??= "";
+    item.applicationNumber ??= item.patentMetrics?.status === "출원" ? legacyNumber : "";
+    item.registrationNumber ??= item.patentMetrics?.status === "등록" ? legacyNumber : "";
+    delete item.publishedAt;
+    delete item.patentNumber;
     for (const key of ["authors", "venue", "details", "keywords", "doi", "links"]) delete item[key];
   }
 }

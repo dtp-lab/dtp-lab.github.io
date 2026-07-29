@@ -93,11 +93,17 @@ const publicationBibliographicDefaults = {
   doi: "",
   links: [],
 };
-const publicationCoreKeys = ["id", "type", "publishedAt", "title"];
+const publicationUniversalKeys = ["id", "type", "title"];
+const publicationPaperKeys = [...publicationUniversalKeys, "publishedAt"];
+const publicationPatentDefaults = {
+  applicationDate: "",
+  registrationDate: "",
+  applicationNumber: "",
+  registrationNumber: "",
+};
 
 export function normalizePublicationRecord(item, { previousType = null } = {}) {
   const normalized = structuredClone(item);
-  const legacyPatentNumber = typeof normalized.details === "string" ? normalized.details : "";
   delete normalized.metrics;
   delete normalized.patentStatus;
   for (const key of ["journalMetrics", "conferenceMetrics", "patentMetrics"]) {
@@ -119,11 +125,21 @@ export function normalizePublicationRecord(item, { previousType = null } = {}) {
     }
   }
   if (normalized.type === "patent") {
-    normalized.patentNumber = previousType && previousType !== "patent"
-      ? ""
-      : (normalized.patentNumber ?? legacyPatentNumber);
+    for (const [key, defaultValue] of Object.entries(publicationPatentDefaults)) {
+      if (previousType && previousType !== "patent") {
+        normalized[key] = defaultValue;
+      } else if (!Object.prototype.hasOwnProperty.call(normalized, key)) {
+        normalized[key] = defaultValue;
+      }
+    }
+    delete normalized.publishedAt;
+    delete normalized.patentNumber;
     for (const key of Object.keys(publicationBibliographicDefaults)) delete normalized[key];
   } else if (["journal", "conference"].includes(normalized.type)) {
+    if (previousType === "patent" || !Object.prototype.hasOwnProperty.call(normalized, "publishedAt")) {
+      normalized.publishedAt = "";
+    }
+    for (const key of Object.keys(publicationPatentDefaults)) delete normalized[key];
     delete normalized.patentNumber;
     for (const [key, defaultValue] of Object.entries(publicationBibliographicDefaults)) {
       if (previousType === "patent" || !Object.prototype.hasOwnProperty.call(normalized, key)) {
@@ -132,9 +148,9 @@ export function normalizePublicationRecord(item, { previousType = null } = {}) {
     }
   }
   const allowedKeys = new Set([
-    ...publicationCoreKeys,
+    ...(normalized.type === "patent" ? publicationUniversalKeys : publicationPaperKeys),
     `${normalized.type}Metrics`,
-    ...(normalized.type === "patent" ? ["patentNumber"] : Object.keys(publicationBibliographicDefaults)),
+    ...(normalized.type === "patent" ? Object.keys(publicationPatentDefaults) : Object.keys(publicationBibliographicDefaults)),
   ]);
   for (const key of Object.keys(normalized)) {
     if (!allowedKeys.has(key)) delete normalized[key];
@@ -165,13 +181,34 @@ const publicationFields = [
   ], { visibleWhen: { path: ["type"], equals: "conference" } }),
   objectField("patentMetrics", "Patent 지표", [
     selectField("jurisdiction", "관할", ["국내", "국제", "PCT"]),
-    selectField("status", "상태", ["등록", "출원", "공개"]),
+    selectField("status", "상태", ["등록", "출원"]),
   ], { visibleWhen: { path: ["type"], equals: "patent" } }),
-  stringField("publishedAt", "발표연월", { required: true, input: "month", pattern: "YYYY.MM" }),
+  stringField("publishedAt", "발표연월", {
+    required: true,
+    input: "month",
+    pattern: "YYYY.MM",
+    visibleWhen: { path: ["type"], oneOf: ["journal", "conference"] },
+  }),
+  stringField("applicationDate", "출원일자", {
+    required: true,
+    input: "date",
+    pattern: "YYYY.MM.DD",
+    visibleWhen: { path: ["type"], equals: "patent" },
+  }),
+  stringField("registrationDate", "등록일자", {
+    required: true,
+    input: "date",
+    pattern: "YYYY.MM.DD",
+    visibleWhen: { path: ["patentMetrics", "status"], equals: "등록" },
+  }),
   stringField("title", "제목", { required: true }),
-  stringField("patentNumber", "특허번호", {
+  stringField("applicationNumber", "출원번호", {
     required: true,
     visibleWhen: { path: ["type"], equals: "patent" },
+  }),
+  stringField("registrationNumber", "등록번호", {
+    required: true,
+    visibleWhen: { path: ["patentMetrics", "status"], equals: "등록" },
   }),
   listField("authors", "저자", {
     type: "object",
@@ -208,7 +245,7 @@ const publicationFields = [
 ];
 
 export const contentContract = {
-  version: 5,
+  version: 6,
   site: "dtp-lab.github.io",
   controlledKeywords,
   views: [
@@ -301,7 +338,9 @@ export const contentContract = {
         { type: "object", path: ["page"], label: "페이지 제목" },
       ],
     },
-    ...["journal", "conference", "patent"].map((type) => ({
+    ...["journal", "conference", "patent"].map((type) => {
+      const datePath = [type === "patent" ? "applicationDate" : "publishedAt"];
+      return {
       key: `pub-${type}`,
       label: `Publications-${type[0].toUpperCase()}${type.slice(1)}`,
       file: "publications.json",
@@ -314,12 +353,13 @@ export const contentContract = {
         filter: { path: ["type"], equals: type },
         defaults: { type },
         listSubtitle: {
-          parts: [{ path: ["type"] }, { path: ["publishedAt"] }],
+          parts: [{ path: ["type"] }, { path: datePath }],
           separator: " · ",
         },
-        orderPolicy: { mode: "sorted-ties", path: ["publishedAt"], direction: "desc", empty: "first" },
+        orderPolicy: { mode: "sorted-ties", path: datePath, direction: "desc", empty: "first" },
       }],
-    })),
+    };
+    }),
     {
       key: "seminars",
       label: "Seminars",
@@ -551,7 +591,17 @@ export const contentContract = {
   },
 };
 
-const validDate = (value, day = false) => new RegExp(day ? "^\\d{4}\\.(0[1-9]|1[0-2])\\.(0[1-9]|[12]\\d|3[01])$" : "^\\d{4}\\.(0[1-9]|1[0-2])$").test(value || "");
+const validDate = (value, day = false) => {
+  const match = new RegExp(day
+    ? "^(\\d{4})\\.(0[1-9]|1[0-2])\\.(0[1-9]|[12]\\d|3[01])$"
+    : "^(\\d{4})\\.(0[1-9]|1[0-2])$").exec(value || "");
+  if (!match || !day) return Boolean(match);
+  const [year, month, date] = match.slice(1).map(Number);
+  const parsed = new Date(Date.UTC(year, month - 1, date));
+  return parsed.getUTCFullYear() === year
+    && parsed.getUTCMonth() === month - 1
+    && parsed.getUTCDate() === date;
+};
 const dateValue = (value = "") => Number(String(value).replace(/[^0-9]/g, "")) || 0;
 
 export function validateContent({
@@ -737,17 +787,26 @@ export function validateContent({
     if (publicationIds.has(item.id)) errors.push(`${at}.id: duplicate`);
     publicationIds.add(item.id);
     if (!["journal", "conference", "patent"].includes(item.type)) errors.push(`${at}.type: unsupported type`);
-    if (!validDate(item.publishedAt)) errors.push(`${at}.publishedAt: use YYYY.MM`);
+    if (item.type === "patent") {
+      if (!validDate(item.applicationDate, true)) errors.push(`${at}.applicationDate: use YYYY.MM.DD`);
+      if (item.registrationDate && !validDate(item.registrationDate, true)) errors.push(`${at}.registrationDate: use YYYY.MM.DD`);
+    } else if (!validDate(item.publishedAt)) {
+      errors.push(`${at}.publishedAt: use YYYY.MM`);
+    }
     rejectUnexpectedKeys(item, [
-      ...publicationCoreKeys,
+      ...(item.type === "patent" ? publicationUniversalKeys : publicationPaperKeys),
       `${item.type}Metrics`,
-      ...(item.type === "patent" ? ["patentNumber"] : Object.keys(publicationBibliographicDefaults)),
+      ...(item.type === "patent" ? Object.keys(publicationPatentDefaults) : Object.keys(publicationBibliographicDefaults)),
     ], at);
     if (item.type === "patent") {
       rejectKeys(item, Object.keys(publicationBibliographicDefaults), at);
-      requiredText(item.patentNumber, `${at}.patentNumber`);
+      requiredText(item.applicationNumber, `${at}.applicationNumber`);
+      if (item.patentMetrics?.status === "등록") {
+        requiredText(item.registrationNumber, `${at}.registrationNumber`);
+        requiredText(item.registrationDate, `${at}.registrationDate`);
+      }
     } else if (["journal", "conference"].includes(item.type)) {
-      rejectKeys(item, ["patentNumber"], at);
+      rejectKeys(item, ["patentNumber", ...Object.keys(publicationPatentDefaults)], at);
       validateKeywords(item.keywords, `${at}.keywords`);
       (item.authors || []).forEach((author, authorIndex) => {
         requiredText(author.name, `${at}.authors[${authorIndex}].name`);
@@ -782,7 +841,7 @@ export function validateContent({
     } else if (item.type === "patent") {
       const metrics = item.patentMetrics;
       if (!["국내", "국제", "PCT"].includes(metrics.jurisdiction)) errors.push(`${at}.patentMetrics.jurisdiction: unsupported value`);
-      if (!["등록", "출원", "공개"].includes(metrics.status)) errors.push(`${at}.patentMetrics.status: unsupported value`);
+      if (!["등록", "출원"].includes(metrics.status)) errors.push(`${at}.patentMetrics.status: unsupported value`);
     }
     if (item.type !== "patent") {
       (item.links || []).forEach((link, linkIndex) => {
