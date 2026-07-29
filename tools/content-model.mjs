@@ -85,8 +85,19 @@ export const publicationMetricDefaults = {
   patent: { patentMetrics: { jurisdiction: "국내", status: "출원" } },
 };
 
-export function normalizePublicationMetrics(item) {
+const publicationBibliographicDefaults = {
+  authors: [],
+  venue: "",
+  details: "",
+  keywords: [],
+  doi: "",
+  links: [],
+};
+const publicationCoreKeys = ["id", "type", "publishedAt", "title"];
+
+export function normalizePublicationRecord(item, { previousType = null } = {}) {
   const normalized = structuredClone(item);
+  const legacyPatentNumber = typeof normalized.details === "string" ? normalized.details : "";
   delete normalized.metrics;
   delete normalized.patentStatus;
   for (const key of ["journalMetrics", "conferenceMetrics", "patentMetrics"]) {
@@ -107,8 +118,31 @@ export function normalizePublicationMetrics(item) {
       normalized.conferenceMetrics.kiise = "해당없음";
     }
   }
+  if (normalized.type === "patent") {
+    normalized.patentNumber = previousType && previousType !== "patent"
+      ? ""
+      : (normalized.patentNumber ?? legacyPatentNumber);
+    for (const key of Object.keys(publicationBibliographicDefaults)) delete normalized[key];
+  } else if (["journal", "conference"].includes(normalized.type)) {
+    delete normalized.patentNumber;
+    for (const [key, defaultValue] of Object.entries(publicationBibliographicDefaults)) {
+      if (previousType === "patent" || !Object.prototype.hasOwnProperty.call(normalized, key)) {
+        normalized[key] = structuredClone(defaultValue);
+      }
+    }
+  }
+  const allowedKeys = new Set([
+    ...publicationCoreKeys,
+    `${normalized.type}Metrics`,
+    ...(normalized.type === "patent" ? ["patentNumber"] : Object.keys(publicationBibliographicDefaults)),
+  ]);
+  for (const key of Object.keys(normalized)) {
+    if (!allowedKeys.has(key)) delete normalized[key];
+  }
   return normalized;
 }
+
+export const normalizePublicationMetrics = normalizePublicationRecord;
 
 const publicationFields = [
   stringField("id", "ID", { required: true, generated: "publication-id", formHidden: true }),
@@ -135,6 +169,10 @@ const publicationFields = [
   ], { visibleWhen: { path: ["type"], equals: "patent" } }),
   stringField("publishedAt", "발표연월", { required: true, input: "month", pattern: "YYYY.MM" }),
   stringField("title", "제목", { required: true }),
+  stringField("patentNumber", "특허번호", {
+    required: true,
+    visibleWhen: { path: ["type"], equals: "patent" },
+  }),
   listField("authors", "저자", {
     type: "object",
     fields: [
@@ -143,22 +181,34 @@ const publicationFields = [
       booleanField("isFirstAuthor", "제1저자"),
       booleanField("isCorrespondingAuthor", "교신저자"),
     ],
+  }, { visibleWhen: { path: ["type"], oneOf: ["journal", "conference"] } }),
+  stringField("venue", "학술지·학회", {
+    optional: true,
+    visibleWhen: { path: ["type"], oneOf: ["journal", "conference"] },
   }),
-  stringField("venue", "학술지·학회·관할", { optional: true }),
-  textField("details", "상세 정보", { optional: true }),
-  listField("keywords", "키워드", { type: "select", options: controlledKeywords }, { maximum: 5 }),
-  stringField("doi", "DOI", { optional: true }),
+  textField("details", "상세 정보", {
+    optional: true,
+    visibleWhen: { path: ["type"], oneOf: ["journal", "conference"] },
+  }),
+  listField("keywords", "키워드", { type: "select", options: controlledKeywords }, {
+    maximum: 5,
+    visibleWhen: { path: ["type"], oneOf: ["journal", "conference"] },
+  }),
+  stringField("doi", "DOI", {
+    optional: true,
+    visibleWhen: { path: ["type"], oneOf: ["journal", "conference"] },
+  }),
   listField("links", "외부 링크", {
     type: "object",
     fields: [
       stringField("label", "표시 이름", { required: true }),
       stringField("url", "HTTPS URL", { required: true, input: "url" }),
     ],
-  }),
+  }, { visibleWhen: { path: ["type"], oneOf: ["journal", "conference"] } }),
 ];
 
 export const contentContract = {
-  version: 4,
+  version: 5,
   site: "dtp-lab.github.io",
   controlledKeywords,
   views: [
@@ -187,6 +237,7 @@ export const contentContract = {
           path: ["news"],
           label: "소식",
           mutable: true,
+          listSubtitle: { parts: [{ path: ["date"] }] },
           orderPolicy: { mode: "sorted-ties", path: ["date"], direction: "desc", empty: "first" },
         },
       ],
@@ -198,12 +249,18 @@ export const contentContract = {
       route: "/people/",
       records: [
         { type: "object", path: ["page"], label: "페이지 제목" },
-        { type: "object", path: ["professor"], label: "Professor" },
+        {
+          type: "object",
+          path: ["professor"],
+          label: "Professor",
+          listSubtitle: { literal: "professor" },
+        },
         {
           type: "collection",
           path: ["members"],
           label: "구성원",
           mutable: true,
+          listSubtitle: { parts: [{ path: ["category"] }] },
           orderPolicy: {
             mode: "grouped-ties",
             path: ["category"],
@@ -225,6 +282,7 @@ export const contentContract = {
           path: ["projects"],
           label: "프로젝트",
           mutable: true,
+          listSubtitle: { parts: [{ path: ["status"] }] },
           orderPolicy: {
             mode: "manual-buckets",
             path: ["status"],
@@ -255,6 +313,10 @@ export const contentContract = {
         mutable: true,
         filter: { path: ["type"], equals: type },
         defaults: { type },
+        listSubtitle: {
+          parts: [{ path: ["type"] }, { path: ["publishedAt"] }],
+          separator: " · ",
+        },
         orderPolicy: { mode: "sorted-ties", path: ["publishedAt"], direction: "desc", empty: "first" },
       }],
     })),
@@ -270,6 +332,7 @@ export const contentContract = {
           path: ["seminars"],
           label: "세미나",
           mutable: true,
+          listSubtitle: { parts: [{ path: ["date"] }] },
           orderPolicy: { mode: "sorted-ties", path: ["date"], direction: "desc", empty: "first" },
         },
       ],
@@ -286,6 +349,7 @@ export const contentContract = {
           path: ["events"],
           label: "행사",
           mutable: true,
+          listSubtitle: { parts: [{ path: ["date"] }] },
           orderPolicy: { mode: "manual" },
         },
       ],
@@ -520,6 +584,13 @@ export function validateContent({
       if (Object.prototype.hasOwnProperty.call(value, key)) errors.push(`${location}.${key}: field is not part of the public content model`);
     }
   };
+  const rejectUnexpectedKeys = (value, keys, location) => {
+    if (!value || typeof value !== "object") return;
+    const allowed = new Set(keys);
+    for (const key of Object.keys(value)) {
+      if (!allowed.has(key)) errors.push(`${location}.${key}: field is not part of the public content model`);
+    }
+  };
   const validateHeading = (value, location) => {
     requiredText(value?.kicker, `${location}.kicker`);
     requiredText(value?.title, `${location}.title`);
@@ -663,20 +734,30 @@ export function validateContent({
     const at = `publications[${index}]`;
     requiredText(item.id, `${at}.id`);
     requiredText(item.title, `${at}.title`);
-    rejectKeys(item, ["rawCitation", "semanticScholarId", "patentNumber", "metrics", "patentStatus"], at);
     if (publicationIds.has(item.id)) errors.push(`${at}.id: duplicate`);
     publicationIds.add(item.id);
     if (!["journal", "conference", "patent"].includes(item.type)) errors.push(`${at}.type: unsupported type`);
     if (!validDate(item.publishedAt)) errors.push(`${at}.publishedAt: use YYYY.MM`);
-    validateKeywords(item.keywords, `${at}.keywords`);
-    (item.authors || []).forEach((author, authorIndex) => {
-      requiredText(author.name, `${at}.authors[${authorIndex}].name`);
-      for (const key of ["isLabMember", "isFirstAuthor", "isCorrespondingAuthor"]) {
-        if (typeof author[key] !== "boolean") errors.push(`${at}.authors[${authorIndex}].${key}: boolean required`);
+    rejectUnexpectedKeys(item, [
+      ...publicationCoreKeys,
+      `${item.type}Metrics`,
+      ...(item.type === "patent" ? ["patentNumber"] : Object.keys(publicationBibliographicDefaults)),
+    ], at);
+    if (item.type === "patent") {
+      rejectKeys(item, Object.keys(publicationBibliographicDefaults), at);
+      requiredText(item.patentNumber, `${at}.patentNumber`);
+    } else if (["journal", "conference"].includes(item.type)) {
+      rejectKeys(item, ["patentNumber"], at);
+      validateKeywords(item.keywords, `${at}.keywords`);
+      (item.authors || []).forEach((author, authorIndex) => {
+        requiredText(author.name, `${at}.authors[${authorIndex}].name`);
+        for (const key of ["isLabMember", "isFirstAuthor", "isCorrespondingAuthor"]) {
+          if (typeof author[key] !== "boolean") errors.push(`${at}.authors[${authorIndex}].${key}: boolean required`);
+        }
+      });
+      if (item.authors?.length && !item.authors.some((author) => author.isFirstAuthor)) {
+        warnings.push(`${at}: no first author marker in source`);
       }
-    });
-    if (item.type !== "patent" && item.authors?.length && !item.authors.some((author) => author.isFirstAuthor)) {
-      warnings.push(`${at}: no first author marker in source`);
     }
     const metricKeys = ["journalMetrics", "conferenceMetrics", "patentMetrics"];
     const expectedMetricKey = `${item.type}Metrics`;
@@ -703,10 +784,12 @@ export function validateContent({
       if (!["국내", "국제", "PCT"].includes(metrics.jurisdiction)) errors.push(`${at}.patentMetrics.jurisdiction: unsupported value`);
       if (!["등록", "출원", "공개"].includes(metrics.status)) errors.push(`${at}.patentMetrics.status: unsupported value`);
     }
-    (item.links || []).forEach((link, linkIndex) => {
-      requiredText(link.label, `${at}.links[${linkIndex}].label`);
-      if (!/^https:\/\//.test(link.url || "")) errors.push(`${at}.links[${linkIndex}].url: HTTPS required`);
-    });
+    if (item.type !== "patent") {
+      (item.links || []).forEach((link, linkIndex) => {
+        requiredText(link.label, `${at}.links[${linkIndex}].label`);
+        if (!/^https:\/\//.test(link.url || "")) errors.push(`${at}.links[${linkIndex}].url: HTTPS required`);
+      });
+    }
   });
 
   const seminarsDocument = read("seminars.json");

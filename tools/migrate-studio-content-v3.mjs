@@ -51,12 +51,16 @@ if (people.groups) {
 
 const publications = await read("publications.json");
 for (const item of publications.items || []) {
-  if (item.type !== "conference") continue;
-  item.conferenceMetrics ||= { conferenceType: "국제", bk21: "해당없음", kiise: "해당없음" };
-  item.conferenceMetrics.conferenceType = /[가-힣]/.test(item.venue || "") ? "국내" : "국제";
-  if (item.conferenceMetrics.conferenceType === "국내") {
-    item.conferenceMetrics.bk21 = "해당없음";
-    item.conferenceMetrics.kiise = "해당없음";
+  if (item.type === "conference") {
+    item.conferenceMetrics ||= { conferenceType: "국제", bk21: "해당없음", kiise: "해당없음" };
+    item.conferenceMetrics.conferenceType = /[가-힣]/.test(item.venue || "") ? "국내" : "국제";
+    if (item.conferenceMetrics.conferenceType === "국내") {
+      item.conferenceMetrics.bk21 = "해당없음";
+      item.conferenceMetrics.kiise = "해당없음";
+    }
+  } else if (item.type === "patent") {
+    item.patentNumber ??= item.details || "";
+    for (const key of ["authors", "venue", "details", "keywords", "doi", "links"]) delete item[key];
   }
 }
 await write("publications.json", publications);

@@ -32,6 +32,7 @@ for (const name of ["people.json", "projects.json", "publications.json", "semina
       };
       delete item.conferenceMetrics;
       delete item.patentMetrics;
+      delete item.patentNumber;
     } else if (item.type === "conference") {
       item.conferenceMetrics ||= {
         conferenceType: /[가-힣]/.test(item.venue || "") ? "국내" : "국제",
@@ -47,14 +48,17 @@ for (const name of ["people.json", "projects.json", "publications.json", "semina
       }
       delete item.journalMetrics;
       delete item.patentMetrics;
+      delete item.patentNumber;
     } else if (item.type === "patent") {
       const pct = legacyPatentStatus === "PCT" || /\bPCT\b/i.test(`${item.venue || ""} ${item.details || ""}`);
+      item.patentNumber ??= item.details || "";
       item.patentMetrics ||= {
         jurisdiction: pct ? "PCT" : "국내",
         status: pct ? "출원" : (["등록", "출원", "공개"].includes(legacyPatentStatus) ? legacyPatentStatus : "출원"),
       };
       delete item.journalMetrics;
       delete item.conferenceMetrics;
+      for (const key of ["authors", "venue", "details", "keywords", "doi", "links"]) delete item[key];
     }
   }
   write(name, document);

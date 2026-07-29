@@ -134,19 +134,29 @@
     ? `<p class="authors record-meta-control record-meta-text">${baselineProbe}${item.authors.map(renderPublicationAuthor).join(", ")}</p>`
     : "";
 
+  const patentVenueLabels = {
+    국내: "대한민국 특허",
+    국제: "국제 특허",
+    PCT: "PCT",
+  };
+
   const renderPublicationCard = (item, { headingLevel = 4, citations = { papers: {} } } = {}) => {
     const heading = headingLevel === 3 ? "h3" : "h4";
-    const authors = item.authors?.length ? `<div class="publication-detail-row publication-authors-row record-meta-item"><span class="publication-row-icon record-meta-icon">${publicationIcons.authors}</span>${renderPublicationAuthors(item)}</div>` : "";
-    const venueText = [item.venue, item.details, item.publishedAt].filter(Boolean).map(escapeHtml).join(", ");
+    const isPatent = item.type === "patent";
+    const authors = !isPatent && item.authors?.length ? `<div class="publication-detail-row publication-authors-row record-meta-item"><span class="publication-row-icon record-meta-icon">${publicationIcons.authors}</span>${renderPublicationAuthors(item)}</div>` : "";
+    const venueParts = isPatent
+      ? [patentVenueLabels[item.patentMetrics?.jurisdiction] || "특허", item.patentNumber, item.publishedAt]
+      : [item.venue, item.details, item.publishedAt];
+    const venueText = venueParts.filter(Boolean).map(escapeHtml).join(", ");
     const venue = venueText ? `<span class="publication-meta-item publication-venue-item record-meta-item"><span class="publication-row-icon record-meta-icon">${publicationIcons.venue}</span><span class="publication-venue record-meta-control record-meta-text">${baselineProbe}${venueText}</span></span>` : "";
-    const keywords = item.keywords?.length ? `<span class="publication-meta-item publication-keywords-item record-meta-item"><span class="publication-row-icon record-meta-icon">${publicationIcons.keywords}</span><span class="record-meta-control record-meta-keywords">${renderKeywords(item.keywords, { baselineProbe: true })}</span></span>` : "";
+    const keywords = !isPatent && item.keywords?.length ? `<span class="publication-meta-item publication-keywords-item record-meta-item"><span class="publication-row-icon record-meta-icon">${publicationIcons.keywords}</span><span class="record-meta-control record-meta-keywords">${renderKeywords(item.keywords, { baselineProbe: true })}</span></span>` : "";
     return `<article class="publication-card">
       <div class="publication-top">
         <div class="publication-heading-line"><div class="publication-tags">${renderPublicationTags(item)}</div><${heading}>${escapeHtml(item.title)}</${heading}></div>
-        ${renderPublicationLinks(item, citations)}
+        ${isPatent ? "" : renderPublicationLinks(item, citations)}
       </div>
       ${authors}
-      <div class="publication-lower-row record-meta-row">${venue}${renderPublicationCitation(item, citations)}${keywords}</div>
+      <div class="publication-lower-row record-meta-row">${venue}${isPatent ? "" : renderPublicationCitation(item, citations)}${keywords}</div>
     </article>`;
   };
 

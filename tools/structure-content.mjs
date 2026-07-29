@@ -128,7 +128,17 @@ if (!publications.items) {
     const parts = withoutStatus.split(",").map((part) => part.trim()).filter(Boolean);
     const date = lastDate(citation) || `${record.year || ""}.01`;
     const isPct = /\bPCT\b/i.test(citation);
-    return { id: `patent-${date.replaceAll(".", "")}-${String(index + 1).padStart(2, "0")}`, type: "patent", publishedAt: date, title: parts[0] || withoutStatus, authors: [], venue: "대한민국 특허", details: parts.slice(1, -1).join(", "), patentMetrics: { jurisdiction: isPct ? "PCT" : "국내", status: isPct ? "출원" : (["등록", "출원", "공개"].includes(status) ? status : "출원") }, keywords: keywordsFor(parts[0] || ""), doi: "", links: [] };
+    return {
+      id: `patent-${date.replaceAll(".", "")}-${String(index + 1).padStart(2, "0")}`,
+      type: "patent",
+      publishedAt: date,
+      title: parts[0] || withoutStatus,
+      patentNumber: parts.slice(1, -1).join(", "),
+      patentMetrics: {
+        jurisdiction: isPct ? "PCT" : "국내",
+        status: isPct ? "출원" : (["등록", "출원", "공개"].includes(status) ? status : "출원"),
+      },
+    };
   });
   await write("publications.json", { page: { kicker: "On the Record", title: "Publications" }, items: [...journal, ...conference, ...patent] });
 }
@@ -149,6 +159,7 @@ else {
       };
       delete item.conferenceMetrics;
       delete item.patentMetrics;
+      delete item.patentNumber;
     } else if (item.type === "conference") {
       item.conferenceMetrics ||= { conferenceType: /[가-힣]/.test(item.venue || "") ? "국내" : "국제", bk21: "해당없음", kiise: "해당없음" };
       if (!["국제", "국내"].includes(item.conferenceMetrics.conferenceType)) {
@@ -160,14 +171,17 @@ else {
       }
       delete item.journalMetrics;
       delete item.patentMetrics;
+      delete item.patentNumber;
     } else if (item.type === "patent") {
       const pct = legacyPatentStatus === "PCT" || /\bPCT\b/i.test(`${item.venue || ""} ${item.details || ""}`);
+      item.patentNumber ??= item.details || "";
       item.patentMetrics ||= {
         jurisdiction: pct ? "PCT" : "국내",
         status: pct ? "출원" : (["등록", "출원", "공개"].includes(legacyPatentStatus) ? legacyPatentStatus : "출원"),
       };
       delete item.journalMetrics;
       delete item.conferenceMetrics;
+      for (const key of ["authors", "venue", "details", "keywords", "doi", "links"]) delete item[key];
     }
   }
   await write("publications.json", publications);

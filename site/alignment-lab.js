@@ -107,14 +107,18 @@
         type,
         publishedAt: "2026.07",
         title: "Content-independent icon and text alignment under multiline metadata wrapping",
-        authors,
-        venue: venue.venue,
-        details: venue.details,
         ...(type === "journal" ? { journalMetrics: journalMetrics[typeIndex % journalMetrics.length] } : {}),
         ...(type === "conference" ? { conferenceMetrics: conferenceMetrics[typeIndex % conferenceMetrics.length] } : {}),
         ...(type === "patent" ? { patentMetrics: patentMetrics[typeIndex % patentMetrics.length] } : {}),
-        keywords,
-        links: [],
+        ...(type === "patent"
+          ? { patentNumber: venue.id === "long" ? "PCT/KR2026/0123456789" : "10-2941109" }
+          : {
+              authors,
+              venue: venue.venue,
+              details: venue.details,
+              keywords,
+              links: [],
+            }),
       };
       return {
         id,
