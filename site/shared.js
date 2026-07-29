@@ -10,7 +10,7 @@
   };
 
   const loadJson = async (name) => {
-    const response = await fetch(`/data/${name}`);
+    const response = await fetch(`/data/${name}?v=28`);
     if (!response.ok) throw new Error(`${name}: HTTP ${response.status}`);
     return response.json();
   };

@@ -46,6 +46,16 @@ test("content contract is serializable and exposes only known files", () => {
   );
 });
 
+test("page assets and JSON data use the same cache version", () => {
+  const head = fs.readFileSync(path.resolve("templates", "partials", "head.ejs"), "utf8");
+  const shared = fs.readFileSync(path.join(siteDir, "shared.js"), "utf8");
+  const assetVersions = [...head.matchAll(/\?v=(\d+)/g)].map((match) => match[1]);
+  const dataVersion = shared.match(/\/data\/\$\{name\}\?v=(\d+)/)?.[1];
+  assert.ok(assetVersions.length >= 3);
+  assert.equal(new Set(assetVersions).size, 1);
+  assert.equal(dataVersion, assetVersions[0]);
+});
+
 test("content contract exposes raw list subtitles without technical ID fallbacks", () => {
   const descriptor = (viewKey, index = -1) => {
     const records = contentContract.views.find((view) => view.key === viewKey).records;
