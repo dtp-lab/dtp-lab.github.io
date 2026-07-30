@@ -1,11 +1,6 @@
 {
   "news": [
     {
-      "date": "2030.03",
-      "category": "project",
-      "text": "ffffff"
-    },
-    {
       "date": "2026.04",
       "category": "project",
       "text": "Isaac Sim-PhysX 물리엔진과 강화학습을 통한 세탁성능 시뮬레이션 기술 개발 연구과제 수주 (LG전자, 12개월)"
