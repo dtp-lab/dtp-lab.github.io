@@ -10,7 +10,7 @@
   };
 
   const loadJson = async (name) => {
-    const response = await fetch(`/data/${name}?v=29`);
+    const response = await fetch(`/data/${name}?v=30`);
     if (!response.ok) throw new Error(`${name}: HTTP ${response.status}`);
     return response.json();
   };
@@ -28,6 +28,15 @@
   const renderKeywords = (keywords = [], { baselineProbe = false } = {}) => keywords.length
     ? `<div class="keyword-row">${keywords.map((keyword) => `<span class="keyword">${baselineProbe ? '<span class="record-meta-baseline-probe" aria-hidden="true"></span>' : ""}<span class="keyword-label">${escapeHtml(keyword)}</span></span>`).join("")}</div>`
     : "";
+
+  const renderBodyText = (value = "") => String(value ?? "")
+    .replace(/\r\n?/g, "\n")
+    .trim()
+    .split(/\n(?:[ \t]*\n)+/)
+    .map((paragraph) => paragraph.trim())
+    .filter(Boolean)
+    .map((paragraph) => `<p>${paragraph.split("\n").map(escapeHtml).join("<br>")}</p>`)
+    .join("");
 
   const imageMarkup = (image, fallbackAlt = "") => {
     if (!image) return "";
@@ -87,6 +96,6 @@
     });
   };
 
-  window.DTPLab = { escapeHtml, sitePath, loadJson, dateValue, sortByDateDesc, groupByYear, renderKeywords, imageMarkup, showDataError, applyPageHeading };
+  window.DTPLab = { escapeHtml, sitePath, loadJson, dateValue, sortByDateDesc, groupByYear, renderKeywords, renderBodyText, imageMarkup, showDataError, applyPageHeading };
   document.addEventListener("DOMContentLoaded", setupShell);
 })();

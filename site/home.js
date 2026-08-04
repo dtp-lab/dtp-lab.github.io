@@ -1,5 +1,5 @@
 (async function () {
-  const { escapeHtml, loadJson, groupByYear, imageMarkup, showDataError } = DTPLab;
+  const { escapeHtml, loadJson, groupByYear, renderBodyText, imageMarkup, showDataError } = DTPLab;
   const heroTopics = document.querySelector("#hero-research-topics");
   const recruitment = document.querySelector("#recruitment-content");
   const researchOverview = document.querySelector("#research-overview");
@@ -21,7 +21,7 @@
     return `<div class="recruitment-editorial">
       <header class="recruitment-intro-panel">
         <p class="recruitment-eyebrow">${escapeHtml(data.eyebrow)}</p>
-        <p class="recruitment-intro">${escapeHtml(data.intro)}</p>
+        <div class="recruitment-intro body-text">${renderBodyText(data.intro)}</div>
         <a class="recruitment-mail" href="mailto:${escapeHtml(data.contactEmail)}">${escapeHtml(data.contactEmail)} <span aria-hidden="true">↗</span></a>
       </header>
       <div class="recruitment-list">${sections.map((section, index) => `<section class="recruitment-row">
@@ -32,15 +32,6 @@
     </div>`;
   };
 
-  const renderResearchDescription = (description) => String(description ?? "")
-    .replace(/\r\n?/g, "\n")
-    .trim()
-    .split(/\n(?:[ \t]*\n)+/)
-    .map((paragraph) => paragraph.trim())
-    .filter(Boolean)
-    .map((paragraph) => `<p>${paragraph.split("\n").map(escapeHtml).join("<br>")}</p>`)
-    .join("\n      ");
-
   const renderResearch = (items) => items.map((item, index) => `<article class="research-thrust">
     <div class="research-thrust-heading">
       <p class="research-thrust-label">${escapeHtml(item.label || `Direction ${String(index + 1).padStart(2, "0")}`)}</p>
@@ -48,8 +39,8 @@
       ${item.subtitle ? `<p class="research-thrust-subtitle">${escapeHtml(item.subtitle)}</p>` : ""}
     </div>
     <figure class="research-thrust-visual">${imageMarkup(item.image, item.title)}</figure>
-    <div class="research-thrust-copy">
-      ${renderResearchDescription(item.description)}
+    <div class="research-thrust-copy body-text">
+      ${renderBodyText(item.description)}
       ${item.focus?.length ? `<ul class="research-focus">${item.focus.map((focus) => `<li>${escapeHtml(focus)}</li>`).join("")}</ul>` : ""}
     </div>
   </article>`).join("");
@@ -60,7 +51,7 @@
       <span class="news-marker" aria-hidden="true"></span>
       <time datetime="${escapeHtml(item.date)}">${escapeHtml(item.date)}</time>
       <span class="category-label">${escapeHtml(categoryLabels[item.category] || item.category)}</span>
-      <p>${escapeHtml(item.text)}</p>
+      <div class="news-timeline-copy body-text">${renderBodyText(item.text)}</div>
     </article>`).join("")}</div>
   </section>`).join("")}</div>`;
 

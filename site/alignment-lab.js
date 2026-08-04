@@ -34,9 +34,10 @@
     ];
     return programs.flatMap((program) => keywordSets.flatMap((keywords) => widths.map((width) => {
       const id = `project-stress-${program.id}-${keywords.id}-${width.id}`;
+      const bodyTextCase = program.id === "short" && keywords.id === "k0" && width.id === "full";
       return {
         id,
-        label: `${program.value} · ${keywords.value.length} keywords · ${width.label}`,
+        label: `${program.value} · ${keywords.value.length} keywords · ${width.label}${bodyTextCase ? " · multiline body" : ""}`,
         width,
         html: renderProjectCard({
           id,
@@ -46,7 +47,8 @@
           program: program.value,
           period: { start: "2025.06", end: "2026.02" },
           keywords: keywords.value,
-        }, { diagnostic: true }),
+          description: bodyTextCase ? "첫 번째 줄\n같은 문단의 두 번째 줄\n\n빈 줄 뒤의 두 번째 문단" : "",
+        }, { diagnostic: !bodyTextCase }),
       };
     })));
   };
@@ -148,17 +150,18 @@
     ];
     return titles.flatMap((title, titleIndex) => speakers.flatMap((speaker, speakerIndex) => keywordSets.flatMap((keywords) => compactWidths.map((width) => {
       const id = `seminar-stress-t${titleIndex + 1}-s${speakerIndex + 1}-k${keywords.length}-${width.id}`;
+      const bodyTextCase = titleIndex === 0 && speakerIndex === 0 && keywords.length === 1 && width.id === "390";
       return {
         id,
-        label: `${titleIndex + 1}-level title · ${speakerIndex ? "long" : "short"} speaker · ${keywords.length} keywords · ${width.label}`,
+        label: `${titleIndex + 1}-level title · ${speakerIndex ? "long" : "short"} speaker · ${keywords.length} keywords · ${width.label}${bodyTextCase ? " · multiline body" : ""}`,
         width,
         html: renderSeminarCard({
           date: "2026.03.09",
           title,
           speaker,
-          summary: "",
+          summary: bodyTextCase ? "First line\nSecond line in the same paragraph\n\nSecond paragraph after a blank line" : "",
           keywords,
-        }, { diagnostic: true }),
+        }, { diagnostic: !bodyTextCase }),
       };
     }))));
   };

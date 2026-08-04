@@ -1,5 +1,5 @@
 (function () {
-  const { escapeHtml, imageMarkup, renderKeywords } = DTPLab;
+  const { escapeHtml, imageMarkup, renderKeywords, renderBodyText } = DTPLab;
   const baselineProbe = '<span class="record-meta-baseline-probe" aria-hidden="true"></span>';
 
   const projectCategoryLabels = { industry: "산학", rnd: "R&D", talent: "인재" };
@@ -20,7 +20,8 @@
       ? `<span class="project-meta-part record-meta-item meta-keyword">${projectIconSlot("keyword")}<span class="sr-only">키워드: </span><span class="project-keywords record-meta-control record-meta-keywords">${project.keywords.map((keyword) => `<span class="keyword">${baselineProbe}<span class="keyword-label">${escapeHtml(keyword)}</span></span>`).join("")}</span></span>`
       : "";
     const meta = `${projectMetaPart("program", "사업명 및 과제유형", project.program)}${projectMetaPart("period", "연구기간", period)}${keywordChips}`;
-    const body = diagnostic ? "" : `${project.description ? `<p class="project-description">${escapeHtml(project.description)}</p>` : ""}${project.details?.length ? `<section class="project-details-section"><h4>세부 연구내용</h4><ol class="project-details">${project.details.map((detail) => `<li>${escapeHtml(detail)}</li>`).join("")}</ol></section>` : ""}${images.length ? `<div class="record-gallery image-count-${images.length}">${images.map((image) => `<figure class="record-image">${imageMarkup(image, project.title)}</figure>`).join("")}</div>` : ""}`;
+    const description = renderBodyText(project.description);
+    const body = diagnostic ? "" : `${description ? `<div class="project-description body-text">${description}</div>` : ""}${project.details?.length ? `<section class="project-details-section"><h4>세부 연구내용</h4><ol class="project-details">${project.details.map((detail) => `<li>${escapeHtml(detail)}</li>`).join("")}</ol></section>` : ""}${images.length ? `<div class="record-gallery image-count-${images.length}">${images.map((image) => `<figure class="record-image">${imageMarkup(image, project.title)}</figure>`).join("")}</div>` : ""}`;
     return `<article class="project-card"><header class="project-head"><div><div class="chip-row"><span class="chip category-${escapeHtml(project.category)}">${projectCategoryLabels[project.category] || escapeHtml(project.category)}</span></div><h3>${escapeHtml(project.title)}</h3></div></header>${meta ? `<div class="project-meta-line record-meta-row">${meta}</div>` : ""}${body}</article>`;
   };
 
@@ -182,7 +183,10 @@
     keyword: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m20.5 13.5-7 7a2 2 0 0 1-2.8 0L3 12.8V3h9.8l7.7 7.7a2 2 0 0 1 0 2.8Z"/><circle cx="7.5" cy="7.5" r="1.2"/></svg>',
   };
   const seminarMetaIcon = (kind) => `<span class="seminar-meta-icon record-meta-icon">${seminarIcons[kind]}</span>`;
-  const renderSeminarCard = (seminar, { diagnostic = false } = {}) => `<article class="seminar-card"><div class="seminar-title-row"><span class="seminar-title-icon">${seminarIcons.presentation}</span><h3 class="seminar-title">${escapeHtml(seminar.title)}</h3></div><div class="seminar-meta-row record-meta-row"><span class="seminar-meta-item seminar-date record-meta-item">${seminarMetaIcon("calendar")}<time class="record-meta-control record-meta-text" datetime="${escapeHtml(seminar.date)}">${baselineProbe}${escapeHtml(seminar.date)}</time></span><span class="seminar-meta-item seminar-speaker record-meta-item">${seminarMetaIcon("speaker")}<span class="speaker record-meta-control record-meta-text">${baselineProbe}${escapeHtml(seminar.speaker)}</span></span>${seminar.keywords?.length ? `<span class="seminar-meta-item seminar-keywords record-meta-item">${seminarMetaIcon("keyword")}<span class="record-meta-control record-meta-keywords">${renderKeywords(seminar.keywords, { baselineProbe: true })}</span></span>` : ""}</div>${diagnostic ? "" : `<p class="seminar-summary">${escapeHtml(seminar.summary)}</p>`}</article>`;
+  const renderSeminarCard = (seminar, { diagnostic = false } = {}) => {
+    const summary = renderBodyText(seminar.summary);
+    return `<article class="seminar-card"><div class="seminar-title-row"><span class="seminar-title-icon">${seminarIcons.presentation}</span><h3 class="seminar-title">${escapeHtml(seminar.title)}</h3></div><div class="seminar-meta-row record-meta-row"><span class="seminar-meta-item seminar-date record-meta-item">${seminarMetaIcon("calendar")}<time class="record-meta-control record-meta-text" datetime="${escapeHtml(seminar.date)}">${baselineProbe}${escapeHtml(seminar.date)}</time></span><span class="seminar-meta-item seminar-speaker record-meta-item">${seminarMetaIcon("speaker")}<span class="speaker record-meta-control record-meta-text">${baselineProbe}${escapeHtml(seminar.speaker)}</span></span>${seminar.keywords?.length ? `<span class="seminar-meta-item seminar-keywords record-meta-item">${seminarMetaIcon("keyword")}<span class="record-meta-control record-meta-keywords">${renderKeywords(seminar.keywords, { baselineProbe: true })}</span></span>` : ""}</div>${diagnostic || !summary ? "" : `<div class="seminar-summary body-text">${summary}</div>`}</article>`;
+  };
 
   DTPLab.recordRenderers = {
     bindProjectGalleryRatios,

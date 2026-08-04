@@ -7,8 +7,8 @@
     "build": "node tools/build-site.mjs",
     "serve": "node tools/serve-site.mjs _site",
     "test:content-model": "node --test tools/test-content-model.mjs",
-    "test:home-rendering": "node --test tools/test-home-rendering.mjs",
-    "validate": "npm run test:home-rendering && npm run test:content-model && node tools/validate-content.mjs && npm run build && node tools/check-links.mjs _site"
+    "test:body-rendering": "node --test tools/test-body-rendering.mjs",
+    "validate": "npm run test:body-rendering && npm run test:content-model && node tools/validate-content.mjs && npm run build && node tools/check-links.mjs _site"
   },
   "dependencies": {
     "ejs": "^3.1.10"

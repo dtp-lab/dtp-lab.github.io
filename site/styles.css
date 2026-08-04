@@ -306,6 +306,8 @@ img { display: block; max-width: 100%; }
 .project-meta-part.meta-keyword svg { stroke: var(--orange); }
 .project-keywords { display: inline-flex; flex-wrap: wrap; gap: 5px; }
 .project-keywords .keyword { padding-inline: 8px; color: var(--navy); border-color: #9fc6d9; font-size: max(.7rem, var(--text-tag-min)); }
+.body-text > p { margin: 0; }
+.body-text > p + p { margin-top: .9em; }
 .project-description { margin: 16px 0 0; color: #42586b; }
 .project-details-section { margin-top: 15px; }
 .project-details-section h4 { margin: 0 0 9px; color: var(--navy); font-size: max(.82rem, var(--text-meta-min)); font-weight: 850; letter-spacing: .02em; }
@@ -952,8 +954,8 @@ img {
   font-size: .58rem;
   line-height: 1;
 }
-.news-timeline-item p {
-  min-width: 0;
+.news-timeline-copy { min-width: 0; }
+.news-timeline-copy > p {
   margin: 0;
   color: #243b4d;
   font-size: .88rem;
@@ -1268,7 +1270,7 @@ img {
   .news-timeline-item { padding: 14px 0 14px 18px; }
   .news-marker { top: 19px; }
   .news-timeline-meta { align-items: flex-start; flex-direction: column; gap: 5px; }
-  .news-timeline-item p { font-size: .82rem; }
+.news-timeline-copy > p { font-size: .82rem; }
   .publication-legend { gap: 6px 18px; }
   .publication-links { margin-top: 4px; }
   .publication-cards-view .publication-card { padding: 13px 12px; }
@@ -1473,7 +1475,6 @@ img {
   font-size: .9rem;
   line-height: 1.72;
 }
-.research-thrust-copy > p + p { margin-top: .9em; }
 .research-focus { margin-top: 22px; }
 .research-focus li { padding: 8px 0; }
 
@@ -1542,7 +1543,7 @@ img {
   line-height: max(15px, var(--tag-line-min));
   text-transform: lowercase;
 }
-.news-timeline-item p {
+.news-timeline-copy > p {
   font-size: max(.84rem, var(--text-compact-min));
   line-height: 1.45;
 }
@@ -1705,9 +1706,11 @@ img {
     grid-column: 3;
     grid-row: 1;
   }
-  .news-timeline-item p {
+  .news-timeline-copy {
     grid-column: 3;
     grid-row: 2;
+  }
+  .news-timeline-copy > p {
     font-size: max(.8rem, var(--text-compact-min));
     line-height: 1.42;
   }

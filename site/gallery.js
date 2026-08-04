@@ -1,5 +1,5 @@
 (async function () {
-  const { escapeHtml, sitePath, loadJson, sortByDateDesc, showDataError, applyPageHeading } = DTPLab;
+  const { escapeHtml, sitePath, loadJson, sortByDateDesc, renderBodyText, showDataError, applyPageHeading } = DTPLab;
   const root = document.querySelector("#gallery-content");
   const dialog = document.querySelector("#gallery-lightbox");
   const dialogImage = document.querySelector("#lightbox-image");
@@ -17,7 +17,8 @@
       const images = event.images || [];
       const thumbnailImages = images.slice(0, 4);
       const classes = ["gallery-event", images.length ? "has-images" : ""].filter(Boolean).join(" ");
-      return `<article class="${classes}"><div class="gallery-event-meta"><time datetime="${escapeHtml(event.date)}">${escapeHtml(event.date)}</time></div><h2>${escapeHtml(event.title)}</h2>${event.description ? `<p>${escapeHtml(event.description)}</p>` : ""}${images.length ? `<div class="gallery-grid">${thumbnailImages.map((image, imageIndex) => `<button class="gallery-thumb" type="button" data-event="${eventIndex}" data-image="${imageIndex}" aria-label="${escapeHtml(image.alt || event.title)} 크게 보기">${thumbnailMarkup(image, event.title)}</button>`).join("")}</div>` : ""}</article>`;
+      const description = renderBodyText(event.description);
+      return `<article class="${classes}"><div class="gallery-event-meta"><time datetime="${escapeHtml(event.date)}">${escapeHtml(event.date)}</time></div><h2>${escapeHtml(event.title)}</h2>${description ? `<div class="gallery-event-description body-text">${description}</div>` : ""}${images.length ? `<div class="gallery-grid">${thumbnailImages.map((image, imageIndex) => `<button class="gallery-thumb" type="button" data-event="${eventIndex}" data-image="${imageIndex}" aria-label="${escapeHtml(image.alt || event.title)} 크게 보기">${thumbnailMarkup(image, event.title)}</button>`).join("")}</div>` : ""}</article>`;
     }).join("") || '<p class="empty-state">등록된 행사가 없습니다.</p>';
     root.querySelectorAll(".gallery-thumb").forEach((button) => button.addEventListener("click", () => open(events[Number(button.dataset.event)].images, Number(button.dataset.image), button)));
   } catch (error) { showDataError(root, error); }
