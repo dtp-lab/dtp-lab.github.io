@@ -32,6 +32,15 @@
     </div>`;
   };
 
+  const renderResearchDescription = (description) => String(description ?? "")
+    .replace(/\r\n?/g, "\n")
+    .trim()
+    .split(/\n(?:[ \t]*\n)+/)
+    .map((paragraph) => paragraph.trim())
+    .filter(Boolean)
+    .map((paragraph) => `<p>${paragraph.split("\n").map(escapeHtml).join("<br>")}</p>`)
+    .join("\n      ");
+
   const renderResearch = (items) => items.map((item, index) => `<article class="research-thrust">
     <div class="research-thrust-heading">
       <p class="research-thrust-label">${escapeHtml(item.label || `Direction ${String(index + 1).padStart(2, "0")}`)}</p>
@@ -40,7 +49,7 @@
     </div>
     <figure class="research-thrust-visual">${imageMarkup(item.image, item.title)}</figure>
     <div class="research-thrust-copy">
-      <p>${escapeHtml(item.description)}</p>
+      ${renderResearchDescription(item.description)}
       ${item.focus?.length ? `<ul class="research-focus">${item.focus.map((focus) => `<li>${escapeHtml(focus)}</li>`).join("")}</ul>` : ""}
     </div>
   </article>`).join("");

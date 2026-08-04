@@ -1473,6 +1473,7 @@ img {
   font-size: .9rem;
   line-height: 1.72;
 }
+.research-thrust-copy > p + p { margin-top: .9em; }
 .research-focus { margin-top: 22px; }
 .research-focus li { padding: 8px 0; }
 
