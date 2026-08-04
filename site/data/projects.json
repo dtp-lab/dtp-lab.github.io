@@ -3,9 +3,9 @@
     {
       "id": "project-01",
       "status": "current",
-      "category": "industry",
-      "title": "디지털트윈 모델 기반 강화학습을 활용한 특수목적용 로봇 제어 기술 연구",
-      "program": "RISE 산학공동 기술개발과제",
+      "category": "rnd",
+      "title": "특수목적 로봇암 장기 복합 작업 수행을 위한 계층적 강화학습 및 Skill-Planning VLA 기술 연구",
+      "program": "교육부-앵커산학공동기술개발과제-코어로보틱스",
       "period": {
         "start": "2025.09",
         "end": "2030.01"
@@ -15,14 +15,15 @@
         "Sim2Real",
         "Robotics",
         "Reinforcement Learning",
-        "Optimization"
+        "Physical AI"
       ],
-      "description": "특수 목적 로봇의 다양한 고위험·고비용 작업 자율화를 위한 디지털트윈 시뮬레이션 환경 구축 및 모델 기반 강화학습 기술을 연구한다. 본 연구실에서는 (1)고정밀 디지털트윈 시뮬레이션 환경을 구축하고, 시뮬레이션으로 수집된 데이터를 기반으로 환경의 상태 전이와 보상을 예측하는 월드 모델을 학습하며, 도메인 랜덤화 기법을 적용하여 예측 성능과 일반화 성능을 향상시킨다. 또한, (2)이를 활용한 모델 기반 강화학습(MBRL)과, sparse reward 환경에 대응 가능한 보상 구조를 설계함으로써 다양한 작업 시나리오에서 자율적 판단과 복잡한 행동 계획이 가능한 정책을 도출한다.",
+      "description": "본 연구에서는 실제 환경에서 특수목적 로봇을 학습시키는 데 따르는 물리적·시간적 제약을 극복하고, 다양한 비정형 산업 환경에서 자율적 판단과 장기 복합 작업 수행이 가능하도록 시뮬레이션 기반 로봇 제어 정책 학습 기법을 연구한다. Pre-trained VLA(Vision-Language-Action) 모델을 활용하여 특수목적 장기 복합 작업(specialized long-horizon multi-stage tasks)을 수행하기 위한 다양한 기법을 연구하며, 구체적으로는 전체 작업을 단일 end-to-end policy로 직접 제어하는 방식이 아니라, 접근, 정렬, 파지, 이동, 조작, 회피, 복구 등 세분화된 primitive skill composition을 통해 제어를 수행하게 된다. 2차년도에는 이러한 primitive skill family를 시뮬레이션 강화학습만으로 구축하기 위한 스킬별 멀티레벨 리워드 설계 기술을 개발한다.",
       "details": [
-        "디지털트윈 시뮬레이터 기반 Model-free 강화학습 및 학습된 Agent의 Sim2Real Transfer 연구",
-        "특수목적 도메인 대상 월드 모델 학습 및 도메인 랜덤화 적용 기술 연구",
-        "Sparse Reward 환경 대응을 위한 보상 구조 최적화 연구",
-        "도메인 특화 DT-월드모델 기반 자율로봇 Sim2Real 전이학습 프레임워크 구축"
+        "특수목적 로봇암 학습을 위한 디지털트윈 시뮬레이터 구축",
+        "특수목적 로봇암 장기 복합 작업 수행을 위한 멀티레벨 리워드 설계 기술",
+        "Skill-Planning VLA 모델을 활용한 필터봇 미니어처 대상 Sim2Real 전이학습 기술",
+        "Skill-Planning VLA 모델을 활용한 실제 환경 필터봇 Sim2Real 전이학습 및 도메인 랜덤화 기술",
+        "원전해체 도메인 특화 Sim2Real 자율로봇 정책 검증 및 실제 환경 테스트"
       ],
       "images": [
         {
@@ -73,8 +74,249 @@
       ]
     },
     {
-      "id": "project-03",
+      "id": "project-2026-record",
       "status": "current",
+      "category": "rnd",
+      "title": "폐쇄망 ITS 운영지원을 위한 로컬 LLM·RAG·지식그래프 기반 AI Agent 운영 기술 연구",
+      "program": "과기부-연구산업진흥단지육성사업",
+      "period": {
+        "start": "2026.05",
+        "end": "2026.12"
+      },
+      "keywords": [
+        "AI Agent",
+        "LLM",
+        "RAG",
+        "Knowledge Graph"
+      ],
+      "description": "교통정보센터는 운영 매뉴얼, 장애 대응 자료, 교통 데이터, 보고서 양식 등 다양한 자료를 보유하고 있으나, 자료가 문서·파일·시스템 화면 등으로 분산되어 있어 운영자가 필요한 정보를 직접 검색하고 해석해야 하는 부담이 크다. 본 연구에서는 폐쇄망 ITS 운영지원 환경에서 외부 클라우드 AI 서비스에 의존하지 않고, Linux 기반 로컬 서버에서 구동 가능한 로컬 LLM 기반 AI Agent 참조 구현체를 개발한다. 교통정보센터 운영자가 운영문서 검색, 샘플 교통데이터 요약, 상황 정리, 보고서 초안 작성 등을 효율적으로 수행할 수 있도록 지원하는 것을 목표로 하며, 실제 신호제어 명령 수행이나 현장 운영시스템 직접 제어가 아닌 운영자 의사결정 보조형 AI Agent 기술 개발에 중점을 둔다.",
+      "details": [
+        "로컬 LLM을 활용한 Agentic AI 동작 프레임워크 구성",
+        "운영문서 지식그래프·벡터DB화를 통한 RAG 동작환경 구성",
+        "Raw 교통데이터 기반 주요정보 요약 기능 및 보고서 생성 기능"
+      ],
+      "images": [
+        {
+          "src": "assets/projects/project-2026-record/dtp-ai-agent-architecture.png",
+          "alt": "폐쇄망 ITS 운영지원을 위한 로컬 LLM·RAG·지식그래프 기반 AI Agent 운영 기술 연구"
+        }
+      ]
+    },
+    {
+      "id": "project-2026-record-3",
+      "status": "current",
+      "category": "industry",
+      "title": "Isaac Sim-PhysX 물리엔진 및 강화학습을 통한 세탁성능 시뮬레이션 기술 연구",
+      "program": "LG전자",
+      "period": {
+        "start": "2026.04",
+        "end": "2027.03"
+      },
+      "keywords": [
+        "Digital Twin",
+        "Physical AI",
+        "Reinforcement Learning",
+        "Physics Engine",
+        "Surrogate Modeling"
+      ],
+      "description": "Isaac Sim 기반 세탁기 디지털트윈 시뮬레이터에서 드럼·댐퍼·부시 등의 강체 시스템과 의류 유연체, 세탁수 유체의 연성 거동을 실시간으로 재현한다. 물리엔진 시뮬레이션에서 진동, 기계력, 토크, 소비전력 등 핵심 물리량을 추출하고 실제 동작영상 및 고정밀 해석모델과 비교하여 시뮬레이션 신뢰도를 검증한다. 이를 바탕으로 세탁성능과 에너지 소비를 사전 예측하고, 강화학습을 활용한 운전조건 최적화로 확장하는 것을 목표로 한다.",
+      "details": [
+        "Isaac Sim·PhysX 환경에서 세탁기 디지털트윈 모델 구축",
+        "드럼 구동, 센서 계측 및 실시간 제어 환경 구축",
+        "이중 댐퍼와 댐퍼 부시의 비선형 거동을 물리엔진에 구현하고 최대진동·공진주파수 응답을 비교 검증",
+        "드럼 리프트, 규격 옷감, 세탁수에 대한 강체–유연체–유체 연성 모델을 구축하고 충돌·접힘·물빠짐 특성 조정"
+      ],
+      "images": [
+        {
+          "src": "assets/projects/project-2026-record-3/cap-2026-08-04-23-07-35-409.png",
+          "alt": "Isaac Sim-PhysX 물리엔진 및 강화학습을 통한 세탁성능 시뮬레이션 기술 연구"
+        },
+        {
+          "src": "assets/projects/project-2026-record-3/cap-2026-08-04-23-08-40-590.png",
+          "alt": "Isaac Sim-PhysX 물리엔진 및 강화학습을 통한 세탁성능 시뮬레이션 기술 연구"
+        }
+      ]
+    },
+    {
+      "id": "project-2026-record-4",
+      "status": "current",
+      "category": "industry",
+      "title": "CCTV 작업자 인식을 통한 디지털트윈 동기화 기술 개발",
+      "program": "삼성중공업",
+      "period": {
+        "start": "2026.03",
+        "end": "2026.10"
+      },
+      "keywords": [
+        "Digital Twin",
+        "Computer Vision",
+        "Localization",
+        "Smart Yard"
+      ],
+      "description": "조선소 절단공장 CCTV 영상에서 작업자를 실시간으로 검출·추적하고 자세 기반 위치 정보를 추정하여, 현장 작업자의 위치와 이동 상태를 디지털트윈 공간에 동기화하는 기술을 개발한다. RTSP 영상 중계, 작업자 인식·추적, 카메라 파라미터 정합, Unity 기반 3차원 좌표 매핑을 통합하여 작업 구역별 위치와 인원 현황을 실시간으로 모니터링할 수 있는 안전관리 시스템을 구현한다.",
+      "details": [
+        "Transformer 기반 탐지 모델 RF-DETR (ICLR, 2026)의 사전 학습 가중치를 기반으로 현장 환경 Fine-tuning 수행",
+        "RTMPose 기반 작업자 자세 추정과 양발 중심점 기반 대표 위치 좌표 산출",
+        "현장 CCTV와 디지털트윈 가상 카메라를 정합하고 픽셀 좌표를 3차원 공간 좌표로 변환"
+      ],
+      "images": [
+        {
+          "src": "assets/projects/project-2026-record-4/1.png",
+          "alt": "CCTV 작업자 인식을 통한 디지털트윈 동기화 기술 개발"
+        },
+        {
+          "src": "assets/projects/project-2026-record-4/cap-2026-08-04-23-17-07-591.png",
+          "alt": "CCTV 작업자 인식을 통한 디지털트윈 동기화 기술 개발"
+        },
+        {
+          "src": "assets/projects/project-2026-record-4/2.png",
+          "alt": "CCTV 작업자 인식을 통한 디지털트윈 동기화 기술 개발"
+        }
+      ]
+    },
+    {
+      "id": "project-12",
+      "status": "current",
+      "category": "industry",
+      "title": "가변데크·복원성 제약을 고려한 강화학습 기반 RoRo 선박 선적 최적화 기법 연구",
+      "program": "토탈소프트뱅크",
+      "period": {
+        "start": "2025.09",
+        "end": "2026.10"
+      },
+      "keywords": [
+        "Optimization",
+        "Scheduling",
+        "Reinforcement Learning"
+      ],
+      "description": "RoRo 선박의 화물 선적 계획은 여러 항구를 순차 운항하는 동안 화물의 선적·하역 순서와 이동 경로, 데크별 공간·높이, 선박의 무게중심과 복원성을 함께 만족해야 하는 복합 최적화 문제이다. 본 연구에서는 화물의 선적항·하역항(POL/POD), 규격·중량, 예약 변동성을 반영해 화물을 분류하고, 선박 내부 경로와 적재 공간을 Conflict-Free Block으로 모델링하여 재취급과 이동거리를 줄이는 자동 배치 알고리즘을 고도화한다. 또한 가변데크 높이 조정과 복원성 검증을 배치 과정에 통합하고, MCTS 및 강화학습 기반 탐색을 적용해 최적화 성능을 향상시킨다.",
+      "details": [
+        "화물의 POL/POD, 유형, 규격, 높이, 중량과 선적 규칙을 반영한 화물 분류 및 배치 입력 모델링",
+        "선박 내부 진출입 경로와 적재 가능 공간을 고려한 Conflict-Free Block 및 Path Node 모델링",
+        "화물 체류기간, 선내 이동거리와 재취급 비용을 함께 고려한 선적 순서·배치 최적화",
+        "화물 높이별 수요와 데크 용량을 반영한 가변데크 그룹 조정 및 배치 실패 화물 처리",
+        "항구별 무게중심·복원성 검증과 재배치 절차를 통합하고 MCTS·강화학습 기반 탐색 정책 적용"
+      ],
+      "images": [
+        {
+          "src": "assets/projects/project-12/cap-2026-08-04-22-36-53-224.png",
+          "alt": "가변데크·복원성 제약을 고려한 강화학습 기반 RoRo 선박 선적 최적화 기법 연구"
+        },
+        {
+          "src": "assets/projects/project-12/cap-2026-08-04-22-32-33-919.png",
+          "alt": "가변데크·복원성 제약을 고려한 강화학습 기반 RoRo 선박 선적 최적화 기법 연구"
+        },
+        {
+          "src": "assets/projects/project-12/cap-2026-08-04-22-37-25-035.png",
+          "alt": "가변데크·복원성 제약을 고려한 강화학습 기반 RoRo 선박 선적 최적화 기법 연구"
+        }
+      ]
+    },
+    {
+      "id": "project-2026-record-2",
+      "status": "current",
+      "category": "rnd",
+      "title": "Digital-X AIoT 연구센터",
+      "program": "과기부-ITRC",
+      "period": {
+        "start": "2023.07",
+        "end": "2030.12"
+      },
+      "keywords": [
+        "Physical AI"
+      ],
+      "description": "동남권 산업 디지털 전환의 핵심 수요 기술인 대규모 지능형 산업 사물인터넷을 위한 초소형 임베디드 AI, 신뢰할 수 있는 초연결 네트워크와 복합상황인지 AI 플랫폼, 자율 협업 인공지능 코어 모델 등 Digital-X AIoT 핵심 기술 개발과 우수 전문 인재 양성",
+      "details": [],
+      "images": []
+    },
+    {
+      "id": "project-07",
+      "status": "current",
+      "category": "talent",
+      "title": "인공지능 융합혁신 인재양성 (AI대학원)",
+      "program": "과기부",
+      "period": {
+        "start": "2023.07",
+        "end": "2026.12"
+      },
+      "keywords": [
+        "AI"
+      ],
+      "description": "",
+      "details": [],
+      "images": []
+    },
+    {
+      "id": "project-08",
+      "status": "current",
+      "category": "talent",
+      "title": "산업융합형 멀티모달 생성 인공지능 인재양성",
+      "program": "과기부",
+      "period": {
+        "start": "2024.04",
+        "end": "2027.12"
+      },
+      "keywords": [
+        "AI"
+      ],
+      "description": "",
+      "details": [],
+      "images": []
+    },
+    {
+      "id": "project-05",
+      "status": "completed",
+      "category": "industry",
+      "title": "디지털트윈·강화학습 기반 자항선 3D 블록 배치 최적화 기술 연구",
+      "program": "한화오션",
+      "period": {
+        "start": "2025.06",
+        "end": "2026.02"
+      },
+      "keywords": [
+        "Digital Twin",
+        "Reinforcement Learning",
+        "Optimization"
+      ],
+      "description": "자항선에 블록을 선적하는 과정에서 2D 정보만으로 배치가 이루어져 공간 활용에 비효율이 발생하고 있다. 이에 대응하기 위해서는 블록의 입체적인 형상, 지지 구조물(T/P, 트레슬), 자항선의 다양한 구조 및 장애물 등을 반영한 정밀한 배치가 필요하다. 본 연구에서는 디지털트윈 기반 시뮬레이터를 통해 실제 환경을 가상으로 재현하고, 이를 통해 생성된 데이터로 최적 배치 알고리즘을 개발한다. 최종적으로는 강화학습 기반 접근법을 통해 배치 최적화 속도와 품질을 동시에 향상시키는 것이 목표이다.",
+      "details": [
+        "자항선, 블록, T/P, 트레슬 등의 형상을 통합한 2.5D 복셀 기반 공간 표현 기술 개발",
+        "3D 형상 기반의 블록 배치를 위한 휴리스틱 탐색 및 최적화 알고리즘 구현",
+        "블록 회전, 배치 지점 선택 등 의사결정 단계를 대체하는 강화학습 기반 배치 정책 학습",
+        "실제 환경을 반영한 디지털트윈 시뮬레이터 구축을 통한 합성 데이터 생성 및 강화학습 학습 효율 향상"
+      ],
+      "images": [
+        {
+          "src": "assets/projects/project-05/01.webp",
+          "alt": "자항선 3D 블록 배치 최적화 프로젝트 연구 이미지 1"
+        },
+        {
+          "src": "assets/projects/project-05/02.webp",
+          "alt": "자항선 3D 블록 배치 최적화 프로젝트 연구 이미지 2"
+        }
+      ]
+    },
+    {
+      "id": "project-09",
+      "status": "completed",
+      "category": "talent",
+      "title": "스마트야드 전문인력양성",
+      "program": "산자부",
+      "period": {
+        "start": "2022.03",
+        "end": "2026.02"
+      },
+      "keywords": [
+        "AI",
+        "Smart Yard"
+      ],
+      "description": "",
+      "details": [],
+      "images": []
+    },
+    {
+      "id": "project-03",
+      "status": "completed",
       "category": "rnd",
       "title": "디지털트윈 및 강화학습 기반 스마트팩토리 소모전력 최적화 기법 연구",
       "program": "과기부-이노폴리스(연구특구진흥재단)",
@@ -108,75 +350,8 @@
       ]
     },
     {
-      "id": "project-04",
-      "status": "current",
-      "category": "industry",
-      "title": "조선소 용접로봇 자동화를 위한 디지털트윈 비전 합성데이터 생성·활용 고도화 기술 연구",
-      "program": "삼성중공업",
-      "period": {
-        "start": "2024.03",
-        "end": "2025.08"
-      },
-      "keywords": [
-        "Digital Twin",
-        "Robotics",
-        "Computer Vision",
-        "Synthetic Data"
-      ],
-      "description": "조선소에서 용접로봇 공정 자동화를 위해서는 다양한 작업 환경을 정밀하게 인식하고 대응할 수 있는 AI 모델이 요구된다. 하지만 매번 실제 작업 현장에서 영상을 수집 및 가공하기에는 비용과 시간이 많이 소요되며, 여러 환경 변수를 모두 반영하기도 쉽지 않다. 본 연구에서는 디지털트윈 기술을 활용해 실제 조선소 작업 현장을 가상 공간에 정교하게 재현하고, 여기서 생성한 합성데이터셋만으로 충분히 높은 일반화 성능을 확보할 수 있는 용접선 인식 모델을 개발한다.",
-      "details": [
-        "조선소 용접로봇 작업환경에서 정교한 비전 합성데이터 생성을 위한 디지털트윈 공간 구축 고도화",
-        "합성데이터 기반 용접 파츠 Image Segmentation 및 Line Detection 모델 학습",
-        "선 데이터 정제 및 추론한 용접선 데이터를 로봇 인식 좌표로 변환",
-        "Depth Camera 기반 Camera Pose Estimation"
-      ],
-      "images": [
-        {
-          "src": "assets/projects/project-04/01.webp",
-          "alt": "조선소 비전 합성데이터 프로젝트 연구 이미지 1"
-        },
-        {
-          "src": "assets/projects/project-04/02.webp",
-          "alt": "조선소 비전 합성데이터 프로젝트 연구 이미지 2"
-        }
-      ]
-    },
-    {
-      "id": "project-05",
-      "status": "current",
-      "category": "industry",
-      "title": "디지털트윈·강화학습 기반 자항선 3D 블록 배치 최적화 기술 연구",
-      "program": "한화오션",
-      "period": {
-        "start": "2025.06",
-        "end": "2026.02"
-      },
-      "keywords": [
-        "Digital Twin",
-        "Reinforcement Learning",
-        "Optimization"
-      ],
-      "description": "자항선에 블록을 선적하는 과정에서 2D 정보만으로 배치가 이루어져 공간 활용에 비효율이 발생하고 있다. 이에 대응하기 위해서는 블록의 입체적인 형상, 지지 구조물(T/P, 트레슬), 자항선의 다양한 구조 및 장애물 등을 반영한 정밀한 배치가 필요하다. 본 연구에서는 디지털트윈 기반 시뮬레이터를 통해 실제 환경을 가상으로 재현하고, 이를 통해 생성된 데이터로 최적 배치 알고리즘을 개발한다. 최종적으로는 강화학습 기반 접근법을 통해 배치 최적화 속도와 품질을 동시에 향상시키는 것이 목표이다.",
-      "details": [
-        "자항선, 블록, T/P, 트레슬 등의 형상을 통합한 2.5D 복셀 기반 공간 표현 기술 개발",
-        "3D 형상 기반의 블록 배치를 위한 휴리스틱 탐색 및 최적화 알고리즘 구현",
-        "블록 회전, 배치 지점 선택 등 의사결정 단계를 대체하는 강화학습 기반 배치 정책 학습",
-        "실제 환경을 반영한 디지털트윈 시뮬레이터 구축을 통한 합성 데이터 생성 및 강화학습 학습 효율 향상"
-      ],
-      "images": [
-        {
-          "src": "assets/projects/project-05/01.webp",
-          "alt": "자항선 3D 블록 배치 최적화 프로젝트 연구 이미지 1"
-        },
-        {
-          "src": "assets/projects/project-05/02.webp",
-          "alt": "자항선 3D 블록 배치 최적화 프로젝트 연구 이미지 2"
-        }
-      ]
-    },
-    {
       "id": "project-06",
-      "status": "current",
+      "status": "completed",
       "category": "industry",
       "title": "디지털트윈 기반 실시간 스마트야드 모니터링·원격제어 시스템 개발",
       "program": "삼성중공업",
@@ -216,53 +391,38 @@
       ]
     },
     {
-      "id": "project-07",
-      "status": "current",
-      "category": "talent",
-      "title": "인공지능 융합혁신 인재양성 (AI대학원)",
-      "program": "과기부",
+      "id": "project-04",
+      "status": "completed",
+      "category": "industry",
+      "title": "조선소 용접로봇 자동화를 위한 디지털트윈 비전 합성데이터 생성·활용 고도화 기술 연구",
+      "program": "삼성중공업",
       "period": {
-        "start": "2023.07",
-        "end": "2026.12"
+        "start": "2024.03",
+        "end": "2025.08"
       },
       "keywords": [
-        "AI Education"
+        "Digital Twin",
+        "Robotics",
+        "Computer Vision",
+        "Synthetic Data"
       ],
-      "description": "",
-      "details": [],
-      "images": []
-    },
-    {
-      "id": "project-08",
-      "status": "current",
-      "category": "talent",
-      "title": "산업융합형 멀티모달 생성 인공지능 인재양성",
-      "program": "과기부",
-      "period": {
-        "start": "2024.04",
-        "end": "2027.12"
-      },
-      "keywords": [
-        "AI Education"
+      "description": "조선소에서 용접로봇 공정 자동화를 위해서는 다양한 작업 환경을 정밀하게 인식하고 대응할 수 있는 AI 모델이 요구된다. 하지만 매번 실제 작업 현장에서 영상을 수집 및 가공하기에는 비용과 시간이 많이 소요되며, 여러 환경 변수를 모두 반영하기도 쉽지 않다. 본 연구에서는 디지털트윈 기술을 활용해 실제 조선소 작업 현장을 가상 공간에 정교하게 재현하고, 여기서 생성한 합성데이터셋만으로 충분히 높은 일반화 성능을 확보할 수 있는 용접선 인식 모델을 개발한다.",
+      "details": [
+        "조선소 용접로봇 작업환경에서 정교한 비전 합성데이터 생성을 위한 디지털트윈 공간 구축 고도화",
+        "합성데이터 기반 용접 파츠 Image Segmentation 및 Line Detection 모델 학습",
+        "선 데이터 정제 및 추론한 용접선 데이터를 로봇 인식 좌표로 변환",
+        "Depth Camera 기반 Camera Pose Estimation"
       ],
-      "description": "",
-      "details": [],
-      "images": []
-    },
-    {
-      "id": "project-09",
-      "status": "current",
-      "category": "rnd",
-      "title": "스마트야드 전문인력양성",
-      "program": "산자부",
-      "period": {
-        "start": "2022.03",
-        "end": "2026.02"
-      },
-      "keywords": [],
-      "description": "",
-      "details": [],
-      "images": []
+      "images": [
+        {
+          "src": "assets/projects/project-04/01.webp",
+          "alt": "조선소 비전 합성데이터 프로젝트 연구 이미지 1"
+        },
+        {
+          "src": "assets/projects/project-04/02.webp",
+          "alt": "조선소 비전 합성데이터 프로젝트 연구 이미지 2"
+        }
+      ]
     },
     {
       "id": "project-10",
@@ -320,7 +480,7 @@
       "images": []
     },
     {
-      "id": "project-12",
+      "id": "project-2024-roro-선박-화물-선적-계획을-위한-화물-배",
       "status": "completed",
       "category": "industry",
       "title": "RoRo 선박 화물 선적 계획을 위한 화물 배치 최적화 알고리즘 개발",
