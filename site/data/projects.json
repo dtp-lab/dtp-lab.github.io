@@ -205,6 +205,40 @@
       ]
     },
     {
+      "id": "project-2026-record-6",
+      "status": "current",
+      "category": "industry",
+      "title": "다수 AMR 동시 작업 환경에서 케이블 제약을 고려한 작업계획 생성 기술 연구",
+      "program": "중소조선연구원",
+      "period": {
+        "start": "2026.05",
+        "end": "2026.10"
+      },
+      "keywords": [
+        "Digital Twin",
+        "Physical AI",
+        "Optimization",
+        "Scheduling"
+      ],
+      "description": "블록 하부 오버헤드 취부·용접 작업장에서 자율주행대차에 연결된 용접 케이블의 형상을 이동 경로에 따라 예측하고, 구조물 걸림과 복수 케이블 교차, 반복 이동에 따른 꼬임을 최소화하는 작업계획 생성 기술을 개발한다. 작업장·장애물·작업위치 정보를 바탕으로 최적 방문 순서와 간섭 회피 Waypoint를 산출하고, 케이블 형상과 간섭 정보를 통합 모니터링 시스템에 연계한다.",
+      "details": [
+        "작업장 구조물, 작업 위치 및 AMR 출발점을 반영한 디지털트윈 작업환경 구성",
+        "AMR 이동에 따른 케이블 형상 시뮬레이션 및 형상 좌표 데이터 생성",
+        "구조물 걸림, 복수 케이블 교차 및 반복 이동에 따른 꼬임 예측",
+        "케이블 간섭과 AMR 이동거리를 함께 최소화하는 작업 위치 방문 순서 및 회피 Waypoint 생성"
+      ],
+      "images": [
+        {
+          "src": "assets/projects/project-2026-record-6/3.png",
+          "alt": "다수 AMR 동시 작업 환경에서 케이블 제약을 고려한 작업계획 생성 기술 연구"
+        },
+        {
+          "src": "assets/projects/project-2026-record-6/codex--2026-8-4--11-30-05.png",
+          "alt": "다수 AMR 동시 작업 환경에서 케이블 제약을 고려한 작업계획 생성 기술 연구"
+        }
+      ]
+    },
+    {
       "id": "project-12",
       "status": "current",
       "category": "industry",
