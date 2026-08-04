@@ -1,6 +1,36 @@
 {
   "projects": [
     {
+      "id": "project-2026-record-5",
+      "status": "current",
+      "category": "rnd",
+      "title": "멀티모달 초음파 월드모델 및 VLA 기반 진단·수술보조 로봇암 정밀 제어 기술 연구",
+      "program": "과기부-AI최고급신진연구자지원사업(AI스타펠로우십)",
+      "period": {
+        "start": "2026.07",
+        "end": "2031.12"
+      },
+      "keywords": [
+        "Physical AI",
+        "Computer Vision",
+        "Ultrasound",
+        "World Models"
+      ],
+      "description": "본 연구는 환자별 체형, 체표면, 장기 위치, 실시간 초음파 영상 품질 및 의료진의 지시를 반영하여, 로봇팔이 초음파 탐촉자의 위치, 각도, 압력 및 스캔 경로를 능동적으로 결정하는 환자 맞춤형 지능형 초음파 로봇 스캔 기술을 개발하는 것을 목표로 한다. 최종적으로는 의료진의 음성 지시, 수술 단계, 수술 도구 움직임 및 환자 상태를 종합적으로 이해하고, 병변으로의 안전한 접근 경로 제안, 위험 혈관 접근 및 영상 신뢰도 저하를 사전에 경고하는 수술 맥락 인지형 Physical AI 초음파 코파일럿 기술로 확장하고자 한다.",
+      "details": [
+        "전역 스캔용 Pre-trained 초음파 월드모델 구축",
+        "3D US Volume 정밀화를 위한 월드모델–VLA Joint Learning 기반 스캔 제어",
+        "환자 맞춤형 해부학 월드모델 구축 및 실시간 관측 기반 Bayesian 갱신",
+        "의료진 피드백 루프 기반 해부학 월드모델–VLA 수술 보조 제어 고도화"
+      ],
+      "images": [
+        {
+          "src": "assets/projects/project-2026-record-5/cap-2026-08-04-23-24-59-175.png",
+          "alt": "멀티모달 초음파 월드모델 및 VLA 기반 진단·수술보조 로봇암 정밀 제어 기술 연구"
+        }
+      ]
+    },
+    {
       "id": "project-01",
       "status": "current",
       "category": "rnd",
