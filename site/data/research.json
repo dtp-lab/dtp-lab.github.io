@@ -1,60 +1,60 @@
 {
   "overviewImage": {
-    "src": "assets/research/research-overview.png",
+    "src": "assets/research/research/260804-dtp--background.webp",
     "alt": "Digital Twin과 Physical AI를 중심으로 로봇 지능, 물리 시뮬레이션, 신경 예측모델, AI 최적화를 연결한 연구 분야 개요도"
   },
   "research": [
     {
-      "label": "Research Direction 01",
+      "label": "Research Thrust 01",
       "title": "Robotic Intelligence",
-      "subtitle": "Perceive, reason, and act in the physical world",
-      "description": "로봇이 센서로 물리 세계의 상태를 이해하고, 미래 변화를 예측하며, 목적에 맞는 행동을 선택하는 지능을 연구합니다. 디지털트윈과 실제 환경에서 수집한 경험을 함께 활용해 인지·상태표현·의사결정·제어를 연결하고, 새로운 작업과 환경에서도 신뢰성 있게 적응하는 로봇 학습 방법을 개발합니다.",
+      "subtitle": "From multimodal understanding to long-horizon robot action",
+      "description": "로봇이 카메라와 센서로 주변 환경을 인식하고, 언어로 주어진 목표를 해석하며, 여러 단계의 행동을 스스로 계획·수행하는 Physical AI를 연구합니다. 특히 실환경 데이터 수집의 비용과 위험을 줄이기 위해 시뮬레이션에서 생성한 멀티모달 궤적으로 비전-언어-행동(Vision-Language-Action, VLA) 모델을 파인튜닝하고, 새로운 물체·배치·작업 조건에도 적응할 수 있는 로봇 정책을 개발합니다.\n\n단일 동작의 성공보다 장기 복합 작업의 안정적인 완수를 중요하게 다룹니다. 이를 위해 작업을 명시적인 스킬 단위로 분해·조합하는 Skill-Planning VLA, 과거의 관측과 행동 결과를 활용하는 Memory-Augmented VLA, 상위 의사결정과 하위 제어를 연결하는 계층적 강화학습을 연구합니다. 또한 시뮬레이션에서만 얻을 수 있는 특권정보를 교사 정책에 활용하고, 그 지식을 실제 센서 입력만으로 동작하는 정책에 이전하여 복잡한 로봇 행동을 안전하고 효율적으로 학습시킵니다.",
       "focus": [
-        "Embodied intelligence",
-        "World representation",
-        "Robot learning and control"
+        "Simulation-Only VLA Fine-Tuning",
+        "Skill Planning & Long-Horizon Manipulation",
+        "Privileged Learning in Simulation"
       ],
       "image": "assets/projects/project-01/02.webp"
     },
     {
-      "label": "Research Direction 02",
+      "label": "Research Thrust 02",
       "title": "Physics Simulation & Sim2Real",
-      "subtitle": "Learn safely in simulation, transfer reliably to reality",
-      "description": "실세계 데이터 수집과 반복 실험의 비용·위험을 줄이기 위해 Isaac Sim, Unity, Unreal 기반 물리 시뮬레이션에서 로봇과 산업 시스템을 학습·검증합니다. 합성데이터 생성, 시뮬레이터 충실도 보정, Domain Randomization과 Domain Adaptation을 결합하여 시뮬레이션에서 얻은 지능이 실제 장비와 환경으로 안정적으로 전이되도록 합니다.",
+      "subtitle": "From high-fidelity simulation to reliable real-world transfer",
+      "description": "현실의 로봇과 산업 시스템을 가상 공간에 물리적으로 일관되게 재현하고, 그 안에서 데이터 생성·학습·검증을 반복하는 Omniverse Isaac Sim 및 Unity 기반 고충실도 시뮬레이션 기술을 연구합니다. 물리엔진과 재질·마찰·질량·접촉 등의 물성치를 정교하게 모델링하고, 설비·객체·관계 정보를 온톨로지로 구조화하여 단순한 3D 형상을 넘어 실제 시스템의 상태와 동작 의미를 반영하는 디지털트윈을 구축합니다.\n\n시뮬레이션과 현실 사이의 차이를 줄이기 위해 실제 관측으로부터 미지의 물리 파라미터를 추정하는 System Identification, 다양한 환경 변화를 학습에 포함하는 Domain Randomization and Adaptation, 남아 있는 모델 오차를 학습하는 Residual Dynamics Learning을 함께 활용합니다. 이를 통해 대규모 합성데이터와 안전한 가상 실험에서 학습한 모델과 정책이 실제 장비에서도 안정적으로 작동하도록 Sim2Real 전이 및 검증 방법을 개발합니다.",
       "focus": [
-        "Physics simulation",
-        "Synthetic data generation",
-        "Domain randomization & adaptation"
+        "High-Fidelity Physics Simulation",
+        "System Identification, Domain Randomization & Adaptation",
+        "Ontology-based Digital Twins"
       ],
-      "image": "assets/projects/project-04/02.webp"
+      "image": "assets/projects/project-02/02.webp"
     },
     {
-      "label": "Research Direction 03",
+      "label": "Research Thrust 03",
       "title": "Neural Surrogates & World Models",
-      "subtitle": "Fast predictive models for complex physical systems",
-      "description": "열·유체·동역학처럼 계산 비용이 큰 시뮬레이션을 빠르게 근사하는 신경 대체모델과, 환경의 잠재 상태와 변화를 학습하는 월드모델을 연구합니다. 물리 법칙, 시뮬레이션 데이터, 현장 센서 데이터를 함께 활용하고 불확실성과 장기 rollout 안정성을 고려하여 실시간 예측·설계·제어에 사용할 수 있는 신뢰도 높은 모델을 구축합니다.",
+      "subtitle": "From physics-aware surrogates to learnable simulators",
+      "description": "열·유체·동역학처럼 정확한 수치해석에 많은 계산시간이 필요한 물리 시스템을 빠르게 예측할 수 있는 Neural Surrogate Model을 연구합니다. PINNs(Physics-Informed Neural Network)와 Neural Operators를 통해 물리 법칙과 시뮬레이션 데이터를 함께 학습하고, Recurrent Surrogate Models로 시간에 따라 변화하는 상태를 효율적으로 추론하여 반복 설계, 실시간 제어, 대규모 파라미터 탐색에 활용할 수 있는 예측 모델을 구축합니다.\n\n동시에 환경의 구조와 상태 전이를 학습해 미래를 잠재 표현으로 시뮬레이션하는 월드모델을 연구합니다. 객체와 상호작용을 명시적으로 표현하는 Structured and Graph-Based World Models, 장기 예측 과정에서 누적 오차를 줄이는 학습 전략, 새로운 조건에서도 물리적 일관성을 유지하는 Learnable Simulator를 연구합니다. 이러한 모델은 기존 시뮬레이터를 대체하거나 보완하며, 로봇의 계획과 산업 시스템의 예측·최적화를 위한 빠른 내부 모델로 활용됩니다.",
       "focus": [
-        "Deep surrogate models",
-        "World models",
-        "Uncertainty-aware long-horizon prediction"
+        "Physics-Informed Neural Surrogates",
+        "Structured & Graph-based World Models",
+        "Uncertainty-aware Long-horizon Prediction"
       ],
       "image": "assets/projects/project-10/01.webp"
     },
     {
-      "label": "Research Direction 04",
-      "title": "Mathematical & AI Optimization",
-      "subtitle": "Efficient decisions under expensive models and constraints",
-      "description": "실험이나 시뮬레이션 호출이 비싼 고차원 산업 문제에서 수학적 최적화와 AI 기반 탐색을 결합합니다. Bayesian Optimization, 조합최적화, 메타휴리스틱, 강화학습을 활용하여 설계 파라미터와 운영 정책을 효율적으로 찾고, 불확실성·비선형 제약·다목적 요구를 명시적으로 다루는 의사결정 방법을 연구합니다.",
+      "label": "Research Thrust 04",
+      "title": "AI Optimization",
+      "subtitle": "From mathematical formulations to learning-based optimization",
+      "description": "산업 현장의 최적화 문제는 이산적인 의사결정과 연속적인 설계변수, 복잡한 비선형 제약조건이 함께 존재하는 경우가 많습니다. MILP/MINLP와 같은 수리모델, 조합최적화 및 메타휴리스틱을 활용하여 문제의 구조와 제약조건을 명시적으로 표현하고, 실행 가능한 고품질 해를 체계적으로 탐색합니다. 목적함수를 평가하기 어렵거나 탐색공간이 지나치게 큰 문제에는 Bayesian Optimization를 적용합니다.\n\n대규모 순차 의사결정과 고차원 탐색에는 강화학습 및 Diffusion·Flow Matching 기반 최적화를 적용하며, 기존 해와 새롭게 수집되는 결과를 반복적으로 학습해 탐색 전략 자체를 개선하는 자기개선형 모델을 연구합니다. 해석모델, 신경 대체모델, 디지털트윈 시뮬레이터를 목적과 계산비용에 따라 결합함으로써 로봇 정책, 에너지 운영, 제조·물류·배치 등 도메인 특화 문제에서 실행 가능하고 효율적인 의사결정을 도출합니다.",
       "focus": [
-        "Bayesian optimization",
-        "Combinatorial & metaheuristic optimization",
-        "Reinforcement learning"
+        "Combinatorial & Metaheuristic Optimization",
+        "Bayesian & Reinforcement Learning-based Optimization",
+        "Diffusion & Self-Improving Optimization"
       ],
-      "image": "assets/projects/project-05/02.webp"
+      "image": "assets/projects/project-05/01.webp"
     }
   ],
   "section": {
-    "kicker": "Research",
-    "title": "연구 분야"
+    "kicker": "Research Domain",
+    "title": "DTPLab 연구 분야"
   }
 }
