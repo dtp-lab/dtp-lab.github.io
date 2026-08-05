@@ -12,9 +12,9 @@
       },
       "keywords": [
         "Physical AI",
-        "Computer Vision",
-        "Ultrasound",
-        "World Models"
+        "World Models",
+        "Digital Twin",
+        "Sim2Real"
       ],
       "description": "본 연구는 환자별 체형, 체표면, 장기 위치, 실시간 초음파 영상 품질 및 의료진의 지시를 반영하여, 로봇팔이 초음파 탐촉자의 위치, 각도, 압력 및 스캔 경로를 능동적으로 결정하는 환자 맞춤형 지능형 초음파 로봇 스캔 기술을 개발하는 것을 목표로 한다. 최종적으로는 의료진의 음성 지시, 수술 단계, 수술 도구 움직임 및 환자 상태를 종합적으로 이해하고, 병변으로의 안전한 접근 경로 제안, 위험 혈관 접근 및 영상 신뢰도 저하를 사전에 경고하는 수술 맥락 인지형 Physical AI 초음파 코파일럿 기술로 확장하고자 한다.",
       "details": [
@@ -43,7 +43,6 @@
       "keywords": [
         "Digital Twin",
         "Sim2Real",
-        "Robotics",
         "Reinforcement Learning",
         "Physical AI"
       ],
@@ -83,7 +82,8 @@
       "keywords": [
         "Digital Twin",
         "Computer Vision",
-        "Synthetic Data"
+        "Synthetic Data",
+        "Generative AI"
       ],
       "description": "산불 및 고층빌딩 화재와 같은 난접근성 화재의 효과적인 대응을 위한 드론 기반 가스하이드레이트 소화탄 투척 진화 시스템의 요소 기술을 연구한다. 본 연구실에서는 (1)소화탄 투척량 산출을 위해 모니터링 드론에서 촬영된 RGB·Thermal 영상을 활용하여 산불 크기, 면적, 발열량 등을 인식하며, 이를 위해 기존 산불데이터셋을 넘어 라벨데이터 확장을 위해 디지털트윈 기반 합성데이터 생성 및 활용 기술 연구를 수행한다. 또한, (2)모니터링 드론 주시방향으로 소화탄 투척지점을 도출하기 위해 해당 지역 GIS 기반 디지털트윈 공간 구축 후 정교한 투척지점 좌표 도출 연구를 수행한다.",
       "details": [
@@ -117,9 +117,10 @@
         "AI Agent",
         "LLM",
         "RAG",
-        "Knowledge Graph"
+        "Knowledge Graph",
+        "Semantic Digital Twin"
       ],
-      "description": "교통정보센터는 운영 매뉴얼, 장애 대응 자료, 교통 데이터, 보고서 양식 등 다양한 자료를 보유하고 있으나, 자료가 문서·파일·시스템 화면 등으로 분산되어 있어 운영자가 필요한 정보를 직접 검색하고 해석해야 하는 부담이 크다. 본 연구에서는 폐쇄망 ITS 운영지원 환경에서 외부 클라우드 AI 서비스에 의존하지 않고, Linux 기반 로컬 서버에서 구동 가능한 로컬 LLM 기반 AI Agent 참조 구현체를 개발한다. 교통정보센터 운영자가 운영문서 검색, 샘플 교통데이터 요약, 상황 정리, 보고서 초안 작성 등을 효율적으로 수행할 수 있도록 지원하는 것을 목표로 하며, 실제 신호제어 명령 수행이나 현장 운영시스템 직접 제어가 아닌 운영자 의사결정 보조형 AI Agent 기술 개발에 중점을 둔다.",
+      "description": "교통정보센터는 운영 매뉴얼, 장애 대응 자료, 교통 데이터, 보고서 양식 등 다양한 자료를 보유하고 있으나, 자료가 문서·파일·시스템 화면 등으로 분산되어 있어 운영자가 필요한 정보를 직접 검색하고 해석해야 하는 부담이 크다. 이에 본 연구에서는 폐쇄망 ITS 운영지원 환경에서 외부 클라우드 AI 서비스에 의존하지 않고, Linux 기반 로컬 서버에서 구동 가능한 로컬 LLM 기반 AI Agent 참조 구현체를 개발한다. 교통정보센터 운영자가 운영문서 검색, 샘플 교통데이터 요약, 상황 정리, 보고서 초안 작성 등을 효율적으로 수행할 수 있도록 지원하는 것을 목표로 하며, 온톨로지·지식그래프를 활용하여 교통정보센터의 시맨틱 디지털트윈 프로토타입을 제작한 후, 운영자 의사결정 보조형 AI Agent 기술을 개발한다.",
       "details": [
         "로컬 LLM을 활용한 Agentic AI 동작 프레임워크 구성",
         "운영문서 지식그래프·벡터DB화를 통한 RAG 동작환경 구성",
@@ -144,7 +145,6 @@
       },
       "keywords": [
         "Digital Twin",
-        "Physical AI",
         "Reinforcement Learning",
         "Physics Engine",
         "Surrogate Modeling"
@@ -180,12 +180,11 @@
       "keywords": [
         "Digital Twin",
         "Computer Vision",
-        "Localization",
         "Smart Yard"
       ],
       "description": "조선소 절단공장 CCTV 영상에서 작업자를 실시간으로 검출·추적하고 자세 기반 위치 정보를 추정하여, 현장 작업자의 위치와 이동 상태를 디지털트윈 공간에 동기화하는 기술을 개발한다. RTSP 영상 중계, 작업자 인식·추적, 카메라 파라미터 정합, Unity 기반 3차원 좌표 매핑을 통합하여 작업 구역별 위치와 인원 현황을 실시간으로 모니터링할 수 있는 안전관리 시스템을 구현한다.",
       "details": [
-        "Transformer 기반 탐지 모델 RF-DETR (ICLR, 2026)의 사전 학습 가중치를 기반으로 현장 환경 Fine-tuning 수행",
+        "ViT 객체 탐지 모델 RF-DETR(ICLR, 2026)의 사전 학습 가중치를 기반으로 현장 환경 Fine-tuning 수행",
         "RTMPose 기반 작업자 자세 추정과 양발 중심점 기반 대표 위치 좌표 산출",
         "현장 CCTV와 디지털트윈 가상 카메라를 정합하고 픽셀 좌표를 3차원 공간 좌표로 변환"
       ],
@@ -216,9 +215,8 @@
       },
       "keywords": [
         "Digital Twin",
-        "Physical AI",
-        "Optimization",
-        "Scheduling"
+        "Reinforcement Learning",
+        "Optimization"
       ],
       "description": "블록 하부 오버헤드 취부·용접 작업장에서 자율주행대차에 연결된 용접 케이블의 형상을 이동 경로에 따라 예측하고, 구조물 걸림과 복수 케이블 교차, 반복 이동에 따른 꼬임을 최소화하는 작업계획 생성 기술을 개발한다. 작업장·장애물·작업위치 정보를 바탕으로 최적 방문 순서와 간섭 회피 Waypoint를 산출하고, 케이블 형상과 간섭 정보를 통합 모니터링 시스템에 연계한다.",
       "details": [
@@ -250,8 +248,8 @@
       },
       "keywords": [
         "Optimization",
-        "Scheduling",
-        "Reinforcement Learning"
+        "Reinforcement Learning",
+        "Bayesian Optimization"
       ],
       "description": "RoRo 선박의 화물 선적 계획은 여러 항구를 순차 운항하는 동안 화물의 선적·하역 순서와 이동 경로, 데크별 공간·높이, 선박의 무게중심과 복원성을 함께 만족해야 하는 복합 최적화 문제이다. 본 연구에서는 화물의 선적항·하역항(POL/POD), 규격·중량, 예약 변동성을 반영해 화물을 분류하고, 선박 내부 경로와 적재 공간을 Conflict-Free Block으로 모델링하여 재취급과 이동거리를 줄이는 자동 배치 알고리즘을 고도화한다. 또한 가변데크 높이 조정과 복원성 검증을 배치 과정에 통합하고, MCTS 및 강화학습 기반 탐색을 적용해 최적화 성능을 향상시킨다.",
       "details": [
@@ -287,6 +285,7 @@
         "end": "2030.12"
       },
       "keywords": [
+        "Digital Twin",
         "Physical AI"
       ],
       "description": "동남권 산업 디지털 전환의 핵심 수요 기술인 대규모 지능형 산업 사물인터넷을 위한 초소형 임베디드 AI, 신뢰할 수 있는 초연결 네트워크와 복합상황인지 AI 플랫폼, 자율 협업 인공지능 코어 모델 등 Digital-X AIoT 핵심 기술 개발과 우수 전문 인재 양성",
@@ -304,7 +303,8 @@
         "end": "2026.12"
       },
       "keywords": [
-        "AI"
+        "Digital Twin",
+        "Physical AI"
       ],
       "description": "",
       "details": [],
@@ -321,7 +321,9 @@
         "end": "2027.12"
       },
       "keywords": [
-        "AI"
+        "Digital Twin",
+        "Physical AI",
+        "Generative AI"
       ],
       "description": "",
       "details": [],
@@ -371,8 +373,8 @@
         "end": "2026.02"
       },
       "keywords": [
-        "AI",
-        "Smart Yard"
+        "Smart Yard",
+        "Digital Twin"
       ],
       "description": "",
       "details": [],
@@ -390,10 +392,8 @@
       },
       "keywords": [
         "Digital Twin",
-        "Reinforcement Learning",
         "Optimization",
-        "Surrogate Modeling",
-        "Energy Systems"
+        "Metaheuristic"
       ],
       "description": "제조공장 내 CDA(Clean Dry Air) 압축기 시스템에 디지털트윈을 적용하여 모니터링 데이터 기반 실시간 소모전력 최적화 기술을 연구한다. 구체적으로는, (1)디지털트윈 초저지연 모니터링 솔루션을 적용하여 CDA 압축기 시스템 실시간 데이터를 효과적으로 시각화하여 의사결정을 지원하고, (2)디지털트윈 실시간 수집 데이터 및 해석모델 데이터를 활용하여 성능 저하 없이 전력 소모량을 최소화할 수 있는 메타휴리스틱 최적화 알고리즘 적용 및 평가를 수행한다.",
       "details": [
@@ -425,8 +425,7 @@
       },
       "keywords": [
         "Digital Twin",
-        "Optimization",
-        "Computer Vision"
+        "Smart Yard"
       ],
       "description": "조선소 내 고위험·고정밀 작업을 안전하고 효율적으로 운영하기 위해 디지털트윈 기반 실시간 모니터링·원격제어 기술을 개발한다. 본 연구에서는 도면 기반 정밀 3D 모델 구축, 모든 공정을 한 화면에서 파악할 수 있는 디지털트윈 공간 및 다중 카메라 스트림 기반 시각화, 데이터 가공을 통한 저지연 동기화 기술 등을 개발하여 작업 현장에 적용하였다.",
       "details": [
@@ -466,9 +465,9 @@
       },
       "keywords": [
         "Digital Twin",
-        "Robotics",
         "Computer Vision",
-        "Synthetic Data"
+        "Synthetic Data",
+        "Smart Yard"
       ],
       "description": "조선소에서 용접로봇 공정 자동화를 위해서는 다양한 작업 환경을 정밀하게 인식하고 대응할 수 있는 AI 모델이 요구된다. 하지만 매번 실제 작업 현장에서 영상을 수집 및 가공하기에는 비용과 시간이 많이 소요되며, 여러 환경 변수를 모두 반영하기도 쉽지 않다. 본 연구에서는 디지털트윈 기술을 활용해 실제 조선소 작업 현장을 가상 공간에 정교하게 재현하고, 여기서 생성한 합성데이터셋만으로 충분히 높은 일반화 성능을 확보할 수 있는 용접선 인식 모델을 개발한다.",
       "details": [
@@ -499,11 +498,9 @@
         "end": "2024.12"
       },
       "keywords": [
-        "Digital Twin",
         "Reinforcement Learning",
         "Optimization",
-        "Surrogate Modeling",
-        "Energy Systems"
+        "Surrogate Modeling"
       ],
       "description": "전기차는 엔진 열로 히터를 가동하는 내연기관 차량과는 달리, 전기에너지로 직접 히터를 가동해야 하므로 전비(연비) 중 차량 내부 열관리가 차지하는 비중이 20-60%로 매우 높다. 본 연구실에서는 전기차 통합열관리 Model Reference Adaptive Control 운용 효율 최적화를 위해, 차량 속도, 가감속 페달 조작량, 내·외기 온도, 경사도와 같은 다양한 파라미터 상태값에 따라 실시간 제어를 수행하는 강화학습 기반 열관리시스템 제어 기술을 연구한다.",
       "details": [
@@ -534,8 +531,7 @@
         "end": "2024.11"
       },
       "keywords": [
-        "Digital Twin",
-        "AI Education"
+        "Digital Twin"
       ],
       "description": "디지털 트윈 공간을 기반으로 교육훈련 콘텐츠 제작할 수 있는 디지털 트윈 기반 콘텐츠 저작 기술이 빠르게 확산되고 있다. 이에 본 연구실에서는 교육·훈련 콘텐츠를 실 공간에서 모바일 기기로 증강현실 형태로 보기 위해 VPS기반 AR 콘텐츠 가시화 기술 연구를 진행하였다.",
       "details": [
@@ -586,8 +582,8 @@
       },
       "keywords": [
         "Digital Twin",
-        "Optimization",
-        "Computer Vision"
+        "Computer Vision",
+        "Smart Yard"
       ],
       "description": "현재, 선박 조립블록 하부도장 작업은 숙련된 전문인력이 자신의 노하우를 기반으로 직접 도장액 분사 또는 작업차량을 조작하는 형태로 수행되므로 상당한 시간과 비용이 소요되고 있다. 본 연구실에서는 블록 하부도장 자동화차량 경로 설정을 위한 디지털트윈 시뮬레이터 기반 블록표면 영상처리 기술을 개발한다. 구체적으로는, 다중 카메라 around view, 블록하부 환경 인식, 작업경로 연산, 실시간 경로이탈 감지·복구제어 기술을 개발한다.",
       "details": [
@@ -618,7 +614,7 @@
         "end": "2023.10"
       },
       "keywords": [
-        "Computer Vision"
+        "Video Streaming"
       ],
       "description": "건설현장 중장비 원격제어 기술은 영상 스트리밍 및 제어신호 전송 시 발생하는 네트워크 지연으로 인해 실시간성이 보장되지 않고 있다. 본 과제를 통해 안전성, 작업효율성 및 생산성 극대화를 위해 WebRTC 기반 건설기계 초저지연 원격제어 기술을 개발한다.",
       "details": [
@@ -649,8 +645,7 @@
       },
       "keywords": [
         "Digital Twin",
-        "Computer Vision",
-        "Energy Systems"
+        "Localization"
       ],
       "description": "기존의 카메라 영상 기반 반려동물 모니터링 기술은 가구나 벽 등에 의한 사각지대 발생이 불가피하고, 개체 식별 및 추적 등 상시 영상처리를 수행해야 하므로 전력 소모량이 높으며 영상 유출과 같은 심각한 보안 문제 발생의 우려도 존재한다. 본 연구실에서는 UWB 기반 Indoor RTLS 정확도 향상 기법을 연구하여 반려동물 실시간 위치를 디지털트윈 공간 상에서 모니터링할 수 있는 기술을 제공한다. 또한 정교한 반려동물 위치 기록을 분석하여 반려동물의 개체별 건강상태, 휴식 및 활동수준 등을 제공하고자 한다.",
       "details": [
@@ -683,7 +678,9 @@
         "start": "2020.03",
         "end": "2023.02"
       },
-      "keywords": [],
+      "keywords": [
+        "Provisioning"
+      ],
       "description": "본 연구에서는 엣지 컴퓨팅 환경에서 클라우드 VR 서비스들의 MTP 지연 감소를 위한 서비스 지향 리소스 프로비저닝 알고리즘을 연구하였다. VR 서비스는 다양한 트래픽 패턴(고화질, HMD/컨트롤러/시선 등 입력 신호 주기, 지연시간), 서비스 요구사항(3DoF/6DoF, 입력 장치 종류, 다중 사용자), 사용자 경험(지연시간 및 해상도 임계점)과 같은 다양한 특성을 가지므로, 이러한 서비스별 컨텍스트를 분석하여 서버 인스턴스를 계층화/분산화하고 MTP Latency를 최소화하도록 리소스를 프로비저닝하는 알고리즘을 연구하였다.",
       "details": [
         "동작 컨텍스트 기반 서비스 지향 리소스 프로비저닝 알고리즘 연구",
@@ -717,7 +714,7 @@
       },
       "keywords": [
         "Digital Twin",
-        "Energy Systems"
+        "Smart Yard"
       ],
       "description": "조선소 내 고위험·고정밀 작업을 안전하고 효율적으로 운영하기 위해 디지털트윈 기반 실시간 모니터링·원격제어 기술을 개발한다. 본 과제에서는 도면 및 실측 데이터 기반 low-poly 3D 모델링/텍스처 제작, 모든 공정을 한 화면에서 파악할 수 있는 디지털트윈 공간 구축, 데이터 가공을 통한 저지연 동기화 기술, 사용성을 고려한 다양한 UI/UX 제어 시스템 등을 개발하여 작업 현장에 적용하였다.",
       "details": [
@@ -768,8 +765,8 @@
     }
   ],
   "page": {
-    "kicker": "From Models to Motion",
-    "title": "Projects",
-    "subtitle": ""
+    "kicker": "Ideas in Production",
+    "title": "projects.",
+    "subtitle": "i boost u"
   }
 }

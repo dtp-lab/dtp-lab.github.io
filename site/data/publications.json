@@ -34,7 +34,7 @@
       "venue": "IEICE Nonlinear Theory and Its Applications",
       "details": "Vol. 17, pp. -",
       "keywords": [
-        "Computer Vision"
+        "Localization"
       ],
       "doi": "",
       "links": [],
@@ -85,7 +85,7 @@
       "details": "Vol. 15, pp. 214",
       "keywords": [
         "Optimization",
-        "Energy Systems"
+        "Metaheuristic"
       ],
       "doi": "",
       "links": [],
@@ -161,7 +161,7 @@
       "venue": "Journal of Korea Multimedia Society",
       "details": "Vol. 28, No. 11, pp. 1787-1799",
       "keywords": [
-        "Sim2Real",
+        "Physical AI",
         "Reinforcement Learning"
       ],
       "doi": "",
@@ -200,6 +200,7 @@
       "venue": "Journal of Korea Multimedia Society",
       "details": "Vol. 28, No. 11, pp. 1653-1663",
       "keywords": [
+        "Digital Twin",
         "Computer Vision"
       ],
       "doi": "",
@@ -238,7 +239,7 @@
       "venue": "Renewable Energy",
       "details": "Vol. 253, pp. 123926",
       "keywords": [
-        "Energy Systems"
+        "Optimization"
       ],
       "doi": "",
       "links": [],
@@ -276,8 +277,7 @@
       "venue": "Energy",
       "details": "Vol. 334, pp. 137801, 2025.10. (SCIE - Q1(JCR 5%))",
       "keywords": [
-        "Optimization",
-        "Energy Systems"
+        "Optimization"
       ],
       "doi": "",
       "links": [],
@@ -321,7 +321,8 @@
       "venue": "Future Internet",
       "details": "Vol. 17, No. 10, pp. 440",
       "keywords": [
-        "Computer Vision"
+        "Computer Vision",
+        "Localization"
       ],
       "doi": "",
       "links": [],
@@ -360,7 +361,7 @@
       "details": "Vol. 28, No. 8, pp. 1070-1078",
       "keywords": [
         "Optimization",
-        "Energy Systems"
+        "Metaheuristic"
       ],
       "doi": "",
       "links": [],
@@ -428,7 +429,8 @@
       "venue": "Journal of Korea Multimedia Society",
       "details": "Vol. 28, No. 3, pp. 395-411",
       "keywords": [
-        "Digital Twin"
+        "Digital Twin",
+        "Smart Yard"
       ],
       "doi": "",
       "links": [],
@@ -477,7 +479,9 @@
       ],
       "venue": "Electronics",
       "details": "Vol. 14, No. 7, pp. 1249",
-      "keywords": [],
+      "keywords": [
+        "Provisioning"
+      ],
       "doi": "",
       "links": [],
       "journalMetrics": {
@@ -514,7 +518,8 @@
       "venue": "Journal of Korea Multimedia Society",
       "details": "Vol. 28, No. 1, pp. 1-9",
       "keywords": [
-        "Digital Twin"
+        "Digital Twin",
+        "Computer Vision"
       ],
       "doi": "",
       "links": [],
@@ -557,7 +562,9 @@
       ],
       "venue": "Electronics",
       "details": "Vol. 13, No. 20, pp. 3993",
-      "keywords": [],
+      "keywords": [
+        "Localization"
+      ],
       "doi": "",
       "links": [],
       "journalMetrics": {
@@ -594,7 +601,7 @@
       "venue": "Electronics",
       "details": "Vol. 13, No. 15, pp. 3077, 2024. 08.",
       "keywords": [
-        "Computer Vision"
+        "Provisioning"
       ],
       "doi": "",
       "links": [],
@@ -643,7 +650,10 @@
       ],
       "venue": "Sensors",
       "details": "Vol. 24, No. 13, pp. 4075",
-      "keywords": [],
+      "keywords": [
+        "Machine Learning",
+        "Smart Yard"
+      ],
       "doi": "",
       "links": [],
       "journalMetrics": {
@@ -692,7 +702,7 @@
       "venue": "Future Internet",
       "details": "Vol. 16, No. 6, pp. 211",
       "keywords": [
-        "Computer Vision"
+        "Localization"
       ],
       "doi": "",
       "links": [],
@@ -748,7 +758,9 @@
       "venue": "Journal of Korea Multimedia Society",
       "details": "Vol. 27, No. 2, pp. 218-228",
       "keywords": [
-        "Digital Twin"
+        "Digital Twin",
+        "Computer Vision",
+        "Smart Yard"
       ],
       "doi": "",
       "links": [],
@@ -785,7 +797,9 @@
       ],
       "venue": "Journal of Korea Multimedia Society",
       "details": "Vol. 26, No. 2, pp. 166-174",
-      "keywords": [],
+      "keywords": [
+        "Localization"
+      ],
       "doi": "",
       "links": [],
       "journalMetrics": {
@@ -827,7 +841,9 @@
       ],
       "venue": "Sensors",
       "details": "Vol. 22, No. 9, pp. 1-28",
-      "keywords": [],
+      "keywords": [
+        "Provisioning"
+      ],
       "doi": "",
       "links": [],
       "journalMetrics": {
@@ -915,7 +931,9 @@
       ],
       "venue": "Journal of Korea Multimedia Society",
       "details": "Vol. 24, No. 8, pp. 1090-1100",
-      "keywords": [],
+      "keywords": [
+        "Provisioning"
+      ],
       "doi": "",
       "links": [],
       "journalMetrics": {
@@ -939,7 +957,9 @@
       ],
       "venue": "Entropy",
       "details": "Vol. 23, No. 5, pp. 532-551",
-      "keywords": [],
+      "keywords": [
+        "Provisioning"
+      ],
       "doi": "",
       "links": [],
       "journalMetrics": {
@@ -975,7 +995,9 @@
       ],
       "venue": "IEEE Access",
       "details": "Vol. 9, pp. 57989-58008",
-      "keywords": [],
+      "keywords": [
+        "Provisioning"
+      ],
       "doi": "",
       "links": [],
       "journalMetrics": {
@@ -1011,7 +1033,9 @@
       ],
       "venue": "International Journal of Distributed Sensor Networks",
       "details": "Vol. 15, No. 1, pp. 1-19",
-      "keywords": [],
+      "keywords": [
+        "Provisioning"
+      ],
       "doi": "",
       "links": [],
       "journalMetrics": {
@@ -1042,7 +1066,8 @@
       "venue": "Computer Networks",
       "details": "Vol. 145, pp. 76-88",
       "keywords": [
-        "Optimization"
+        "Optimization",
+        "Provisioning"
       ],
       "doi": "",
       "links": [],
@@ -1079,7 +1104,9 @@
       ],
       "venue": "Journal of KIISE",
       "details": "Vol. 45, No. 6, pp. 598-610",
-      "keywords": [],
+      "keywords": [
+        "Provisioning"
+      ],
       "doi": "",
       "links": [],
       "journalMetrics": {
@@ -1109,7 +1136,10 @@
       ],
       "venue": "IEEE Access",
       "details": "Vol. 6, pp. 20262-20278",
-      "keywords": [],
+      "keywords": [
+        "Provisioning",
+        "Optimization"
+      ],
       "doi": "",
       "links": [],
       "journalMetrics": {
@@ -1331,9 +1361,7 @@
       ],
       "venue": "International Journal of Distributed Sensor Networks",
       "details": "Vol. 9, No. 12, pp. 1-16",
-      "keywords": [
-        "Computer Vision"
-      ],
+      "keywords": [],
       "doi": "",
       "links": [],
       "journalMetrics": {
@@ -1376,9 +1404,7 @@
       "venue": "MITA 2025",
       "details": "",
       "keywords": [
-        "Digital Twin",
-        "Surrogate Modeling",
-        "Energy Systems"
+        "Surrogate Modeling"
       ],
       "doi": "",
       "links": [],
@@ -1410,8 +1436,7 @@
       "venue": "MITA 2025",
       "details": "",
       "keywords": [
-        "Optimization",
-        "Energy Systems"
+        "Optimization"
       ],
       "doi": "",
       "links": [],
@@ -1466,7 +1491,10 @@
       ],
       "venue": "ICCAS 2024",
       "details": "",
-      "keywords": [],
+      "keywords": [
+        "Machine Learning",
+        "Smart Yard"
+      ],
       "doi": "",
       "links": [],
       "conferenceMetrics": {
@@ -1496,7 +1524,9 @@
       ],
       "venue": "한국청정기술학회",
       "details": "",
-      "keywords": [],
+      "keywords": [
+        "Digital Twin"
+      ],
       "doi": "",
       "links": [],
       "conferenceMetrics": {
@@ -1571,7 +1601,8 @@
       "venue": "2024 한국정보과학회 한국컴퓨터종합학술대회",
       "details": "",
       "keywords": [
-        "Computer Vision"
+        "Computer Vision",
+        "Smart Yard"
       ],
       "doi": "",
       "links": [],
@@ -1614,7 +1645,9 @@
       ],
       "venue": "KJCCS 2024",
       "details": "",
-      "keywords": [],
+      "keywords": [
+        "Localization"
+      ],
       "doi": "",
       "links": [],
       "conferenceMetrics": {
@@ -1657,7 +1690,7 @@
       "venue": "KJCCS 2024",
       "details": "",
       "keywords": [
-        "Computer Vision"
+        "Localization"
       ],
       "doi": "",
       "links": [],
@@ -1695,7 +1728,7 @@
       "venue": "IEEE GCCE 2023",
       "details": "",
       "keywords": [
-        "Computer Vision"
+        "Localization"
       ],
       "doi": "",
       "links": [],
@@ -1733,7 +1766,7 @@
       "venue": "ITIOT 2023",
       "details": "",
       "keywords": [
-        "Computer Vision"
+        "Localization"
       ],
       "doi": "",
       "links": [],
@@ -1806,7 +1839,9 @@
       ],
       "venue": "JKCCS 2023",
       "details": "",
-      "keywords": [],
+      "keywords": [
+        "Machine Learning"
+      ],
       "doi": "",
       "links": [],
       "conferenceMetrics": {
@@ -1848,7 +1883,9 @@
       ],
       "venue": "JKCCS 2023",
       "details": "",
-      "keywords": [],
+      "keywords": [
+        "Localization"
+      ],
       "doi": "",
       "links": [],
       "conferenceMetrics": {
@@ -1884,7 +1921,9 @@
       ],
       "venue": "MITA 2022",
       "details": "",
-      "keywords": [],
+      "keywords": [
+        "Provisioning"
+      ],
       "doi": "",
       "links": [],
       "conferenceMetrics": {
@@ -1920,7 +1959,9 @@
       ],
       "venue": "MITA 2021",
       "details": "",
-      "keywords": [],
+      "keywords": [
+        "Provisioning"
+      ],
       "doi": "",
       "links": [],
       "conferenceMetrics": {
@@ -1980,9 +2021,7 @@
       ],
       "venue": "2021 한국멀티미디어학회 춘계학술발표대회",
       "details": "",
-      "keywords": [
-        "Computer Vision"
-      ],
+      "keywords": [],
       "doi": "",
       "links": [],
       "conferenceMetrics": {
@@ -2048,7 +2087,9 @@
       ],
       "venue": "IEEE ICUFN 2017",
       "details": "",
-      "keywords": [],
+      "keywords": [
+        "Provisioning"
+      ],
       "doi": "",
       "links": [],
       "conferenceMetrics": {
@@ -2078,7 +2119,9 @@
       ],
       "venue": "2017 한국통신학회 동계종합학술발표회",
       "details": "",
-      "keywords": [],
+      "keywords": [
+        "Provisioning"
+      ],
       "doi": "",
       "links": [],
       "conferenceMetrics": {
@@ -2114,7 +2157,9 @@
       ],
       "venue": "2017 한국통신학회 동계종합학술발표회",
       "details": "",
-      "keywords": [],
+      "keywords": [
+        "Provisioning"
+      ],
       "doi": "",
       "links": [],
       "conferenceMetrics": {
@@ -2150,7 +2195,9 @@
       ],
       "venue": "2017 한국통신학회 동계종합학술발표회",
       "details": "",
-      "keywords": [],
+      "keywords": [
+        "Provisioning"
+      ],
       "doi": "",
       "links": [],
       "conferenceMetrics": {
@@ -2390,9 +2437,7 @@
       ],
       "venue": "IEEE AINA 2013",
       "details": "",
-      "keywords": [
-        "Optimization"
-      ],
+      "keywords": [],
       "doi": "",
       "links": [],
       "conferenceMetrics": {
@@ -2458,9 +2503,7 @@
       ],
       "venue": "IEEE WIMOB 2011",
       "details": "",
-      "keywords": [
-        "Computer Vision"
-      ],
+      "keywords": [],
       "doi": "",
       "links": [],
       "conferenceMetrics": {
@@ -2811,8 +2854,8 @@
     }
   ],
   "page": {
-    "kicker": "On the Record!",
-    "title": "Publications",
-    "subtitle": ""
+    "kicker": "Stable Release",
+    "title": "publications.",
+    "subtitle": "v0.9.163"
   }
 }
