@@ -6,10 +6,16 @@
   <meta name="theme-color" content="#ffffff">
   <meta name="description" content="<%= description %>">
   <link rel="canonical" href="https://dtp-lab.github.io<%= canonicalPath %>">
+  <% if (typeof verificationToken !== 'undefined' && verificationToken) { -%>
+  <meta name="google-site-verification" content="<%= verificationToken %>">
+  <% } -%>
   <% if (typeof noindex !== 'undefined' && noindex) { -%>
   <meta name="robots" content="noindex,nofollow">
   <% } -%>
   <title><%= title %></title>
+  <% if (typeof structuredData !== 'undefined' && structuredData) { -%>
+  <script type="application/ld+json"><%- JSON.stringify(structuredData) %></script>
+  <% } -%>
   <link rel="icon" type="image/png" href="/assets/brand/dtp-logo-icon.png">
   <link rel="stylesheet" href="/styles.css?v=30">
   <script src="/shared.js?v=30" defer></script>
