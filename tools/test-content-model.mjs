@@ -13,7 +13,7 @@ const siteDir = path.resolve("site");
 
 test("content contract is serializable and exposes only known files", () => {
   const serialized = JSON.parse(JSON.stringify(contentContract));
-  assert.equal(serialized.version, 6);
+  assert.equal(serialized.version, 7);
   assert.deepEqual(
     Object.values(serialized.files).map((entry) => entry.file).sort(),
     fs.readdirSync(path.join(siteDir, "data")).filter((name) => name.endsWith(".json")).sort(),
@@ -88,16 +88,36 @@ test("technical IDs and generated Gallery thumbnails stay out of the Studio form
 
   assert.equal(projectFields.find((field) => field.name === "id").formHidden, true);
   assert.equal(publicationFields.find((field) => field.name === "id").formHidden, true);
+  assert.equal(galleryFields.find((field) => field.name === "id").formHidden, true);
+  assert.equal(galleryFields.find((field) => field.name === "id").generated, "gallery-event-id");
   assert.equal(galleryImageFields.find((field) => field.name === "thumbnail").formHidden, true);
   assert.equal(galleryImageFields.find((field) => field.name === "src").label, "원본 이미지 (썸네일 자동 생성)");
   assert.equal(galleryFields.some((field) => field.name === "isSample"), false);
 });
 
-test("Gallery contains only actual events and no sample asset references", () => {
+test("Gallery events use unique IDs and ordered, resolvable original/thumbnail paths", () => {
   const gallery = JSON.parse(fs.readFileSync(path.join(siteDir, "data", "gallery.json"), "utf8"));
-  assert.equal(gallery.events.length, 9);
+  assert.ok(gallery.events.length > 0);
   assert.equal(gallery.events.some((event) => event.isSample || /샘플/.test(event.title)), false);
   assert.equal(JSON.stringify(gallery).includes("sample-"), false);
+  const eventIds = new Set();
+  const assetPaths = new Set();
+  for (const event of gallery.events) {
+    assert.match(event.id, /^[0-9a-f]{12}$/);
+    assert.equal(eventIds.has(event.id), false);
+    eventIds.add(event.id);
+    for (const [index, image] of event.images.entries()) {
+      const number = String(index + 1).padStart(2, "0");
+      assert.match(image.src, new RegExp(`^assets/gallery/${event.id}/${number}\\.(?:jpe?g|png|webp)$`));
+      assert.match(image.thumbnail, new RegExp(`^assets/gallery-thumbs/${event.id}/${number}\\.(?:jpe?g|png|webp)$`));
+      assert.equal(path.extname(image.src), path.extname(image.thumbnail));
+      for (const reference of [image.src, image.thumbnail]) {
+        assert.equal(assetPaths.has(reference), false);
+        assetPaths.add(reference);
+        assert.equal(fs.existsSync(path.join(siteDir, reference)), true);
+      }
+    }
+  }
 });
 
 test("People contract and migrated data use structured member categories without losing records", () => {

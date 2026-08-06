@@ -6,18 +6,19 @@
       "description": "",
       "images": [
         {
-          "src": "assets/gallery/ea1750b32caa/01.jpg",
-          "thumbnail": "assets/gallery-thumbs/ea1750b32caa/01.jpg",
+          "src": "assets/gallery/94bd6c2cec06/01.jpg",
+          "thumbnail": "assets/gallery-thumbs/94bd6c2cec06/01.jpg",
           "alt": "봄맞이 산성 꽃놀이",
           "caption": ""
         },
         {
-          "src": "assets/gallery/ea1750b32caa/02.jpg",
-          "thumbnail": "assets/gallery-thumbs/ea1750b32caa/02.jpg",
+          "src": "assets/gallery/94bd6c2cec06/02.jpg",
+          "thumbnail": "assets/gallery-thumbs/94bd6c2cec06/02.jpg",
           "alt": "봄맞이 산성 꽃놀이",
           "caption": ""
         }
-      ]
+      ],
+      "id": "94bd6c2cec06"
     },
     {
       "date": "2026.03",
@@ -25,24 +26,25 @@
       "description": "LG전자 HS사업본부 커넥티비티개발팀 이수환 책임연구원 참석",
       "images": [
         {
-          "src": "assets/gallery/7f4e5864ca2d/01.jpg",
-          "thumbnail": "assets/gallery-thumbs/7f4e5864ca2d/01.jpg",
+          "src": "assets/gallery/636fdbb5d130/01.jpg",
+          "thumbnail": "assets/gallery-thumbs/636fdbb5d130/01.jpg",
           "alt": "LG전자 HS사업본부 타겟랩 선정 안내",
           "caption": ""
         },
         {
-          "src": "assets/gallery/7f4e5864ca2d/02.jpg",
-          "thumbnail": "assets/gallery-thumbs/7f4e5864ca2d/02.jpg",
+          "src": "assets/gallery/636fdbb5d130/02.jpg",
+          "thumbnail": "assets/gallery-thumbs/636fdbb5d130/02.jpg",
           "alt": "LG전자 HS사업본부 타겟랩 선정 안내",
           "caption": ""
         },
         {
-          "src": "assets/gallery/7f4e5864ca2d/03.jpg",
-          "thumbnail": "assets/gallery-thumbs/7f4e5864ca2d/03.jpg",
+          "src": "assets/gallery/636fdbb5d130/03.jpg",
+          "thumbnail": "assets/gallery-thumbs/636fdbb5d130/03.jpg",
           "alt": "LG전자 HS사업본부 타겟랩 선정 안내",
           "caption": ""
         }
-      ]
+      ],
+      "id": "636fdbb5d130"
     },
     {
       "date": "2026.02",
@@ -50,24 +52,25 @@
       "description": "",
       "images": [
         {
-          "src": "assets/gallery/cb93ebb83256/01.jpg",
-          "thumbnail": "assets/gallery-thumbs/cb93ebb83256/01.jpg",
+          "src": "assets/gallery/5dd2efcfa5d7/01.jpg",
+          "thumbnail": "assets/gallery-thumbs/5dd2efcfa5d7/01.jpg",
           "alt": "학과 연구실 간 풋살 개최",
           "caption": ""
         },
         {
-          "src": "assets/gallery/cb93ebb83256/02.jpg",
-          "thumbnail": "assets/gallery-thumbs/cb93ebb83256/02.jpg",
+          "src": "assets/gallery/5dd2efcfa5d7/02.jpg",
+          "thumbnail": "assets/gallery-thumbs/5dd2efcfa5d7/02.jpg",
           "alt": "학과 연구실 간 풋살 개최",
           "caption": ""
         },
         {
-          "src": "assets/gallery/cb93ebb83256/03.jpg",
-          "thumbnail": "assets/gallery-thumbs/cb93ebb83256/03.jpg",
+          "src": "assets/gallery/5dd2efcfa5d7/03.jpg",
+          "thumbnail": "assets/gallery-thumbs/5dd2efcfa5d7/03.jpg",
           "alt": "학과 연구실 간 풋살 개최",
           "caption": ""
         }
-      ]
+      ],
+      "id": "5dd2efcfa5d7"
     },
     {
       "date": "2026.02",
@@ -75,12 +78,13 @@
       "description": "디지털트윈과 피지컬AI에 대한 기술 및 연구분야 소개",
       "images": [
         {
-          "src": "assets/gallery/ffc3e7fd4eb8/01.jpg",
-          "thumbnail": "assets/gallery-thumbs/ffc3e7fd4eb8/01.jpg",
+          "src": "assets/gallery/24b0b0c4da67/01.jpg",
+          "thumbnail": "assets/gallery-thumbs/24b0b0c4da67/01.jpg",
           "alt": "한양대 ERICA 초청강연 참석",
           "caption": ""
         }
-      ]
+      ],
+      "id": "24b0b0c4da67"
     },
     {
       "date": "2026.01",
@@ -88,18 +92,19 @@
       "description": "자항선 블록배치 최적화 과제 점검을 위해 한화오션에서 연구실 방문 (창민 발표 - 박의윤 선임, 유병우 선임 참석)",
       "images": [
         {
-          "src": "assets/gallery/--/kakaotalk-20260806-112401700-01.jpg",
-          "thumbnail": "assets/gallery-thumbs/--/kakaotalk-20260806-112401700-01.jpg",
+          "src": "assets/gallery/4c084b43f8ab/01.jpg",
+          "thumbnail": "assets/gallery-thumbs/4c084b43f8ab/01.jpg",
           "alt": "한화오션 연구실 방문",
           "caption": ""
         },
         {
-          "src": "assets/gallery/--/kakaotalk-20260806-112401700-02.jpg",
-          "thumbnail": "assets/gallery-thumbs/--/kakaotalk-20260806-112401700-02.jpg",
+          "src": "assets/gallery/4c084b43f8ab/02.jpg",
+          "thumbnail": "assets/gallery-thumbs/4c084b43f8ab/02.jpg",
           "alt": "한화오션 연구실 방문",
           "caption": ""
         }
-      ]
+      ],
+      "id": "4c084b43f8ab"
     },
     {
       "date": "2025.11",
@@ -107,48 +112,49 @@
       "description": "자연대연구실험동 → IT관 이사",
       "images": [
         {
-          "src": "assets/gallery/-/img-4634-1.jpg",
-          "thumbnail": "assets/gallery-thumbs/-/img-4634-1.jpg",
+          "src": "assets/gallery/d1289aa0ae06/01.jpg",
+          "thumbnail": "assets/gallery-thumbs/d1289aa0ae06/01.jpg",
           "alt": "연구실 이사",
           "caption": ""
         },
         {
-          "src": "assets/gallery/-/img-4635-1.jpg",
-          "thumbnail": "assets/gallery-thumbs/-/img-4635-1.jpg",
+          "src": "assets/gallery/d1289aa0ae06/02.jpg",
+          "thumbnail": "assets/gallery-thumbs/d1289aa0ae06/02.jpg",
           "alt": "연구실 이사",
           "caption": ""
         },
         {
-          "src": "assets/gallery/-/-2026-07-20-212941.png",
-          "thumbnail": "assets/gallery-thumbs/-/-2026-07-20-212941.png",
+          "src": "assets/gallery/d1289aa0ae06/03.png",
+          "thumbnail": "assets/gallery-thumbs/d1289aa0ae06/03.png",
           "alt": "연구실 이사",
           "caption": ""
         },
         {
-          "src": "assets/gallery/-/-2026-07-20-212950.png",
-          "thumbnail": "assets/gallery-thumbs/-/-2026-07-20-212950.png",
+          "src": "assets/gallery/d1289aa0ae06/04.png",
+          "thumbnail": "assets/gallery-thumbs/d1289aa0ae06/04.png",
           "alt": "연구실 이사",
           "caption": ""
         },
         {
-          "src": "assets/gallery/-/img-3965.jpg",
-          "thumbnail": "assets/gallery-thumbs/-/img-3965.jpg",
+          "src": "assets/gallery/d1289aa0ae06/05.jpg",
+          "thumbnail": "assets/gallery-thumbs/d1289aa0ae06/05.jpg",
           "alt": "연구실 이사",
           "caption": ""
         },
         {
-          "src": "assets/gallery/-/img-3966.jpg",
-          "thumbnail": "assets/gallery-thumbs/-/img-3966.jpg",
+          "src": "assets/gallery/d1289aa0ae06/06.jpg",
+          "thumbnail": "assets/gallery-thumbs/d1289aa0ae06/06.jpg",
           "alt": "연구실 이사",
           "caption": ""
         },
         {
-          "src": "assets/gallery/-/img-3969.jpg",
-          "thumbnail": "assets/gallery-thumbs/-/img-3969.jpg",
+          "src": "assets/gallery/d1289aa0ae06/07.jpg",
+          "thumbnail": "assets/gallery-thumbs/d1289aa0ae06/07.jpg",
           "alt": "연구실 이사",
           "caption": ""
         }
-      ]
+      ],
+      "id": "d1289aa0ae06"
     },
     {
       "date": "2025.11",
@@ -156,30 +162,31 @@
       "description": "장려상 수상(김정호)",
       "images": [
         {
-          "src": "assets/gallery/ai--/-2026-07-20-213050.png",
-          "thumbnail": "assets/gallery-thumbs/ai--/-2026-07-20-213050.png",
+          "src": "assets/gallery/0bbaa80ead2f/01.png",
+          "thumbnail": "assets/gallery-thumbs/0bbaa80ead2f/01.png",
           "alt": "AI대학원 학생주도연구프로젝트 시상식",
           "caption": ""
         },
         {
-          "src": "assets/gallery/ai--/-2026-07-20-213103.png",
-          "thumbnail": "assets/gallery-thumbs/ai--/-2026-07-20-213103.png",
+          "src": "assets/gallery/0bbaa80ead2f/02.png",
+          "thumbnail": "assets/gallery-thumbs/0bbaa80ead2f/02.png",
           "alt": "AI대학원 학생주도연구프로젝트 시상식",
           "caption": ""
         },
         {
-          "src": "assets/gallery/ai--/-2026-07-20-213025.png",
-          "thumbnail": "assets/gallery-thumbs/ai--/-2026-07-20-213025.png",
+          "src": "assets/gallery/0bbaa80ead2f/03.png",
+          "thumbnail": "assets/gallery-thumbs/0bbaa80ead2f/03.png",
           "alt": "AI대학원 학생주도연구프로젝트 시상식",
           "caption": ""
         },
         {
-          "src": "assets/gallery/ai--/-2026-07-20-213037.png",
-          "thumbnail": "assets/gallery-thumbs/ai--/-2026-07-20-213037.png",
+          "src": "assets/gallery/0bbaa80ead2f/04.png",
+          "thumbnail": "assets/gallery-thumbs/0bbaa80ead2f/04.png",
           "alt": "AI대학원 학생주도연구프로젝트 시상식",
           "caption": ""
         }
-      ]
+      ],
+      "id": "0bbaa80ead2f"
     },
     {
       "date": "2025.09",
@@ -187,30 +194,31 @@
       "description": "고생한\n은\n성이\n",
       "images": [
         {
-          "src": "assets/gallery/----/img-2538.jpeg",
-          "thumbnail": "assets/gallery-thumbs/----/img-2538.jpeg",
+          "src": "assets/gallery/0a786e0f554a/01.jpeg",
+          "thumbnail": "assets/gallery-thumbs/0a786e0f554a/01.jpeg",
           "alt": "다부처 과제 현장 시연평가 참석",
           "caption": ""
         },
         {
-          "src": "assets/gallery/----/img-2542.jpg",
-          "thumbnail": "assets/gallery-thumbs/----/img-2542.jpg",
+          "src": "assets/gallery/0a786e0f554a/02.jpg",
+          "thumbnail": "assets/gallery-thumbs/0a786e0f554a/02.jpg",
           "alt": "다부처 과제 현장 시연평가 참석",
           "caption": ""
         },
         {
-          "src": "assets/gallery/----/img-2545.jpg",
-          "thumbnail": "assets/gallery-thumbs/----/img-2545.jpg",
+          "src": "assets/gallery/0a786e0f554a/03.jpg",
+          "thumbnail": "assets/gallery-thumbs/0a786e0f554a/03.jpg",
           "alt": "다부처 과제 현장 시연평가 참석",
           "caption": ""
         },
         {
-          "src": "assets/gallery/----/img-2564.jpg",
-          "thumbnail": "assets/gallery-thumbs/----/img-2564.jpg",
+          "src": "assets/gallery/0a786e0f554a/04.jpg",
+          "thumbnail": "assets/gallery-thumbs/0a786e0f554a/04.jpg",
           "alt": "다부처 과제 현장 시연평가 참석",
           "caption": ""
         }
-      ]
+      ],
+      "id": "0a786e0f554a"
     },
     {
       "date": "2025.09",
@@ -218,18 +226,19 @@
       "description": "oral session - 최호진, 고은성",
       "images": [
         {
-          "src": "assets/gallery/---/img-2409.jpeg",
-          "thumbnail": "assets/gallery-thumbs/---/img-2409.jpeg",
+          "src": "assets/gallery/774a13baef42/01.jpeg",
+          "thumbnail": "assets/gallery-thumbs/774a13baef42/01.jpeg",
           "alt": "다부처 과제 청정학회 참석",
           "caption": ""
         },
         {
-          "src": "assets/gallery/---/-2026-04-03-105418.png",
-          "thumbnail": "assets/gallery-thumbs/---/-2026-04-03-105418.png",
+          "src": "assets/gallery/774a13baef42/02.png",
+          "thumbnail": "assets/gallery-thumbs/774a13baef42/02.png",
           "alt": "다부처 과제 청정학회 참석",
           "caption": ""
         }
-      ]
+      ],
+      "id": "774a13baef42"
     },
     {
       "date": "2025.07",
@@ -237,18 +246,19 @@
       "description": "MITA 국제학술대회 구두 발표(최호진, 이지혜)",
       "images": [
         {
-          "src": "assets/gallery/2025-07-mita/01.webp",
-          "thumbnail": "assets/gallery-thumbs/2025-07-mita/01.webp",
+          "src": "assets/gallery/6fd325923b5e/01.webp",
+          "thumbnail": "assets/gallery-thumbs/6fd325923b5e/01.webp",
           "alt": "MITA 2025 국제학술대회 활동 사진 1",
           "caption": "MITA 2025 국제학술대회"
         },
         {
-          "src": "assets/gallery/2025-07-mita/02.webp",
-          "thumbnail": "assets/gallery-thumbs/2025-07-mita/02.webp",
+          "src": "assets/gallery/6fd325923b5e/02.webp",
+          "thumbnail": "assets/gallery-thumbs/6fd325923b5e/02.webp",
           "alt": "MITA 2025 국제학술대회 활동 사진 2",
           "caption": "MITA 2025 국제학술대회"
         }
-      ]
+      ],
+      "id": "6fd325923b5e"
     },
     {
       "date": "2025.07",
@@ -256,30 +266,31 @@
       "description": "한국컴퓨터종합학술대회 참석 겸 연구실 MT",
       "images": [
         {
-          "src": "assets/gallery/kcc-2025--mt/kakaotalk-20260720-105417587.jpg",
-          "thumbnail": "assets/gallery-thumbs/kcc-2025--mt/kakaotalk-20260720-105417587.jpg",
+          "src": "assets/gallery/6a3d4c8e137d/01.jpg",
+          "thumbnail": "assets/gallery-thumbs/6a3d4c8e137d/01.jpg",
           "alt": "KCC 2025 & 연구실 MT",
           "caption": ""
         },
         {
-          "src": "assets/gallery/kcc-2025--mt/img-1626.jpg",
-          "thumbnail": "assets/gallery-thumbs/kcc-2025--mt/img-1626.jpg",
+          "src": "assets/gallery/6a3d4c8e137d/02.jpg",
+          "thumbnail": "assets/gallery-thumbs/6a3d4c8e137d/02.jpg",
           "alt": "KCC 2025 & 연구실 MT",
           "caption": ""
         },
         {
-          "src": "assets/gallery/kcc-2025--mt/img-1633.jpg",
-          "thumbnail": "assets/gallery-thumbs/kcc-2025--mt/img-1633.jpg",
+          "src": "assets/gallery/6a3d4c8e137d/03.jpg",
+          "thumbnail": "assets/gallery-thumbs/6a3d4c8e137d/03.jpg",
           "alt": "KCC 2025 & 연구실 MT",
           "caption": ""
         },
         {
-          "src": "assets/gallery/kcc-2025--mt/kakaotalk-20260720-105417587-01.jpg",
-          "thumbnail": "assets/gallery-thumbs/kcc-2025--mt/kakaotalk-20260720-105417587-01.jpg",
+          "src": "assets/gallery/6a3d4c8e137d/04.jpg",
+          "thumbnail": "assets/gallery-thumbs/6a3d4c8e137d/04.jpg",
           "alt": "KCC 2025 & 연구실 MT",
           "caption": ""
         }
-      ]
+      ],
+      "id": "6a3d4c8e137d"
     },
     {
       "date": "2025.03",
@@ -287,36 +298,37 @@
       "description": "자연대연구실험동(313) 시절 연구실 대청소 후",
       "images": [
         {
-          "src": "assets/gallery/2025-03-lab/01.webp",
-          "thumbnail": "assets/gallery-thumbs/2025-03-lab/01.webp",
+          "src": "assets/gallery/de70e94da389/01.webp",
+          "thumbnail": "assets/gallery-thumbs/de70e94da389/01.webp",
           "alt": "2025년 3월 연구실 단체 사진 1",
           "caption": "연구실 대청소 후"
         },
         {
-          "src": "assets/gallery/2025-03-lab/02.webp",
-          "thumbnail": "assets/gallery-thumbs/2025-03-lab/02.webp",
+          "src": "assets/gallery/de70e94da389/02.webp",
+          "thumbnail": "assets/gallery-thumbs/de70e94da389/02.webp",
           "alt": "2025년 3월 연구실 단체 사진 2",
           "caption": "연구실 대청소 후"
         },
         {
-          "src": "assets/gallery/2025-03-lab/03.webp",
-          "thumbnail": "assets/gallery-thumbs/2025-03-lab/03.webp",
+          "src": "assets/gallery/de70e94da389/03.webp",
+          "thumbnail": "assets/gallery-thumbs/de70e94da389/03.webp",
           "alt": "2025년 3월 연구실 단체 사진 3",
           "caption": "연구실 대청소 후"
         },
         {
-          "src": "assets/gallery/2025-03-lab/04.webp",
-          "thumbnail": "assets/gallery-thumbs/2025-03-lab/04.webp",
+          "src": "assets/gallery/de70e94da389/04.webp",
+          "thumbnail": "assets/gallery-thumbs/de70e94da389/04.webp",
           "alt": "2025년 3월 연구실 단체 사진 4",
           "caption": "연구실 대청소 후"
         },
         {
-          "src": "assets/gallery/2025-03-lab/05.webp",
-          "thumbnail": "assets/gallery-thumbs/2025-03-lab/05.webp",
+          "src": "assets/gallery/de70e94da389/05.webp",
+          "thumbnail": "assets/gallery-thumbs/de70e94da389/05.webp",
           "alt": "2025년 3월 연구실 단체 사진 5",
           "caption": "연구실 대청소 후"
         }
-      ]
+      ],
+      "id": "de70e94da389"
     },
     {
       "date": "2024.06",
@@ -324,48 +336,49 @@
       "description": "한국컴퓨터종합학술대회 구두 발표(최호진) 및 포스터 발표(김정호) 참석",
       "images": [
         {
-          "src": "assets/gallery/kcc-2024/kakaotalk-20240701-130948459-01.jpg",
-          "thumbnail": "assets/gallery-thumbs/kcc-2024/kakaotalk-20240701-130948459-01.jpg",
+          "src": "assets/gallery/a7ece84cafa7/01.jpg",
+          "thumbnail": "assets/gallery-thumbs/a7ece84cafa7/01.jpg",
           "alt": "KCC 2024",
           "caption": ""
         },
         {
-          "src": "assets/gallery/kcc-2024/-2026-07-20-212834.png",
-          "thumbnail": "assets/gallery-thumbs/kcc-2024/-2026-07-20-212834.png",
+          "src": "assets/gallery/a7ece84cafa7/02.png",
+          "thumbnail": "assets/gallery-thumbs/a7ece84cafa7/02.png",
           "alt": "KCC 2024",
           "caption": ""
         },
         {
-          "src": "assets/gallery/kcc-2024/1000002456.jpg",
-          "thumbnail": "assets/gallery-thumbs/kcc-2024/1000002456.jpg",
+          "src": "assets/gallery/a7ece84cafa7/03.jpg",
+          "thumbnail": "assets/gallery-thumbs/a7ece84cafa7/03.jpg",
           "alt": "KCC 2024",
           "caption": ""
         },
         {
-          "src": "assets/gallery/kcc-2024/11388.jpg",
-          "thumbnail": "assets/gallery-thumbs/kcc-2024/11388.jpg",
+          "src": "assets/gallery/a7ece84cafa7/04.jpg",
+          "thumbnail": "assets/gallery-thumbs/a7ece84cafa7/04.jpg",
           "alt": "KCC 2024",
           "caption": ""
         },
         {
-          "src": "assets/gallery/kcc-2024/img-1749.jpg",
-          "thumbnail": "assets/gallery-thumbs/kcc-2024/img-1749.jpg",
+          "src": "assets/gallery/a7ece84cafa7/05.jpg",
+          "thumbnail": "assets/gallery-thumbs/a7ece84cafa7/05.jpg",
           "alt": "KCC 2024",
           "caption": ""
         },
         {
-          "src": "assets/gallery/kcc-2024/img-6446.jpg",
-          "thumbnail": "assets/gallery-thumbs/kcc-2024/img-6446.jpg",
+          "src": "assets/gallery/a7ece84cafa7/06.jpg",
+          "thumbnail": "assets/gallery-thumbs/a7ece84cafa7/06.jpg",
           "alt": "KCC 2024",
           "caption": ""
         },
         {
-          "src": "assets/gallery/kcc-2024/img-2838.jpg",
-          "thumbnail": "assets/gallery-thumbs/kcc-2024/img-2838.jpg",
+          "src": "assets/gallery/a7ece84cafa7/07.jpg",
+          "thumbnail": "assets/gallery-thumbs/a7ece84cafa7/07.jpg",
           "alt": "KCC 2024",
           "caption": ""
         }
-      ]
+      ],
+      "id": "a7ece84cafa7"
     },
     {
       "date": "2024.01",
@@ -373,24 +386,25 @@
       "description": "10th Anniversary Korea-Japan Joint Workshop on Complex Communication Sciences (KJCCS 2024) 국제 학술 대회 구두 발표(안현기) 및 회의 참석",
       "images": [
         {
-          "src": "assets/gallery/kjccs-2024/kakaotalk-20260720-195423769-19.jpg",
-          "thumbnail": "assets/gallery-thumbs/kjccs-2024/kakaotalk-20260720-195423769-19.jpg",
+          "src": "assets/gallery/a6b4ddd8acce/01.jpg",
+          "thumbnail": "assets/gallery-thumbs/a6b4ddd8acce/01.jpg",
           "alt": "KJCCS 2024",
           "caption": ""
         },
         {
-          "src": "assets/gallery/kjccs-2024/kakaotalk-20260720-195423769-04.jpg",
-          "thumbnail": "assets/gallery-thumbs/kjccs-2024/kakaotalk-20260720-195423769-04.jpg",
+          "src": "assets/gallery/a6b4ddd8acce/02.jpg",
+          "thumbnail": "assets/gallery-thumbs/a6b4ddd8acce/02.jpg",
           "alt": "KJCCS 2024",
           "caption": ""
         },
         {
-          "src": "assets/gallery/kjccs-2024/kakaotalk-20260720-195423769-01.jpg",
-          "thumbnail": "assets/gallery-thumbs/kjccs-2024/kakaotalk-20260720-195423769-01.jpg",
+          "src": "assets/gallery/a6b4ddd8acce/03.jpg",
+          "thumbnail": "assets/gallery-thumbs/a6b4ddd8acce/03.jpg",
           "alt": "KJCCS 2024",
           "caption": ""
         }
-      ]
+      ],
+      "id": "a6b4ddd8acce"
     },
     {
       "date": "2022.11",
@@ -398,24 +412,25 @@
       "description": "2022 TECHWEEK 활동최호진, 안현기 연구원 수상",
       "images": [
         {
-          "src": "assets/gallery/techweek/-2026-07-20-212404.png",
-          "thumbnail": "assets/gallery-thumbs/techweek/-2026-07-20-212404.png",
+          "src": "assets/gallery/77a3355eb290/01.png",
+          "thumbnail": "assets/gallery-thumbs/77a3355eb290/01.png",
           "alt": "TECHWEEK",
           "caption": ""
         },
         {
-          "src": "assets/gallery/techweek/-2026-07-20-212336.png",
-          "thumbnail": "assets/gallery-thumbs/techweek/-2026-07-20-212336.png",
+          "src": "assets/gallery/77a3355eb290/02.png",
+          "thumbnail": "assets/gallery-thumbs/77a3355eb290/02.png",
           "alt": "TECHWEEK",
           "caption": ""
         },
         {
-          "src": "assets/gallery/techweek/-2026-07-20-212426.png",
-          "thumbnail": "assets/gallery-thumbs/techweek/-2026-07-20-212426.png",
+          "src": "assets/gallery/77a3355eb290/03.png",
+          "thumbnail": "assets/gallery-thumbs/77a3355eb290/03.png",
           "alt": "TECHWEEK",
           "caption": ""
         }
-      ]
+      ],
+      "id": "77a3355eb290"
     }
   ],
   "page": {

@@ -245,7 +245,7 @@ const publicationFields = [
 ];
 
 export const contentContract = {
-  version: 6,
+  version: 7,
   site: "dtp-lab.github.io",
   controlledKeywords,
   views: [
@@ -572,6 +572,7 @@ export const contentContract = {
         listField("events", "행사", {
           type: "object",
           fields: [
+            stringField("id", "ID", { required: true, generated: "gallery-event-id", formHidden: true }),
             stringField("date", "날짜", { required: true, input: "month", pattern: "YYYY.MM" }),
             stringField("title", "제목", { required: true }),
             textField("description", "설명", { optional: true }),
@@ -869,10 +870,34 @@ export function validateContent({
   rejectKeys(galleryDocument, ["source", "migrated"], "gallery");
   validateHeading(galleryDocument.page, "gallery.page");
   const gallery = galleryDocument.events || [];
+  const galleryIds = new Set();
+  const galleryPaths = new Set();
   gallery.forEach((event, index) => {
-    if (!validDate(event.date)) errors.push(`gallery[${index}].date: use YYYY.MM`);
-    requiredText(event.title, `gallery[${index}].title`);
-    validateImages(event.images, `gallery[${index}]`);
+    const at = `gallery[${index}]`;
+    requiredText(event.id, `${at}.id`);
+    if (!/^[0-9a-f]{12}$/.test(event.id || "")) errors.push(`${at}.id: use 12 lowercase hex characters`);
+    if (galleryIds.has(event.id)) errors.push(`${at}.id: duplicate Gallery event ID`);
+    galleryIds.add(event.id);
+    if (!validDate(event.date)) errors.push(`${at}.date: use YYYY.MM`);
+    requiredText(event.title, `${at}.title`);
+    validateImages(event.images, at);
+    (event.images || []).forEach((image, imageIndex) => {
+      const number = String(imageIndex + 1).padStart(2, "0");
+      const originalPattern = new RegExp(`^assets/gallery/${event.id}/${number}\\.(?:jpe?g|png|webp)$`);
+      const thumbnailPattern = new RegExp(`^assets/gallery-thumbs/${event.id}/${number}\\.(?:jpe?g|png|webp)$`);
+      if (!originalPattern.test(image?.src || "")) errors.push(`${at}.images[${imageIndex}].src: use assets/gallery/<event-id>/${number}.ext`);
+      if (!thumbnailPattern.test(image?.thumbnail || "")) errors.push(`${at}.images[${imageIndex}].thumbnail: use assets/gallery-thumbs/<event-id>/${number}.ext`);
+      const originalExtension = path.extname(image?.src || "").toLowerCase();
+      const thumbnailExtension = path.extname(image?.thumbnail || "").toLowerCase();
+      if (originalExtension && thumbnailExtension && originalExtension !== thumbnailExtension) {
+        errors.push(`${at}.images[${imageIndex}]: original and thumbnail extensions must match`);
+      }
+      for (const reference of [image?.src, image?.thumbnail]) {
+        if (!reference) continue;
+        if (galleryPaths.has(reference)) errors.push(`${at}.images[${imageIndex}]: duplicate Gallery asset path (${reference})`);
+        galleryPaths.add(reference);
+      }
+    });
   });
 
   const citations = read("citations.json");

@@ -1,0 +1,634 @@
+{
+  "schemaVersion": 1,
+  "sourceHead": "2c4935d7cefcaeb81f50ec3447c1c01bcc0f2e82",
+  "deletedFiles": 104,
+  "deletedBytes": 61676866,
+  "siteReferenceCountsBeforeDeletion": {
+    "assets/gallery/ea1750b32caa/01.jpg": 0,
+    "assets/gallery-thumbs/ea1750b32caa/01.jpg": 0,
+    "assets/gallery/ea1750b32caa/02.jpg": 0,
+    "assets/gallery-thumbs/ea1750b32caa/02.jpg": 0,
+    "assets/gallery/7f4e5864ca2d/01.jpg": 0,
+    "assets/gallery-thumbs/7f4e5864ca2d/01.jpg": 0,
+    "assets/gallery/7f4e5864ca2d/02.jpg": 0,
+    "assets/gallery-thumbs/7f4e5864ca2d/02.jpg": 0,
+    "assets/gallery/7f4e5864ca2d/03.jpg": 0,
+    "assets/gallery-thumbs/7f4e5864ca2d/03.jpg": 0,
+    "assets/gallery/cb93ebb83256/01.jpg": 0,
+    "assets/gallery-thumbs/cb93ebb83256/01.jpg": 0,
+    "assets/gallery/cb93ebb83256/02.jpg": 0,
+    "assets/gallery-thumbs/cb93ebb83256/02.jpg": 0,
+    "assets/gallery/cb93ebb83256/03.jpg": 0,
+    "assets/gallery-thumbs/cb93ebb83256/03.jpg": 0,
+    "assets/gallery/ffc3e7fd4eb8/01.jpg": 0,
+    "assets/gallery-thumbs/ffc3e7fd4eb8/01.jpg": 0,
+    "assets/gallery/--/kakaotalk-20260806-112401700-01.jpg": 0,
+    "assets/gallery-thumbs/--/kakaotalk-20260806-112401700-01.jpg": 0,
+    "assets/gallery/--/kakaotalk-20260806-112401700-02.jpg": 0,
+    "assets/gallery-thumbs/--/kakaotalk-20260806-112401700-02.jpg": 0,
+    "assets/gallery/-/img-4634-1.jpg": 0,
+    "assets/gallery-thumbs/-/img-4634-1.jpg": 0,
+    "assets/gallery/-/img-4635-1.jpg": 0,
+    "assets/gallery-thumbs/-/img-4635-1.jpg": 0,
+    "assets/gallery/-/-2026-07-20-212941.png": 0,
+    "assets/gallery-thumbs/-/-2026-07-20-212941.png": 0,
+    "assets/gallery/-/-2026-07-20-212950.png": 0,
+    "assets/gallery-thumbs/-/-2026-07-20-212950.png": 0,
+    "assets/gallery/-/img-3965.jpg": 0,
+    "assets/gallery-thumbs/-/img-3965.jpg": 0,
+    "assets/gallery/-/img-3966.jpg": 0,
+    "assets/gallery-thumbs/-/img-3966.jpg": 0,
+    "assets/gallery/-/img-3969.jpg": 0,
+    "assets/gallery-thumbs/-/img-3969.jpg": 0,
+    "assets/gallery/ai--/-2026-07-20-213050.png": 0,
+    "assets/gallery-thumbs/ai--/-2026-07-20-213050.png": 0,
+    "assets/gallery/ai--/-2026-07-20-213103.png": 0,
+    "assets/gallery-thumbs/ai--/-2026-07-20-213103.png": 0,
+    "assets/gallery/ai--/-2026-07-20-213025.png": 0,
+    "assets/gallery-thumbs/ai--/-2026-07-20-213025.png": 0,
+    "assets/gallery/ai--/-2026-07-20-213037.png": 0,
+    "assets/gallery-thumbs/ai--/-2026-07-20-213037.png": 0,
+    "assets/gallery/----/img-2538.jpeg": 0,
+    "assets/gallery-thumbs/----/img-2538.jpeg": 0,
+    "assets/gallery/----/img-2542.jpg": 0,
+    "assets/gallery-thumbs/----/img-2542.jpg": 0,
+    "assets/gallery/----/img-2545.jpg": 0,
+    "assets/gallery-thumbs/----/img-2545.jpg": 0,
+    "assets/gallery/----/img-2564.jpg": 0,
+    "assets/gallery-thumbs/----/img-2564.jpg": 0,
+    "assets/gallery/---/img-2409.jpeg": 0,
+    "assets/gallery-thumbs/---/img-2409.jpeg": 0,
+    "assets/gallery/---/-2026-04-03-105418.png": 0,
+    "assets/gallery-thumbs/---/-2026-04-03-105418.png": 0,
+    "assets/gallery/2025-07-mita/01.webp": 0,
+    "assets/gallery-thumbs/2025-07-mita/01.webp": 0,
+    "assets/gallery/2025-07-mita/02.webp": 0,
+    "assets/gallery-thumbs/2025-07-mita/02.webp": 0,
+    "assets/gallery/kcc-2025--mt/kakaotalk-20260720-105417587.jpg": 0,
+    "assets/gallery-thumbs/kcc-2025--mt/kakaotalk-20260720-105417587.jpg": 0,
+    "assets/gallery/kcc-2025--mt/img-1626.jpg": 0,
+    "assets/gallery-thumbs/kcc-2025--mt/img-1626.jpg": 0,
+    "assets/gallery/kcc-2025--mt/img-1633.jpg": 0,
+    "assets/gallery-thumbs/kcc-2025--mt/img-1633.jpg": 0,
+    "assets/gallery/kcc-2025--mt/kakaotalk-20260720-105417587-01.jpg": 0,
+    "assets/gallery-thumbs/kcc-2025--mt/kakaotalk-20260720-105417587-01.jpg": 0,
+    "assets/gallery/2025-03-lab/01.webp": 0,
+    "assets/gallery-thumbs/2025-03-lab/01.webp": 0,
+    "assets/gallery/2025-03-lab/02.webp": 0,
+    "assets/gallery-thumbs/2025-03-lab/02.webp": 0,
+    "assets/gallery/2025-03-lab/03.webp": 0,
+    "assets/gallery-thumbs/2025-03-lab/03.webp": 0,
+    "assets/gallery/2025-03-lab/04.webp": 0,
+    "assets/gallery-thumbs/2025-03-lab/04.webp": 0,
+    "assets/gallery/2025-03-lab/05.webp": 0,
+    "assets/gallery-thumbs/2025-03-lab/05.webp": 0,
+    "assets/gallery/kcc-2024/kakaotalk-20240701-130948459-01.jpg": 0,
+    "assets/gallery-thumbs/kcc-2024/kakaotalk-20240701-130948459-01.jpg": 0,
+    "assets/gallery/kcc-2024/-2026-07-20-212834.png": 0,
+    "assets/gallery-thumbs/kcc-2024/-2026-07-20-212834.png": 0,
+    "assets/gallery/kcc-2024/1000002456.jpg": 0,
+    "assets/gallery-thumbs/kcc-2024/1000002456.jpg": 0,
+    "assets/gallery/kcc-2024/11388.jpg": 0,
+    "assets/gallery-thumbs/kcc-2024/11388.jpg": 0,
+    "assets/gallery/kcc-2024/img-1749.jpg": 0,
+    "assets/gallery-thumbs/kcc-2024/img-1749.jpg": 0,
+    "assets/gallery/kcc-2024/img-6446.jpg": 0,
+    "assets/gallery-thumbs/kcc-2024/img-6446.jpg": 0,
+    "assets/gallery/kcc-2024/img-2838.jpg": 0,
+    "assets/gallery-thumbs/kcc-2024/img-2838.jpg": 0,
+    "assets/gallery/kjccs-2024/kakaotalk-20260720-195423769-19.jpg": 0,
+    "assets/gallery-thumbs/kjccs-2024/kakaotalk-20260720-195423769-19.jpg": 0,
+    "assets/gallery/kjccs-2024/kakaotalk-20260720-195423769-04.jpg": 0,
+    "assets/gallery-thumbs/kjccs-2024/kakaotalk-20260720-195423769-04.jpg": 0,
+    "assets/gallery/kjccs-2024/kakaotalk-20260720-195423769-01.jpg": 0,
+    "assets/gallery-thumbs/kjccs-2024/kakaotalk-20260720-195423769-01.jpg": 0,
+    "assets/gallery/techweek/-2026-07-20-212404.png": 0,
+    "assets/gallery-thumbs/techweek/-2026-07-20-212404.png": 0,
+    "assets/gallery/techweek/-2026-07-20-212336.png": 0,
+    "assets/gallery-thumbs/techweek/-2026-07-20-212336.png": 0,
+    "assets/gallery/techweek/-2026-07-20-212426.png": 0,
+    "assets/gallery-thumbs/techweek/-2026-07-20-212426.png": 0
+  },
+  "files": [
+    {
+      "path": "assets/gallery/ea1750b32caa/01.jpg",
+      "bytes": 2086139,
+      "sha256": "644224fe1d8632138af8066b66499f0698626b989b5007fd7f73a658d0f9199b"
+    },
+    {
+      "path": "assets/gallery-thumbs/ea1750b32caa/01.jpg",
+      "bytes": 130273,
+      "sha256": "43852697a23fe17c76d987916235947b785e45e0a6fb96c8ed3d57662f7f755f"
+    },
+    {
+      "path": "assets/gallery/ea1750b32caa/02.jpg",
+      "bytes": 1464944,
+      "sha256": "dc10c2bb1b32617155864c475e333ed086bcdd6ec547648e15c9265c07cf6493"
+    },
+    {
+      "path": "assets/gallery-thumbs/ea1750b32caa/02.jpg",
+      "bytes": 159456,
+      "sha256": "f98422a3e750b1390063f3329c665e0047ea40d72f56fd53b634dd67ff65853f"
+    },
+    {
+      "path": "assets/gallery/7f4e5864ca2d/01.jpg",
+      "bytes": 2009493,
+      "sha256": "e45a8c831ac13266d96602be556ae79e9703f28f94a76022eeb6daab1f84d76b"
+    },
+    {
+      "path": "assets/gallery-thumbs/7f4e5864ca2d/01.jpg",
+      "bytes": 106587,
+      "sha256": "824204f43b967f33c189b3f24b65b1dc4755c7ce5c56369747720673d65a7a95"
+    },
+    {
+      "path": "assets/gallery/7f4e5864ca2d/02.jpg",
+      "bytes": 2016702,
+      "sha256": "d43af87c8749d7c80c54fab10e2ef51c31380c73a715d938fbec0824e272b23b"
+    },
+    {
+      "path": "assets/gallery-thumbs/7f4e5864ca2d/02.jpg",
+      "bytes": 95425,
+      "sha256": "10ccc36f7818db2bc1f85ca023f863f0b4c622b95cb2abb0ed53d7893f31017a"
+    },
+    {
+      "path": "assets/gallery/7f4e5864ca2d/03.jpg",
+      "bytes": 2059276,
+      "sha256": "9b60088dfb99211c7f3ff6dd67afa5f90d7c09cd2eb5ab7b0d37836f1eb50095"
+    },
+    {
+      "path": "assets/gallery-thumbs/7f4e5864ca2d/03.jpg",
+      "bytes": 94387,
+      "sha256": "2e3f5d0b5f786276c88b8b92632e578737161782f50ea5cc862c8edffdbba7cb"
+    },
+    {
+      "path": "assets/gallery/cb93ebb83256/01.jpg",
+      "bytes": 2054807,
+      "sha256": "bcd4f019f3750a6e3edbde09955c2d711933046133508c5301a6d3e26c85a2ba"
+    },
+    {
+      "path": "assets/gallery-thumbs/cb93ebb83256/01.jpg",
+      "bytes": 114845,
+      "sha256": "e7daa33160df0126eed0e7acde7c7520c104c73972132602a9fbffcd4ad97bb6"
+    },
+    {
+      "path": "assets/gallery/cb93ebb83256/02.jpg",
+      "bytes": 1985862,
+      "sha256": "fc0a87b54f7bb2e4b74fdf95aa03e8e633dce408e52259175b410480232129fd"
+    },
+    {
+      "path": "assets/gallery-thumbs/cb93ebb83256/02.jpg",
+      "bytes": 101195,
+      "sha256": "793e6d83b9f8fb238556acabc83686c05db9238d9fa786c6c20edbf942d5b740"
+    },
+    {
+      "path": "assets/gallery/cb93ebb83256/03.jpg",
+      "bytes": 2072686,
+      "sha256": "8d694df489e885ca709cd5181c300b2aec46296f343b2822f1ef466c735df5bd"
+    },
+    {
+      "path": "assets/gallery-thumbs/cb93ebb83256/03.jpg",
+      "bytes": 114279,
+      "sha256": "54b30b5569e10f934934e376e20d1ecbc768799711ac52c3324c2d307765f078"
+    },
+    {
+      "path": "assets/gallery/ffc3e7fd4eb8/01.jpg",
+      "bytes": 1998343,
+      "sha256": "2b2a72564657ac5f28f2994691e496f396d2ceeac1c59f2b51c72ef47db7025f"
+    },
+    {
+      "path": "assets/gallery-thumbs/ffc3e7fd4eb8/01.jpg",
+      "bytes": 74737,
+      "sha256": "9de77657b8c0a45b24a18fb18862aab54b962f5bc301c67c1af17c1c078bc4d2"
+    },
+    {
+      "path": "assets/gallery/--/kakaotalk-20260806-112401700-01.jpg",
+      "bytes": 446375,
+      "sha256": "e875a61213f2b9358fcc040b108cc8357118058f8d1fafdde2229a20b8d70eb2"
+    },
+    {
+      "path": "assets/gallery-thumbs/--/kakaotalk-20260806-112401700-01.jpg",
+      "bytes": 35212,
+      "sha256": "11627248aaff9a1888ecd22bdfd61c6609fdca0350f34ff10db0a28709ecbec1"
+    },
+    {
+      "path": "assets/gallery/--/kakaotalk-20260806-112401700-02.jpg",
+      "bytes": 473542,
+      "sha256": "948af4464db5816bf79cd1610db7536eb4b132447bef7eb87f70da9afa219b14"
+    },
+    {
+      "path": "assets/gallery-thumbs/--/kakaotalk-20260806-112401700-02.jpg",
+      "bytes": 38916,
+      "sha256": "c4f9eb28537756347beb9cc5e4a7a328bde36baa6f1ff16edc1fde6b19247ce4"
+    },
+    {
+      "path": "assets/gallery/-/img-4634-1.jpg",
+      "bytes": 785788,
+      "sha256": "a93153b6ce6327c01626d51fde0e3afde4b0314d2ab7c450c0a6ce6ee576091f"
+    },
+    {
+      "path": "assets/gallery-thumbs/-/img-4634-1.jpg",
+      "bytes": 59137,
+      "sha256": "3cb06112d40578b1b8e0103bca8ca5fde2ac125bcd5373525387bb469f710240"
+    },
+    {
+      "path": "assets/gallery/-/img-4635-1.jpg",
+      "bytes": 758586,
+      "sha256": "5aa72fe7b3d5cbdb75a49b56cdba6202ae93880486b41292ebb4a965a358a482"
+    },
+    {
+      "path": "assets/gallery-thumbs/-/img-4635-1.jpg",
+      "bytes": 57213,
+      "sha256": "8ef9065e533f6bafb75aa2a087083847b322ede89336c581e4ddfdd13898b894"
+    },
+    {
+      "path": "assets/gallery/-/-2026-07-20-212941.png",
+      "bytes": 1122404,
+      "sha256": "e12cff4238d904f9e408e2a407d4c35ecf29f99909663932e3bd219dbf11b53a"
+    },
+    {
+      "path": "assets/gallery-thumbs/-/-2026-07-20-212941.png",
+      "bytes": 472564,
+      "sha256": "e7d7250f61196948d85f9c763cf30c5ff0b3c524ca5a35a535472109c6eddc14"
+    },
+    {
+      "path": "assets/gallery/-/-2026-07-20-212950.png",
+      "bytes": 996903,
+      "sha256": "d640c66e6901372e7000474f436ef9e4e7fbb66b52258b573496b324eb871de4"
+    },
+    {
+      "path": "assets/gallery-thumbs/-/-2026-07-20-212950.png",
+      "bytes": 421255,
+      "sha256": "afb11aaf4962a13823a67cab78109bda1558b84ba4da75f79d6a614749c643ca"
+    },
+    {
+      "path": "assets/gallery/-/img-3965.jpg",
+      "bytes": 580428,
+      "sha256": "aa63dc4aa62e12321f2327f4ff4b659bb9118bab4f7cbdea05bb39bb3fe12be8"
+    },
+    {
+      "path": "assets/gallery-thumbs/-/img-3965.jpg",
+      "bytes": 43979,
+      "sha256": "10513fd513aaebc4b048abe456e35f37e9d86111f9794a168246c6ab088b98da"
+    },
+    {
+      "path": "assets/gallery/-/img-3966.jpg",
+      "bytes": 800018,
+      "sha256": "08fb67a2feae77bafae39da969b37cbb4effe544dfd2d319693665c126b4c338"
+    },
+    {
+      "path": "assets/gallery-thumbs/-/img-3966.jpg",
+      "bytes": 60839,
+      "sha256": "194d34328a220808d113a78d1008397a5f2f42ff6074d23f6b3293fc42eb59b0"
+    },
+    {
+      "path": "assets/gallery/-/img-3969.jpg",
+      "bytes": 686351,
+      "sha256": "a63c544cdd7805f3c81d94dbba71cae0ccf45cf4609a9cfa722f6402891fc7b9"
+    },
+    {
+      "path": "assets/gallery-thumbs/-/img-3969.jpg",
+      "bytes": 48961,
+      "sha256": "be9e39a14af7be39c24f15163330c91d685886961f1bfe1d15489ca0b60a374f"
+    },
+    {
+      "path": "assets/gallery/ai--/-2026-07-20-213050.png",
+      "bytes": 818137,
+      "sha256": "77f5e2d39a701f21e1f3454aac1c67f9476f172a2f6ec232317bd4cde440c64d"
+    },
+    {
+      "path": "assets/gallery-thumbs/ai--/-2026-07-20-213050.png",
+      "bytes": 348122,
+      "sha256": "e865f7fb808d595dbdb066b0b987cf93eaba9b24e4cc8c0a95f7ce13d8ff403a"
+    },
+    {
+      "path": "assets/gallery/ai--/-2026-07-20-213103.png",
+      "bytes": 1050049,
+      "sha256": "90b9f17151ba733140617a45319389aa2dbf9fbefb7372a8f47ea2a31b4cdead"
+    },
+    {
+      "path": "assets/gallery-thumbs/ai--/-2026-07-20-213103.png",
+      "bytes": 409278,
+      "sha256": "1b75e095c0524cdf1ce0968141e2cf19c6ba64054a1d1c128cc074e8e0f993e1"
+    },
+    {
+      "path": "assets/gallery/ai--/-2026-07-20-213025.png",
+      "bytes": 1105549,
+      "sha256": "44b5cd639bf13aa0b5598e2bb9f534cbf11c04e37c48c63f162362ff0fe5dfb3"
+    },
+    {
+      "path": "assets/gallery-thumbs/ai--/-2026-07-20-213025.png",
+      "bytes": 438732,
+      "sha256": "b5f800e32c8cee76bfab2d9a1afaf2fb1197edc29602f879ce89fefab1f2f727"
+    },
+    {
+      "path": "assets/gallery/ai--/-2026-07-20-213037.png",
+      "bytes": 1123525,
+      "sha256": "0fd3d5f968b59b45c445ac99ff523521200c9e8224fdaafcde701c0a9500f50c"
+    },
+    {
+      "path": "assets/gallery-thumbs/ai--/-2026-07-20-213037.png",
+      "bytes": 436942,
+      "sha256": "83ca4f09ca5a80e0fbc77109936fd665e11cd7741a759daba5232df9ea7c510d"
+    },
+    {
+      "path": "assets/gallery/----/img-2538.jpeg",
+      "bytes": 980497,
+      "sha256": "b669e34992940277fb3bae20e7f35107ec61ce1da421fe297be45f410a493607"
+    },
+    {
+      "path": "assets/gallery-thumbs/----/img-2538.jpeg",
+      "bytes": 67715,
+      "sha256": "f8e999041999e5ad4b3fccc018734594a31da604aef9377fea6ec5918e68d2d6"
+    },
+    {
+      "path": "assets/gallery/----/img-2542.jpg",
+      "bytes": 1646059,
+      "sha256": "99f6861d1d6d706406a04f297aaaa9aef7c64a1e015a308d7d77b6f991e770df"
+    },
+    {
+      "path": "assets/gallery-thumbs/----/img-2542.jpg",
+      "bytes": 93126,
+      "sha256": "d1edfb56c1799221cabe2187f7135fd78512a601b9d2b988742d3ea599a7f923"
+    },
+    {
+      "path": "assets/gallery/----/img-2545.jpg",
+      "bytes": 941970,
+      "sha256": "0140d057bfb7bb290e4aee28e3724617d6820924139e4124ac2a7f1ab1584b78"
+    },
+    {
+      "path": "assets/gallery-thumbs/----/img-2545.jpg",
+      "bytes": 65297,
+      "sha256": "4dac860663560c8a194b5e1791be4dbb5f6805b77955b97d4d250181d2f3fcca"
+    },
+    {
+      "path": "assets/gallery/----/img-2564.jpg",
+      "bytes": 1251984,
+      "sha256": "334f06a8c37ff84ac737465b8985d6bb58c41b3e4f890bb4bf0ff379a1daf5b4"
+    },
+    {
+      "path": "assets/gallery-thumbs/----/img-2564.jpg",
+      "bytes": 90376,
+      "sha256": "83b91923998c655265d18342fc3df14befc2b0600b7bfed2233a0a3abc27b1c6"
+    },
+    {
+      "path": "assets/gallery/---/img-2409.jpeg",
+      "bytes": 933647,
+      "sha256": "3537ee5b0e857920b11906a1afaf62caa9dbdda6f86f72bd3e0f6d2cad069309"
+    },
+    {
+      "path": "assets/gallery-thumbs/---/img-2409.jpeg",
+      "bytes": 62295,
+      "sha256": "61c04cc72f59ecbf589146c53040900919e5027eba886c6e4e2681971d1c2b9e"
+    },
+    {
+      "path": "assets/gallery/---/-2026-04-03-105418.png",
+      "bytes": 1226648,
+      "sha256": "b886348091c9f0fe2b7f8f164ba49cc993bfd967d1ae53624980b228ba8bdcf9"
+    },
+    {
+      "path": "assets/gallery-thumbs/---/-2026-04-03-105418.png",
+      "bytes": 514982,
+      "sha256": "3f254cee238da983bca75684187a72900b056c0274834316ba88aabd81eb55a0"
+    },
+    {
+      "path": "assets/gallery/2025-07-mita/01.webp",
+      "bytes": 79686,
+      "sha256": "91b14483a11136f4e07e771b90d9a779bfef5adcf073fc2ddd9584bbff54ecb5"
+    },
+    {
+      "path": "assets/gallery-thumbs/2025-07-mita/01.webp",
+      "bytes": 18230,
+      "sha256": "fe66f2ba789a3a8ce285a7900b9b202a5cd66c204cacfa8dcc94ba819dbd46b7"
+    },
+    {
+      "path": "assets/gallery/2025-07-mita/02.webp",
+      "bytes": 148190,
+      "sha256": "6908fdc3ff86818da21c1d1bb7192342858b78018c1944dfc9cd8675b165c3d6"
+    },
+    {
+      "path": "assets/gallery-thumbs/2025-07-mita/02.webp",
+      "bytes": 33714,
+      "sha256": "3f1ccd89f746287e2803e693dc1affcfc249734eb479271448b1d867189e687e"
+    },
+    {
+      "path": "assets/gallery/kcc-2025--mt/kakaotalk-20260720-105417587.jpg",
+      "bytes": 535768,
+      "sha256": "e4f3c02bee10e8d51743acb9b285ea96b9f7d1aec1ec0f3a9d2dcaea18155d75"
+    },
+    {
+      "path": "assets/gallery-thumbs/kcc-2025--mt/kakaotalk-20260720-105417587.jpg",
+      "bytes": 60141,
+      "sha256": "c784a502724eb98742c05bb648015fce0234a232ab436b2f7b01e8d43e5a127b"
+    },
+    {
+      "path": "assets/gallery/kcc-2025--mt/img-1626.jpg",
+      "bytes": 870424,
+      "sha256": "7245a5dc9af6beee486e9a0dc1a4a4bcc850948f2df61028a40243fbd2b0c4c4"
+    },
+    {
+      "path": "assets/gallery-thumbs/kcc-2025--mt/img-1626.jpg",
+      "bytes": 64665,
+      "sha256": "e774372a331e9b6b1f696a5914dc4a4ca2ea3e757a0edfe432fee158d97c9e69"
+    },
+    {
+      "path": "assets/gallery/kcc-2025--mt/img-1633.jpg",
+      "bytes": 906107,
+      "sha256": "8e24571890132daebec22e72fc844002c6a6103a954e49398fbf3834c705b181"
+    },
+    {
+      "path": "assets/gallery-thumbs/kcc-2025--mt/img-1633.jpg",
+      "bytes": 74701,
+      "sha256": "869ce0af88b7dfac02c3b363dd6d92ac5068199a348020840a94bfa2f78770a2"
+    },
+    {
+      "path": "assets/gallery/kcc-2025--mt/kakaotalk-20260720-105417587-01.jpg",
+      "bytes": 285307,
+      "sha256": "5fca649a622ffdc02a5e152de5909bc1cbd5a0a963e4022ad05d843bb9cc3b7c"
+    },
+    {
+      "path": "assets/gallery-thumbs/kcc-2025--mt/kakaotalk-20260720-105417587-01.jpg",
+      "bytes": 21406,
+      "sha256": "13712ed54d1503864b369eec89e9dc0a902ffcbd8a16c49a6b0603bc1abc2e62"
+    },
+    {
+      "path": "assets/gallery/2025-03-lab/01.webp",
+      "bytes": 170112,
+      "sha256": "4208276d3820030d84f4ec876465ee364866884e2f364c4f3caa45a78f5164b8"
+    },
+    {
+      "path": "assets/gallery-thumbs/2025-03-lab/01.webp",
+      "bytes": 24710,
+      "sha256": "2f6a9028275ae37733f97dc71936e28b10c92009e348d1ae3122dc0b78fac313"
+    },
+    {
+      "path": "assets/gallery/2025-03-lab/02.webp",
+      "bytes": 296914,
+      "sha256": "f19aff5ee84c5ed8ed77b0e780fc3903046dc10cb24261d7734c16288490469e"
+    },
+    {
+      "path": "assets/gallery-thumbs/2025-03-lab/02.webp",
+      "bytes": 36760,
+      "sha256": "3b0e23f3fccf1ba7e83c796083f1fdb6b2143a8cf5cb4e2df965efcb9a84a800"
+    },
+    {
+      "path": "assets/gallery/2025-03-lab/03.webp",
+      "bytes": 235428,
+      "sha256": "be2c5ee2ef16117635dc184632906257a75dd104a1a6eccf5de12097f4c27552"
+    },
+    {
+      "path": "assets/gallery-thumbs/2025-03-lab/03.webp",
+      "bytes": 28680,
+      "sha256": "cdf2749544bbe6c6ffa9783c7cf0df36fdd13b4664a90ba09e05100683293bb0"
+    },
+    {
+      "path": "assets/gallery/2025-03-lab/04.webp",
+      "bytes": 95714,
+      "sha256": "b928ca6a77efa7171e4ddeb53ee5c2011373a49f2301e571f33d7c235b600dc3"
+    },
+    {
+      "path": "assets/gallery-thumbs/2025-03-lab/04.webp",
+      "bytes": 25482,
+      "sha256": "21c2b58a001fa055354374c0885d171e4c98880a16c1fb6b7d183a5a7b96b46e"
+    },
+    {
+      "path": "assets/gallery/2025-03-lab/05.webp",
+      "bytes": 142616,
+      "sha256": "8b958568fab9d712579f834b1f0e39b6e3abe40388fac43ed9a54f09ec962393"
+    },
+    {
+      "path": "assets/gallery-thumbs/2025-03-lab/05.webp",
+      "bytes": 38626,
+      "sha256": "1c0b52459e9d7b589abc9c7150ab9a903e643678f3de78048b66323d1e871806"
+    },
+    {
+      "path": "assets/gallery/kcc-2024/kakaotalk-20240701-130948459-01.jpg",
+      "bytes": 536383,
+      "sha256": "a9ffe0a28e6ce2e137f7ed531c489f08db14cfde20d3ecb2dc0370dc8ab36ae4"
+    },
+    {
+      "path": "assets/gallery-thumbs/kcc-2024/kakaotalk-20240701-130948459-01.jpg",
+      "bytes": 56918,
+      "sha256": "8eeb56ba0d57aef9741b0f6dbed065a90d66f8b1afeb0c6d29f02591671c723f"
+    },
+    {
+      "path": "assets/gallery/kcc-2024/-2026-07-20-212834.png",
+      "bytes": 1292362,
+      "sha256": "ec178917f47e06067c62d7d5f8bc915827a782899f2e510bf9578a9b7c4b72a8"
+    },
+    {
+      "path": "assets/gallery-thumbs/kcc-2024/-2026-07-20-212834.png",
+      "bytes": 420178,
+      "sha256": "c9d10106e9edcdbfcde8703b84335819cce32e5cef2de0b79473f9d6d8b4e8a0"
+    },
+    {
+      "path": "assets/gallery/kcc-2024/1000002456.jpg",
+      "bytes": 583412,
+      "sha256": "23a74ddb8a452a454c57fd60228335e925a05b56497905173869c3c0493c76d1"
+    },
+    {
+      "path": "assets/gallery-thumbs/kcc-2024/1000002456.jpg",
+      "bytes": 51125,
+      "sha256": "2b57c516ccc6aeedaa0e186f0acb4bd256791da69280a017ca7128df96398f39"
+    },
+    {
+      "path": "assets/gallery/kcc-2024/11388.jpg",
+      "bytes": 935682,
+      "sha256": "caf128a855993c72b4dbe7ea3b5d4b424418140a8a25e7ec091c8499eb37c6da"
+    },
+    {
+      "path": "assets/gallery-thumbs/kcc-2024/11388.jpg",
+      "bytes": 58307,
+      "sha256": "f0e670ec30307855dca25f5ce564434713f74257a6eae4a9abc76c8b539cdecb"
+    },
+    {
+      "path": "assets/gallery/kcc-2024/img-1749.jpg",
+      "bytes": 716389,
+      "sha256": "5d44974a6c333584a06e038a2a82064af7f79d575c1f7b49a525b1fd88b56baf"
+    },
+    {
+      "path": "assets/gallery-thumbs/kcc-2024/img-1749.jpg",
+      "bytes": 39449,
+      "sha256": "a19d23fb1dfa9f6bcdf9795d6172452e5ddc5dd67df3e2f299bf8401559a9ae2"
+    },
+    {
+      "path": "assets/gallery/kcc-2024/img-6446.jpg",
+      "bytes": 946835,
+      "sha256": "ec4e57a09c46010c7229d907b86d58b17b6fff5f85a312bf2db11e95344e597c"
+    },
+    {
+      "path": "assets/gallery-thumbs/kcc-2024/img-6446.jpg",
+      "bytes": 75034,
+      "sha256": "c3387960c0b284ff749eecf7434b6167f9503e6ccdfd08daaa19e6e9243826b2"
+    },
+    {
+      "path": "assets/gallery/kcc-2024/img-2838.jpg",
+      "bytes": 224125,
+      "sha256": "607fc35036f8cf0bf2caef1e638250bf7698534d3d9fb25d17c8c2d584147699"
+    },
+    {
+      "path": "assets/gallery-thumbs/kcc-2024/img-2838.jpg",
+      "bytes": 38914,
+      "sha256": "3c89cde0e877b4afac43e2fbe8349761f50cdb3b8ad855e8deebc8f72ae57bd4"
+    },
+    {
+      "path": "assets/gallery/kjccs-2024/kakaotalk-20260720-195423769-19.jpg",
+      "bytes": 793060,
+      "sha256": "59800dae24b69dbb6fe31d0406729185a7be6c3761817a8bc784290182345093"
+    },
+    {
+      "path": "assets/gallery-thumbs/kjccs-2024/kakaotalk-20260720-195423769-19.jpg",
+      "bytes": 58459,
+      "sha256": "32f58f14e5caed51f2253175b506f2693975b64b7d4cabf06640da323eb79241"
+    },
+    {
+      "path": "assets/gallery/kjccs-2024/kakaotalk-20260720-195423769-04.jpg",
+      "bytes": 346868,
+      "sha256": "c880555fea321444090302171b3db5f83c6f4c2be34e954dcdcf45708a1ab230"
+    },
+    {
+      "path": "assets/gallery-thumbs/kjccs-2024/kakaotalk-20260720-195423769-04.jpg",
+      "bytes": 26493,
+      "sha256": "f24cafaeda72b4cace0ba69835d1efaa89a14e9750ab4efd634fb7471e0b616c"
+    },
+    {
+      "path": "assets/gallery/kjccs-2024/kakaotalk-20260720-195423769-01.jpg",
+      "bytes": 804085,
+      "sha256": "df8b6ebe277930c8cd4a133312439de36b944ce194311f24089bd61c62bcb1ad"
+    },
+    {
+      "path": "assets/gallery-thumbs/kjccs-2024/kakaotalk-20260720-195423769-01.jpg",
+      "bytes": 60467,
+      "sha256": "fccbb993016fb1b1571769c1dbbe3bddd111488cf421c18ebea28b8246915997"
+    },
+    {
+      "path": "assets/gallery/techweek/-2026-07-20-212404.png",
+      "bytes": 2739952,
+      "sha256": "7c5217bf0f997d2354560bc01fccfff5d9dc1436f303397b640cb46e6f97303a"
+    },
+    {
+      "path": "assets/gallery-thumbs/techweek/-2026-07-20-212404.png",
+      "bytes": 429630,
+      "sha256": "124400e9413a335fbda8f3d5602404ac48ca8eea4014ece7553ff8c33c1049c5"
+    },
+    {
+      "path": "assets/gallery/techweek/-2026-07-20-212336.png",
+      "bytes": 2351335,
+      "sha256": "e06ef3db54a28abe5b2ca5b2c1d5f99e99870bffca853a5d59d8f68a945801da"
+    },
+    {
+      "path": "assets/gallery-thumbs/techweek/-2026-07-20-212336.png",
+      "bytes": 379151,
+      "sha256": "4fda38737bb66f80497e340ed3a18d94dc9002ab9edcfc4d99bf29ca0e80cb39"
+    },
+    {
+      "path": "assets/gallery/techweek/-2026-07-20-212426.png",
+      "bytes": 2860403,
+      "sha256": "a4de7c0322eb0747fe8c4ee3431f2ed28b29174fe5a706e25f88fb9677b6d611"
+    },
+    {
+      "path": "assets/gallery-thumbs/techweek/-2026-07-20-212426.png",
+      "bytes": 425632,
+      "sha256": "7703d293278d90465c5f2442ce3fea45d36b6ed98202ae99ca8c754c63f64b22"
+    }
+  ]
+}

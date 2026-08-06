@@ -1,0 +1,5132 @@
+{
+  "schemaVersion": 1,
+  "policy": "DTPLab Website Studio v2.1.6 Gallery paths",
+  "sourceHead": "2c4935d7cefcaeb81f50ec3447c1c01bcc0f2e82",
+  "sourceGallerySha256": "dee09b40185778b62b3757fa527650a766e5be18217c8fbf95c3700754017b6b",
+  "migratedGallerySha256": "fb3e6a007c1bc872ad982110793768e6e1d94ee0675124e51ea87dead77e9989",
+  "idGeneration": "Python secrets.token_hex(6); 48 cryptographically random bits per event",
+  "limits": {
+    "assetBytes": 2097152
+  },
+  "summary": {
+    "events": 15,
+    "originals": 52,
+    "thumbnails": 52,
+    "uniqueLegacyPaths": 104,
+    "uniqueNewPaths": 104
+  },
+  "events": [
+    {
+      "eventIndex": 0,
+      "eventId": "94bd6c2cec06",
+      "date": "2026.04",
+      "title": "봄맞이 산성 꽃놀이",
+      "images": [
+        {
+          "imageIndex": 1,
+          "number": "01",
+          "old": {
+            "src": "assets/gallery/ea1750b32caa/01.jpg",
+            "thumbnail": "assets/gallery-thumbs/ea1750b32caa/01.jpg"
+          },
+          "new": {
+            "src": "assets/gallery/94bd6c2cec06/01.jpg",
+            "thumbnail": "assets/gallery-thumbs/94bd6c2cec06/01.jpg"
+          },
+          "original": {
+            "before": {
+              "bytes": 2086139,
+              "width": 4032,
+              "height": 3024,
+              "format": "JPEG",
+              "mime": "image/jpeg",
+              "extension": ".jpg",
+              "sha256": "644224fe1d8632138af8066b66499f0698626b989b5007fd7f73a658d0f9199b",
+              "signatureFormat": "JPEG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": "12afb4d9953adee0607d347daee5b78b18d6b3cab2d572b88970703f5edb37bc",
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            },
+            "after": {
+              "bytes": 2072179,
+              "width": 4032,
+              "height": 3024,
+              "format": "JPEG",
+              "mime": "image/jpeg",
+              "extension": ".jpg",
+              "sha256": "1a580c95854d1d5d7b7e96725b4027a65cf529015841d95bfa569734456a2ee2",
+              "signatureFormat": "JPEG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": "12afb4d9953adee0607d347daee5b78b18d6b3cab2d572b88970703f5edb37bc",
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            }
+          },
+          "thumbnail": {
+            "before": {
+              "bytes": 130273,
+              "width": 640,
+              "height": 360,
+              "format": "JPEG",
+              "mime": "image/jpeg",
+              "extension": ".jpg",
+              "sha256": "43852697a23fe17c76d987916235947b785e45e0a6fb96c8ed3d57662f7f755f",
+              "signatureFormat": "JPEG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": "12afb4d9953adee0607d347daee5b78b18d6b3cab2d572b88970703f5edb37bc",
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            },
+            "after": {
+              "bytes": 103508,
+              "width": 640,
+              "height": 360,
+              "format": "JPEG",
+              "mime": "image/jpeg",
+              "extension": ".jpg",
+              "sha256": "1d91d3cea33a53d98ebc457d57d9f352f7a27bd8015566697108473b9693bbbf",
+              "signatureFormat": "JPEG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": "12afb4d9953adee0607d347daee5b78b18d6b3cab2d572b88970703f5edb37bc",
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            }
+          }
+        },
+        {
+          "imageIndex": 2,
+          "number": "02",
+          "old": {
+            "src": "assets/gallery/ea1750b32caa/02.jpg",
+            "thumbnail": "assets/gallery-thumbs/ea1750b32caa/02.jpg"
+          },
+          "new": {
+            "src": "assets/gallery/94bd6c2cec06/02.jpg",
+            "thumbnail": "assets/gallery-thumbs/94bd6c2cec06/02.jpg"
+          },
+          "original": {
+            "before": {
+              "bytes": 1464944,
+              "width": 1512,
+              "height": 1512,
+              "format": "JPEG",
+              "mime": "image/jpeg",
+              "extension": ".jpg",
+              "sha256": "dc10c2bb1b32617155864c475e333ed086bcdd6ec547648e15c9265c07cf6493",
+              "signatureFormat": "JPEG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": "12afb4d9953adee0607d347daee5b78b18d6b3cab2d572b88970703f5edb37bc",
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            },
+            "after": {
+              "bytes": 1136249,
+              "width": 1512,
+              "height": 1512,
+              "format": "JPEG",
+              "mime": "image/jpeg",
+              "extension": ".jpg",
+              "sha256": "e27e59c4cebcffcfebdfd265766f02f2c9e445d5e75993dba95632787395d8bc",
+              "signatureFormat": "JPEG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": "12afb4d9953adee0607d347daee5b78b18d6b3cab2d572b88970703f5edb37bc",
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            }
+          },
+          "thumbnail": {
+            "before": {
+              "bytes": 159456,
+              "width": 640,
+              "height": 360,
+              "format": "JPEG",
+              "mime": "image/jpeg",
+              "extension": ".jpg",
+              "sha256": "f98422a3e750b1390063f3329c665e0047ea40d72f56fd53b634dd67ff65853f",
+              "signatureFormat": "JPEG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": "12afb4d9953adee0607d347daee5b78b18d6b3cab2d572b88970703f5edb37bc",
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            },
+            "after": {
+              "bytes": 121981,
+              "width": 640,
+              "height": 360,
+              "format": "JPEG",
+              "mime": "image/jpeg",
+              "extension": ".jpg",
+              "sha256": "1cb54f17e33c71379c7e88cd5ae8f233ded0b4167ffee92c7bebdd38c2f0363f",
+              "signatureFormat": "JPEG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": "12afb4d9953adee0607d347daee5b78b18d6b3cab2d572b88970703f5edb37bc",
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            }
+          }
+        }
+      ]
+    },
+    {
+      "eventIndex": 1,
+      "eventId": "636fdbb5d130",
+      "date": "2026.03",
+      "title": "LG전자 HS사업본부 타겟랩 선정 안내",
+      "images": [
+        {
+          "imageIndex": 1,
+          "number": "01",
+          "old": {
+            "src": "assets/gallery/7f4e5864ca2d/01.jpg",
+            "thumbnail": "assets/gallery-thumbs/7f4e5864ca2d/01.jpg"
+          },
+          "new": {
+            "src": "assets/gallery/636fdbb5d130/01.jpg",
+            "thumbnail": "assets/gallery-thumbs/636fdbb5d130/01.jpg"
+          },
+          "original": {
+            "before": {
+              "bytes": 2009493,
+              "width": 4342,
+              "height": 3256,
+              "format": "JPEG",
+              "mime": "image/jpeg",
+              "extension": ".jpg",
+              "sha256": "e45a8c831ac13266d96602be556ae79e9703f28f94a76022eeb6daab1f84d76b",
+              "signatureFormat": "JPEG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": "12afb4d9953adee0607d347daee5b78b18d6b3cab2d572b88970703f5edb37bc",
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            },
+            "after": {
+              "bytes": 2020759,
+              "width": 4342,
+              "height": 3256,
+              "format": "JPEG",
+              "mime": "image/jpeg",
+              "extension": ".jpg",
+              "sha256": "f18ef53a356c94eeb1e132da00145b21195ead107fc0ba8db8cdfca967353762",
+              "signatureFormat": "JPEG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": "12afb4d9953adee0607d347daee5b78b18d6b3cab2d572b88970703f5edb37bc",
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            }
+          },
+          "thumbnail": {
+            "before": {
+              "bytes": 106587,
+              "width": 640,
+              "height": 360,
+              "format": "JPEG",
+              "mime": "image/jpeg",
+              "extension": ".jpg",
+              "sha256": "824204f43b967f33c189b3f24b65b1dc4755c7ce5c56369747720673d65a7a95",
+              "signatureFormat": "JPEG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": "12afb4d9953adee0607d347daee5b78b18d6b3cab2d572b88970703f5edb37bc",
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            },
+            "after": {
+              "bytes": 83687,
+              "width": 640,
+              "height": 360,
+              "format": "JPEG",
+              "mime": "image/jpeg",
+              "extension": ".jpg",
+              "sha256": "1d33b66da59dcd8cdbdd24ff0d58c688719c0dc3e0f27b44c7a4ad1c0002a2b6",
+              "signatureFormat": "JPEG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": "12afb4d9953adee0607d347daee5b78b18d6b3cab2d572b88970703f5edb37bc",
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            }
+          }
+        },
+        {
+          "imageIndex": 2,
+          "number": "02",
+          "old": {
+            "src": "assets/gallery/7f4e5864ca2d/02.jpg",
+            "thumbnail": "assets/gallery-thumbs/7f4e5864ca2d/02.jpg"
+          },
+          "new": {
+            "src": "assets/gallery/636fdbb5d130/02.jpg",
+            "thumbnail": "assets/gallery-thumbs/636fdbb5d130/02.jpg"
+          },
+          "original": {
+            "before": {
+              "bytes": 2016702,
+              "width": 4032,
+              "height": 3024,
+              "format": "JPEG",
+              "mime": "image/jpeg",
+              "extension": ".jpg",
+              "sha256": "d43af87c8749d7c80c54fab10e2ef51c31380c73a715d938fbec0824e272b23b",
+              "signatureFormat": "JPEG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": "12afb4d9953adee0607d347daee5b78b18d6b3cab2d572b88970703f5edb37bc",
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            },
+            "after": {
+              "bytes": 2002997,
+              "width": 4032,
+              "height": 3024,
+              "format": "JPEG",
+              "mime": "image/jpeg",
+              "extension": ".jpg",
+              "sha256": "29278c39d4e8ae5a0c6bb8786af858664fd557faae1aa75b89deabf58183f160",
+              "signatureFormat": "JPEG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": "12afb4d9953adee0607d347daee5b78b18d6b3cab2d572b88970703f5edb37bc",
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            }
+          },
+          "thumbnail": {
+            "before": {
+              "bytes": 95425,
+              "width": 640,
+              "height": 360,
+              "format": "JPEG",
+              "mime": "image/jpeg",
+              "extension": ".jpg",
+              "sha256": "10ccc36f7818db2bc1f85ca023f863f0b4c622b95cb2abb0ed53d7893f31017a",
+              "signatureFormat": "JPEG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": "12afb4d9953adee0607d347daee5b78b18d6b3cab2d572b88970703f5edb37bc",
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            },
+            "after": {
+              "bytes": 77203,
+              "width": 640,
+              "height": 360,
+              "format": "JPEG",
+              "mime": "image/jpeg",
+              "extension": ".jpg",
+              "sha256": "394a496f0cb96d15f0294aee816bf27952e586647f50e43c9e8e98a2fc02ef26",
+              "signatureFormat": "JPEG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": "12afb4d9953adee0607d347daee5b78b18d6b3cab2d572b88970703f5edb37bc",
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            }
+          }
+        },
+        {
+          "imageIndex": 3,
+          "number": "03",
+          "old": {
+            "src": "assets/gallery/7f4e5864ca2d/03.jpg",
+            "thumbnail": "assets/gallery-thumbs/7f4e5864ca2d/03.jpg"
+          },
+          "new": {
+            "src": "assets/gallery/636fdbb5d130/03.jpg",
+            "thumbnail": "assets/gallery-thumbs/636fdbb5d130/03.jpg"
+          },
+          "original": {
+            "before": {
+              "bytes": 2059276,
+              "width": 4032,
+              "height": 3024,
+              "format": "JPEG",
+              "mime": "image/jpeg",
+              "extension": ".jpg",
+              "sha256": "9b60088dfb99211c7f3ff6dd67afa5f90d7c09cd2eb5ab7b0d37836f1eb50095",
+              "signatureFormat": "JPEG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": "12afb4d9953adee0607d347daee5b78b18d6b3cab2d572b88970703f5edb37bc",
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            },
+            "after": {
+              "bytes": 1991959,
+              "width": 4032,
+              "height": 3024,
+              "format": "JPEG",
+              "mime": "image/jpeg",
+              "extension": ".jpg",
+              "sha256": "462c0ef46953f84b3786b9755a4f8b21c15a58b8e6c28343279ae4f9d70d1485",
+              "signatureFormat": "JPEG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": "12afb4d9953adee0607d347daee5b78b18d6b3cab2d572b88970703f5edb37bc",
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            }
+          },
+          "thumbnail": {
+            "before": {
+              "bytes": 94387,
+              "width": 640,
+              "height": 360,
+              "format": "JPEG",
+              "mime": "image/jpeg",
+              "extension": ".jpg",
+              "sha256": "2e3f5d0b5f786276c88b8b92632e578737161782f50ea5cc862c8edffdbba7cb",
+              "signatureFormat": "JPEG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": "12afb4d9953adee0607d347daee5b78b18d6b3cab2d572b88970703f5edb37bc",
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            },
+            "after": {
+              "bytes": 75379,
+              "width": 640,
+              "height": 360,
+              "format": "JPEG",
+              "mime": "image/jpeg",
+              "extension": ".jpg",
+              "sha256": "a9f269a77ec8f06f0def6abf4e8c4cdaef4642eab5c1a15a7a78a5223fee8877",
+              "signatureFormat": "JPEG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": "12afb4d9953adee0607d347daee5b78b18d6b3cab2d572b88970703f5edb37bc",
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            }
+          }
+        }
+      ]
+    },
+    {
+      "eventIndex": 2,
+      "eventId": "5dd2efcfa5d7",
+      "date": "2026.02",
+      "title": "학과 연구실 간 풋살 개최",
+      "images": [
+        {
+          "imageIndex": 1,
+          "number": "01",
+          "old": {
+            "src": "assets/gallery/cb93ebb83256/01.jpg",
+            "thumbnail": "assets/gallery-thumbs/cb93ebb83256/01.jpg"
+          },
+          "new": {
+            "src": "assets/gallery/5dd2efcfa5d7/01.jpg",
+            "thumbnail": "assets/gallery-thumbs/5dd2efcfa5d7/01.jpg"
+          },
+          "original": {
+            "before": {
+              "bytes": 2054807,
+              "width": 3479,
+              "height": 2609,
+              "format": "JPEG",
+              "mime": "image/jpeg",
+              "extension": ".jpg",
+              "sha256": "bcd4f019f3750a6e3edbde09955c2d711933046133508c5301a6d3e26c85a2ba",
+              "signatureFormat": "JPEG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": "12afb4d9953adee0607d347daee5b78b18d6b3cab2d572b88970703f5edb37bc",
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            },
+            "after": {
+              "bytes": 2063246,
+              "width": 3479,
+              "height": 2609,
+              "format": "JPEG",
+              "mime": "image/jpeg",
+              "extension": ".jpg",
+              "sha256": "c592d100c8f77759898cd38ad3c5f1a1f2252791dd261b222fa8498e13c97f65",
+              "signatureFormat": "JPEG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": "12afb4d9953adee0607d347daee5b78b18d6b3cab2d572b88970703f5edb37bc",
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            }
+          },
+          "thumbnail": {
+            "before": {
+              "bytes": 114845,
+              "width": 640,
+              "height": 360,
+              "format": "JPEG",
+              "mime": "image/jpeg",
+              "extension": ".jpg",
+              "sha256": "e7daa33160df0126eed0e7acde7c7520c104c73972132602a9fbffcd4ad97bb6",
+              "signatureFormat": "JPEG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": "12afb4d9953adee0607d347daee5b78b18d6b3cab2d572b88970703f5edb37bc",
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            },
+            "after": {
+              "bytes": 90264,
+              "width": 640,
+              "height": 360,
+              "format": "JPEG",
+              "mime": "image/jpeg",
+              "extension": ".jpg",
+              "sha256": "080b4438343ddbada93700b8453b6ae7a2c9cadd5e17f149d451eceb7e3c1606",
+              "signatureFormat": "JPEG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": "12afb4d9953adee0607d347daee5b78b18d6b3cab2d572b88970703f5edb37bc",
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            }
+          }
+        },
+        {
+          "imageIndex": 2,
+          "number": "02",
+          "old": {
+            "src": "assets/gallery/cb93ebb83256/02.jpg",
+            "thumbnail": "assets/gallery-thumbs/cb93ebb83256/02.jpg"
+          },
+          "new": {
+            "src": "assets/gallery/5dd2efcfa5d7/02.jpg",
+            "thumbnail": "assets/gallery-thumbs/5dd2efcfa5d7/02.jpg"
+          },
+          "original": {
+            "before": {
+              "bytes": 1985862,
+              "width": 4032,
+              "height": 3024,
+              "format": "JPEG",
+              "mime": "image/jpeg",
+              "extension": ".jpg",
+              "sha256": "fc0a87b54f7bb2e4b74fdf95aa03e8e633dce408e52259175b410480232129fd",
+              "signatureFormat": "JPEG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": "12afb4d9953adee0607d347daee5b78b18d6b3cab2d572b88970703f5edb37bc",
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            },
+            "after": {
+              "bytes": 1993282,
+              "width": 4032,
+              "height": 3024,
+              "format": "JPEG",
+              "mime": "image/jpeg",
+              "extension": ".jpg",
+              "sha256": "9eedcbdb33e80ee7baa97270f60d0fb9c9803ff57c34b97dc5edc3a5c64acd14",
+              "signatureFormat": "JPEG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": "12afb4d9953adee0607d347daee5b78b18d6b3cab2d572b88970703f5edb37bc",
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            }
+          },
+          "thumbnail": {
+            "before": {
+              "bytes": 101195,
+              "width": 640,
+              "height": 360,
+              "format": "JPEG",
+              "mime": "image/jpeg",
+              "extension": ".jpg",
+              "sha256": "793e6d83b9f8fb238556acabc83686c05db9238d9fa786c6c20edbf942d5b740",
+              "signatureFormat": "JPEG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": "12afb4d9953adee0607d347daee5b78b18d6b3cab2d572b88970703f5edb37bc",
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            },
+            "after": {
+              "bytes": 79542,
+              "width": 640,
+              "height": 360,
+              "format": "JPEG",
+              "mime": "image/jpeg",
+              "extension": ".jpg",
+              "sha256": "c70f547d9247015e3d8124edd648227eda75252367ce28166018994bc22b2e7f",
+              "signatureFormat": "JPEG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": "12afb4d9953adee0607d347daee5b78b18d6b3cab2d572b88970703f5edb37bc",
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            }
+          }
+        },
+        {
+          "imageIndex": 3,
+          "number": "03",
+          "old": {
+            "src": "assets/gallery/cb93ebb83256/03.jpg",
+            "thumbnail": "assets/gallery-thumbs/cb93ebb83256/03.jpg"
+          },
+          "new": {
+            "src": "assets/gallery/5dd2efcfa5d7/03.jpg",
+            "thumbnail": "assets/gallery-thumbs/5dd2efcfa5d7/03.jpg"
+          },
+          "original": {
+            "before": {
+              "bytes": 2072686,
+              "width": 2456,
+              "height": 3275,
+              "format": "JPEG",
+              "mime": "image/jpeg",
+              "extension": ".jpg",
+              "sha256": "8d694df489e885ca709cd5181c300b2aec46296f343b2822f1ef466c735df5bd",
+              "signatureFormat": "JPEG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": "12afb4d9953adee0607d347daee5b78b18d6b3cab2d572b88970703f5edb37bc",
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            },
+            "after": {
+              "bytes": 2061134,
+              "width": 2456,
+              "height": 3275,
+              "format": "JPEG",
+              "mime": "image/jpeg",
+              "extension": ".jpg",
+              "sha256": "4919990b7230215b16c96c5e3ff15aa675daa49a1cba1c7bae9cce9c3bd7a2b8",
+              "signatureFormat": "JPEG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": "12afb4d9953adee0607d347daee5b78b18d6b3cab2d572b88970703f5edb37bc",
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            }
+          },
+          "thumbnail": {
+            "before": {
+              "bytes": 114279,
+              "width": 640,
+              "height": 360,
+              "format": "JPEG",
+              "mime": "image/jpeg",
+              "extension": ".jpg",
+              "sha256": "54b30b5569e10f934934e376e20d1ecbc768799711ac52c3324c2d307765f078",
+              "signatureFormat": "JPEG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": "12afb4d9953adee0607d347daee5b78b18d6b3cab2d572b88970703f5edb37bc",
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            },
+            "after": {
+              "bytes": 89776,
+              "width": 640,
+              "height": 360,
+              "format": "JPEG",
+              "mime": "image/jpeg",
+              "extension": ".jpg",
+              "sha256": "9db40e383ddca27b843b6537cd629ac371433e4ce30947eed8df450f2e44ebad",
+              "signatureFormat": "JPEG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": "12afb4d9953adee0607d347daee5b78b18d6b3cab2d572b88970703f5edb37bc",
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            }
+          }
+        }
+      ]
+    },
+    {
+      "eventIndex": 3,
+      "eventId": "24b0b0c4da67",
+      "date": "2026.02",
+      "title": "한양대 ERICA 초청강연 참석",
+      "images": [
+        {
+          "imageIndex": 1,
+          "number": "01",
+          "old": {
+            "src": "assets/gallery/ffc3e7fd4eb8/01.jpg",
+            "thumbnail": "assets/gallery-thumbs/ffc3e7fd4eb8/01.jpg"
+          },
+          "new": {
+            "src": "assets/gallery/24b0b0c4da67/01.jpg",
+            "thumbnail": "assets/gallery-thumbs/24b0b0c4da67/01.jpg"
+          },
+          "original": {
+            "before": {
+              "bytes": 1998343,
+              "width": 5035,
+              "height": 3776,
+              "format": "JPEG",
+              "mime": "image/jpeg",
+              "extension": ".jpg",
+              "sha256": "2b2a72564657ac5f28f2994691e496f396d2ceeac1c59f2b51c72ef47db7025f",
+              "signatureFormat": "JPEG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": "12afb4d9953adee0607d347daee5b78b18d6b3cab2d572b88970703f5edb37bc",
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            },
+            "after": {
+              "bytes": 2071667,
+              "width": 5035,
+              "height": 3776,
+              "format": "JPEG",
+              "mime": "image/jpeg",
+              "extension": ".jpg",
+              "sha256": "c77fe5ea584f12d2b185c843e241c94baa474862cc0e1e6ef2ae22d85bbed7e4",
+              "signatureFormat": "JPEG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": "12afb4d9953adee0607d347daee5b78b18d6b3cab2d572b88970703f5edb37bc",
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            }
+          },
+          "thumbnail": {
+            "before": {
+              "bytes": 74737,
+              "width": 640,
+              "height": 360,
+              "format": "JPEG",
+              "mime": "image/jpeg",
+              "extension": ".jpg",
+              "sha256": "9de77657b8c0a45b24a18fb18862aab54b962f5bc301c67c1af17c1c078bc4d2",
+              "signatureFormat": "JPEG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": "12afb4d9953adee0607d347daee5b78b18d6b3cab2d572b88970703f5edb37bc",
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            },
+            "after": {
+              "bytes": 59880,
+              "width": 640,
+              "height": 360,
+              "format": "JPEG",
+              "mime": "image/jpeg",
+              "extension": ".jpg",
+              "sha256": "ec1d3935a02b7ec121c1bbd102e2540840ac71f7cba49bd434ad166e6accf0af",
+              "signatureFormat": "JPEG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": "12afb4d9953adee0607d347daee5b78b18d6b3cab2d572b88970703f5edb37bc",
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            }
+          }
+        }
+      ]
+    },
+    {
+      "eventIndex": 4,
+      "eventId": "4c084b43f8ab",
+      "date": "2026.01",
+      "title": "한화오션 연구실 방문",
+      "images": [
+        {
+          "imageIndex": 1,
+          "number": "01",
+          "old": {
+            "src": "assets/gallery/--/kakaotalk-20260806-112401700-01.jpg",
+            "thumbnail": "assets/gallery-thumbs/--/kakaotalk-20260806-112401700-01.jpg"
+          },
+          "new": {
+            "src": "assets/gallery/4c084b43f8ab/01.jpg",
+            "thumbnail": "assets/gallery-thumbs/4c084b43f8ab/01.jpg"
+          },
+          "original": {
+            "before": {
+              "bytes": 446375,
+              "width": 2400,
+              "height": 1800,
+              "format": "JPEG",
+              "mime": "image/jpeg",
+              "extension": ".jpg",
+              "sha256": "e875a61213f2b9358fcc040b108cc8357118058f8d1fafdde2229a20b8d70eb2",
+              "signatureFormat": "JPEG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": "12afb4d9953adee0607d347daee5b78b18d6b3cab2d572b88970703f5edb37bc",
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            },
+            "after": {
+              "bytes": 512088,
+              "width": 2400,
+              "height": 1800,
+              "format": "JPEG",
+              "mime": "image/jpeg",
+              "extension": ".jpg",
+              "sha256": "ae20d7dec64ca3ba3067467b356df917b0e8932386b0c9cc0d9579fc5133f4e1",
+              "signatureFormat": "JPEG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": "12afb4d9953adee0607d347daee5b78b18d6b3cab2d572b88970703f5edb37bc",
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            }
+          },
+          "thumbnail": {
+            "before": {
+              "bytes": 35212,
+              "width": 640,
+              "height": 360,
+              "format": "JPEG",
+              "mime": "image/jpeg",
+              "extension": ".jpg",
+              "sha256": "11627248aaff9a1888ecd22bdfd61c6609fdca0350f34ff10db0a28709ecbec1",
+              "signatureFormat": "JPEG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": "12afb4d9953adee0607d347daee5b78b18d6b3cab2d572b88970703f5edb37bc",
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            },
+            "after": {
+              "bytes": 41334,
+              "width": 640,
+              "height": 360,
+              "format": "JPEG",
+              "mime": "image/jpeg",
+              "extension": ".jpg",
+              "sha256": "10c6a319a9977440bf1f17a893603c8a630a12a88f5cfc742a06fddcded33b0b",
+              "signatureFormat": "JPEG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": "12afb4d9953adee0607d347daee5b78b18d6b3cab2d572b88970703f5edb37bc",
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            }
+          }
+        },
+        {
+          "imageIndex": 2,
+          "number": "02",
+          "old": {
+            "src": "assets/gallery/--/kakaotalk-20260806-112401700-02.jpg",
+            "thumbnail": "assets/gallery-thumbs/--/kakaotalk-20260806-112401700-02.jpg"
+          },
+          "new": {
+            "src": "assets/gallery/4c084b43f8ab/02.jpg",
+            "thumbnail": "assets/gallery-thumbs/4c084b43f8ab/02.jpg"
+          },
+          "original": {
+            "before": {
+              "bytes": 473542,
+              "width": 2400,
+              "height": 1800,
+              "format": "JPEG",
+              "mime": "image/jpeg",
+              "extension": ".jpg",
+              "sha256": "948af4464db5816bf79cd1610db7536eb4b132447bef7eb87f70da9afa219b14",
+              "signatureFormat": "JPEG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": "12afb4d9953adee0607d347daee5b78b18d6b3cab2d572b88970703f5edb37bc",
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            },
+            "after": {
+              "bytes": 541833,
+              "width": 2400,
+              "height": 1800,
+              "format": "JPEG",
+              "mime": "image/jpeg",
+              "extension": ".jpg",
+              "sha256": "5bc7eaeae3c42598150742628d7dd806ce4e56292a9640b50eaeb01e9144dac4",
+              "signatureFormat": "JPEG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": "12afb4d9953adee0607d347daee5b78b18d6b3cab2d572b88970703f5edb37bc",
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            }
+          },
+          "thumbnail": {
+            "before": {
+              "bytes": 38916,
+              "width": 640,
+              "height": 360,
+              "format": "JPEG",
+              "mime": "image/jpeg",
+              "extension": ".jpg",
+              "sha256": "c4f9eb28537756347beb9cc5e4a7a328bde36baa6f1ff16edc1fde6b19247ce4",
+              "signatureFormat": "JPEG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": "12afb4d9953adee0607d347daee5b78b18d6b3cab2d572b88970703f5edb37bc",
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            },
+            "after": {
+              "bytes": 45606,
+              "width": 640,
+              "height": 360,
+              "format": "JPEG",
+              "mime": "image/jpeg",
+              "extension": ".jpg",
+              "sha256": "f96d3a7b018f00cc3282de020b108a3a0049f1787848c4002cacf83704bbba4e",
+              "signatureFormat": "JPEG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": "12afb4d9953adee0607d347daee5b78b18d6b3cab2d572b88970703f5edb37bc",
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            }
+          }
+        }
+      ]
+    },
+    {
+      "eventIndex": 5,
+      "eventId": "d1289aa0ae06",
+      "date": "2025.11",
+      "title": "연구실 이사",
+      "images": [
+        {
+          "imageIndex": 1,
+          "number": "01",
+          "old": {
+            "src": "assets/gallery/-/img-4634-1.jpg",
+            "thumbnail": "assets/gallery-thumbs/-/img-4634-1.jpg"
+          },
+          "new": {
+            "src": "assets/gallery/d1289aa0ae06/01.jpg",
+            "thumbnail": "assets/gallery-thumbs/d1289aa0ae06/01.jpg"
+          },
+          "original": {
+            "before": {
+              "bytes": 785788,
+              "width": 2400,
+              "height": 1800,
+              "format": "JPEG",
+              "mime": "image/jpeg",
+              "extension": ".jpg",
+              "sha256": "a93153b6ce6327c01626d51fde0e3afde4b0314d2ab7c450c0a6ce6ee576091f",
+              "signatureFormat": "JPEG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": "12afb4d9953adee0607d347daee5b78b18d6b3cab2d572b88970703f5edb37bc",
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            },
+            "after": {
+              "bytes": 887524,
+              "width": 2400,
+              "height": 1800,
+              "format": "JPEG",
+              "mime": "image/jpeg",
+              "extension": ".jpg",
+              "sha256": "62c59580281dcb48783e42be6593e673e67e66d59445ed9f06a14218f7dd165c",
+              "signatureFormat": "JPEG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": "12afb4d9953adee0607d347daee5b78b18d6b3cab2d572b88970703f5edb37bc",
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            }
+          },
+          "thumbnail": {
+            "before": {
+              "bytes": 59137,
+              "width": 640,
+              "height": 360,
+              "format": "JPEG",
+              "mime": "image/jpeg",
+              "extension": ".jpg",
+              "sha256": "3cb06112d40578b1b8e0103bca8ca5fde2ac125bcd5373525387bb469f710240",
+              "signatureFormat": "JPEG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": "12afb4d9953adee0607d347daee5b78b18d6b3cab2d572b88970703f5edb37bc",
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            },
+            "after": {
+              "bytes": 68781,
+              "width": 640,
+              "height": 360,
+              "format": "JPEG",
+              "mime": "image/jpeg",
+              "extension": ".jpg",
+              "sha256": "553a2a9c56a28ede50281185a3cd832fa2b95b220341b707f451d52a8aa672b2",
+              "signatureFormat": "JPEG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": "12afb4d9953adee0607d347daee5b78b18d6b3cab2d572b88970703f5edb37bc",
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            }
+          }
+        },
+        {
+          "imageIndex": 2,
+          "number": "02",
+          "old": {
+            "src": "assets/gallery/-/img-4635-1.jpg",
+            "thumbnail": "assets/gallery-thumbs/-/img-4635-1.jpg"
+          },
+          "new": {
+            "src": "assets/gallery/d1289aa0ae06/02.jpg",
+            "thumbnail": "assets/gallery-thumbs/d1289aa0ae06/02.jpg"
+          },
+          "original": {
+            "before": {
+              "bytes": 758586,
+              "width": 2400,
+              "height": 1800,
+              "format": "JPEG",
+              "mime": "image/jpeg",
+              "extension": ".jpg",
+              "sha256": "5aa72fe7b3d5cbdb75a49b56cdba6202ae93880486b41292ebb4a965a358a482",
+              "signatureFormat": "JPEG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": "12afb4d9953adee0607d347daee5b78b18d6b3cab2d572b88970703f5edb37bc",
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            },
+            "after": {
+              "bytes": 860826,
+              "width": 2400,
+              "height": 1800,
+              "format": "JPEG",
+              "mime": "image/jpeg",
+              "extension": ".jpg",
+              "sha256": "8cebf33174d985d2d28210af71af7ea9548a52e20fe39ed833508e1416346c67",
+              "signatureFormat": "JPEG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": "12afb4d9953adee0607d347daee5b78b18d6b3cab2d572b88970703f5edb37bc",
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            }
+          },
+          "thumbnail": {
+            "before": {
+              "bytes": 57213,
+              "width": 640,
+              "height": 360,
+              "format": "JPEG",
+              "mime": "image/jpeg",
+              "extension": ".jpg",
+              "sha256": "8ef9065e533f6bafb75aa2a087083847b322ede89336c581e4ddfdd13898b894",
+              "signatureFormat": "JPEG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": "12afb4d9953adee0607d347daee5b78b18d6b3cab2d572b88970703f5edb37bc",
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            },
+            "after": {
+              "bytes": 66681,
+              "width": 640,
+              "height": 360,
+              "format": "JPEG",
+              "mime": "image/jpeg",
+              "extension": ".jpg",
+              "sha256": "c0ec8d1eecb736148f06e97769b92fa162905fffd0bdbf4215a36407b7267188",
+              "signatureFormat": "JPEG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": "12afb4d9953adee0607d347daee5b78b18d6b3cab2d572b88970703f5edb37bc",
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            }
+          }
+        },
+        {
+          "imageIndex": 3,
+          "number": "03",
+          "old": {
+            "src": "assets/gallery/-/-2026-07-20-212941.png",
+            "thumbnail": "assets/gallery-thumbs/-/-2026-07-20-212941.png"
+          },
+          "new": {
+            "src": "assets/gallery/d1289aa0ae06/03.png",
+            "thumbnail": "assets/gallery-thumbs/d1289aa0ae06/03.png"
+          },
+          "original": {
+            "before": {
+              "bytes": 1122404,
+              "width": 925,
+              "height": 637,
+              "format": "PNG",
+              "mime": "image/png",
+              "extension": ".png",
+              "sha256": "e12cff4238d904f9e408e2a407d4c35ecf29f99909663932e3bd219dbf11b53a",
+              "signatureFormat": "PNG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": null,
+              "hasAlphaChannel": true,
+              "hasTransparency": false
+            },
+            "after": {
+              "bytes": 845182,
+              "width": 925,
+              "height": 637,
+              "format": "PNG",
+              "mime": "image/png",
+              "extension": ".png",
+              "sha256": "91738c4fef1971a3b58bc1123356c51b4be30cfaf45fe292583ce33d63380205",
+              "signatureFormat": "PNG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": null,
+              "hasAlphaChannel": true,
+              "hasTransparency": false
+            }
+          },
+          "thumbnail": {
+            "before": {
+              "bytes": 472564,
+              "width": 640,
+              "height": 360,
+              "format": "PNG",
+              "mime": "image/png",
+              "extension": ".png",
+              "sha256": "e7d7250f61196948d85f9c763cf30c5ff0b3c524ca5a35a535472109c6eddc14",
+              "signatureFormat": "PNG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": null,
+              "hasAlphaChannel": true,
+              "hasTransparency": false
+            },
+            "after": {
+              "bytes": 353568,
+              "width": 640,
+              "height": 360,
+              "format": "PNG",
+              "mime": "image/png",
+              "extension": ".png",
+              "sha256": "28d42bed1694659e940119d13ddd899e885900714545dfaac8d31a27d0e05cbf",
+              "signatureFormat": "PNG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": null,
+              "hasAlphaChannel": true,
+              "hasTransparency": false
+            }
+          }
+        },
+        {
+          "imageIndex": 4,
+          "number": "04",
+          "old": {
+            "src": "assets/gallery/-/-2026-07-20-212950.png",
+            "thumbnail": "assets/gallery-thumbs/-/-2026-07-20-212950.png"
+          },
+          "new": {
+            "src": "assets/gallery/d1289aa0ae06/04.png",
+            "thumbnail": "assets/gallery-thumbs/d1289aa0ae06/04.png"
+          },
+          "original": {
+            "before": {
+              "bytes": 996903,
+              "width": 927,
+              "height": 638,
+              "format": "PNG",
+              "mime": "image/png",
+              "extension": ".png",
+              "sha256": "d640c66e6901372e7000474f436ef9e4e7fbb66b52258b573496b324eb871de4",
+              "signatureFormat": "PNG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": null,
+              "hasAlphaChannel": true,
+              "hasTransparency": false
+            },
+            "after": {
+              "bytes": 745461,
+              "width": 927,
+              "height": 638,
+              "format": "PNG",
+              "mime": "image/png",
+              "extension": ".png",
+              "sha256": "2bd82cfae3a6b0cadda77e6f74f62db761ff36695eb7d012b4b5b30bc0638df0",
+              "signatureFormat": "PNG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": null,
+              "hasAlphaChannel": true,
+              "hasTransparency": false
+            }
+          },
+          "thumbnail": {
+            "before": {
+              "bytes": 421255,
+              "width": 640,
+              "height": 360,
+              "format": "PNG",
+              "mime": "image/png",
+              "extension": ".png",
+              "sha256": "afb11aaf4962a13823a67cab78109bda1558b84ba4da75f79d6a614749c643ca",
+              "signatureFormat": "PNG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": null,
+              "hasAlphaChannel": true,
+              "hasTransparency": false
+            },
+            "after": {
+              "bytes": 314067,
+              "width": 640,
+              "height": 360,
+              "format": "PNG",
+              "mime": "image/png",
+              "extension": ".png",
+              "sha256": "ecc99501052d82b97e27a3c213bb87c8b975e1691855ab9bc0cbb81de9882ebf",
+              "signatureFormat": "PNG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": null,
+              "hasAlphaChannel": true,
+              "hasTransparency": false
+            }
+          }
+        },
+        {
+          "imageIndex": 5,
+          "number": "05",
+          "old": {
+            "src": "assets/gallery/-/img-3965.jpg",
+            "thumbnail": "assets/gallery-thumbs/-/img-3965.jpg"
+          },
+          "new": {
+            "src": "assets/gallery/d1289aa0ae06/05.jpg",
+            "thumbnail": "assets/gallery-thumbs/d1289aa0ae06/05.jpg"
+          },
+          "original": {
+            "before": {
+              "bytes": 580428,
+              "width": 2400,
+              "height": 1800,
+              "format": "JPEG",
+              "mime": "image/jpeg",
+              "extension": ".jpg",
+              "sha256": "aa63dc4aa62e12321f2327f4ff4b659bb9118bab4f7cbdea05bb39bb3fe12be8",
+              "signatureFormat": "JPEG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": "12afb4d9953adee0607d347daee5b78b18d6b3cab2d572b88970703f5edb37bc",
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            },
+            "after": {
+              "bytes": 658170,
+              "width": 2400,
+              "height": 1800,
+              "format": "JPEG",
+              "mime": "image/jpeg",
+              "extension": ".jpg",
+              "sha256": "34f1c3ab9bdfeac12fbbd0cd55f1a8030608f1903b7315f6d1dfbd7e9e207bd3",
+              "signatureFormat": "JPEG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": "12afb4d9953adee0607d347daee5b78b18d6b3cab2d572b88970703f5edb37bc",
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            }
+          },
+          "thumbnail": {
+            "before": {
+              "bytes": 43979,
+              "width": 640,
+              "height": 360,
+              "format": "JPEG",
+              "mime": "image/jpeg",
+              "extension": ".jpg",
+              "sha256": "10513fd513aaebc4b048abe456e35f37e9d86111f9794a168246c6ab088b98da",
+              "signatureFormat": "JPEG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": "12afb4d9953adee0607d347daee5b78b18d6b3cab2d572b88970703f5edb37bc",
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            },
+            "after": {
+              "bytes": 51285,
+              "width": 640,
+              "height": 360,
+              "format": "JPEG",
+              "mime": "image/jpeg",
+              "extension": ".jpg",
+              "sha256": "90ec48998bbb8d8d163b79036927798508abf182d43a249791d0ac9302cd5ff5",
+              "signatureFormat": "JPEG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": "12afb4d9953adee0607d347daee5b78b18d6b3cab2d572b88970703f5edb37bc",
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            }
+          }
+        },
+        {
+          "imageIndex": 6,
+          "number": "06",
+          "old": {
+            "src": "assets/gallery/-/img-3966.jpg",
+            "thumbnail": "assets/gallery-thumbs/-/img-3966.jpg"
+          },
+          "new": {
+            "src": "assets/gallery/d1289aa0ae06/06.jpg",
+            "thumbnail": "assets/gallery-thumbs/d1289aa0ae06/06.jpg"
+          },
+          "original": {
+            "before": {
+              "bytes": 800018,
+              "width": 2400,
+              "height": 1800,
+              "format": "JPEG",
+              "mime": "image/jpeg",
+              "extension": ".jpg",
+              "sha256": "08fb67a2feae77bafae39da969b37cbb4effe544dfd2d319693665c126b4c338",
+              "signatureFormat": "JPEG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": "12afb4d9953adee0607d347daee5b78b18d6b3cab2d572b88970703f5edb37bc",
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            },
+            "after": {
+              "bytes": 888284,
+              "width": 2400,
+              "height": 1800,
+              "format": "JPEG",
+              "mime": "image/jpeg",
+              "extension": ".jpg",
+              "sha256": "ef5cd07b8376906c4c25dc8ddf25dd2d1ab4d27005f325d2dbd17552ae413ab5",
+              "signatureFormat": "JPEG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": "12afb4d9953adee0607d347daee5b78b18d6b3cab2d572b88970703f5edb37bc",
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            }
+          },
+          "thumbnail": {
+            "before": {
+              "bytes": 60839,
+              "width": 640,
+              "height": 360,
+              "format": "JPEG",
+              "mime": "image/jpeg",
+              "extension": ".jpg",
+              "sha256": "194d34328a220808d113a78d1008397a5f2f42ff6074d23f6b3293fc42eb59b0",
+              "signatureFormat": "JPEG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": "12afb4d9953adee0607d347daee5b78b18d6b3cab2d572b88970703f5edb37bc",
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            },
+            "after": {
+              "bytes": 70193,
+              "width": 640,
+              "height": 360,
+              "format": "JPEG",
+              "mime": "image/jpeg",
+              "extension": ".jpg",
+              "sha256": "b1e774f04b4b884ab98868dce262d90884c50643df2f2f636b74300b30f26098",
+              "signatureFormat": "JPEG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": "12afb4d9953adee0607d347daee5b78b18d6b3cab2d572b88970703f5edb37bc",
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            }
+          }
+        },
+        {
+          "imageIndex": 7,
+          "number": "07",
+          "old": {
+            "src": "assets/gallery/-/img-3969.jpg",
+            "thumbnail": "assets/gallery-thumbs/-/img-3969.jpg"
+          },
+          "new": {
+            "src": "assets/gallery/d1289aa0ae06/07.jpg",
+            "thumbnail": "assets/gallery-thumbs/d1289aa0ae06/07.jpg"
+          },
+          "original": {
+            "before": {
+              "bytes": 686351,
+              "width": 1800,
+              "height": 2400,
+              "format": "JPEG",
+              "mime": "image/jpeg",
+              "extension": ".jpg",
+              "sha256": "a63c544cdd7805f3c81d94dbba71cae0ccf45cf4609a9cfa722f6402891fc7b9",
+              "signatureFormat": "JPEG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": "12afb4d9953adee0607d347daee5b78b18d6b3cab2d572b88970703f5edb37bc",
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            },
+            "after": {
+              "bytes": 767929,
+              "width": 1800,
+              "height": 2400,
+              "format": "JPEG",
+              "mime": "image/jpeg",
+              "extension": ".jpg",
+              "sha256": "377f6a953b1641abfa7fa7afddeb87363232da9c2d22b4b18df7fa8004cd8bf4",
+              "signatureFormat": "JPEG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": "12afb4d9953adee0607d347daee5b78b18d6b3cab2d572b88970703f5edb37bc",
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            }
+          },
+          "thumbnail": {
+            "before": {
+              "bytes": 48961,
+              "width": 640,
+              "height": 360,
+              "format": "JPEG",
+              "mime": "image/jpeg",
+              "extension": ".jpg",
+              "sha256": "be9e39a14af7be39c24f15163330c91d685886961f1bfe1d15489ca0b60a374f",
+              "signatureFormat": "JPEG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": "12afb4d9953adee0607d347daee5b78b18d6b3cab2d572b88970703f5edb37bc",
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            },
+            "after": {
+              "bytes": 56869,
+              "width": 640,
+              "height": 360,
+              "format": "JPEG",
+              "mime": "image/jpeg",
+              "extension": ".jpg",
+              "sha256": "190697436e9ec35558ad3878ba6b2213718712b49b469a46cd6dc5c3b0ff221c",
+              "signatureFormat": "JPEG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": "12afb4d9953adee0607d347daee5b78b18d6b3cab2d572b88970703f5edb37bc",
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            }
+          }
+        }
+      ]
+    },
+    {
+      "eventIndex": 6,
+      "eventId": "0bbaa80ead2f",
+      "date": "2025.11",
+      "title": "AI대학원 학생주도연구프로젝트 시상식",
+      "images": [
+        {
+          "imageIndex": 1,
+          "number": "01",
+          "old": {
+            "src": "assets/gallery/ai--/-2026-07-20-213050.png",
+            "thumbnail": "assets/gallery-thumbs/ai--/-2026-07-20-213050.png"
+          },
+          "new": {
+            "src": "assets/gallery/0bbaa80ead2f/01.png",
+            "thumbnail": "assets/gallery-thumbs/0bbaa80ead2f/01.png"
+          },
+          "original": {
+            "before": {
+              "bytes": 818137,
+              "width": 925,
+              "height": 641,
+              "format": "PNG",
+              "mime": "image/png",
+              "extension": ".png",
+              "sha256": "77f5e2d39a701f21e1f3454aac1c67f9476f172a2f6ec232317bd4cde440c64d",
+              "signatureFormat": "PNG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": null,
+              "hasAlphaChannel": true,
+              "hasTransparency": false
+            },
+            "after": {
+              "bytes": 535439,
+              "width": 925,
+              "height": 641,
+              "format": "PNG",
+              "mime": "image/png",
+              "extension": ".png",
+              "sha256": "bd17933fe060b6c1cf25202e7ca7da4fa389d6da0e27e56a307cfae335f75450",
+              "signatureFormat": "PNG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": null,
+              "hasAlphaChannel": true,
+              "hasTransparency": false
+            }
+          },
+          "thumbnail": {
+            "before": {
+              "bytes": 348122,
+              "width": 640,
+              "height": 360,
+              "format": "PNG",
+              "mime": "image/png",
+              "extension": ".png",
+              "sha256": "e865f7fb808d595dbdb066b0b987cf93eaba9b24e4cc8c0a95f7ce13d8ff403a",
+              "signatureFormat": "PNG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": null,
+              "hasAlphaChannel": true,
+              "hasTransparency": false
+            },
+            "after": {
+              "bytes": 233755,
+              "width": 640,
+              "height": 360,
+              "format": "PNG",
+              "mime": "image/png",
+              "extension": ".png",
+              "sha256": "9b96c5dada9071be03e3ba93e5f0a7ccc74c3b1c38792698d3d8f65a5ef18fd9",
+              "signatureFormat": "PNG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": null,
+              "hasAlphaChannel": true,
+              "hasTransparency": false
+            }
+          }
+        },
+        {
+          "imageIndex": 2,
+          "number": "02",
+          "old": {
+            "src": "assets/gallery/ai--/-2026-07-20-213103.png",
+            "thumbnail": "assets/gallery-thumbs/ai--/-2026-07-20-213103.png"
+          },
+          "new": {
+            "src": "assets/gallery/0bbaa80ead2f/02.png",
+            "thumbnail": "assets/gallery-thumbs/0bbaa80ead2f/02.png"
+          },
+          "original": {
+            "before": {
+              "bytes": 1050049,
+              "width": 925,
+              "height": 641,
+              "format": "PNG",
+              "mime": "image/png",
+              "extension": ".png",
+              "sha256": "90b9f17151ba733140617a45319389aa2dbf9fbefb7372a8f47ea2a31b4cdead",
+              "signatureFormat": "PNG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": null,
+              "hasAlphaChannel": true,
+              "hasTransparency": false
+            },
+            "after": {
+              "bytes": 732500,
+              "width": 925,
+              "height": 641,
+              "format": "PNG",
+              "mime": "image/png",
+              "extension": ".png",
+              "sha256": "11b0e87a80221834567d25fead4cd16fd58544488bfae59e2d12de4c2ed40970",
+              "signatureFormat": "PNG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": null,
+              "hasAlphaChannel": true,
+              "hasTransparency": false
+            }
+          },
+          "thumbnail": {
+            "before": {
+              "bytes": 409278,
+              "width": 640,
+              "height": 360,
+              "format": "PNG",
+              "mime": "image/png",
+              "extension": ".png",
+              "sha256": "1b75e095c0524cdf1ce0968141e2cf19c6ba64054a1d1c128cc074e8e0f993e1",
+              "signatureFormat": "PNG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": null,
+              "hasAlphaChannel": true,
+              "hasTransparency": false
+            },
+            "after": {
+              "bytes": 286998,
+              "width": 640,
+              "height": 360,
+              "format": "PNG",
+              "mime": "image/png",
+              "extension": ".png",
+              "sha256": "0f7ec96c18d3ae2ed45d819e9b0bd51614bef2721b5ab471129a0286cb561b10",
+              "signatureFormat": "PNG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": null,
+              "hasAlphaChannel": true,
+              "hasTransparency": false
+            }
+          }
+        },
+        {
+          "imageIndex": 3,
+          "number": "03",
+          "old": {
+            "src": "assets/gallery/ai--/-2026-07-20-213025.png",
+            "thumbnail": "assets/gallery-thumbs/ai--/-2026-07-20-213025.png"
+          },
+          "new": {
+            "src": "assets/gallery/0bbaa80ead2f/03.png",
+            "thumbnail": "assets/gallery-thumbs/0bbaa80ead2f/03.png"
+          },
+          "original": {
+            "before": {
+              "bytes": 1105549,
+              "width": 925,
+              "height": 641,
+              "format": "PNG",
+              "mime": "image/png",
+              "extension": ".png",
+              "sha256": "44b5cd639bf13aa0b5598e2bb9f534cbf11c04e37c48c63f162362ff0fe5dfb3",
+              "signatureFormat": "PNG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": null,
+              "hasAlphaChannel": true,
+              "hasTransparency": false
+            },
+            "after": {
+              "bytes": 788723,
+              "width": 925,
+              "height": 641,
+              "format": "PNG",
+              "mime": "image/png",
+              "extension": ".png",
+              "sha256": "7e311fe270173387e6db3eea2d15be1404a147c1d8670d46d7ab9e0011516647",
+              "signatureFormat": "PNG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": null,
+              "hasAlphaChannel": true,
+              "hasTransparency": false
+            }
+          },
+          "thumbnail": {
+            "before": {
+              "bytes": 438732,
+              "width": 640,
+              "height": 360,
+              "format": "PNG",
+              "mime": "image/png",
+              "extension": ".png",
+              "sha256": "b5f800e32c8cee76bfab2d9a1afaf2fb1197edc29602f879ce89fefab1f2f727",
+              "signatureFormat": "PNG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": null,
+              "hasAlphaChannel": true,
+              "hasTransparency": false
+            },
+            "after": {
+              "bytes": 315582,
+              "width": 640,
+              "height": 360,
+              "format": "PNG",
+              "mime": "image/png",
+              "extension": ".png",
+              "sha256": "015aba065b093e6cb1356ca2c953beee6bc9b0f0918d770f51d1c1b05eadc796",
+              "signatureFormat": "PNG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": null,
+              "hasAlphaChannel": true,
+              "hasTransparency": false
+            }
+          }
+        },
+        {
+          "imageIndex": 4,
+          "number": "04",
+          "old": {
+            "src": "assets/gallery/ai--/-2026-07-20-213037.png",
+            "thumbnail": "assets/gallery-thumbs/ai--/-2026-07-20-213037.png"
+          },
+          "new": {
+            "src": "assets/gallery/0bbaa80ead2f/04.png",
+            "thumbnail": "assets/gallery-thumbs/0bbaa80ead2f/04.png"
+          },
+          "original": {
+            "before": {
+              "bytes": 1123525,
+              "width": 924,
+              "height": 641,
+              "format": "PNG",
+              "mime": "image/png",
+              "extension": ".png",
+              "sha256": "0fd3d5f968b59b45c445ac99ff523521200c9e8224fdaafcde701c0a9500f50c",
+              "signatureFormat": "PNG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": null,
+              "hasAlphaChannel": true,
+              "hasTransparency": false
+            },
+            "after": {
+              "bytes": 809945,
+              "width": 924,
+              "height": 641,
+              "format": "PNG",
+              "mime": "image/png",
+              "extension": ".png",
+              "sha256": "59c867b13a323822c1d434c53b705df104f31cad8d543bfcbed0c33b95b7d5f8",
+              "signatureFormat": "PNG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": null,
+              "hasAlphaChannel": true,
+              "hasTransparency": false
+            }
+          },
+          "thumbnail": {
+            "before": {
+              "bytes": 436942,
+              "width": 640,
+              "height": 360,
+              "format": "PNG",
+              "mime": "image/png",
+              "extension": ".png",
+              "sha256": "83ca4f09ca5a80e0fbc77109936fd665e11cd7741a759daba5232df9ea7c510d",
+              "signatureFormat": "PNG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": null,
+              "hasAlphaChannel": true,
+              "hasTransparency": false
+            },
+            "after": {
+              "bytes": 314460,
+              "width": 640,
+              "height": 360,
+              "format": "PNG",
+              "mime": "image/png",
+              "extension": ".png",
+              "sha256": "349a06b1e08a95aa1b3620f568f27ff235c370cb1e97be2653bb803546615378",
+              "signatureFormat": "PNG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": null,
+              "hasAlphaChannel": true,
+              "hasTransparency": false
+            }
+          }
+        }
+      ]
+    },
+    {
+      "eventIndex": 7,
+      "eventId": "0a786e0f554a",
+      "date": "2025.09",
+      "title": "다부처 과제 현장 시연평가 참석",
+      "images": [
+        {
+          "imageIndex": 1,
+          "number": "01",
+          "old": {
+            "src": "assets/gallery/----/img-2538.jpeg",
+            "thumbnail": "assets/gallery-thumbs/----/img-2538.jpeg"
+          },
+          "new": {
+            "src": "assets/gallery/0a786e0f554a/01.jpeg",
+            "thumbnail": "assets/gallery-thumbs/0a786e0f554a/01.jpeg"
+          },
+          "original": {
+            "before": {
+              "bytes": 980497,
+              "width": 2400,
+              "height": 1800,
+              "format": "JPEG",
+              "mime": "image/jpeg",
+              "extension": ".jpeg",
+              "sha256": "b669e34992940277fb3bae20e7f35107ec61ce1da421fe297be45f410a493607",
+              "signatureFormat": "JPEG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": "12afb4d9953adee0607d347daee5b78b18d6b3cab2d572b88970703f5edb37bc",
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            },
+            "after": {
+              "bytes": 1073866,
+              "width": 2400,
+              "height": 1800,
+              "format": "JPEG",
+              "mime": "image/jpeg",
+              "extension": ".jpeg",
+              "sha256": "c43fd3a9fb52ccb6299969feb73365d371f75028ab4b18e6185edb2575d6bb24",
+              "signatureFormat": "JPEG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": "12afb4d9953adee0607d347daee5b78b18d6b3cab2d572b88970703f5edb37bc",
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            }
+          },
+          "thumbnail": {
+            "before": {
+              "bytes": 67715,
+              "width": 640,
+              "height": 360,
+              "format": "JPEG",
+              "mime": "image/jpeg",
+              "extension": ".jpeg",
+              "sha256": "f8e999041999e5ad4b3fccc018734594a31da604aef9377fea6ec5918e68d2d6",
+              "signatureFormat": "JPEG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": "12afb4d9953adee0607d347daee5b78b18d6b3cab2d572b88970703f5edb37bc",
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            },
+            "after": {
+              "bytes": 78496,
+              "width": 640,
+              "height": 360,
+              "format": "JPEG",
+              "mime": "image/jpeg",
+              "extension": ".jpeg",
+              "sha256": "874344c008450818c67c3dcdddec60021e6487f3d3c90efbbce05b3e0796fe2c",
+              "signatureFormat": "JPEG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": "12afb4d9953adee0607d347daee5b78b18d6b3cab2d572b88970703f5edb37bc",
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            }
+          }
+        },
+        {
+          "imageIndex": 2,
+          "number": "02",
+          "old": {
+            "src": "assets/gallery/----/img-2542.jpg",
+            "thumbnail": "assets/gallery-thumbs/----/img-2542.jpg"
+          },
+          "new": {
+            "src": "assets/gallery/0a786e0f554a/02.jpg",
+            "thumbnail": "assets/gallery-thumbs/0a786e0f554a/02.jpg"
+          },
+          "original": {
+            "before": {
+              "bytes": 1646059,
+              "width": 2205,
+              "height": 2400,
+              "format": "JPEG",
+              "mime": "image/jpeg",
+              "extension": ".jpg",
+              "sha256": "99f6861d1d6d706406a04f297aaaa9aef7c64a1e015a308d7d77b6f991e770df",
+              "signatureFormat": "JPEG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": "12afb4d9953adee0607d347daee5b78b18d6b3cab2d572b88970703f5edb37bc",
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            },
+            "after": {
+              "bytes": 1775248,
+              "width": 2205,
+              "height": 2400,
+              "format": "JPEG",
+              "mime": "image/jpeg",
+              "extension": ".jpg",
+              "sha256": "6007d5de61d2a81c4e89496f8f6ba71da67c3b39cffbf6df8f085496131da5ec",
+              "signatureFormat": "JPEG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": "12afb4d9953adee0607d347daee5b78b18d6b3cab2d572b88970703f5edb37bc",
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            }
+          },
+          "thumbnail": {
+            "before": {
+              "bytes": 93126,
+              "width": 640,
+              "height": 360,
+              "format": "JPEG",
+              "mime": "image/jpeg",
+              "extension": ".jpg",
+              "sha256": "d1edfb56c1799221cabe2187f7135fd78512a601b9d2b988742d3ea599a7f923",
+              "signatureFormat": "JPEG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": "12afb4d9953adee0607d347daee5b78b18d6b3cab2d572b88970703f5edb37bc",
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            },
+            "after": {
+              "bytes": 107631,
+              "width": 640,
+              "height": 360,
+              "format": "JPEG",
+              "mime": "image/jpeg",
+              "extension": ".jpg",
+              "sha256": "a6d4096e51b0663c9722891de407bc8129632c901f200e6b211cf2ee1f65dcb0",
+              "signatureFormat": "JPEG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": "12afb4d9953adee0607d347daee5b78b18d6b3cab2d572b88970703f5edb37bc",
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            }
+          }
+        },
+        {
+          "imageIndex": 3,
+          "number": "03",
+          "old": {
+            "src": "assets/gallery/----/img-2545.jpg",
+            "thumbnail": "assets/gallery-thumbs/----/img-2545.jpg"
+          },
+          "new": {
+            "src": "assets/gallery/0a786e0f554a/03.jpg",
+            "thumbnail": "assets/gallery-thumbs/0a786e0f554a/03.jpg"
+          },
+          "original": {
+            "before": {
+              "bytes": 941970,
+              "width": 1800,
+              "height": 2400,
+              "format": "JPEG",
+              "mime": "image/jpeg",
+              "extension": ".jpg",
+              "sha256": "0140d057bfb7bb290e4aee28e3724617d6820924139e4124ac2a7f1ab1584b78",
+              "signatureFormat": "JPEG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": "12afb4d9953adee0607d347daee5b78b18d6b3cab2d572b88970703f5edb37bc",
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            },
+            "after": {
+              "bytes": 1028745,
+              "width": 1800,
+              "height": 2400,
+              "format": "JPEG",
+              "mime": "image/jpeg",
+              "extension": ".jpg",
+              "sha256": "0e320a9dcc7ad9f1b7cf5b32a93ce4ec2dc258a64e404f354b03e13be99c9a01",
+              "signatureFormat": "JPEG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": "12afb4d9953adee0607d347daee5b78b18d6b3cab2d572b88970703f5edb37bc",
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            }
+          },
+          "thumbnail": {
+            "before": {
+              "bytes": 65297,
+              "width": 640,
+              "height": 360,
+              "format": "JPEG",
+              "mime": "image/jpeg",
+              "extension": ".jpg",
+              "sha256": "4dac860663560c8a194b5e1791be4dbb5f6805b77955b97d4d250181d2f3fcca",
+              "signatureFormat": "JPEG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": "12afb4d9953adee0607d347daee5b78b18d6b3cab2d572b88970703f5edb37bc",
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            },
+            "after": {
+              "bytes": 75782,
+              "width": 640,
+              "height": 360,
+              "format": "JPEG",
+              "mime": "image/jpeg",
+              "extension": ".jpg",
+              "sha256": "fb72873f3d12ab922862126f072f20f6a19a48e4cc195cf07512750047c7a288",
+              "signatureFormat": "JPEG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": "12afb4d9953adee0607d347daee5b78b18d6b3cab2d572b88970703f5edb37bc",
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            }
+          }
+        },
+        {
+          "imageIndex": 4,
+          "number": "04",
+          "old": {
+            "src": "assets/gallery/----/img-2564.jpg",
+            "thumbnail": "assets/gallery-thumbs/----/img-2564.jpg"
+          },
+          "new": {
+            "src": "assets/gallery/0a786e0f554a/04.jpg",
+            "thumbnail": "assets/gallery-thumbs/0a786e0f554a/04.jpg"
+          },
+          "original": {
+            "before": {
+              "bytes": 1251984,
+              "width": 2400,
+              "height": 1800,
+              "format": "JPEG",
+              "mime": "image/jpeg",
+              "extension": ".jpg",
+              "sha256": "334f06a8c37ff84ac737465b8985d6bb58c41b3e4f890bb4bf0ff379a1daf5b4",
+              "signatureFormat": "JPEG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": "12afb4d9953adee0607d347daee5b78b18d6b3cab2d572b88970703f5edb37bc",
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            },
+            "after": {
+              "bytes": 1365067,
+              "width": 2400,
+              "height": 1800,
+              "format": "JPEG",
+              "mime": "image/jpeg",
+              "extension": ".jpg",
+              "sha256": "4d5a20082f599524c9a3f66d4699fd5febf0bef4106bb213378fd542aa817576",
+              "signatureFormat": "JPEG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": "12afb4d9953adee0607d347daee5b78b18d6b3cab2d572b88970703f5edb37bc",
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            }
+          },
+          "thumbnail": {
+            "before": {
+              "bytes": 90376,
+              "width": 640,
+              "height": 360,
+              "format": "JPEG",
+              "mime": "image/jpeg",
+              "extension": ".jpg",
+              "sha256": "83b91923998c655265d18342fc3df14befc2b0600b7bfed2233a0a3abc27b1c6",
+              "signatureFormat": "JPEG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": "12afb4d9953adee0607d347daee5b78b18d6b3cab2d572b88970703f5edb37bc",
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            },
+            "after": {
+              "bytes": 104038,
+              "width": 640,
+              "height": 360,
+              "format": "JPEG",
+              "mime": "image/jpeg",
+              "extension": ".jpg",
+              "sha256": "f25873b2f137298c3e58ac165f1be253005bd592859176d3e400d44d5f0fcfda",
+              "signatureFormat": "JPEG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": "12afb4d9953adee0607d347daee5b78b18d6b3cab2d572b88970703f5edb37bc",
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            }
+          }
+        }
+      ]
+    },
+    {
+      "eventIndex": 8,
+      "eventId": "774a13baef42",
+      "date": "2025.09",
+      "title": "다부처 과제 청정학회 참석",
+      "images": [
+        {
+          "imageIndex": 1,
+          "number": "01",
+          "old": {
+            "src": "assets/gallery/---/img-2409.jpeg",
+            "thumbnail": "assets/gallery-thumbs/---/img-2409.jpeg"
+          },
+          "new": {
+            "src": "assets/gallery/774a13baef42/01.jpeg",
+            "thumbnail": "assets/gallery-thumbs/774a13baef42/01.jpeg"
+          },
+          "original": {
+            "before": {
+              "bytes": 933647,
+              "width": 1800,
+              "height": 2400,
+              "format": "JPEG",
+              "mime": "image/jpeg",
+              "extension": ".jpeg",
+              "sha256": "3537ee5b0e857920b11906a1afaf62caa9dbdda6f86f72bd3e0f6d2cad069309",
+              "signatureFormat": "JPEG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": "12afb4d9953adee0607d347daee5b78b18d6b3cab2d572b88970703f5edb37bc",
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            },
+            "after": {
+              "bytes": 1023945,
+              "width": 1800,
+              "height": 2400,
+              "format": "JPEG",
+              "mime": "image/jpeg",
+              "extension": ".jpeg",
+              "sha256": "0b13de9085361ee8fb6a886703ee12abcab90335235ff8e2baca1a8f496211f5",
+              "signatureFormat": "JPEG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": "12afb4d9953adee0607d347daee5b78b18d6b3cab2d572b88970703f5edb37bc",
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            }
+          },
+          "thumbnail": {
+            "before": {
+              "bytes": 62295,
+              "width": 640,
+              "height": 360,
+              "format": "JPEG",
+              "mime": "image/jpeg",
+              "extension": ".jpeg",
+              "sha256": "61c04cc72f59ecbf589146c53040900919e5027eba886c6e4e2681971d1c2b9e",
+              "signatureFormat": "JPEG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": "12afb4d9953adee0607d347daee5b78b18d6b3cab2d572b88970703f5edb37bc",
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            },
+            "after": {
+              "bytes": 72540,
+              "width": 640,
+              "height": 360,
+              "format": "JPEG",
+              "mime": "image/jpeg",
+              "extension": ".jpeg",
+              "sha256": "031fa17d95103afd6cdc4ee4649530b96ebc650236a90d71c01550ccd0eb95bd",
+              "signatureFormat": "JPEG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": "12afb4d9953adee0607d347daee5b78b18d6b3cab2d572b88970703f5edb37bc",
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            }
+          }
+        },
+        {
+          "imageIndex": 2,
+          "number": "02",
+          "old": {
+            "src": "assets/gallery/---/-2026-04-03-105418.png",
+            "thumbnail": "assets/gallery-thumbs/---/-2026-04-03-105418.png"
+          },
+          "new": {
+            "src": "assets/gallery/774a13baef42/02.png",
+            "thumbnail": "assets/gallery-thumbs/774a13baef42/02.png"
+          },
+          "original": {
+            "before": {
+              "bytes": 1226648,
+              "width": 691,
+              "height": 762,
+              "format": "PNG",
+              "mime": "image/png",
+              "extension": ".png",
+              "sha256": "b886348091c9f0fe2b7f8f164ba49cc993bfd967d1ae53624980b228ba8bdcf9",
+              "signatureFormat": "PNG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": null,
+              "hasAlphaChannel": true,
+              "hasTransparency": false
+            },
+            "after": {
+              "bytes": 1040416,
+              "width": 691,
+              "height": 762,
+              "format": "PNG",
+              "mime": "image/png",
+              "extension": ".png",
+              "sha256": "8cc214c4e889480f623e819b46d72de4d6f8b762a738edeb9348060e536b9f21",
+              "signatureFormat": "PNG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": null,
+              "hasAlphaChannel": true,
+              "hasTransparency": false
+            }
+          },
+          "thumbnail": {
+            "before": {
+              "bytes": 514982,
+              "width": 640,
+              "height": 360,
+              "format": "PNG",
+              "mime": "image/png",
+              "extension": ".png",
+              "sha256": "3f254cee238da983bca75684187a72900b056c0274834316ba88aabd81eb55a0",
+              "signatureFormat": "PNG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": null,
+              "hasAlphaChannel": true,
+              "hasTransparency": false
+            },
+            "after": {
+              "bytes": 412910,
+              "width": 640,
+              "height": 360,
+              "format": "PNG",
+              "mime": "image/png",
+              "extension": ".png",
+              "sha256": "e474ab01d50ecd4d4dff47c41fa4361a7f30b75aaa55f319ce3bf0d3017f23c7",
+              "signatureFormat": "PNG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": null,
+              "hasAlphaChannel": true,
+              "hasTransparency": false
+            }
+          }
+        }
+      ]
+    },
+    {
+      "eventIndex": 9,
+      "eventId": "6fd325923b5e",
+      "date": "2025.07",
+      "title": "MITA 2025",
+      "images": [
+        {
+          "imageIndex": 1,
+          "number": "01",
+          "old": {
+            "src": "assets/gallery/2025-07-mita/01.webp",
+            "thumbnail": "assets/gallery-thumbs/2025-07-mita/01.webp"
+          },
+          "new": {
+            "src": "assets/gallery/6fd325923b5e/01.webp",
+            "thumbnail": "assets/gallery-thumbs/6fd325923b5e/01.webp"
+          },
+          "original": {
+            "before": {
+              "bytes": 79686,
+              "width": 1440,
+              "height": 1080,
+              "format": "WEBP",
+              "mime": "image/webp",
+              "extension": ".webp",
+              "sha256": "91b14483a11136f4e07e771b90d9a779bfef5adcf073fc2ddd9584bbff54ecb5",
+              "signatureFormat": "WEBP",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": null,
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            },
+            "after": {
+              "bytes": 102484,
+              "width": 1440,
+              "height": 1080,
+              "format": "WEBP",
+              "mime": "image/webp",
+              "extension": ".webp",
+              "sha256": "75a34e0ef987d3f6bed3280c1683fb1a86d647a789f01fea6395594856107ffe",
+              "signatureFormat": "WEBP",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": null,
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            }
+          },
+          "thumbnail": {
+            "before": {
+              "bytes": 18230,
+              "width": 640,
+              "height": 360,
+              "format": "WEBP",
+              "mime": "image/webp",
+              "extension": ".webp",
+              "sha256": "fe66f2ba789a3a8ce285a7900b9b202a5cd66c204cacfa8dcc94ba819dbd46b7",
+              "signatureFormat": "WEBP",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": null,
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            },
+            "after": {
+              "bytes": 22216,
+              "width": 640,
+              "height": 360,
+              "format": "WEBP",
+              "mime": "image/webp",
+              "extension": ".webp",
+              "sha256": "8927a3c57d336a5563e2c15db2b4128788e3646fd86ae1438f7551512e5fe8ed",
+              "signatureFormat": "WEBP",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": null,
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            }
+          }
+        },
+        {
+          "imageIndex": 2,
+          "number": "02",
+          "old": {
+            "src": "assets/gallery/2025-07-mita/02.webp",
+            "thumbnail": "assets/gallery-thumbs/2025-07-mita/02.webp"
+          },
+          "new": {
+            "src": "assets/gallery/6fd325923b5e/02.webp",
+            "thumbnail": "assets/gallery-thumbs/6fd325923b5e/02.webp"
+          },
+          "original": {
+            "before": {
+              "bytes": 148190,
+              "width": 1440,
+              "height": 1080,
+              "format": "WEBP",
+              "mime": "image/webp",
+              "extension": ".webp",
+              "sha256": "6908fdc3ff86818da21c1d1bb7192342858b78018c1944dfc9cd8675b165c3d6",
+              "signatureFormat": "WEBP",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": null,
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            },
+            "after": {
+              "bytes": 183908,
+              "width": 1440,
+              "height": 1080,
+              "format": "WEBP",
+              "mime": "image/webp",
+              "extension": ".webp",
+              "sha256": "954d360bf80966e722ea930047628e6a8643ec5e479b1733048d4c5261bdf866",
+              "signatureFormat": "WEBP",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": null,
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            }
+          },
+          "thumbnail": {
+            "before": {
+              "bytes": 33714,
+              "width": 640,
+              "height": 360,
+              "format": "WEBP",
+              "mime": "image/webp",
+              "extension": ".webp",
+              "sha256": "3f1ccd89f746287e2803e693dc1affcfc249734eb479271448b1d867189e687e",
+              "signatureFormat": "WEBP",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": null,
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            },
+            "after": {
+              "bytes": 39768,
+              "width": 640,
+              "height": 360,
+              "format": "WEBP",
+              "mime": "image/webp",
+              "extension": ".webp",
+              "sha256": "9bdf773f977dfcc20e9dfe22b9b3435d02042b09b7dd81e751a38f7e1d74640e",
+              "signatureFormat": "WEBP",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": null,
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            }
+          }
+        }
+      ]
+    },
+    {
+      "eventIndex": 10,
+      "eventId": "6a3d4c8e137d",
+      "date": "2025.07",
+      "title": "KCC 2025 & 연구실 MT",
+      "images": [
+        {
+          "imageIndex": 1,
+          "number": "01",
+          "old": {
+            "src": "assets/gallery/kcc-2025--mt/kakaotalk-20260720-105417587.jpg",
+            "thumbnail": "assets/gallery-thumbs/kcc-2025--mt/kakaotalk-20260720-105417587.jpg"
+          },
+          "new": {
+            "src": "assets/gallery/6a3d4c8e137d/01.jpg",
+            "thumbnail": "assets/gallery-thumbs/6a3d4c8e137d/01.jpg"
+          },
+          "original": {
+            "before": {
+              "bytes": 535768,
+              "width": 2400,
+              "height": 1350,
+              "format": "JPEG",
+              "mime": "image/jpeg",
+              "extension": ".jpg",
+              "sha256": "e4f3c02bee10e8d51743acb9b285ea96b9f7d1aec1ec0f3a9d2dcaea18155d75",
+              "signatureFormat": "JPEG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": "12afb4d9953adee0607d347daee5b78b18d6b3cab2d572b88970703f5edb37bc",
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            },
+            "after": {
+              "bytes": 602601,
+              "width": 2400,
+              "height": 1350,
+              "format": "JPEG",
+              "mime": "image/jpeg",
+              "extension": ".jpg",
+              "sha256": "432ee81329f0b5f437c393cbe6378ef3333a668f89704d7ff3a3a3bff1029a5e",
+              "signatureFormat": "JPEG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": "12afb4d9953adee0607d347daee5b78b18d6b3cab2d572b88970703f5edb37bc",
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            }
+          },
+          "thumbnail": {
+            "before": {
+              "bytes": 60141,
+              "width": 640,
+              "height": 360,
+              "format": "JPEG",
+              "mime": "image/jpeg",
+              "extension": ".jpg",
+              "sha256": "c784a502724eb98742c05bb648015fce0234a232ab436b2f7b01e8d43e5a127b",
+              "signatureFormat": "JPEG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": "12afb4d9953adee0607d347daee5b78b18d6b3cab2d572b88970703f5edb37bc",
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            },
+            "after": {
+              "bytes": 69095,
+              "width": 640,
+              "height": 360,
+              "format": "JPEG",
+              "mime": "image/jpeg",
+              "extension": ".jpg",
+              "sha256": "580a7d522421d7a894b2eca8e0ceb7e2a9ee633eef2600644c8b2e483cc5997c",
+              "signatureFormat": "JPEG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": "12afb4d9953adee0607d347daee5b78b18d6b3cab2d572b88970703f5edb37bc",
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            }
+          }
+        },
+        {
+          "imageIndex": 2,
+          "number": "02",
+          "old": {
+            "src": "assets/gallery/kcc-2025--mt/img-1626.jpg",
+            "thumbnail": "assets/gallery-thumbs/kcc-2025--mt/img-1626.jpg"
+          },
+          "new": {
+            "src": "assets/gallery/6a3d4c8e137d/02.jpg",
+            "thumbnail": "assets/gallery-thumbs/6a3d4c8e137d/02.jpg"
+          },
+          "original": {
+            "before": {
+              "bytes": 870424,
+              "width": 2400,
+              "height": 1800,
+              "format": "JPEG",
+              "mime": "image/jpeg",
+              "extension": ".jpg",
+              "sha256": "7245a5dc9af6beee486e9a0dc1a4a4bcc850948f2df61028a40243fbd2b0c4c4",
+              "signatureFormat": "JPEG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": "12afb4d9953adee0607d347daee5b78b18d6b3cab2d572b88970703f5edb37bc",
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            },
+            "after": {
+              "bytes": 974131,
+              "width": 2400,
+              "height": 1800,
+              "format": "JPEG",
+              "mime": "image/jpeg",
+              "extension": ".jpg",
+              "sha256": "e9f3ff7adf1d45708aa126b3338970fdac93812f7b8739a6d4c038c937673b7b",
+              "signatureFormat": "JPEG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": "12afb4d9953adee0607d347daee5b78b18d6b3cab2d572b88970703f5edb37bc",
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            }
+          },
+          "thumbnail": {
+            "before": {
+              "bytes": 64665,
+              "width": 640,
+              "height": 360,
+              "format": "JPEG",
+              "mime": "image/jpeg",
+              "extension": ".jpg",
+              "sha256": "e774372a331e9b6b1f696a5914dc4a4ca2ea3e757a0edfe432fee158d97c9e69",
+              "signatureFormat": "JPEG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": "12afb4d9953adee0607d347daee5b78b18d6b3cab2d572b88970703f5edb37bc",
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            },
+            "after": {
+              "bytes": 74438,
+              "width": 640,
+              "height": 360,
+              "format": "JPEG",
+              "mime": "image/jpeg",
+              "extension": ".jpg",
+              "sha256": "a86d60a14a1940bc7fa118613b9aee5939da4b57f7fe4c94522f2c5c4912e28b",
+              "signatureFormat": "JPEG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": "12afb4d9953adee0607d347daee5b78b18d6b3cab2d572b88970703f5edb37bc",
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            }
+          }
+        },
+        {
+          "imageIndex": 3,
+          "number": "03",
+          "old": {
+            "src": "assets/gallery/kcc-2025--mt/img-1633.jpg",
+            "thumbnail": "assets/gallery-thumbs/kcc-2025--mt/img-1633.jpg"
+          },
+          "new": {
+            "src": "assets/gallery/6a3d4c8e137d/03.jpg",
+            "thumbnail": "assets/gallery-thumbs/6a3d4c8e137d/03.jpg"
+          },
+          "original": {
+            "before": {
+              "bytes": 906107,
+              "width": 2400,
+              "height": 1800,
+              "format": "JPEG",
+              "mime": "image/jpeg",
+              "extension": ".jpg",
+              "sha256": "8e24571890132daebec22e72fc844002c6a6103a954e49398fbf3834c705b181",
+              "signatureFormat": "JPEG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": "12afb4d9953adee0607d347daee5b78b18d6b3cab2d572b88970703f5edb37bc",
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            },
+            "after": {
+              "bytes": 1004369,
+              "width": 2400,
+              "height": 1800,
+              "format": "JPEG",
+              "mime": "image/jpeg",
+              "extension": ".jpg",
+              "sha256": "54515aca40f896377ad04e42708c645be288607a7b56d8f306050653005d9165",
+              "signatureFormat": "JPEG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": "12afb4d9953adee0607d347daee5b78b18d6b3cab2d572b88970703f5edb37bc",
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            }
+          },
+          "thumbnail": {
+            "before": {
+              "bytes": 74701,
+              "width": 640,
+              "height": 360,
+              "format": "JPEG",
+              "mime": "image/jpeg",
+              "extension": ".jpg",
+              "sha256": "869ce0af88b7dfac02c3b363dd6d92ac5068199a348020840a94bfa2f78770a2",
+              "signatureFormat": "JPEG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": "12afb4d9953adee0607d347daee5b78b18d6b3cab2d572b88970703f5edb37bc",
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            },
+            "after": {
+              "bytes": 86298,
+              "width": 640,
+              "height": 360,
+              "format": "JPEG",
+              "mime": "image/jpeg",
+              "extension": ".jpg",
+              "sha256": "b3495424be9d75585970fd79a901386266cde913ea832092e543dedec689ccaf",
+              "signatureFormat": "JPEG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": "12afb4d9953adee0607d347daee5b78b18d6b3cab2d572b88970703f5edb37bc",
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            }
+          }
+        },
+        {
+          "imageIndex": 4,
+          "number": "04",
+          "old": {
+            "src": "assets/gallery/kcc-2025--mt/kakaotalk-20260720-105417587-01.jpg",
+            "thumbnail": "assets/gallery-thumbs/kcc-2025--mt/kakaotalk-20260720-105417587-01.jpg"
+          },
+          "new": {
+            "src": "assets/gallery/6a3d4c8e137d/04.jpg",
+            "thumbnail": "assets/gallery-thumbs/6a3d4c8e137d/04.jpg"
+          },
+          "original": {
+            "before": {
+              "bytes": 285307,
+              "width": 2400,
+              "height": 1350,
+              "format": "JPEG",
+              "mime": "image/jpeg",
+              "extension": ".jpg",
+              "sha256": "5fca649a622ffdc02a5e152de5909bc1cbd5a0a963e4022ad05d843bb9cc3b7c",
+              "signatureFormat": "JPEG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": "12afb4d9953adee0607d347daee5b78b18d6b3cab2d572b88970703f5edb37bc",
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            },
+            "after": {
+              "bytes": 339844,
+              "width": 2400,
+              "height": 1350,
+              "format": "JPEG",
+              "mime": "image/jpeg",
+              "extension": ".jpg",
+              "sha256": "d60ca8ca7836f2bf182545cd8d0a50330d1a2ba5dd11c246573a7b99f538f766",
+              "signatureFormat": "JPEG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": "12afb4d9953adee0607d347daee5b78b18d6b3cab2d572b88970703f5edb37bc",
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            }
+          },
+          "thumbnail": {
+            "before": {
+              "bytes": 21406,
+              "width": 640,
+              "height": 360,
+              "format": "JPEG",
+              "mime": "image/jpeg",
+              "extension": ".jpg",
+              "sha256": "13712ed54d1503864b369eec89e9dc0a902ffcbd8a16c49a6b0603bc1abc2e62",
+              "signatureFormat": "JPEG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": "12afb4d9953adee0607d347daee5b78b18d6b3cab2d572b88970703f5edb37bc",
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            },
+            "after": {
+              "bytes": 25857,
+              "width": 640,
+              "height": 360,
+              "format": "JPEG",
+              "mime": "image/jpeg",
+              "extension": ".jpg",
+              "sha256": "526f88767d49b70b09c9d659d5193c01dc9db876f0d782581b6403caee0fb727",
+              "signatureFormat": "JPEG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": "12afb4d9953adee0607d347daee5b78b18d6b3cab2d572b88970703f5edb37bc",
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            }
+          }
+        }
+      ]
+    },
+    {
+      "eventIndex": 11,
+      "eventId": "de70e94da389",
+      "date": "2025.03",
+      "title": "연구실 사진",
+      "images": [
+        {
+          "imageIndex": 1,
+          "number": "01",
+          "old": {
+            "src": "assets/gallery/2025-03-lab/01.webp",
+            "thumbnail": "assets/gallery-thumbs/2025-03-lab/01.webp"
+          },
+          "new": {
+            "src": "assets/gallery/de70e94da389/01.webp",
+            "thumbnail": "assets/gallery-thumbs/de70e94da389/01.webp"
+          },
+          "original": {
+            "before": {
+              "bytes": 170112,
+              "width": 1667,
+              "height": 1668,
+              "format": "WEBP",
+              "mime": "image/webp",
+              "extension": ".webp",
+              "sha256": "4208276d3820030d84f4ec876465ee364866884e2f364c4f3caa45a78f5164b8",
+              "signatureFormat": "WEBP",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": null,
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            },
+            "after": {
+              "bytes": 204922,
+              "width": 1667,
+              "height": 1668,
+              "format": "WEBP",
+              "mime": "image/webp",
+              "extension": ".webp",
+              "sha256": "e2c619c751f1b70989bd1487506a72ce7a8712bde7f86a07ca0a95b615607b5b",
+              "signatureFormat": "WEBP",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": null,
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            }
+          },
+          "thumbnail": {
+            "before": {
+              "bytes": 24710,
+              "width": 640,
+              "height": 360,
+              "format": "WEBP",
+              "mime": "image/webp",
+              "extension": ".webp",
+              "sha256": "2f6a9028275ae37733f97dc71936e28b10c92009e348d1ae3122dc0b78fac313",
+              "signatureFormat": "WEBP",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": null,
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            },
+            "after": {
+              "bytes": 29274,
+              "width": 640,
+              "height": 360,
+              "format": "WEBP",
+              "mime": "image/webp",
+              "extension": ".webp",
+              "sha256": "7eb448379e98273c24dedf7f5c7e80390416d591b56a4b31f997e7ee5d098e26",
+              "signatureFormat": "WEBP",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": null,
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            }
+          }
+        },
+        {
+          "imageIndex": 2,
+          "number": "02",
+          "old": {
+            "src": "assets/gallery/2025-03-lab/02.webp",
+            "thumbnail": "assets/gallery-thumbs/2025-03-lab/02.webp"
+          },
+          "new": {
+            "src": "assets/gallery/de70e94da389/02.webp",
+            "thumbnail": "assets/gallery-thumbs/de70e94da389/02.webp"
+          },
+          "original": {
+            "before": {
+              "bytes": 296914,
+              "width": 1667,
+              "height": 1668,
+              "format": "WEBP",
+              "mime": "image/webp",
+              "extension": ".webp",
+              "sha256": "f19aff5ee84c5ed8ed77b0e780fc3903046dc10cb24261d7734c16288490469e",
+              "signatureFormat": "WEBP",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": null,
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            },
+            "after": {
+              "bytes": 369816,
+              "width": 1667,
+              "height": 1668,
+              "format": "WEBP",
+              "mime": "image/webp",
+              "extension": ".webp",
+              "sha256": "f703714f656ae35621a2f799e720774080000abbbb05e445068044eeba4b59e2",
+              "signatureFormat": "WEBP",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": null,
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            }
+          },
+          "thumbnail": {
+            "before": {
+              "bytes": 36760,
+              "width": 640,
+              "height": 360,
+              "format": "WEBP",
+              "mime": "image/webp",
+              "extension": ".webp",
+              "sha256": "3b0e23f3fccf1ba7e83c796083f1fdb6b2143a8cf5cb4e2df965efcb9a84a800",
+              "signatureFormat": "WEBP",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": null,
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            },
+            "after": {
+              "bytes": 43130,
+              "width": 640,
+              "height": 360,
+              "format": "WEBP",
+              "mime": "image/webp",
+              "extension": ".webp",
+              "sha256": "a39603a42422f9dea0e0bf43bfed74dfaac606adeb8722d37b50712def8c0e6f",
+              "signatureFormat": "WEBP",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": null,
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            }
+          }
+        },
+        {
+          "imageIndex": 3,
+          "number": "03",
+          "old": {
+            "src": "assets/gallery/2025-03-lab/03.webp",
+            "thumbnail": "assets/gallery-thumbs/2025-03-lab/03.webp"
+          },
+          "new": {
+            "src": "assets/gallery/de70e94da389/03.webp",
+            "thumbnail": "assets/gallery-thumbs/de70e94da389/03.webp"
+          },
+          "original": {
+            "before": {
+              "bytes": 235428,
+              "width": 1667,
+              "height": 1668,
+              "format": "WEBP",
+              "mime": "image/webp",
+              "extension": ".webp",
+              "sha256": "be2c5ee2ef16117635dc184632906257a75dd104a1a6eccf5de12097f4c27552",
+              "signatureFormat": "WEBP",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": null,
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            },
+            "after": {
+              "bytes": 288372,
+              "width": 1667,
+              "height": 1668,
+              "format": "WEBP",
+              "mime": "image/webp",
+              "extension": ".webp",
+              "sha256": "ea335bf432a05cf287347eeb78fc7a4e9366f4a21ce30ec6b075a5b5281949d5",
+              "signatureFormat": "WEBP",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": null,
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            }
+          },
+          "thumbnail": {
+            "before": {
+              "bytes": 28680,
+              "width": 640,
+              "height": 360,
+              "format": "WEBP",
+              "mime": "image/webp",
+              "extension": ".webp",
+              "sha256": "cdf2749544bbe6c6ffa9783c7cf0df36fdd13b4664a90ba09e05100683293bb0",
+              "signatureFormat": "WEBP",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": null,
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            },
+            "after": {
+              "bytes": 34258,
+              "width": 640,
+              "height": 360,
+              "format": "WEBP",
+              "mime": "image/webp",
+              "extension": ".webp",
+              "sha256": "5ed11b92064e822f4ad21af5305bfbc4ed507d5c54ec34b70c62feb262195d8a",
+              "signatureFormat": "WEBP",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": null,
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            }
+          }
+        },
+        {
+          "imageIndex": 4,
+          "number": "04",
+          "old": {
+            "src": "assets/gallery/2025-03-lab/04.webp",
+            "thumbnail": "assets/gallery-thumbs/2025-03-lab/04.webp"
+          },
+          "new": {
+            "src": "assets/gallery/de70e94da389/04.webp",
+            "thumbnail": "assets/gallery-thumbs/de70e94da389/04.webp"
+          },
+          "original": {
+            "before": {
+              "bytes": 95714,
+              "width": 1251,
+              "height": 1250,
+              "format": "WEBP",
+              "mime": "image/webp",
+              "extension": ".webp",
+              "sha256": "b928ca6a77efa7171e4ddeb53ee5c2011373a49f2301e571f33d7c235b600dc3",
+              "signatureFormat": "WEBP",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": null,
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            },
+            "after": {
+              "bytes": 120970,
+              "width": 1251,
+              "height": 1250,
+              "format": "WEBP",
+              "mime": "image/webp",
+              "extension": ".webp",
+              "sha256": "277b7e5c668556bf9dbc0a42b9a716bc2a243eabe9b1696bb944f6f122fbcfd7",
+              "signatureFormat": "WEBP",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": null,
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            }
+          },
+          "thumbnail": {
+            "before": {
+              "bytes": 25482,
+              "width": 640,
+              "height": 360,
+              "format": "WEBP",
+              "mime": "image/webp",
+              "extension": ".webp",
+              "sha256": "21c2b58a001fa055354374c0885d171e4c98880a16c1fb6b7d183a5a7b96b46e",
+              "signatureFormat": "WEBP",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": null,
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            },
+            "after": {
+              "bytes": 30052,
+              "width": 640,
+              "height": 360,
+              "format": "WEBP",
+              "mime": "image/webp",
+              "extension": ".webp",
+              "sha256": "d0d8cbe03508e2a33996cdc4f91fe0a22e722f2d9efedf0873312ac1846a643b",
+              "signatureFormat": "WEBP",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": null,
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            }
+          }
+        },
+        {
+          "imageIndex": 5,
+          "number": "05",
+          "old": {
+            "src": "assets/gallery/2025-03-lab/05.webp",
+            "thumbnail": "assets/gallery-thumbs/2025-03-lab/05.webp"
+          },
+          "new": {
+            "src": "assets/gallery/de70e94da389/05.webp",
+            "thumbnail": "assets/gallery-thumbs/de70e94da389/05.webp"
+          },
+          "original": {
+            "before": {
+              "bytes": 142616,
+              "width": 1251,
+              "height": 1250,
+              "format": "WEBP",
+              "mime": "image/webp",
+              "extension": ".webp",
+              "sha256": "8b958568fab9d712579f834b1f0e39b6e3abe40388fac43ed9a54f09ec962393",
+              "signatureFormat": "WEBP",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": null,
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            },
+            "after": {
+              "bytes": 182566,
+              "width": 1251,
+              "height": 1250,
+              "format": "WEBP",
+              "mime": "image/webp",
+              "extension": ".webp",
+              "sha256": "db237c16d7898a4a8e01b7262a8f183895b7e36c87d87094740143b3371c4816",
+              "signatureFormat": "WEBP",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": null,
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            }
+          },
+          "thumbnail": {
+            "before": {
+              "bytes": 38626,
+              "width": 640,
+              "height": 360,
+              "format": "WEBP",
+              "mime": "image/webp",
+              "extension": ".webp",
+              "sha256": "1c0b52459e9d7b589abc9c7150ab9a903e643678f3de78048b66323d1e871806",
+              "signatureFormat": "WEBP",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": null,
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            },
+            "after": {
+              "bytes": 45304,
+              "width": 640,
+              "height": 360,
+              "format": "WEBP",
+              "mime": "image/webp",
+              "extension": ".webp",
+              "sha256": "deeff6ce279de02d73633ab68de788144cb236d0952d9c503c17364695c3a299",
+              "signatureFormat": "WEBP",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": null,
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            }
+          }
+        }
+      ]
+    },
+    {
+      "eventIndex": 12,
+      "eventId": "a7ece84cafa7",
+      "date": "2024.06",
+      "title": "KCC 2024",
+      "images": [
+        {
+          "imageIndex": 1,
+          "number": "01",
+          "old": {
+            "src": "assets/gallery/kcc-2024/kakaotalk-20240701-130948459-01.jpg",
+            "thumbnail": "assets/gallery-thumbs/kcc-2024/kakaotalk-20240701-130948459-01.jpg"
+          },
+          "new": {
+            "src": "assets/gallery/a7ece84cafa7/01.jpg",
+            "thumbnail": "assets/gallery-thumbs/a7ece84cafa7/01.jpg"
+          },
+          "original": {
+            "before": {
+              "bytes": 536383,
+              "width": 2400,
+              "height": 1600,
+              "format": "JPEG",
+              "mime": "image/jpeg",
+              "extension": ".jpg",
+              "sha256": "a9ffe0a28e6ce2e137f7ed531c489f08db14cfde20d3ecb2dc0370dc8ab36ae4",
+              "signatureFormat": "JPEG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": "12afb4d9953adee0607d347daee5b78b18d6b3cab2d572b88970703f5edb37bc",
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            },
+            "after": {
+              "bytes": 609199,
+              "width": 2400,
+              "height": 1600,
+              "format": "JPEG",
+              "mime": "image/jpeg",
+              "extension": ".jpg",
+              "sha256": "1989fe14551c400ea08efcb100f85cbfd56c873f8337374d640d35aa1366c6dc",
+              "signatureFormat": "JPEG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": "12afb4d9953adee0607d347daee5b78b18d6b3cab2d572b88970703f5edb37bc",
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            }
+          },
+          "thumbnail": {
+            "before": {
+              "bytes": 56918,
+              "width": 640,
+              "height": 360,
+              "format": "JPEG",
+              "mime": "image/jpeg",
+              "extension": ".jpg",
+              "sha256": "8eeb56ba0d57aef9741b0f6dbed065a90d66f8b1afeb0c6d29f02591671c723f",
+              "signatureFormat": "JPEG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": "12afb4d9953adee0607d347daee5b78b18d6b3cab2d572b88970703f5edb37bc",
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            },
+            "after": {
+              "bytes": 65926,
+              "width": 640,
+              "height": 360,
+              "format": "JPEG",
+              "mime": "image/jpeg",
+              "extension": ".jpg",
+              "sha256": "b93a4b01713d299a437ae8a49cfcaa8594190576fb801d0966e2285628edac44",
+              "signatureFormat": "JPEG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": "12afb4d9953adee0607d347daee5b78b18d6b3cab2d572b88970703f5edb37bc",
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            }
+          }
+        },
+        {
+          "imageIndex": 2,
+          "number": "02",
+          "old": {
+            "src": "assets/gallery/kcc-2024/-2026-07-20-212834.png",
+            "thumbnail": "assets/gallery-thumbs/kcc-2024/-2026-07-20-212834.png"
+          },
+          "new": {
+            "src": "assets/gallery/a7ece84cafa7/02.png",
+            "thumbnail": "assets/gallery-thumbs/a7ece84cafa7/02.png"
+          },
+          "original": {
+            "before": {
+              "bytes": 1292362,
+              "width": 1064,
+              "height": 768,
+              "format": "PNG",
+              "mime": "image/png",
+              "extension": ".png",
+              "sha256": "ec178917f47e06067c62d7d5f8bc915827a782899f2e510bf9578a9b7c4b72a8",
+              "signatureFormat": "PNG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": null,
+              "hasAlphaChannel": true,
+              "hasTransparency": false
+            },
+            "after": {
+              "bytes": 898408,
+              "width": 1064,
+              "height": 768,
+              "format": "PNG",
+              "mime": "image/png",
+              "extension": ".png",
+              "sha256": "3c5c5c4e6a387c699a5cb83cd75c657b7febf698e2552307ae68fe1277d48095",
+              "signatureFormat": "PNG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": null,
+              "hasAlphaChannel": true,
+              "hasTransparency": false
+            }
+          },
+          "thumbnail": {
+            "before": {
+              "bytes": 420178,
+              "width": 640,
+              "height": 360,
+              "format": "PNG",
+              "mime": "image/png",
+              "extension": ".png",
+              "sha256": "c9d10106e9edcdbfcde8703b84335819cce32e5cef2de0b79473f9d6d8b4e8a0",
+              "signatureFormat": "PNG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": null,
+              "hasAlphaChannel": true,
+              "hasTransparency": false
+            },
+            "after": {
+              "bytes": 295435,
+              "width": 640,
+              "height": 360,
+              "format": "PNG",
+              "mime": "image/png",
+              "extension": ".png",
+              "sha256": "4ebbe002f5ef42d43909e9554389716e6956a768606ae520599c855c9c1837dc",
+              "signatureFormat": "PNG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": null,
+              "hasAlphaChannel": true,
+              "hasTransparency": false
+            }
+          }
+        },
+        {
+          "imageIndex": 3,
+          "number": "03",
+          "old": {
+            "src": "assets/gallery/kcc-2024/1000002456.jpg",
+            "thumbnail": "assets/gallery-thumbs/kcc-2024/1000002456.jpg"
+          },
+          "new": {
+            "src": "assets/gallery/a7ece84cafa7/03.jpg",
+            "thumbnail": "assets/gallery-thumbs/a7ece84cafa7/03.jpg"
+          },
+          "original": {
+            "before": {
+              "bytes": 583412,
+              "width": 2400,
+              "height": 1802,
+              "format": "JPEG",
+              "mime": "image/jpeg",
+              "extension": ".jpg",
+              "sha256": "23a74ddb8a452a454c57fd60228335e925a05b56497905173869c3c0493c76d1",
+              "signatureFormat": "JPEG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": "12afb4d9953adee0607d347daee5b78b18d6b3cab2d572b88970703f5edb37bc",
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            },
+            "after": {
+              "bytes": 666681,
+              "width": 2400,
+              "height": 1802,
+              "format": "JPEG",
+              "mime": "image/jpeg",
+              "extension": ".jpg",
+              "sha256": "12b19e01aa236bbbf8e6b3843c8c99d0f6d23d83f006ee8a15977cd20f7af2ef",
+              "signatureFormat": "JPEG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": "12afb4d9953adee0607d347daee5b78b18d6b3cab2d572b88970703f5edb37bc",
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            }
+          },
+          "thumbnail": {
+            "before": {
+              "bytes": 51125,
+              "width": 640,
+              "height": 360,
+              "format": "JPEG",
+              "mime": "image/jpeg",
+              "extension": ".jpg",
+              "sha256": "2b57c516ccc6aeedaa0e186f0acb4bd256791da69280a017ca7128df96398f39",
+              "signatureFormat": "JPEG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": "12afb4d9953adee0607d347daee5b78b18d6b3cab2d572b88970703f5edb37bc",
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            },
+            "after": {
+              "bytes": 58740,
+              "width": 640,
+              "height": 360,
+              "format": "JPEG",
+              "mime": "image/jpeg",
+              "extension": ".jpg",
+              "sha256": "588b72357cf12c132e79fcab98d8676c67d763376f92e37ac51989fa758326e4",
+              "signatureFormat": "JPEG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": "12afb4d9953adee0607d347daee5b78b18d6b3cab2d572b88970703f5edb37bc",
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            }
+          }
+        },
+        {
+          "imageIndex": 4,
+          "number": "04",
+          "old": {
+            "src": "assets/gallery/kcc-2024/11388.jpg",
+            "thumbnail": "assets/gallery-thumbs/kcc-2024/11388.jpg"
+          },
+          "new": {
+            "src": "assets/gallery/a7ece84cafa7/04.jpg",
+            "thumbnail": "assets/gallery-thumbs/a7ece84cafa7/04.jpg"
+          },
+          "original": {
+            "before": {
+              "bytes": 935682,
+              "width": 2400,
+              "height": 2400,
+              "format": "JPEG",
+              "mime": "image/jpeg",
+              "extension": ".jpg",
+              "sha256": "caf128a855993c72b4dbe7ea3b5d4b424418140a8a25e7ec091c8499eb37c6da",
+              "signatureFormat": "JPEG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": "12afb4d9953adee0607d347daee5b78b18d6b3cab2d572b88970703f5edb37bc",
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            },
+            "after": {
+              "bytes": 1056357,
+              "width": 2400,
+              "height": 2400,
+              "format": "JPEG",
+              "mime": "image/jpeg",
+              "extension": ".jpg",
+              "sha256": "1f4d9c6a2dcf5f19c3ed518c1c81cc4b75cf0a05d3bc5b8a9977f477a3c6405a",
+              "signatureFormat": "JPEG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": "12afb4d9953adee0607d347daee5b78b18d6b3cab2d572b88970703f5edb37bc",
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            }
+          },
+          "thumbnail": {
+            "before": {
+              "bytes": 58307,
+              "width": 640,
+              "height": 360,
+              "format": "JPEG",
+              "mime": "image/jpeg",
+              "extension": ".jpg",
+              "sha256": "f0e670ec30307855dca25f5ce564434713f74257a6eae4a9abc76c8b539cdecb",
+              "signatureFormat": "JPEG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": "12afb4d9953adee0607d347daee5b78b18d6b3cab2d572b88970703f5edb37bc",
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            },
+            "after": {
+              "bytes": 67427,
+              "width": 640,
+              "height": 360,
+              "format": "JPEG",
+              "mime": "image/jpeg",
+              "extension": ".jpg",
+              "sha256": "a0dbd991ff296804bc73c04d1c89b5239519a76a6413081d81a04ce57666964b",
+              "signatureFormat": "JPEG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": "12afb4d9953adee0607d347daee5b78b18d6b3cab2d572b88970703f5edb37bc",
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            }
+          }
+        },
+        {
+          "imageIndex": 5,
+          "number": "05",
+          "old": {
+            "src": "assets/gallery/kcc-2024/img-1749.jpg",
+            "thumbnail": "assets/gallery-thumbs/kcc-2024/img-1749.jpg"
+          },
+          "new": {
+            "src": "assets/gallery/a7ece84cafa7/05.jpg",
+            "thumbnail": "assets/gallery-thumbs/a7ece84cafa7/05.jpg"
+          },
+          "original": {
+            "before": {
+              "bytes": 716389,
+              "width": 1800,
+              "height": 2400,
+              "format": "JPEG",
+              "mime": "image/jpeg",
+              "extension": ".jpg",
+              "sha256": "5d44974a6c333584a06e038a2a82064af7f79d575c1f7b49a525b1fd88b56baf",
+              "signatureFormat": "JPEG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": "12afb4d9953adee0607d347daee5b78b18d6b3cab2d572b88970703f5edb37bc",
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            },
+            "after": {
+              "bytes": 779754,
+              "width": 1800,
+              "height": 2400,
+              "format": "JPEG",
+              "mime": "image/jpeg",
+              "extension": ".jpg",
+              "sha256": "c2983a6eee3bf9fd6933153660a601bd9fd8534c12631ac917c870b86a227129",
+              "signatureFormat": "JPEG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": "12afb4d9953adee0607d347daee5b78b18d6b3cab2d572b88970703f5edb37bc",
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            }
+          },
+          "thumbnail": {
+            "before": {
+              "bytes": 39449,
+              "width": 640,
+              "height": 360,
+              "format": "JPEG",
+              "mime": "image/jpeg",
+              "extension": ".jpg",
+              "sha256": "a19d23fb1dfa9f6bcdf9795d6172452e5ddc5dd67df3e2f299bf8401559a9ae2",
+              "signatureFormat": "JPEG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": "12afb4d9953adee0607d347daee5b78b18d6b3cab2d572b88970703f5edb37bc",
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            },
+            "after": {
+              "bytes": 45370,
+              "width": 640,
+              "height": 360,
+              "format": "JPEG",
+              "mime": "image/jpeg",
+              "extension": ".jpg",
+              "sha256": "306511d5d49e5155a0a6c703930e8229df0921b5174be97e6d3a0cf1d30ce786",
+              "signatureFormat": "JPEG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": "12afb4d9953adee0607d347daee5b78b18d6b3cab2d572b88970703f5edb37bc",
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            }
+          }
+        },
+        {
+          "imageIndex": 6,
+          "number": "06",
+          "old": {
+            "src": "assets/gallery/kcc-2024/img-6446.jpg",
+            "thumbnail": "assets/gallery-thumbs/kcc-2024/img-6446.jpg"
+          },
+          "new": {
+            "src": "assets/gallery/a7ece84cafa7/06.jpg",
+            "thumbnail": "assets/gallery-thumbs/a7ece84cafa7/06.jpg"
+          },
+          "original": {
+            "before": {
+              "bytes": 946835,
+              "width": 2400,
+              "height": 1800,
+              "format": "JPEG",
+              "mime": "image/jpeg",
+              "extension": ".jpg",
+              "sha256": "ec4e57a09c46010c7229d907b86d58b17b6fff5f85a312bf2db11e95344e597c",
+              "signatureFormat": "JPEG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": "12afb4d9953adee0607d347daee5b78b18d6b3cab2d572b88970703f5edb37bc",
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            },
+            "after": {
+              "bytes": 1048620,
+              "width": 2400,
+              "height": 1800,
+              "format": "JPEG",
+              "mime": "image/jpeg",
+              "extension": ".jpg",
+              "sha256": "adb495b8c860f5ad062c009de7ee5a947be0a497f665bcfe341289a5514176e7",
+              "signatureFormat": "JPEG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": "12afb4d9953adee0607d347daee5b78b18d6b3cab2d572b88970703f5edb37bc",
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            }
+          },
+          "thumbnail": {
+            "before": {
+              "bytes": 75034,
+              "width": 640,
+              "height": 360,
+              "format": "JPEG",
+              "mime": "image/jpeg",
+              "extension": ".jpg",
+              "sha256": "c3387960c0b284ff749eecf7434b6167f9503e6ccdfd08daaa19e6e9243826b2",
+              "signatureFormat": "JPEG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": "12afb4d9953adee0607d347daee5b78b18d6b3cab2d572b88970703f5edb37bc",
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            },
+            "after": {
+              "bytes": 86026,
+              "width": 640,
+              "height": 360,
+              "format": "JPEG",
+              "mime": "image/jpeg",
+              "extension": ".jpg",
+              "sha256": "909683ab615a141f50bbab90b1e849ab4627e9dfa5927312d5c97c8e29ca17d2",
+              "signatureFormat": "JPEG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": "12afb4d9953adee0607d347daee5b78b18d6b3cab2d572b88970703f5edb37bc",
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            }
+          }
+        },
+        {
+          "imageIndex": 7,
+          "number": "07",
+          "old": {
+            "src": "assets/gallery/kcc-2024/img-2838.jpg",
+            "thumbnail": "assets/gallery-thumbs/kcc-2024/img-2838.jpg"
+          },
+          "new": {
+            "src": "assets/gallery/a7ece84cafa7/07.jpg",
+            "thumbnail": "assets/gallery-thumbs/a7ece84cafa7/07.jpg"
+          },
+          "original": {
+            "before": {
+              "bytes": 224125,
+              "width": 1440,
+              "height": 1080,
+              "format": "JPEG",
+              "mime": "image/jpeg",
+              "extension": ".jpg",
+              "sha256": "607fc35036f8cf0bf2caef1e638250bf7698534d3d9fb25d17c8c2d584147699",
+              "signatureFormat": "JPEG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": "12afb4d9953adee0607d347daee5b78b18d6b3cab2d572b88970703f5edb37bc",
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            },
+            "after": {
+              "bytes": 256402,
+              "width": 1440,
+              "height": 1080,
+              "format": "JPEG",
+              "mime": "image/jpeg",
+              "extension": ".jpg",
+              "sha256": "4ad9576e10ede136a2af27cce8ba1a5941010fb5fc7c3ac69f364ceaf34e3001",
+              "signatureFormat": "JPEG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": "12afb4d9953adee0607d347daee5b78b18d6b3cab2d572b88970703f5edb37bc",
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            }
+          },
+          "thumbnail": {
+            "before": {
+              "bytes": 38914,
+              "width": 640,
+              "height": 360,
+              "format": "JPEG",
+              "mime": "image/jpeg",
+              "extension": ".jpg",
+              "sha256": "3c89cde0e877b4afac43e2fbe8349761f50cdb3b8ad855e8deebc8f72ae57bd4",
+              "signatureFormat": "JPEG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": "12afb4d9953adee0607d347daee5b78b18d6b3cab2d572b88970703f5edb37bc",
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            },
+            "after": {
+              "bytes": 44997,
+              "width": 640,
+              "height": 360,
+              "format": "JPEG",
+              "mime": "image/jpeg",
+              "extension": ".jpg",
+              "sha256": "4d34f1df2399049017c6064141c9abb76bac9d5ee2368bb23d5951d6853e34b5",
+              "signatureFormat": "JPEG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": "12afb4d9953adee0607d347daee5b78b18d6b3cab2d572b88970703f5edb37bc",
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            }
+          }
+        }
+      ]
+    },
+    {
+      "eventIndex": 13,
+      "eventId": "a6b4ddd8acce",
+      "date": "2024.01",
+      "title": "KJCCS 2024",
+      "images": [
+        {
+          "imageIndex": 1,
+          "number": "01",
+          "old": {
+            "src": "assets/gallery/kjccs-2024/kakaotalk-20260720-195423769-19.jpg",
+            "thumbnail": "assets/gallery-thumbs/kjccs-2024/kakaotalk-20260720-195423769-19.jpg"
+          },
+          "new": {
+            "src": "assets/gallery/a6b4ddd8acce/01.jpg",
+            "thumbnail": "assets/gallery-thumbs/a6b4ddd8acce/01.jpg"
+          },
+          "original": {
+            "before": {
+              "bytes": 793060,
+              "width": 1800,
+              "height": 2400,
+              "format": "JPEG",
+              "mime": "image/jpeg",
+              "extension": ".jpg",
+              "sha256": "59800dae24b69dbb6fe31d0406729185a7be6c3761817a8bc784290182345093",
+              "signatureFormat": "JPEG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": "12afb4d9953adee0607d347daee5b78b18d6b3cab2d572b88970703f5edb37bc",
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            },
+            "after": {
+              "bytes": 892403,
+              "width": 1800,
+              "height": 2400,
+              "format": "JPEG",
+              "mime": "image/jpeg",
+              "extension": ".jpg",
+              "sha256": "7aa04cfafb207d50d8a4d31aed313ef7f5d230cbe670c8825677ab0114e70487",
+              "signatureFormat": "JPEG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": "12afb4d9953adee0607d347daee5b78b18d6b3cab2d572b88970703f5edb37bc",
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            }
+          },
+          "thumbnail": {
+            "before": {
+              "bytes": 58459,
+              "width": 640,
+              "height": 360,
+              "format": "JPEG",
+              "mime": "image/jpeg",
+              "extension": ".jpg",
+              "sha256": "32f58f14e5caed51f2253175b506f2693975b64b7d4cabf06640da323eb79241",
+              "signatureFormat": "JPEG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": "12afb4d9953adee0607d347daee5b78b18d6b3cab2d572b88970703f5edb37bc",
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            },
+            "after": {
+              "bytes": 67649,
+              "width": 640,
+              "height": 360,
+              "format": "JPEG",
+              "mime": "image/jpeg",
+              "extension": ".jpg",
+              "sha256": "ea3b4ea32a2d5b938d5b663cde3b2e2590f31f9397a723d69d144f9bc7235fd7",
+              "signatureFormat": "JPEG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": "12afb4d9953adee0607d347daee5b78b18d6b3cab2d572b88970703f5edb37bc",
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            }
+          }
+        },
+        {
+          "imageIndex": 2,
+          "number": "02",
+          "old": {
+            "src": "assets/gallery/kjccs-2024/kakaotalk-20260720-195423769-04.jpg",
+            "thumbnail": "assets/gallery-thumbs/kjccs-2024/kakaotalk-20260720-195423769-04.jpg"
+          },
+          "new": {
+            "src": "assets/gallery/a6b4ddd8acce/02.jpg",
+            "thumbnail": "assets/gallery-thumbs/a6b4ddd8acce/02.jpg"
+          },
+          "original": {
+            "before": {
+              "bytes": 346868,
+              "width": 2400,
+              "height": 1800,
+              "format": "JPEG",
+              "mime": "image/jpeg",
+              "extension": ".jpg",
+              "sha256": "c880555fea321444090302171b3db5f83c6f4c2be34e954dcdcf45708a1ab230",
+              "signatureFormat": "JPEG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": "12afb4d9953adee0607d347daee5b78b18d6b3cab2d572b88970703f5edb37bc",
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            },
+            "after": {
+              "bytes": 409080,
+              "width": 2400,
+              "height": 1800,
+              "format": "JPEG",
+              "mime": "image/jpeg",
+              "extension": ".jpg",
+              "sha256": "711cc9101c4601c3741f6b2291afad47fcca9948ffa837e01cd3afe5fc4e583c",
+              "signatureFormat": "JPEG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": "12afb4d9953adee0607d347daee5b78b18d6b3cab2d572b88970703f5edb37bc",
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            }
+          },
+          "thumbnail": {
+            "before": {
+              "bytes": 26493,
+              "width": 640,
+              "height": 360,
+              "format": "JPEG",
+              "mime": "image/jpeg",
+              "extension": ".jpg",
+              "sha256": "f24cafaeda72b4cace0ba69835d1efaa89a14e9750ab4efd634fb7471e0b616c",
+              "signatureFormat": "JPEG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": "12afb4d9953adee0607d347daee5b78b18d6b3cab2d572b88970703f5edb37bc",
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            },
+            "after": {
+              "bytes": 31015,
+              "width": 640,
+              "height": 360,
+              "format": "JPEG",
+              "mime": "image/jpeg",
+              "extension": ".jpg",
+              "sha256": "9b5ad6224e09f75ef9e8b557935e8f73a1489eb83f33976d07b9278d5f7b4199",
+              "signatureFormat": "JPEG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": "12afb4d9953adee0607d347daee5b78b18d6b3cab2d572b88970703f5edb37bc",
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            }
+          }
+        },
+        {
+          "imageIndex": 3,
+          "number": "03",
+          "old": {
+            "src": "assets/gallery/kjccs-2024/kakaotalk-20260720-195423769-01.jpg",
+            "thumbnail": "assets/gallery-thumbs/kjccs-2024/kakaotalk-20260720-195423769-01.jpg"
+          },
+          "new": {
+            "src": "assets/gallery/a6b4ddd8acce/03.jpg",
+            "thumbnail": "assets/gallery-thumbs/a6b4ddd8acce/03.jpg"
+          },
+          "original": {
+            "before": {
+              "bytes": 804085,
+              "width": 2400,
+              "height": 1971,
+              "format": "JPEG",
+              "mime": "image/jpeg",
+              "extension": ".jpg",
+              "sha256": "df8b6ebe277930c8cd4a133312439de36b944ce194311f24089bd61c62bcb1ad",
+              "signatureFormat": "JPEG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": "12afb4d9953adee0607d347daee5b78b18d6b3cab2d572b88970703f5edb37bc",
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            },
+            "after": {
+              "bytes": 908753,
+              "width": 2400,
+              "height": 1971,
+              "format": "JPEG",
+              "mime": "image/jpeg",
+              "extension": ".jpg",
+              "sha256": "25a26e0ee4438e03bc47bfc1d03b5b039cdccf2e984c0e3ba1ca9b43ef97f39d",
+              "signatureFormat": "JPEG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": "12afb4d9953adee0607d347daee5b78b18d6b3cab2d572b88970703f5edb37bc",
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            }
+          },
+          "thumbnail": {
+            "before": {
+              "bytes": 60467,
+              "width": 640,
+              "height": 360,
+              "format": "JPEG",
+              "mime": "image/jpeg",
+              "extension": ".jpg",
+              "sha256": "fccbb993016fb1b1571769c1dbbe3bddd111488cf421c18ebea28b8246915997",
+              "signatureFormat": "JPEG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": "12afb4d9953adee0607d347daee5b78b18d6b3cab2d572b88970703f5edb37bc",
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            },
+            "after": {
+              "bytes": 70105,
+              "width": 640,
+              "height": 360,
+              "format": "JPEG",
+              "mime": "image/jpeg",
+              "extension": ".jpg",
+              "sha256": "9f5a44cfd0358ef7cf5a75ccd92379e7db683b370d8ea5aece6b3744e13c8d53",
+              "signatureFormat": "JPEG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": "12afb4d9953adee0607d347daee5b78b18d6b3cab2d572b88970703f5edb37bc",
+              "hasAlphaChannel": false,
+              "hasTransparency": false
+            }
+          }
+        }
+      ]
+    },
+    {
+      "eventIndex": 14,
+      "eventId": "77a3355eb290",
+      "date": "2022.11",
+      "title": "TECHWEEK",
+      "images": [
+        {
+          "imageIndex": 1,
+          "number": "01",
+          "old": {
+            "src": "assets/gallery/techweek/-2026-07-20-212404.png",
+            "thumbnail": "assets/gallery-thumbs/techweek/-2026-07-20-212404.png"
+          },
+          "new": {
+            "src": "assets/gallery/77a3355eb290/01.png",
+            "thumbnail": "assets/gallery-thumbs/77a3355eb290/01.png"
+          },
+          "original": {
+            "before": {
+              "bytes": 2739952,
+              "width": 1747,
+              "height": 1288,
+              "format": "PNG",
+              "mime": "image/png",
+              "extension": ".png",
+              "sha256": "7c5217bf0f997d2354560bc01fccfff5d9dc1436f303397b640cb46e6f97303a",
+              "signatureFormat": "PNG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": null,
+              "hasAlphaChannel": true,
+              "hasTransparency": false
+            },
+            "after": {
+              "bytes": 1968685,
+              "width": 1747,
+              "height": 1288,
+              "format": "PNG",
+              "mime": "image/png",
+              "extension": ".png",
+              "sha256": "fcf76d83a4493dad172db4afec109a2d0431c4b755e54c940261fbb445b4025b",
+              "signatureFormat": "PNG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": null,
+              "hasAlphaChannel": true,
+              "hasTransparency": false
+            }
+          },
+          "thumbnail": {
+            "before": {
+              "bytes": 429630,
+              "width": 640,
+              "height": 360,
+              "format": "PNG",
+              "mime": "image/png",
+              "extension": ".png",
+              "sha256": "124400e9413a335fbda8f3d5602404ac48ca8eea4014ece7553ff8c33c1049c5",
+              "signatureFormat": "PNG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": null,
+              "hasAlphaChannel": true,
+              "hasTransparency": false
+            },
+            "after": {
+              "bytes": 343902,
+              "width": 640,
+              "height": 360,
+              "format": "PNG",
+              "mime": "image/png",
+              "extension": ".png",
+              "sha256": "54af541867e90e4f81de755fa90793e18a2751c0fe07a8a80fb741945d69d7d4",
+              "signatureFormat": "PNG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": null,
+              "hasAlphaChannel": true,
+              "hasTransparency": false
+            }
+          }
+        },
+        {
+          "imageIndex": 2,
+          "number": "02",
+          "old": {
+            "src": "assets/gallery/techweek/-2026-07-20-212336.png",
+            "thumbnail": "assets/gallery-thumbs/techweek/-2026-07-20-212336.png"
+          },
+          "new": {
+            "src": "assets/gallery/77a3355eb290/02.png",
+            "thumbnail": "assets/gallery-thumbs/77a3355eb290/02.png"
+          },
+          "original": {
+            "before": {
+              "bytes": 2351335,
+              "width": 1750,
+              "height": 1288,
+              "format": "PNG",
+              "mime": "image/png",
+              "extension": ".png",
+              "sha256": "e06ef3db54a28abe5b2ca5b2c1d5f99e99870bffca853a5d59d8f68a945801da",
+              "signatureFormat": "PNG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": null,
+              "hasAlphaChannel": true,
+              "hasTransparency": false
+            },
+            "after": {
+              "bytes": 1673943,
+              "width": 1750,
+              "height": 1288,
+              "format": "PNG",
+              "mime": "image/png",
+              "extension": ".png",
+              "sha256": "ef84fe3a3ba1347f05fdc1972669e94250915dbf12b15465ed4c36601e414625",
+              "signatureFormat": "PNG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": null,
+              "hasAlphaChannel": true,
+              "hasTransparency": false
+            }
+          },
+          "thumbnail": {
+            "before": {
+              "bytes": 379151,
+              "width": 640,
+              "height": 360,
+              "format": "PNG",
+              "mime": "image/png",
+              "extension": ".png",
+              "sha256": "4fda38737bb66f80497e340ed3a18d94dc9002ab9edcfc4d99bf29ca0e80cb39",
+              "signatureFormat": "PNG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": null,
+              "hasAlphaChannel": true,
+              "hasTransparency": false
+            },
+            "after": {
+              "bytes": 287506,
+              "width": 640,
+              "height": 360,
+              "format": "PNG",
+              "mime": "image/png",
+              "extension": ".png",
+              "sha256": "dea55c46561c4c8a94c20f8d43e488050ad29f2d122d57914f219a6c21bcdbc6",
+              "signatureFormat": "PNG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": null,
+              "hasAlphaChannel": true,
+              "hasTransparency": false
+            }
+          }
+        },
+        {
+          "imageIndex": 3,
+          "number": "03",
+          "old": {
+            "src": "assets/gallery/techweek/-2026-07-20-212426.png",
+            "thumbnail": "assets/gallery-thumbs/techweek/-2026-07-20-212426.png"
+          },
+          "new": {
+            "src": "assets/gallery/77a3355eb290/03.png",
+            "thumbnail": "assets/gallery-thumbs/77a3355eb290/03.png"
+          },
+          "original": {
+            "before": {
+              "bytes": 2860403,
+              "width": 1754,
+              "height": 1291,
+              "format": "PNG",
+              "mime": "image/png",
+              "extension": ".png",
+              "sha256": "a4de7c0322eb0747fe8c4ee3431f2ed28b29174fe5a706e25f88fb9677b6d611",
+              "signatureFormat": "PNG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": null,
+              "hasAlphaChannel": true,
+              "hasTransparency": false
+            },
+            "after": {
+              "bytes": 2019115,
+              "width": 1754,
+              "height": 1291,
+              "format": "PNG",
+              "mime": "image/png",
+              "extension": ".png",
+              "sha256": "64739a24f9df65d1f3c8b84c50ba76366f99bba8f4908d30ccb5faf55deeee12",
+              "signatureFormat": "PNG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": null,
+              "hasAlphaChannel": true,
+              "hasTransparency": false
+            }
+          },
+          "thumbnail": {
+            "before": {
+              "bytes": 425632,
+              "width": 640,
+              "height": 360,
+              "format": "PNG",
+              "mime": "image/png",
+              "extension": ".png",
+              "sha256": "7703d293278d90465c5f2442ce3fea45d36b6ed98202ae99ca8c754c63f64b22",
+              "signatureFormat": "PNG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": null,
+              "hasAlphaChannel": true,
+              "hasTransparency": false
+            },
+            "after": {
+              "bytes": 330727,
+              "width": 640,
+              "height": 360,
+              "format": "PNG",
+              "mime": "image/png",
+              "extension": ".png",
+              "sha256": "c9c723adb3f11fac46fd0ee60369713bd8b33b544e891fd3ebc9b03ffc2dd591",
+              "signatureFormat": "PNG",
+              "orientation": 1,
+              "metadata": {
+                "exif": false,
+                "xmp": false,
+                "iptc": false,
+                "gps": false
+              },
+              "iccSha256": null,
+              "hasAlphaChannel": true,
+              "hasTransparency": false
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

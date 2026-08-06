@@ -48,14 +48,8 @@ jobs:
           SEMANTIC_SCHOLAR_API_KEY: ${{ secrets.SEMANTIC_SCHOLAR_API_KEY }}
         run: node tools/refresh-citations.mjs
 
-      - name: Validate content data
-        run: node tools/validate-content.mjs
-
-      - name: Build static website
-        run: npm run build
-
-      - name: Check internal links and headings
-        run: node tools/check-links.mjs _site
+      - name: Validate website
+        run: npm run validate
 
       - name: Upload website
         uses: actions/upload-pages-artifact@v3

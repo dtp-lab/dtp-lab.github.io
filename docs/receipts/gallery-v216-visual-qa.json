@@ -1,0 +1,85 @@
+{
+  "scope": "local built site from isolated Website workspace",
+  "baseRevision": "2c4935d7cefcaeb81f50ec3447c1c01bcc0f2e82",
+  "gallery": {
+    "eventCount": 15,
+    "referencedOriginalCount": 52,
+    "referencedThumbnailCount": 52,
+    "lightbox": {
+      "eventId": "d1289aa0ae06",
+      "testedImageNumbers": [5, 7],
+      "seventhNaturalSize": [1800, 2400],
+      "seventhRenderedSize": [486, 648],
+      "overflowPx": 0,
+      "escapeClosed": true,
+      "focusReturned": true
+    },
+    "viewports": [
+      {
+        "requested": [1440, 900],
+        "client": [1425, 900],
+        "events": 15,
+        "loadedThumbnails": 45,
+        "brokenImages": 0,
+        "gridColumns": 4,
+        "overflowPx": 0,
+        "clipped": 0
+      },
+      {
+        "requested": [1024, 768],
+        "client": [1009, 768],
+        "events": 15,
+        "loadedThumbnails": 45,
+        "brokenImages": 0,
+        "gridColumns": 4,
+        "overflowPx": 0,
+        "clipped": 0
+      },
+      {
+        "requested": [390, 844],
+        "client": [375, 844],
+        "events": 15,
+        "loadedThumbnails": 45,
+        "brokenImages": 0,
+        "gridColumns": 2,
+        "overflowPx": 0,
+        "clipped": 0
+      }
+    ]
+  },
+  "alignmentLab": {
+    "thresholdPx": 1.5,
+    "viewports": [
+      {
+        "requested": [1440, 900],
+        "client": [1425, 900],
+        "specimens": 290,
+        "overThreshold": 0,
+        "maximumDeltaPx": 1.27,
+        "clippedCases": 0,
+        "degradedSvg": 0,
+        "pageOverflowPx": 0
+      },
+      {
+        "requested": [1024, 768],
+        "client": [1009, 768],
+        "specimens": 290,
+        "overThreshold": 0,
+        "maximumDeltaPx": 1.27,
+        "clippedCases": 0,
+        "degradedSvg": 0,
+        "pageOverflowPx": 0
+      },
+      {
+        "requested": [390, 844],
+        "client": [375, 844],
+        "specimens": 290,
+        "overThreshold": 0,
+        "maximumDeltaPx": 1.27,
+        "clippedCases": 0,
+        "degradedSvg": 0,
+        "pageOverflowPx": 0
+      }
+    ]
+  }
+}
