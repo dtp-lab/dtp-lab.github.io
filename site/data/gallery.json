@@ -1,9 +1,87 @@
 {
   "events": [
     {
+      "id": "24f70374f39f",
+      "date": "2026.07",
+      "title": "CSE-삼성중공업 AI디지털테크UIC 얼라이언스 행사",
+      "description": "김원석 책임교수 dtplab 연구실 소개 및 패널토론 참석",
+      "images": [
+        {
+          "src": "assets/gallery/24f70374f39f/01.jpg",
+          "thumbnail": "assets/gallery-thumbs/24f70374f39f/01.jpg",
+          "alt": "CSE-삼성중공업 AI디지털테크UIC 얼라이언스 행사",
+          "caption": ""
+        },
+        {
+          "src": "assets/gallery/24f70374f39f/02.jpg",
+          "thumbnail": "assets/gallery-thumbs/24f70374f39f/02.jpg",
+          "alt": "CSE-삼성중공업 AI디지털테크UIC 얼라이언스 행사",
+          "caption": ""
+        },
+        {
+          "src": "assets/gallery/24f70374f39f/03.jpg",
+          "thumbnail": "assets/gallery-thumbs/24f70374f39f/03.jpg",
+          "alt": "CSE-삼성중공업 AI디지털테크UIC 얼라이언스 행사",
+          "caption": ""
+        },
+        {
+          "src": "assets/gallery/24f70374f39f/04.jpg",
+          "thumbnail": "assets/gallery-thumbs/24f70374f39f/04.jpg",
+          "alt": "CSE-삼성중공업 AI디지털테크UIC 얼라이언스 행사",
+          "caption": ""
+        }
+      ]
+    },
+    {
+      "id": "71c338ac621b",
       "date": "2026.04",
-      "title": "봄맞이 산성 꽃놀이",
-      "description": "",
+      "title": "Physical AI Conference 2026 참석",
+      "description": "연구실 피지컬AI 대표주자 창주, 서현",
+      "images": [
+        {
+          "src": "assets/gallery/71c338ac621b/01.jpg",
+          "thumbnail": "assets/gallery-thumbs/71c338ac621b/01.jpg",
+          "alt": "Physical AI Conference 2026 참석",
+          "caption": ""
+        },
+        {
+          "src": "assets/gallery/71c338ac621b/02.jpg",
+          "thumbnail": "assets/gallery-thumbs/71c338ac621b/02.jpg",
+          "alt": "Physical AI Conference 2026 참석",
+          "caption": ""
+        }
+      ]
+    },
+    {
+      "id": "48c549f042bb",
+      "date": "2026.04",
+      "title": "ITRC 인재양성대전 참석",
+      "description": "연구실에서 수행 중인 Skill-planning VLA, HRL agents 기술 소개",
+      "images": [
+        {
+          "src": "assets/gallery/48c549f042bb/01.jpg",
+          "thumbnail": "assets/gallery-thumbs/48c549f042bb/01.jpg",
+          "alt": "ITRC 인재양성대전 참석",
+          "caption": ""
+        },
+        {
+          "src": "assets/gallery/48c549f042bb/02.jpg",
+          "thumbnail": "assets/gallery-thumbs/48c549f042bb/02.jpg",
+          "alt": "ITRC 인재양성대전 참석",
+          "caption": ""
+        },
+        {
+          "src": "assets/gallery/48c549f042bb/03.jpg",
+          "thumbnail": "assets/gallery-thumbs/48c549f042bb/03.jpg",
+          "alt": "ITRC 인재양성대전 참석",
+          "caption": ""
+        }
+      ]
+    },
+    {
+      "date": "2026.04",
+      "title": "봄맞이 산성 회식",
+      "description": "겸 꽃놀이",
       "images": [
         {
           "src": "assets/gallery/94bd6c2cec06/01.jpg",
@@ -21,8 +99,28 @@
       "id": "94bd6c2cec06"
     },
     {
+      "id": "a85ea733f62c",
       "date": "2026.03",
-      "title": "LG전자 HS사업본부 타겟랩 선정 안내",
+      "title": "개강맞이 회식",
+      "description": "",
+      "images": [
+        {
+          "src": "assets/gallery/a85ea733f62c/01.png",
+          "thumbnail": "assets/gallery-thumbs/a85ea733f62c/01.png",
+          "alt": "개강 맞이 회식",
+          "caption": ""
+        },
+        {
+          "src": "assets/gallery/a85ea733f62c/02.jpg",
+          "thumbnail": "assets/gallery-thumbs/a85ea733f62c/02.jpg",
+          "alt": "개강 맞이 회식",
+          "caption": ""
+        }
+      ]
+    },
+    {
+      "date": "2026.03",
+      "title": "LG전자 HS사업본부 타겟랩 선정 혜택 소개",
       "description": "LG전자 HS사업본부 커넥티비티개발팀 이수환 책임연구원 참석",
       "images": [
         {
