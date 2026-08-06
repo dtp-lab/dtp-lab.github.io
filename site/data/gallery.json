@@ -2,15 +2,53 @@
   "events": [
     {
       "date": "2026.02",
-      "title": "wef",
-      "description": "asdf",
-      "images": []
+      "title": "한양대 ERICA 초청강연 참석",
+      "description": "디지털트윈과 피지컬AI에 대한 기술 및 연구분야 소개",
+      "images": [
+        {
+          "src": "assets/gallery/ffc3e7fd4eb8/01.jpg",
+          "thumbnail": "assets/gallery-thumbs/ffc3e7fd4eb8/01.jpg",
+          "alt": "한양대 ERICA 초청강연 참석",
+          "caption": ""
+        }
+      ]
+    },
+    {
+      "date": "2026.01",
+      "title": "한화오션 연구실 방문",
+      "description": "자항선 블록배치 최적화 과제 점검을 위해 한화오션에서 연구실 방문 (창민 발표 - 박의윤 선임, 유병우 선임 참석)",
+      "images": [
+        {
+          "src": "assets/gallery/--/kakaotalk-20260806-112401700-01.jpg",
+          "thumbnail": "assets/gallery-thumbs/--/kakaotalk-20260806-112401700-01.jpg",
+          "alt": "한화오션 연구실 방문",
+          "caption": ""
+        },
+        {
+          "src": "assets/gallery/--/kakaotalk-20260806-112401700-02.jpg",
+          "thumbnail": "assets/gallery-thumbs/--/kakaotalk-20260806-112401700-02.jpg",
+          "alt": "한화오션 연구실 방문",
+          "caption": ""
+        }
+      ]
     },
     {
       "date": "2025.11",
       "title": "연구실 이사",
-      "description": "자연대연구실험동 → IT관 이사하는 중",
+      "description": "자연대연구실험동 → IT관 이사",
       "images": [
+        {
+          "src": "assets/gallery/-/img-4634-1.jpg",
+          "thumbnail": "assets/gallery-thumbs/-/img-4634-1.jpg",
+          "alt": "연구실 이사",
+          "caption": ""
+        },
+        {
+          "src": "assets/gallery/-/img-4635-1.jpg",
+          "thumbnail": "assets/gallery-thumbs/-/img-4635-1.jpg",
+          "alt": "연구실 이사",
+          "caption": ""
+        },
         {
           "src": "assets/gallery/-/-2026-07-20-212941.png",
           "thumbnail": "assets/gallery-thumbs/-/-2026-07-20-212941.png",
@@ -20,6 +58,24 @@
         {
           "src": "assets/gallery/-/-2026-07-20-212950.png",
           "thumbnail": "assets/gallery-thumbs/-/-2026-07-20-212950.png",
+          "alt": "연구실 이사",
+          "caption": ""
+        },
+        {
+          "src": "assets/gallery/-/img-3965.jpg",
+          "thumbnail": "assets/gallery-thumbs/-/img-3965.jpg",
+          "alt": "연구실 이사",
+          "caption": ""
+        },
+        {
+          "src": "assets/gallery/-/img-3966.jpg",
+          "thumbnail": "assets/gallery-thumbs/-/img-3966.jpg",
+          "alt": "연구실 이사",
+          "caption": ""
+        },
+        {
+          "src": "assets/gallery/-/img-3969.jpg",
+          "thumbnail": "assets/gallery-thumbs/-/img-3969.jpg",
           "alt": "연구실 이사",
           "caption": ""
         }
@@ -52,6 +108,56 @@
           "src": "assets/gallery/ai--/-2026-07-20-213037.png",
           "thumbnail": "assets/gallery-thumbs/ai--/-2026-07-20-213037.png",
           "alt": "AI대학원 학생주도연구프로젝트 시상식",
+          "caption": ""
+        }
+      ]
+    },
+    {
+      "date": "2025.09",
+      "title": "다부처 과제 현장 시연평가 참석",
+      "description": "고생한\n은\n성이\n",
+      "images": [
+        {
+          "src": "assets/gallery/----/img-2538.jpeg",
+          "thumbnail": "assets/gallery-thumbs/----/img-2538.jpeg",
+          "alt": "다부처 과제 현장 시연평가 참석",
+          "caption": ""
+        },
+        {
+          "src": "assets/gallery/----/img-2542.jpg",
+          "thumbnail": "assets/gallery-thumbs/----/img-2542.jpg",
+          "alt": "다부처 과제 현장 시연평가 참석",
+          "caption": ""
+        },
+        {
+          "src": "assets/gallery/----/img-2545.jpg",
+          "thumbnail": "assets/gallery-thumbs/----/img-2545.jpg",
+          "alt": "다부처 과제 현장 시연평가 참석",
+          "caption": ""
+        },
+        {
+          "src": "assets/gallery/----/img-2564.jpg",
+          "thumbnail": "assets/gallery-thumbs/----/img-2564.jpg",
+          "alt": "다부처 과제 현장 시연평가 참석",
+          "caption": ""
+        }
+      ]
+    },
+    {
+      "date": "2025.09",
+      "title": "다부처 과제 청정학회 참석",
+      "description": "oral session - 최호진, 고은성",
+      "images": [
+        {
+          "src": "assets/gallery/---/img-2409.jpeg",
+          "thumbnail": "assets/gallery-thumbs/---/img-2409.jpeg",
+          "alt": "다부처 과제 청정학회 참석",
+          "caption": ""
+        },
+        {
+          "src": "assets/gallery/---/-2026-04-03-105418.png",
+          "thumbnail": "assets/gallery-thumbs/---/-2026-04-03-105418.png",
+          "alt": "다부처 과제 청정학회 참석",
           "caption": ""
         }
       ]
