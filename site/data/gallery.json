@@ -1,6 +1,75 @@
 {
   "events": [
     {
+      "date": "2026.04",
+      "title": "봄맞이 산성 꽃놀이",
+      "description": "",
+      "images": [
+        {
+          "src": "assets/gallery/ea1750b32caa/01.jpg",
+          "thumbnail": "assets/gallery-thumbs/ea1750b32caa/01.jpg",
+          "alt": "봄맞이 산성 꽃놀이",
+          "caption": ""
+        },
+        {
+          "src": "assets/gallery/ea1750b32caa/02.jpg",
+          "thumbnail": "assets/gallery-thumbs/ea1750b32caa/02.jpg",
+          "alt": "봄맞이 산성 꽃놀이",
+          "caption": ""
+        }
+      ]
+    },
+    {
+      "date": "2026.03",
+      "title": "LG전자 HS사업본부 타겟랩 선정 안내",
+      "description": "LG전자 HS사업본부 커넥티비티개발팀 이수환 책임연구원 참석",
+      "images": [
+        {
+          "src": "assets/gallery/7f4e5864ca2d/01.jpg",
+          "thumbnail": "assets/gallery-thumbs/7f4e5864ca2d/01.jpg",
+          "alt": "LG전자 HS사업본부 타겟랩 선정 안내",
+          "caption": ""
+        },
+        {
+          "src": "assets/gallery/7f4e5864ca2d/02.jpg",
+          "thumbnail": "assets/gallery-thumbs/7f4e5864ca2d/02.jpg",
+          "alt": "LG전자 HS사업본부 타겟랩 선정 안내",
+          "caption": ""
+        },
+        {
+          "src": "assets/gallery/7f4e5864ca2d/03.jpg",
+          "thumbnail": "assets/gallery-thumbs/7f4e5864ca2d/03.jpg",
+          "alt": "LG전자 HS사업본부 타겟랩 선정 안내",
+          "caption": ""
+        }
+      ]
+    },
+    {
+      "date": "2026.02",
+      "title": "학과 연구실 간 풋살 개최",
+      "description": "",
+      "images": [
+        {
+          "src": "assets/gallery/cb93ebb83256/01.jpg",
+          "thumbnail": "assets/gallery-thumbs/cb93ebb83256/01.jpg",
+          "alt": "학과 연구실 간 풋살 개최",
+          "caption": ""
+        },
+        {
+          "src": "assets/gallery/cb93ebb83256/02.jpg",
+          "thumbnail": "assets/gallery-thumbs/cb93ebb83256/02.jpg",
+          "alt": "학과 연구실 간 풋살 개최",
+          "caption": ""
+        },
+        {
+          "src": "assets/gallery/cb93ebb83256/03.jpg",
+          "thumbnail": "assets/gallery-thumbs/cb93ebb83256/03.jpg",
+          "alt": "학과 연구실 간 풋살 개최",
+          "caption": ""
+        }
+      ]
+    },
+    {
       "date": "2026.02",
       "title": "한양대 ERICA 초청강연 참석",
       "description": "디지털트윈과 피지컬AI에 대한 기술 및 연구분야 소개",
