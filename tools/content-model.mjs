@@ -874,6 +874,7 @@ export function validateContent({
   const galleryPaths = new Set();
   gallery.forEach((event, index) => {
     const at = `gallery[${index}]`;
+    const eventStems = new Set();
     requiredText(event.id, `${at}.id`);
     if (!/^[0-9a-f]{12}$/.test(event.id || "")) errors.push(`${at}.id: use 12 lowercase hex characters`);
     if (galleryIds.has(event.id)) errors.push(`${at}.id: duplicate Gallery event ID`);
@@ -882,11 +883,17 @@ export function validateContent({
     requiredText(event.title, `${at}.title`);
     validateImages(event.images, at);
     (event.images || []).forEach((image, imageIndex) => {
-      const number = String(imageIndex + 1).padStart(2, "0");
-      const originalPattern = new RegExp(`^assets/gallery/${event.id}/${number}\\.(?:jpe?g|png|webp)$`);
-      const thumbnailPattern = new RegExp(`^assets/gallery-thumbs/${event.id}/${number}\\.(?:jpe?g|png|webp)$`);
-      if (!originalPattern.test(image?.src || "")) errors.push(`${at}.images[${imageIndex}].src: use assets/gallery/<event-id>/${number}.ext`);
-      if (!thumbnailPattern.test(image?.thumbnail || "")) errors.push(`${at}.images[${imageIndex}].thumbnail: use assets/gallery-thumbs/<event-id>/${number}.ext`);
+      const originalMatch = (image?.src || "").match(new RegExp(`^assets/gallery/${event.id}/(0[1-9]|[1-9][0-9]+)\\.(jpe?g|png|webp)$`));
+      const thumbnailMatch = (image?.thumbnail || "").match(new RegExp(`^assets/gallery-thumbs/${event.id}/(0[1-9]|[1-9][0-9]+)\\.(jpe?g|png|webp)$`));
+      if (!originalMatch) errors.push(`${at}.images[${imageIndex}].src: use assets/gallery/<event-id>/<number>.ext`);
+      if (!thumbnailMatch) errors.push(`${at}.images[${imageIndex}].thumbnail: use assets/gallery-thumbs/<event-id>/<number>.ext`);
+      if (originalMatch && thumbnailMatch && originalMatch[1] !== thumbnailMatch[1]) {
+        errors.push(`${at}.images[${imageIndex}]: original and thumbnail numeric stems must match`);
+      }
+      if (originalMatch && thumbnailMatch && originalMatch[1] === thumbnailMatch[1]) {
+        if (eventStems.has(originalMatch[1])) errors.push(`${at}.images[${imageIndex}]: duplicate Gallery numeric stem (${originalMatch[1]})`);
+        eventStems.add(originalMatch[1]);
+      }
       const originalExtension = path.extname(image?.src || "").toLowerCase();
       const thumbnailExtension = path.extname(image?.thumbnail || "").toLowerCase();
       if (originalExtension && thumbnailExtension && originalExtension !== thumbnailExtension) {

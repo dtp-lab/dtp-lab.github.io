@@ -95,7 +95,7 @@ test("technical IDs and generated Gallery thumbnails stay out of the Studio form
   assert.equal(galleryFields.some((field) => field.name === "isSample"), false);
 });
 
-test("Gallery events use unique IDs and ordered, resolvable original/thumbnail paths", () => {
+test("Gallery events use unique IDs and paired, resolvable original/thumbnail paths", () => {
   const gallery = JSON.parse(fs.readFileSync(path.join(siteDir, "data", "gallery.json"), "utf8"));
   assert.ok(gallery.events.length > 0);
   assert.equal(gallery.events.some((event) => event.isSample || /샘플/.test(event.title)), false);
@@ -106,10 +106,12 @@ test("Gallery events use unique IDs and ordered, resolvable original/thumbnail p
     assert.match(event.id, /^[0-9a-f]{12}$/);
     assert.equal(eventIds.has(event.id), false);
     eventIds.add(event.id);
-    for (const [index, image] of event.images.entries()) {
-      const number = String(index + 1).padStart(2, "0");
-      assert.match(image.src, new RegExp(`^assets/gallery/${event.id}/${number}\\.(?:jpe?g|png|webp)$`));
-      assert.match(image.thumbnail, new RegExp(`^assets/gallery-thumbs/${event.id}/${number}\\.(?:jpe?g|png|webp)$`));
+    for (const image of event.images) {
+      const original = image.src.match(new RegExp(`^assets/gallery/${event.id}/(0[1-9]|[1-9][0-9]+)\\.(jpe?g|png|webp)$`));
+      const thumbnail = image.thumbnail.match(new RegExp(`^assets/gallery-thumbs/${event.id}/(0[1-9]|[1-9][0-9]+)\\.(jpe?g|png|webp)$`));
+      assert.ok(original, `Invalid Gallery original path: ${image.src}`);
+      assert.ok(thumbnail, `Invalid Gallery thumbnail path: ${image.thumbnail}`);
+      assert.equal(original[1], thumbnail[1]);
       assert.equal(path.extname(image.src), path.extname(image.thumbnail));
       for (const reference of [image.src, image.thumbnail]) {
         assert.equal(assetPaths.has(reference), false);
@@ -118,6 +120,95 @@ test("Gallery events use unique IDs and ordered, resolvable original/thumbnail p
       }
     }
   }
+});
+
+test("Gallery validation accepts reordered numeric stems and numbering gaps", () => {
+  const gallery = JSON.parse(fs.readFileSync(path.join(siteDir, "data", "gallery.json"), "utf8"));
+  const eventIndex = 0;
+  const reordered = structuredClone(gallery);
+  const eventId = reordered.events[eventIndex].id;
+  const fixtureImages = ["01", "03", "04", "02"].map((stem) => ({
+    src: `assets/gallery/${eventId}/${stem}.jpg`,
+    thumbnail: `assets/gallery-thumbs/${eventId}/${stem}.jpg`,
+    alt: `Synthetic Gallery image ${stem}`,
+  }));
+  const virtualAssets = fixtureImages.flatMap((image) => [image.src, image.thumbnail]);
+  reordered.events[eventIndex].images = fixtureImages;
+  assert.deepEqual(
+    reordered.events[eventIndex].images.map((image) => path.parse(image.src).name),
+    ["01", "03", "04", "02"],
+  );
+  let result = validateContent({ siteDir, overrides: { "gallery.json": reordered }, virtualAssets });
+  assert.equal(result.ok, true, result.errors.join("\n"));
+
+  const gapped = structuredClone(reordered);
+  gapped.events[eventIndex].images = gapped.events[eventIndex].images.slice(0, 2);
+  assert.deepEqual(gapped.events[eventIndex].images.map((image) => path.parse(image.src).name), ["01", "03"]);
+  result = validateContent({ siteDir, overrides: { "gallery.json": gapped }, virtualAssets });
+  assert.equal(result.ok, true, result.errors.join("\n"));
+});
+
+test("Gallery validation rejects mismatched stems, event folders, extensions, and duplicate paths", () => {
+  const gallery = JSON.parse(fs.readFileSync(path.join(siteDir, "data", "gallery.json"), "utf8"));
+  const eventIndex = gallery.events.findIndex((event) => event.images.length >= 2);
+  assert.notEqual(eventIndex, -1);
+
+  const mismatchedStem = structuredClone(gallery);
+  mismatchedStem.events[eventIndex].images[0].thumbnail = mismatchedStem.events[eventIndex].images[0].thumbnail
+    .replace(/([0-9]+)(\.[^.]+)$/, "99$2");
+  let result = validateContent({ siteDir, overrides: { "gallery.json": mismatchedStem } });
+  assert.equal(result.ok, false);
+  assert.ok(result.errors.some((error) => error.includes("numeric stems must match")));
+
+  const wrongFolder = structuredClone(gallery);
+  wrongFolder.events[eventIndex].images[0].src = wrongFolder.events[eventIndex].images[0].src
+    .replace(wrongFolder.events[eventIndex].id, "000000000000");
+  result = validateContent({ siteDir, overrides: { "gallery.json": wrongFolder } });
+  assert.equal(result.ok, false);
+  assert.ok(result.errors.some((error) => error.includes("assets/gallery/<event-id>/<number>.ext")));
+
+  const wrongExtension = structuredClone(gallery);
+  const nonPngImageIndex = wrongExtension.events[eventIndex].images.findIndex((image) => path.extname(image.thumbnail) !== ".png");
+  assert.notEqual(nonPngImageIndex, -1);
+  wrongExtension.events[eventIndex].images[nonPngImageIndex].thumbnail = wrongExtension.events[eventIndex].images[nonPngImageIndex].thumbnail
+    .replace(/\.[^.]+$/, ".png");
+  result = validateContent({ siteDir, overrides: { "gallery.json": wrongExtension } });
+  assert.equal(result.ok, false);
+  assert.ok(result.errors.some((error) => error.includes("extensions must match")));
+
+  const duplicate = structuredClone(gallery);
+  duplicate.events[eventIndex].images[1].src = duplicate.events[eventIndex].images[0].src;
+  result = validateContent({ siteDir, overrides: { "gallery.json": duplicate } });
+  assert.equal(result.ok, false);
+  assert.ok(result.errors.some((error) => error.includes("duplicate Gallery asset path")));
+
+  const zeroStem = structuredClone(gallery);
+  for (const key of ["src", "thumbnail"]) {
+    zeroStem.events[eventIndex].images[0][key] = zeroStem.events[eventIndex].images[0][key].replace(/([0-9]+)(\.[^.]+)$/, "00$2");
+  }
+  result = validateContent({ siteDir, overrides: { "gallery.json": zeroStem } });
+  assert.equal(result.ok, false);
+  assert.ok(result.errors.some((error) => error.includes("<number>.ext")));
+
+  for (const invalidStem of ["1", "0001"]) {
+    const invalidPadding = structuredClone(gallery);
+    for (const key of ["src", "thumbnail"]) {
+      invalidPadding.events[eventIndex].images[0][key] = invalidPadding.events[eventIndex].images[0][key]
+        .replace(/([0-9]+)(\.[^.]+)$/, `${invalidStem}$2`);
+    }
+    result = validateContent({ siteDir, overrides: { "gallery.json": invalidPadding } });
+    assert.equal(result.ok, false, `${invalidStem} must not be accepted as a canonical numeric stem`);
+    assert.ok(result.errors.some((error) => error.includes("<number>.ext")));
+  }
+
+  const duplicateStem = structuredClone(gallery);
+  const firstExtension = path.extname(duplicateStem.events[eventIndex].images[0].src);
+  const alternateExtension = firstExtension === ".png" ? ".jpg" : ".png";
+  duplicateStem.events[eventIndex].images[1].src = `assets/gallery/${duplicateStem.events[eventIndex].id}/01${alternateExtension}`;
+  duplicateStem.events[eventIndex].images[1].thumbnail = `assets/gallery-thumbs/${duplicateStem.events[eventIndex].id}/01${alternateExtension}`;
+  result = validateContent({ siteDir, overrides: { "gallery.json": duplicateStem } });
+  assert.equal(result.ok, false);
+  assert.ok(result.errors.some((error) => error.includes("duplicate Gallery numeric stem")));
 });
 
 test("People contract and migrated data use structured member categories without losing records", () => {

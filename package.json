@@ -9,8 +9,9 @@
     "test:content-model": "node --test tools/test-content-model.mjs",
     "test:body-rendering": "node --test tools/test-body-rendering.mjs",
     "test:gallery-assets": "node --test tools/test-gallery-assets.mjs",
+    "test:render-order": "node --test tools/test-render-order.mjs",
     "check:seo": "node tools/check-seo.mjs _site",
-    "validate": "npm run test:body-rendering && npm run test:content-model && npm run test:gallery-assets && node tools/validate-content.mjs && npm run build && node tools/check-links.mjs _site && npm run check:seo"
+    "validate": "npm run test:body-rendering && npm run test:content-model && npm run test:gallery-assets && npm run test:render-order && node tools/validate-content.mjs && npm run build && node tools/check-links.mjs _site && npm run check:seo"
   },
   "dependencies": {
     "ejs": "^3.1.10"

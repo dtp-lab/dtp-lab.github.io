@@ -175,11 +175,16 @@ test("Gallery assets satisfy the v2.1.6 path, reference, format, metadata, and s
     assert.match(event.id, /^[0-9a-f]{12}$/);
     assert.equal(eventIds.has(event.id), false, `Duplicate Gallery event ID: ${event.id}`);
     eventIds.add(event.id);
-    for (const [index, image] of event.images.entries()) {
+    const eventStems = new Set();
+    for (const image of event.images) {
       imageCount += 1;
-      const number = String(index + 1).padStart(2, "0");
-      assert.match(image.src, new RegExp(`^assets/gallery/${event.id}/${number}\\.(?:jpe?g|png|webp)$`));
-      assert.match(image.thumbnail, new RegExp(`^assets/gallery-thumbs/${event.id}/${number}\\.(?:jpe?g|png|webp)$`));
+      const originalReference = image.src.match(new RegExp(`^assets/gallery/${event.id}/(0[1-9]|[1-9][0-9]+)\\.(jpe?g|png|webp)$`));
+      const thumbnailReference = image.thumbnail.match(new RegExp(`^assets/gallery-thumbs/${event.id}/(0[1-9]|[1-9][0-9]+)\\.(jpe?g|png|webp)$`));
+      assert.ok(originalReference, `Invalid Gallery original path: ${image.src}`);
+      assert.ok(thumbnailReference, `Invalid Gallery thumbnail path: ${image.thumbnail}`);
+      assert.equal(originalReference[1], thumbnailReference[1], `Original/thumbnail numeric stem mismatch: ${image.src}`);
+      assert.equal(eventStems.has(originalReference[1]), false, `Duplicate Gallery numeric stem: ${event.id}/${originalReference[1]}`);
+      eventStems.add(originalReference[1]);
       assert.equal(path.extname(image.src), path.extname(image.thumbnail));
       assert.equal(originalReferences.has(image.src), false, `Duplicate original reference: ${image.src}`);
       assert.equal(thumbnailReferences.has(image.thumbnail), false, `Duplicate thumbnail reference: ${image.thumbnail}`);
