@@ -1,5 +1,5 @@
 (async function () {
-  const { escapeHtml, sitePath, loadJson, sortByDateDesc, renderBodyText, showDataError, applyPageHeading } = DTPLab;
+  const { escapeHtml, sitePath, loadJson, sortByDateDesc, sortImagesBySeq, renderBodyText, showDataError, applyPageHeading } = DTPLab;
   const root = document.querySelector("#gallery-content");
   const dialog = document.querySelector("#gallery-lightbox");
   const dialogImage = document.querySelector("#lightbox-image");
@@ -12,9 +12,8 @@
   try {
     const data = await loadJson("gallery.json");
     applyPageHeading(data.page);
-    const events = sortByDateDesc(data.events);
-    root.innerHTML = events.map((event, eventIndex) => {
-      const images = event.images || [];
+    const events = sortByDateDesc(data.events).map((event) => ({ event, images: sortImagesBySeq(event.images || []) }));
+    root.innerHTML = events.map(({ event, images }, eventIndex) => {
       const thumbnailImages = images.slice(0, 4);
       const classes = ["gallery-event", images.length ? "has-images" : ""].filter(Boolean).join(" ");
       const description = renderBodyText(event.description);

@@ -13,7 +13,7 @@ const siteDir = path.resolve("site");
 
 test("content contract is serializable and exposes only known files", () => {
   const serialized = JSON.parse(JSON.stringify(contentContract));
-  assert.equal(serialized.version, 7);
+  assert.equal(serialized.version, 8);
   assert.deepEqual(
     Object.values(serialized.files).map((entry) => entry.file).sort(),
     fs.readdirSync(path.join(siteDir, "data")).filter((name) => name.endsWith(".json")).sort(),
@@ -84,6 +84,7 @@ test("technical IDs and generated Gallery thumbnails stay out of the Studio form
     .find((field) => field.name === "items").item.fields;
   const galleryFields = contentContract.files.gallery.fields
     .find((field) => field.name === "events").item.fields;
+  const projectImageFields = projectFields.find((field) => field.name === "images").item.fields;
   const galleryImageFields = galleryFields.find((field) => field.name === "images").item.fields;
 
   assert.equal(projectFields.find((field) => field.name === "id").formHidden, true);
@@ -91,6 +92,12 @@ test("technical IDs and generated Gallery thumbnails stay out of the Studio form
   assert.equal(galleryFields.find((field) => field.name === "id").formHidden, true);
   assert.equal(galleryFields.find((field) => field.name === "id").generated, "gallery-event-id");
   assert.equal(galleryImageFields.find((field) => field.name === "thumbnail").formHidden, true);
+  for (const imageFields of [projectImageFields, galleryImageFields]) {
+    assert.deepEqual(
+      imageFields.find((field) => field.name === "seq"),
+      { name: "seq", label: "표시 순서", type: "integer", optional: true, minimum: 1, formHidden: true },
+    );
+  }
   assert.equal(galleryImageFields.find((field) => field.name === "src").label, "원본 이미지 (썸네일 자동 생성)");
   assert.equal(galleryFields.some((field) => field.name === "isSample"), false);
 });
@@ -209,6 +216,62 @@ test("Gallery validation rejects mismatched stems, event folders, extensions, an
   result = validateContent({ siteDir, overrides: { "gallery.json": duplicateStem } });
   assert.equal(result.ok, false);
   assert.ok(result.errors.some((error) => error.includes("duplicate Gallery numeric stem")));
+});
+
+test("Gallery and Projects accept complete seq permutations and reject invalid or partial sequences without mutation", () => {
+  const gallery = JSON.parse(fs.readFileSync(path.join(siteDir, "data", "gallery.json"), "utf8"));
+  const projects = JSON.parse(fs.readFileSync(path.join(siteDir, "data", "projects.json"), "utf8"));
+  const cases = [
+    {
+      file: "gallery.json",
+      document: gallery,
+      images: (document) => document.events.find((event) => event.images.length === 3).images,
+    },
+    {
+      file: "projects.json",
+      document: projects,
+      images: (document) => document.projects.find((project) => project.images?.length === 3).images,
+    },
+  ];
+  const invalidSequences = [
+    { label: "duplicate", values: [1, 1, 3] },
+    { label: "zero", values: [0, 2, 3] },
+    { label: "negative", values: [-1, 2, 3] },
+    { label: "decimal", values: [1.5, 2, 3] },
+    { label: "string", values: ["1", 2, 3] },
+    { label: "partial", values: [1, undefined, 3] },
+    { label: "gap", values: [1, 3, 4] },
+  ];
+
+  for (const fixture of cases) {
+    const unsequenced = structuredClone(fixture.document);
+    const unsequencedSnapshot = structuredClone(unsequenced);
+    let result = validateContent({ siteDir, overrides: { [fixture.file]: unsequenced } });
+    assert.equal(result.ok, true, `${fixture.file} without seq must remain valid: ${result.errors.join("\n")}`);
+    assert.deepEqual(unsequenced, unsequencedSnapshot);
+
+    const valid = structuredClone(fixture.document);
+    fixture.images(valid).forEach((image, index) => { image.seq = [2, 1, 3][index]; });
+    const validSnapshot = structuredClone(valid);
+    const validPaths = fixture.images(valid).map((image) => image.src);
+    result = validateContent({ siteDir, overrides: { [fixture.file]: valid } });
+    assert.equal(result.ok, true, `${fixture.file} complete seq must be valid: ${result.errors.join("\n")}`);
+    assert.deepEqual(valid, validSnapshot);
+    assert.deepEqual(fixture.images(valid).map((image) => image.src), validPaths);
+
+    for (const invalid of invalidSequences) {
+      const document = structuredClone(fixture.document);
+      fixture.images(document).forEach((image, index) => {
+        const value = invalid.values[index];
+        if (value !== undefined) image.seq = value;
+      });
+      const snapshot = structuredClone(document);
+      result = validateContent({ siteDir, overrides: { [fixture.file]: document } });
+      assert.equal(result.ok, false, `${fixture.file} must reject ${invalid.label} seq`);
+      assert.ok(result.errors.some((error) => error.includes("seq")), result.errors.join("\n"));
+      assert.deepEqual(document, snapshot);
+    }
+  }
 });
 
 test("People contract and migrated data use structured member categories without losing records", () => {

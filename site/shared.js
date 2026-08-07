@@ -10,13 +10,25 @@
   };
 
   const loadJson = async (name) => {
-    const response = await fetch(`/data/${name}?v=30`);
+    const response = await fetch(`/data/${name}?v=31`);
     if (!response.ok) throw new Error(`${name}: HTTP ${response.status}`);
     return response.json();
   };
 
   const dateValue = (value = "") => Number(String(value).replace(/[^0-9]/g, "").padEnd(8, "0")) || 0;
   const sortByDateDesc = (items, getter = (item) => item.date) => [...items].sort((a, b) => dateValue(getter(b)) - dateValue(getter(a)));
+  const sortImagesBySeq = (images = []) => {
+    const copied = Array.isArray(images) ? [...images] : [];
+    if (!copied.some((image) => image && Object.prototype.hasOwnProperty.call(image, "seq"))) return copied;
+    return copied
+      .map((image, index) => ({ image, index }))
+      .sort((a, b) => {
+        const aSeq = Number.isInteger(a.image?.seq) ? a.image.seq : Number.MAX_SAFE_INTEGER;
+        const bSeq = Number.isInteger(b.image?.seq) ? b.image.seq : Number.MAX_SAFE_INTEGER;
+        return aSeq - bSeq || a.index - b.index;
+      })
+      .map(({ image }) => image);
+  };
   const groupByYear = (items, getter = (item) => item.date) => sortByDateDesc(items, getter).reduce((groups, item) => {
     // A trailing space keeps numeric-looking year keys in insertion order.
     // JavaScript otherwise reorders integer object keys from oldest to newest.
@@ -96,6 +108,6 @@
     });
   };
 
-  window.DTPLab = { escapeHtml, sitePath, loadJson, dateValue, sortByDateDesc, groupByYear, renderKeywords, renderBodyText, imageMarkup, showDataError, applyPageHeading };
+  window.DTPLab = { escapeHtml, sitePath, loadJson, dateValue, sortByDateDesc, sortImagesBySeq, groupByYear, renderKeywords, renderBodyText, imageMarkup, showDataError, applyPageHeading };
   document.addEventListener("DOMContentLoaded", setupShell);
 })();

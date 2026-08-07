@@ -8,6 +8,7 @@ const siteDir = path.resolve("site");
 const sharedSource = fs.readFileSync(path.join(siteDir, "shared.js"), "utf8");
 const gallerySource = fs.readFileSync(path.join(siteDir, "gallery.js"), "utf8");
 const projectsSource = fs.readFileSync(path.join(siteDir, "projects.js"), "utf8");
+const recordRendererSource = fs.readFileSync(path.join(siteDir, "record-renderers.js"), "utf8");
 
 const element = () => {
   const handlers = new Map();
@@ -43,16 +44,9 @@ const createHarness = () => {
   return { context, elements };
 };
 
-test("Gallery grid and lightbox preserve [01, 03, 04, 02] JSON image order", async () => {
+const renderGallery = async (images) => {
   const { context, elements } = createHarness();
   const eventId = "0123456789ab";
-  const stems = ["01", "03", "04", "02"];
-  const images = stems.map((stem) => ({
-    src: `assets/gallery/${eventId}/${stem}.jpg`,
-    thumbnail: `assets/gallery-thumbs/${eventId}/${stem}.jpg`,
-    alt: `Image ${stem}`,
-    caption: `Caption ${stem}`,
-  }));
   const thumbnailButtons = images.map((_, index) => {
     const button = element();
     button.dataset = { event: "0", image: String(index) };
@@ -84,6 +78,47 @@ test("Gallery grid and lightbox preserve [01, 03, 04, 02] JSON image order", asy
   });
   await vm.runInContext(gallerySource, context);
 
+  return { context, controls, dialog, dialogCaption, dialogImage, root, thumbnailButtons };
+};
+
+test("shared image sequence helper returns a stable copy without mutating arrays or image objects", () => {
+  const { context } = createHarness();
+  const sequenced = Object.freeze([
+    Object.freeze({ src: "01.jpg", alt: "one", seq: 2 }),
+    Object.freeze({ src: "02.jpg", alt: "two", seq: 1 }),
+    Object.freeze({ src: "03.jpg", alt: "three", seq: 3 }),
+  ]);
+  const sequencedSnapshot = structuredClone(sequenced);
+  const ordered = context.DTPLab.sortImagesBySeq(sequenced);
+  assert.notEqual(ordered, sequenced);
+  assert.deepEqual(Array.from(ordered, (image) => image.src), ["02.jpg", "01.jpg", "03.jpg"]);
+  assert.equal(ordered[0], sequenced[1]);
+  assert.equal(ordered[1], sequenced[0]);
+  assert.deepEqual(sequenced, sequencedSnapshot);
+
+  const unsequenced = [{ src: "03.jpg" }, { src: "01.jpg" }, { src: "02.jpg" }];
+  const unsequencedSnapshot = structuredClone(unsequenced);
+  const preserved = context.DTPLab.sortImagesBySeq(unsequenced);
+  assert.notEqual(preserved, unsequenced);
+  assert.deepEqual(Array.from(preserved, (image) => image.src), ["03.jpg", "01.jpg", "02.jpg"]);
+  assert.deepEqual(unsequenced, unsequencedSnapshot);
+
+  const tied = [{ src: "a.jpg", seq: 1 }, { src: "b.jpg", seq: 1 }, { src: "c.jpg", seq: 2 }];
+  assert.deepEqual(Array.from(context.DTPLab.sortImagesBySeq(tied), (image) => image.src), ["a.jpg", "b.jpg", "c.jpg"]);
+});
+
+test("Gallery grid and lightbox preserve unsequenced JSON image order", async () => {
+  const eventId = "0123456789ab";
+  const stems = ["01", "03", "04", "02"];
+  const images = stems.map((stem) => ({
+    src: `assets/gallery/${eventId}/${stem}.jpg`,
+    thumbnail: `assets/gallery-thumbs/${eventId}/${stem}.jpg`,
+    alt: `Image ${stem}`,
+    caption: `Caption ${stem}`,
+  }));
+  const snapshot = structuredClone(images);
+  const { controls, dialog, dialogImage, root, thumbnailButtons } = await renderGallery(images);
+
   const renderedThumbnails = [...root.innerHTML.matchAll(/<img src="([^"]+)"/g)].map((match) => match[1]);
   assert.deepEqual(renderedThumbnails, stems.map((stem) => `/assets/gallery-thumbs/${eventId}/${stem}.jpg`));
 
@@ -98,6 +133,88 @@ test("Gallery grid and lightbox preserve [01, 03, 04, 02] JSON image order", asy
   assert.equal(dialogImage.src, `/assets/gallery/${eventId}/01.jpg`);
   controls.get(".lightbox-prev").dispatch("click");
   assert.equal(dialogImage.src, `/assets/gallery/${eventId}/02.jpg`);
+  assert.deepEqual(images, snapshot);
+});
+
+test("Gallery grid, lightbox source, alt, and caption share seq order", async () => {
+  const eventId = "0123456789ab";
+  const images = [
+    { src: `assets/gallery/${eventId}/01.jpg`, thumbnail: `assets/gallery-thumbs/${eventId}/01.jpg`, alt: "Alt 01", caption: "Caption 01", seq: 2 },
+    { src: `assets/gallery/${eventId}/02.jpg`, thumbnail: `assets/gallery-thumbs/${eventId}/02.jpg`, alt: "Alt 02", caption: "Caption 02", seq: 1 },
+    { src: `assets/gallery/${eventId}/03.jpg`, thumbnail: `assets/gallery-thumbs/${eventId}/03.jpg`, alt: "Alt 03", caption: "Caption 03", seq: 3 },
+  ];
+  const snapshot = structuredClone(images);
+  const { controls, dialogCaption, dialogImage, root, thumbnailButtons } = await renderGallery(images);
+  const thumbnails = [...root.innerHTML.matchAll(/<img src="([^"]+)" alt="([^"]+)"/g)]
+    .map((match) => ({ src: match[1], alt: match[2] }));
+  assert.deepEqual(thumbnails, [
+    { src: `/assets/gallery-thumbs/${eventId}/02.jpg`, alt: "Alt 02" },
+    { src: `/assets/gallery-thumbs/${eventId}/01.jpg`, alt: "Alt 01" },
+    { src: `/assets/gallery-thumbs/${eventId}/03.jpg`, alt: "Alt 03" },
+  ]);
+
+  thumbnailButtons[0].dispatch("click");
+  assert.equal(dialogImage.src, `/assets/gallery/${eventId}/02.jpg`);
+  assert.equal(dialogImage.alt, "Alt 02");
+  assert.equal(dialogCaption.textContent, "Caption 02");
+  controls.get(".lightbox-next").dispatch("click");
+  assert.equal(dialogImage.src, `/assets/gallery/${eventId}/01.jpg`);
+  assert.equal(dialogImage.alt, "Alt 01");
+  assert.equal(dialogCaption.textContent, "Caption 01");
+  controls.get(".lightbox-next").dispatch("click");
+  assert.equal(dialogImage.src, `/assets/gallery/${eventId}/03.jpg`);
+  assert.equal(dialogImage.alt, "Alt 03");
+  assert.equal(dialogCaption.textContent, "Caption 03");
+  assert.deepEqual(images, snapshot);
+});
+
+test("Projects record gallery renders seq order without changing upload paths or objects", () => {
+  const { context } = createHarness();
+  vm.runInContext(recordRendererSource, context);
+  const images = [
+    { src: "assets/projects/order/01.jpg", alt: "Alt 01", seq: 2 },
+    { src: "assets/projects/order/02.jpg", alt: "Alt 02", seq: 1 },
+    { src: "assets/projects/order/03.jpg", alt: "Alt 03", seq: 3 },
+  ];
+  const snapshot = structuredClone(images);
+  const html = context.DTPLab.recordRenderers.renderProjectCard({
+    category: "rnd",
+    title: "Sequence fixture",
+    keywords: [],
+    details: [],
+    images,
+  });
+  const rendered = [...html.matchAll(/<img src="([^"]+)" alt="([^"]+)"/g)]
+    .map((match) => ({ src: match[1], alt: match[2] }));
+  assert.deepEqual(rendered, [
+    { src: "/assets/projects/order/02.jpg", alt: "Alt 02" },
+    { src: "/assets/projects/order/01.jpg", alt: "Alt 01" },
+    { src: "/assets/projects/order/03.jpg", alt: "Alt 03" },
+  ]);
+  assert.deepEqual(images, snapshot);
+
+  const unsequenced = [
+    { src: "assets/projects/order/03.jpg", alt: "Alt 03" },
+    { src: "assets/projects/order/01.jpg", alt: "Alt 01" },
+    { src: "assets/projects/order/02.jpg", alt: "Alt 02" },
+  ];
+  const unsequencedSnapshot = structuredClone(unsequenced);
+  const unsequencedHtml = context.DTPLab.recordRenderers.renderProjectCard({
+    category: "rnd",
+    title: "Unsequenced fixture",
+    keywords: [],
+    details: [],
+    images: unsequenced,
+  });
+  assert.deepEqual(
+    [...unsequencedHtml.matchAll(/<img src="([^"]+)"/g)].map((match) => match[1]),
+    [
+      "/assets/projects/order/03.jpg",
+      "/assets/projects/order/01.jpg",
+      "/assets/projects/order/02.jpg",
+    ],
+  );
+  assert.deepEqual(unsequenced, unsequencedSnapshot);
 });
 
 test("Projects preserve JSON order within status sections and category filters", async () => {

@@ -30,6 +30,7 @@ const controlledKeywords = [
 const stringField = (name, label, extra = {}) => ({ name, label, type: "string", ...extra });
 const textField = (name, label, extra = {}) => ({ name, label, type: "text", ...extra });
 const booleanField = (name, label, extra = {}) => ({ name, label, type: "boolean", ...extra });
+const integerField = (name, label, extra = {}) => ({ name, label, type: "integer", ...extra });
 const listField = (name, label, item, extra = {}) => ({ name, label, type: "list", item, ...extra });
 const objectField = (name, label, fields, extra = {}) => ({ name, label, type: "object", fields, ...extra });
 const selectField = (name, label, options, extra = {}) => ({ name, label, type: "select", options, ...extra });
@@ -38,12 +39,15 @@ const projectImageFields = [
   stringField("src", "이미지 경로", { required: true, input: "image" }),
   stringField("alt", "대체 텍스트", { required: true }),
 ];
+const imageSequenceField = () => integerField("seq", "표시 순서", { optional: true, minimum: 1, formHidden: true });
+const projectGalleryImageFields = [...projectImageFields, imageSequenceField()];
 
 const galleryImageFields = [
   stringField("src", "원본 이미지 (썸네일 자동 생성)", { required: true, input: "image" }),
   stringField("thumbnail", "썸네일 경로", { input: "image", optional: true, formHidden: true }),
   stringField("alt", "대체 텍스트", { required: true }),
   stringField("caption", "캡션", { optional: true }),
+  imageSequenceField(),
 ];
 
 const memberCategoryOptions = ["phd", "master", "undergraduate", "alumni", "staff"];
@@ -245,7 +249,7 @@ const publicationFields = [
 ];
 
 export const contentContract = {
-  version: 7,
+  version: 8,
   site: "dtp-lab.github.io",
   controlledKeywords,
   views: [
@@ -513,7 +517,7 @@ export const contentContract = {
             listField("keywords", "키워드", { type: "select", options: controlledKeywords }, { maximum: 5 }),
             textField("description", "개요", { optional: true }),
             listField("details", "세부 연구내용", { type: "string" }),
-            listField("images", "이미지", { type: "object", fields: projectImageFields }),
+            listField("images", "이미지", { type: "object", fields: projectGalleryImageFields }),
           ],
         }),
       ],
@@ -681,6 +685,22 @@ export function validateContent({
         validateImagePath(image.thumbnail, `${location}.images[${index}].thumbnail`);
       }
     });
+    const sequencePresence = images.map((image) => Boolean(image && Object.prototype.hasOwnProperty.call(image, "seq")));
+    if (!sequencePresence.some(Boolean)) return;
+    if (!sequencePresence.every(Boolean)) errors.push(`${location}.images: seq must be present on every image when used`);
+    const sequence = images.map((image, index) => {
+      if (!Number.isInteger(image?.seq) || image.seq <= 0) {
+        errors.push(`${location}.images[${index}].seq: positive integer required`);
+        return null;
+      }
+      return image.seq;
+    });
+    if (!sequencePresence.every(Boolean) || sequence.some((value) => value === null)) return;
+    if (new Set(sequence).size !== sequence.length) errors.push(`${location}.images: seq values must be unique`);
+    const ordered = [...sequence].sort((a, b) => a - b);
+    if (ordered.some((value, index) => value !== index + 1)) {
+      errors.push(`${location}.images: seq must be contiguous from 1 through ${images.length}`);
+    }
   };
   const validateImageObject = (image, location) => {
     if (!image || typeof image !== "object") return errors.push(`${location}: use {src, alt}`);

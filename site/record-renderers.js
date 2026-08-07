@@ -1,5 +1,5 @@
 (function () {
-  const { escapeHtml, imageMarkup, renderKeywords, renderBodyText } = DTPLab;
+  const { escapeHtml, imageMarkup, sortImagesBySeq, renderKeywords, renderBodyText } = DTPLab;
   const baselineProbe = '<span class="record-meta-baseline-probe" aria-hidden="true"></span>';
 
   const projectCategoryLabels = { industry: "산학", rnd: "R&D", talent: "인재" };
@@ -15,7 +15,7 @@
 
   const renderProjectCard = (project, { diagnostic = false } = {}) => {
     const period = [project.period?.start, project.period?.end].filter(Boolean).join(" – ");
-    const images = diagnostic ? [] : (project.images || []).filter((image) => typeof image === "string" ? image : image?.src);
+    const images = diagnostic ? [] : sortImagesBySeq(project.images || []).filter((image) => typeof image === "string" ? image : image?.src);
     const keywordChips = project.keywords?.length
       ? `<span class="project-meta-part record-meta-item meta-keyword">${projectIconSlot("keyword")}<span class="sr-only">키워드: </span><span class="project-keywords record-meta-control record-meta-keywords">${project.keywords.map((keyword) => `<span class="keyword">${baselineProbe}<span class="keyword-label">${escapeHtml(keyword)}</span></span>`).join("")}</span></span>`
       : "";
