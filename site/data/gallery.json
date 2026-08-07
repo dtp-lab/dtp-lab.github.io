@@ -287,6 +287,38 @@
       "id": "0bbaa80ead2f"
     },
     {
+      "id": "6c20640bf31d",
+      "date": "2025.10",
+      "title": "연구실 보유 로봇 플랫폼",
+      "description": "DOFBOT x3, UFactory Lite 6 x2, Filterbot Miniature x1, Jetson Orin Series x15",
+      "images": [
+        {
+          "src": "assets/gallery/6c20640bf31d/01.jpg",
+          "thumbnail": "assets/gallery-thumbs/6c20640bf31d/01.jpg",
+          "alt": "로봇 플랫폼 구축",
+          "caption": ""
+        },
+        {
+          "src": "assets/gallery/6c20640bf31d/02.jpg",
+          "thumbnail": "assets/gallery-thumbs/6c20640bf31d/02.jpg",
+          "alt": "로봇 플랫폼 구축",
+          "caption": ""
+        },
+        {
+          "src": "assets/gallery/6c20640bf31d/03.jpg",
+          "thumbnail": "assets/gallery-thumbs/6c20640bf31d/03.jpg",
+          "alt": "로봇 플랫폼 구축",
+          "caption": ""
+        },
+        {
+          "src": "assets/gallery/6c20640bf31d/04.jpg",
+          "thumbnail": "assets/gallery-thumbs/6c20640bf31d/04.jpg",
+          "alt": "로봇 플랫폼 구축",
+          "caption": ""
+        }
+      ]
+    },
+    {
       "date": "2025.09",
       "title": "다부처 과제 현장 시연평가 참석",
       "description": "고생한\n은\n성이\n",
