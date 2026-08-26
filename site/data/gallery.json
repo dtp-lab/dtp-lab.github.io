@@ -1,6 +1,56 @@
 {
   "events": [
     {
+      "id": "600855c471e9",
+      "date": "2026.08",
+      "title": "ICPR-2026 학회 참석",
+      "description": "은성 혼자 포스터 세션 발표하려 다녀옴",
+      "images": [
+        {
+          "src": "assets/gallery/600855c471e9/01.jpg",
+          "thumbnail": "assets/gallery-thumbs/600855c471e9/01.jpg",
+          "alt": "ICPR-2026 학회 참석",
+          "caption": "",
+          "seq": 1
+        },
+        {
+          "src": "assets/gallery/600855c471e9/02.jpg",
+          "thumbnail": "assets/gallery-thumbs/600855c471e9/02.jpg",
+          "alt": "ICPR-2026 학회 참석",
+          "caption": "",
+          "seq": 2
+        },
+        {
+          "src": "assets/gallery/600855c471e9/03.jpg",
+          "thumbnail": "assets/gallery-thumbs/600855c471e9/03.jpg",
+          "alt": "ICPR-2026 학회 참석",
+          "caption": "",
+          "seq": 3
+        },
+        {
+          "src": "assets/gallery/600855c471e9/04.jpg",
+          "thumbnail": "assets/gallery-thumbs/600855c471e9/04.jpg",
+          "alt": "ICPR-2026 학회 참석",
+          "caption": "",
+          "seq": 4
+        },
+        {
+          "src": "assets/gallery/600855c471e9/05.jpg",
+          "thumbnail": "assets/gallery-thumbs/600855c471e9/05.jpg",
+          "alt": "ICPR-2026 학회 참석",
+          "caption": "",
+          "seq": 5
+        },
+        {
+          "src": "assets/gallery/600855c471e9/06.jpg",
+          "thumbnail": "assets/gallery-thumbs/600855c471e9/06.jpg",
+          "alt": "ICPR-2026 학회 참석",
+          "caption": "",
+          "seq": 6
+        }
+      ]
+    },
+    {
       "id": "24f70374f39f",
       "date": "2026.07",
       "title": "CSE-삼성중공업 AI디지털테크UIC 얼라이언스 행사",
