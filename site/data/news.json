@@ -2,6 +2,11 @@
   "news": [
     {
       "date": "2026.08",
+      "category": "publication",
+      "text": "김정호, \"CVaR 및 Bayesian Optimization 기반 환경 변화에 강건한 멀티모델 선검출 기법 연구,\" SCIE-Q1 논문 출판"
+    },
+    {
+      "date": "2026.08",
       "category": "project",
       "text": "\"멀티모달 초음파 월드모델 및 VLA 기반 진단·수술보조 로봇암 정밀 제어 기술\" 연구과제 수주 (과기부, 66개월)"
     },

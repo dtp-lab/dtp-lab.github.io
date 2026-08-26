@@ -1,6 +1,82 @@
 {
   "items": [
     {
+      "id": "pub-2026-record",
+      "type": "journal",
+      "journalMetrics": {
+        "indexing": "SCIE",
+        "quartile": "Q1",
+        "award": ""
+      },
+      "publishedAt": "2026.09",
+      "title": "Multi-Model Integrated Line Detection Robust to Environmental Variations Using Bayesian Optimization",
+      "authors": [
+        {
+          "name": "Jeong-Ho Kim",
+          "isLabMember": true,
+          "isFirstAuthor": true,
+          "isCorrespondingAuthor": false
+        },
+        {
+          "name": "Min-Jae Kim",
+          "isLabMember": true,
+          "isFirstAuthor": false,
+          "isCorrespondingAuthor": false
+        },
+        {
+          "name": "Chang-Ju Lee",
+          "isLabMember": true,
+          "isFirstAuthor": false,
+          "isCorrespondingAuthor": false
+        },
+        {
+          "name": "Eun-Seong Ko",
+          "isLabMember": true,
+          "isFirstAuthor": false,
+          "isCorrespondingAuthor": false
+        },
+        {
+          "name": "Seung-Hwan Jung",
+          "isLabMember": false,
+          "isFirstAuthor": false,
+          "isCorrespondingAuthor": false
+        },
+        {
+          "name": "Do-Hyung Jeon",
+          "isLabMember": false,
+          "isFirstAuthor": false,
+          "isCorrespondingAuthor": false
+        },
+        {
+          "name": "Hyung-Jin Kim",
+          "isLabMember": false,
+          "isFirstAuthor": false,
+          "isCorrespondingAuthor": false
+        },
+        {
+          "name": "Doo-Jin Choi",
+          "isLabMember": false,
+          "isFirstAuthor": false,
+          "isCorrespondingAuthor": false
+        },
+        {
+          "name": "Won-Suk Kim",
+          "isLabMember": true,
+          "isFirstAuthor": false,
+          "isCorrespondingAuthor": true
+        }
+      ],
+      "venue": "Computers & Industrial Engineering",
+      "details": "",
+      "keywords": [
+        "Computer Vision",
+        "Bayesian Optimization",
+        "Smart Yard"
+      ],
+      "doi": "",
+      "links": []
+    },
+    {
       "id": "journal-202607-01",
       "type": "journal",
       "publishedAt": "2026.07",
