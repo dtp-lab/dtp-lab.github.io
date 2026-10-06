@@ -1,7 +1,7 @@
 {
   "items": [
     {
-      "id": "pub-2026-record",
+      "id": "pub-2026-record-3",
       "type": "journal",
       "journalMetrics": {
         "indexing": "SCIE",
@@ -67,20 +67,27 @@
         }
       ],
       "venue": "Computers & Industrial Engineering",
-      "details": "",
+      "details": "Vol.222, pp.112343",
       "keywords": [
-        "Computer Vision",
+        "Line detection",
+        "Multimodal AI",
         "Bayesian Optimization",
-        "Smart Yard"
+        "Risk-aware optimization",
+        "Weighted RANSAC"
       ],
       "doi": "",
       "links": []
     },
     {
-      "id": "journal-202607-01",
+      "id": "pub-2026-record-2",
       "type": "journal",
+      "journalMetrics": {
+        "indexing": "SCIE",
+        "quartile": "Q4",
+        "award": ""
+      },
       "publishedAt": "2026.07",
-      "title": "A lightweight fusion localization framework integrating improved PDR and BLE location fingerprinting",
+      "title": "Physically Consistent Spatial Reconstruction of Indoor Environments via Optimal Interpolation of Sparse Sensors",
       "authors": [
         {
           "name": "Kaku Muto",
@@ -107,7 +114,50 @@
           "isCorrespondingAuthor": false
         }
       ],
-      "venue": "IEICE Nonlinear Theory and Its Applications",
+      "venue": "Nonlinear Theory and Its Applications, IEICE",
+      "details": "Vol.E17,No.1,pp1-17",
+      "keywords": [
+        "Sensor network",
+        "Computational Fluid Dynamics(CFD)",
+        "Indoor environment",
+        "Spatial interpolation",
+        "Optimal interpolation"
+      ],
+      "doi": "",
+      "links": []
+    },
+    {
+      "id": "journal-202607-01",
+      "type": "journal",
+      "publishedAt": "2026.07",
+      "title": "A lightweight fusion localization framework integrating improved PDR and BLE location fingerprinting",
+      "authors": [
+        {
+          "name": "Jingshi Qian",
+          "isLabMember": false,
+          "isFirstAuthor": true,
+          "isCorrespondingAuthor": false
+        },
+        {
+          "name": "Nobuyoshi Komuro",
+          "isLabMember": false,
+          "isFirstAuthor": false,
+          "isCorrespondingAuthor": true
+        },
+        {
+          "name": "Won-Suk Kim",
+          "isLabMember": true,
+          "isFirstAuthor": false,
+          "isCorrespondingAuthor": false
+        },
+        {
+          "name": "Younghwan Yoo",
+          "isLabMember": false,
+          "isFirstAuthor": false,
+          "isCorrespondingAuthor": false
+        }
+      ],
+      "venue": "Nonlinear Theory and Its Applications, IEICE",
       "details": "Vol. 17, pp. -",
       "keywords": [
         "Localization"
@@ -116,7 +166,45 @@
       "links": [],
       "journalMetrics": {
         "indexing": "SCIE",
-        "quartile": "해당없음",
+        "quartile": "Q4",
+        "award": ""
+      }
+    },
+    {
+      "id": "journal-202512-03",
+      "type": "journal",
+      "publishedAt": "2026.01",
+      "title": "Rehandling-aware stowage planning for RoRo ships using exclusive subgraph modeling and affinity-based cargo ordering",
+      "authors": [
+        {
+          "name": "Chang-Min Lee",
+          "isLabMember": true,
+          "isFirstAuthor": true,
+          "isCorrespondingAuthor": false
+        },
+        {
+          "name": "Hoon Lee",
+          "isLabMember": false,
+          "isFirstAuthor": false,
+          "isCorrespondingAuthor": false
+        },
+        {
+          "name": "Won-Suk Kim",
+          "isLabMember": true,
+          "isFirstAuthor": false,
+          "isCorrespondingAuthor": true
+        }
+      ],
+      "venue": "Scientific Reports",
+      "details": "Vol 16/1-16",
+      "keywords": [
+        "Optimization"
+      ],
+      "doi": "",
+      "links": [],
+      "journalMetrics": {
+        "indexing": "SCIE",
+        "quartile": "Q1",
         "award": ""
       }
     },
@@ -168,44 +256,6 @@
       "journalMetrics": {
         "indexing": "SCIE",
         "quartile": "Q2",
-        "award": ""
-      }
-    },
-    {
-      "id": "journal-202512-03",
-      "type": "journal",
-      "publishedAt": "2025.12",
-      "title": "Rehandling-aware stowage planning for RoRo ships using exclusive subgraph modeling and affinity-based cargo ordering",
-      "authors": [
-        {
-          "name": "Chang-Min Lee",
-          "isLabMember": true,
-          "isFirstAuthor": true,
-          "isCorrespondingAuthor": false
-        },
-        {
-          "name": "Hoon Lee",
-          "isLabMember": false,
-          "isFirstAuthor": false,
-          "isCorrespondingAuthor": false
-        },
-        {
-          "name": "Won-Suk Kim",
-          "isLabMember": true,
-          "isFirstAuthor": false,
-          "isCorrespondingAuthor": true
-        }
-      ],
-      "venue": "Scientific Reports",
-      "details": "Vol. 15, pp. 32841",
-      "keywords": [
-        "Optimization"
-      ],
-      "doi": "",
-      "links": [],
-      "journalMetrics": {
-        "indexing": "SCIE",
-        "quartile": "Q1",
         "award": ""
       }
     },
@@ -1445,6 +1495,172 @@
         "quartile": "해당없음",
         "award": ""
       }
+    },
+    {
+      "id": "pub-2026-record-6",
+      "type": "conference",
+      "conferenceMetrics": {
+        "conferenceType": "국제",
+        "bk21": "해당없음",
+        "kiise": "해당없음"
+      },
+      "publishedAt": "2026.08",
+      "title": "Demo-Efficient Hierarchical VLA Learning with VLM-Generated Atomic Skill Sequences",
+      "authors": [
+        {
+          "name": "Min-Jae Kim",
+          "isLabMember": true,
+          "isFirstAuthor": true,
+          "isCorrespondingAuthor": false
+        },
+        {
+          "name": "Won-Suk Kim",
+          "isLabMember": true,
+          "isFirstAuthor": false,
+          "isCorrespondingAuthor": true
+        }
+      ],
+      "venue": "IWCS 2026",
+      "details": "",
+      "keywords": [
+        "VLA",
+        "Hierarchical VLA Robotic Manipulation",
+        "Atomic Skill Decomposition",
+        "Demo-Efficient Learning"
+      ],
+      "doi": "",
+      "links": []
+    },
+    {
+      "id": "pub-2026-record-5",
+      "type": "conference",
+      "conferenceMetrics": {
+        "conferenceType": "국제",
+        "bk21": "해당없음",
+        "kiise": "해당없음"
+      },
+      "publishedAt": "2026.08",
+      "title": "Adaptive Visual Memory Selection for Non-Markovian Robotic Manipulation",
+      "authors": [
+        {
+          "name": "Chang-Ju Lee",
+          "isLabMember": true,
+          "isFirstAuthor": true,
+          "isCorrespondingAuthor": false
+        },
+        {
+          "name": "Won-Suk Kim",
+          "isLabMember": true,
+          "isFirstAuthor": false,
+          "isCorrespondingAuthor": true
+        }
+      ],
+      "venue": "IWCS 2026",
+      "details": "",
+      "keywords": [
+        "VLA",
+        "non-Markovian robotic manipulation",
+        "visual memory",
+        "frame selection",
+        "RoboMME"
+      ],
+      "doi": "",
+      "links": []
+    },
+    {
+      "id": "pub-2026-record-4",
+      "type": "conference",
+      "conferenceMetrics": {
+        "conferenceType": "국제",
+        "bk21": "IF1",
+        "kiise": "해당없음"
+      },
+      "publishedAt": "2026.08",
+      "title": "Zero-shot Sim2Real Wildfire Frontline Estimation from UAV Imagery via VLM-Guided Learning",
+      "authors": [
+        {
+          "name": "Eun-Seong Ko",
+          "isLabMember": true,
+          "isFirstAuthor": true,
+          "isCorrespondingAuthor": false
+        },
+        {
+          "name": "Chang-Min Lee",
+          "isLabMember": true,
+          "isFirstAuthor": false,
+          "isCorrespondingAuthor": false
+        },
+        {
+          "name": "Won-Suk Kim",
+          "isLabMember": true,
+          "isFirstAuthor": false,
+          "isCorrespondingAuthor": true
+        }
+      ],
+      "venue": "ICPR 2026",
+      "details": "",
+      "keywords": [
+        "Wildfire",
+        "UAV",
+        "Zero-shot Sim2Real",
+        "VLM guided learning"
+      ],
+      "doi": "",
+      "links": []
+    },
+    {
+      "id": "pub-2026-record",
+      "type": "conference",
+      "conferenceMetrics": {
+        "conferenceType": "국제",
+        "bk21": "해당없음",
+        "kiise": "해당없음"
+      },
+      "publishedAt": "2026.07",
+      "title": "A Study on Three-Dimensional Indoor Localization Using Mobile Device Sensors",
+      "authors": [
+        {
+          "name": "Mitsuki Shigehiro ",
+          "isLabMember": false,
+          "isFirstAuthor": true,
+          "isCorrespondingAuthor": false
+        },
+        {
+          "name": "Jingshi Qian",
+          "isLabMember": false,
+          "isFirstAuthor": false,
+          "isCorrespondingAuthor": false
+        },
+        {
+          "name": "Won-Suk Kim  ",
+          "isLabMember": true,
+          "isFirstAuthor": false,
+          "isCorrespondingAuthor": false
+        },
+        {
+          "name": "Younghwan Yoo",
+          "isLabMember": false,
+          "isFirstAuthor": false,
+          "isCorrespondingAuthor": false
+        },
+        {
+          "name": "Nobuyoshi Komuro",
+          "isLabMember": false,
+          "isFirstAuthor": false,
+          "isCorrespondingAuthor": true
+        }
+      ],
+      "venue": "ICCCAS 2026",
+      "details": "",
+      "keywords": [
+        "Indoor Localization",
+        "Pedestrian Dead Reckoning(PDR)",
+        "3D Localization",
+        "Stair Climbing Detection",
+        "Accelerometer"
+      ],
+      "doi": "",
+      "links": []
     },
     {
       "id": "conference-202507-01",
@@ -2729,9 +2945,22 @@
         "status": "등록"
       },
       "applicationDate": "2024.12.06",
-      "registrationDate": "2026.03.24",
+      "registrationDate": "2026.03.16",
       "applicationNumber": "10-2024-0180306",
       "registrationNumber": "10-2941109"
+    },
+    {
+      "id": "pub-2026-record-7",
+      "type": "patent",
+      "patentMetrics": {
+        "jurisdiction": "국내",
+        "status": "출원"
+      },
+      "applicationDate": "2026.08.27",
+      "registrationDate": "",
+      "title": "자기개선형 디퓨전 모델을 이용한 다중 압축기 시스템의 전력 최적화 장치 및 방법",
+      "applicationNumber": "10-2026-0161761",
+      "registrationNumber": ""
     },
     {
       "id": "patent-202501-02",
@@ -2778,12 +3007,12 @@
       "title": "디지털 트윈 화재 시뮬레이터를 활용한 화재면적 산출방법",
       "patentMetrics": {
         "jurisdiction": "국내",
-        "status": "출원"
+        "status": "등록"
       },
       "applicationDate": "2024.12.06",
-      "registrationDate": "",
+      "registrationDate": "2026.06.30",
       "applicationNumber": "10-2024-0180301",
-      "registrationNumber": ""
+      "registrationNumber": "10-2986010"
     },
     {
       "id": "patent-202400-06",

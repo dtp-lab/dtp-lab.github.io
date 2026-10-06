@@ -1,6 +1,159 @@
 {
   "seminars": [
     {
+      "date": "2026.09.21",
+      "title": "RORO 화물 선적 최적화 산학 과제 소개",
+      "speaker": "이지혜",
+      "summary": "본 세미나에서는 RORO 선박의 화물 선적 최적화를 위한 CFB 생성 알고리즘, 가변 데크 조정, 강화학습 기반 화물 배치 방법 등을 소개하였다. \n화물 선적 최적화의 주요 목표는 재취급을 최소화하면서 fail과 무게중심 조건을 만족하는 선적 계획을 수립하는 것이다. \n이를 달성하기 위해, 먼저 동일 높이 노드 구성, CFB 내 분기 제거, Balanced CFB 및 Path node 추가를 통해 CFB 생성 알고리즘을 개선하고, 가변 데크의 높이 조정을 통해 적재 가능한 공간을 확보하였다.  \n이후 PPO 기반 강화학습을 적용하여 화물과 CFB의 배치 결정을 학습하였다. 기존 배치 알고리즘 데이터를 활용한 모방학습으로 Actor를 사전 학습한 후 강화학습을 수행하였으며, 최종적으로 fail 0 및 무게중심 위반 0을 만족하면서 재취급이 최소화되는 배치 결과를 도출하고 테스트 데이터에 적용하여 성능을 비교하였다. ",
+      "keywords": [
+        "Optimization",
+        "Reinforcement Learning"
+      ]
+    },
+    {
+      "date": "2026.09.21",
+      "title": "Automatic Virtual Camera Alignment for Real-to-Digital Twin",
+      "speaker": "고은성",
+      "summary": "디지털트윈에서 실제 카메라 영상을 활용하기 위해서는 실제 카메라와 가상환경의 카메라가 동일한 장면을 바라보도록 정확하게 정합되어야 한다. 그러나 실제 산업현장에서는 카메라의 방향이나 줌, 등 카메라 값들이  변경될 수 있으며, 이때 가상카메라를 사람이 직접 조정하여 다시 맞추는 과정은 많은 시간과 반복적인 작업을 필요로 한다. 현재 상황에서 사용한 방법, 그리고 지금 상황에서의 제약과, 이때 사용할 수 있는 방법에 대한 소개 및 토론에 대한 세미나이다. ",
+      "keywords": [
+        "Computer Vision"
+      ]
+    },
+    {
+      "date": "2026.08.31",
+      "title": "Flow Matching for Combinatorial Optimization",
+      "speaker": "하서현",
+      "summary": "본 세미나는 Combinatorial Optimization(CO) 문제를 해결하기 위해 기존 Diffusion Model의 한계를 극복하고 빠른 해 생성을 가능하게 하는 ‘EFLOCO’ Framework의 핵심 아이디어와 방법론을 다룬다. EFLOCO는 확률적이고 긴 Sampling 과정을 요구하는 기존 Diffusion 방식 대신, 사전에 정의된 결정론적이고 매끄러운 경로를 학습하는 Discrete Flow Matching 기법을 CO 문제에 최초로 도입하였다.\nEFLOCO는 연속적인 이미지 생성 도메인에서 발전한 Flow Matching을 이산적인 CO 도메인에 적용할 때 발생하는 예측 불안정성을 해결하기 위해 ‘Velocity-based Consistency Loss’를 도입하였다. 이는 적은 Step으로 해를 생성할 때, 인접한 시점 간 변화(Transition Distribution)가 너무 급격하게 달라지지 않도록 Penalty를 부여하여 안정성을 유지하게 한다. 또한, 제한된 계산 예산을 균등하게 배분하지 않고 해의 변화가 집중되는 중요한 구간(Critical Interval)에 연산을 집중시키는 ‘Adaptive Time-Step Scheduling Strategy(ATSS)’를 적용하여 학습과 추론의 효율을 극대화하였다.\n결과적으로 EFLOCO는 TSP/ATSP Benchmark에서 기존 Diffusion-based Solver와 유사한 높은 해 품질을 유지하면서도 추론 속도를 압도적으로 단축시키는 데 성공하였다. 이를 통해 CO 문제 해결에 있어 반드시 길고 반복적인 생성 과정이 필요하지 않으며, 중간 단계의 일관적인 학습과 효율적인 스케줄링 전략을 통해 매우 적은 추론 단계만으로도 빠르고 안정적인 최적화가 가능함을 입증하였다.",
+      "keywords": [
+        "Flow Matching",
+        "Optimization"
+      ]
+    },
+    {
+      "date": "2026.08.24",
+      "title": "VLM with Skills",
+      "speaker": "김민재",
+      "summary": "VLA 모델이 새로운 task를 수행하려면 추가 데이터로 fine-tuning이 필요하지만, 이 과정에서 기존에 학습한 task의 수행 능력이 함께 저하되는 catastrophic forgetting이 발생한다. 단일 action decoder가 모든 skill을 함께 담당하기 때문이다. \nAtomicVLA는 이 decoder를 atomic skill 단위의 Action Expert로 분해하고, skill abstraction에 따라 expert를 활성화하는 Router를 도입했다. 새로운 skill은 expert와 routing branch를 추가하는 것만으로 학습되므로, 기존 expert를 건드리지 않은 채 skill library를 확장할 수 있다.",
+      "keywords": [
+        "VLA",
+        "Reinforcement Learning"
+      ]
+    },
+    {
+      "date": "2026.08.12",
+      "title": "VLA + Memory",
+      "speaker": "이창주",
+      "summary": "기존의 VLA는 현재 시점의 관측만 가지고 행동을 예측하는 방식으로 동작한다.  하지만 ‘버튼을 x 번 누르기’ 와 같이 이전 관측/행동에 대한 기억이 필요한 non-Markovian 특성을 지닌 task는 수행하지 못하는 한계가 있다.  그래서 이번 세미나에서는 기존 VLA의 한계 및 memory를 표현/구현 하는 방식에 대해서 전반적으로 알아본다.",
+      "keywords": [
+        "VLA",
+        "Physical AI"
+      ]
+    },
+    {
+      "date": "2026.08.10",
+      "title": "IsaacSim",
+      "speaker": "홍석기",
+      "summary": "본 세미나에서는 LG 세탁기 물리 시뮬레이션 사례를 바탕으로 Isaac Sim의 기본 사용법을 소개함.\nUSD 기반 모델 구성과 Scene·물리 설정을 중심으로 시뮬레이션 환경을 구축하는 과정을 설명함.\n구현 과정에서 발생한 주요 문제와 원인을 분석하고, 적용한 해결 방법을 함께 정리함.",
+      "keywords": [
+        "Simulator"
+      ]
+    },
+    {
+      "date": "2026.08.03",
+      "title": "AI Agent",
+      "speaker": "김범수",
+      "summary": "본 세미나는 수 십 년 전부터 컴퓨터 과학 분야에 존재했던  ai agent라는 개념이 LLM이라는 강력한 범용성을 가진 추론 엔진의 등장으로 agent ai로 발달되는 과정을 살펴본다. 먼저 ai agent와 agentic ai를 구분하고 두 개념이 어떤 부분에서 다른지 그리고 어떤 특징 때문에 완벽히 나눌 수 없는지 정리하고, agentic ai에게 있어 중요한 prompt engineering과 context engineering이라는 두 축을 살펴본다. 이어서 정적인 LLM의 지식을 동적 지식으로 다루는 방법에 대해 특히, Vector Database를 사용한 RAG의 구조와 Agent 안에서의 작동 구조에 대해서 살펴본다. 마지막으로, ai agent framework라는 것이 정확히 어떤 것을 지칭하는지 정의하고, 앞선 내용의 agent 구조를 살펴보며 framework의 핵심은 루프가 아닌 루프 이외의 영역에 있다는 것을 살펴본다. 끝으로 몇몇 framework들의 방향성을 소개하며 마친다.",
+      "keywords": [
+        "AI Agent"
+      ]
+    },
+    {
+      "date": "2026.08.03",
+      "title": "TuneNet: One-Shot Residual Tuning for System Identification and Sim-to-Real Robot Task Transfer ",
+      "speaker": "최호진",
+      "summary": "본 세미나에서는 시뮬레이션과 실제 환경 간의 Reality Gap을 줄이기 위한 방법인 TuneNet을 소개한다. \nTuneNet은 실제 물리 파라미터 자체를 직접 예측하는 대신, 현재 시뮬레이터와 Target 환경에서 얻은 관측 시계열의 차이를 이용하여 물리 파라미터의 수정량(Residual)을 예측하고 이를 반복적으로 업데이트하는 방식이다. \n이를 통해 현실을 최대한 근사하는 canonical simulation을 구축하는 것을 목표로 한다.",
+      "keywords": [
+        "Optimization"
+      ]
+    },
+    {
+      "date": "2026.07.13",
+      "title": "Vision-Language-Action Models for Generalist Robot Policies",
+      "speaker": "김성민",
+      "summary": "본 세미나에서는 Vision-Language-Action(VLA) 모델이 어떻게 로봇 제어를 위한 범용 정책으로 발전해 왔는지 살펴본다. 먼저 VLA의 기본 개념과 초기 모델인 RT-1, RT-2, Open X-Embodiment의 흐름을 정리하고, 이후 OpenVLA와 같은 autoregressive VLA 모델이 로봇 action을 어떻게 시퀀스 모델링 문제로 다루는지 설명한다. 이어서 autoregressive 방식의 한계를 바탕으로 flow matching 기반 generative VLA 모델이 등장한 배경을 살펴보고, 마지막으로 Physical Intelligence, NVIDIA, Google DeepMind와 같은 주요 기업들이 VLA를 어떤 방향으로 설계하고 있는지 비교한다.",
+      "keywords": [
+        "Physical AI",
+        "VLA"
+      ]
+    },
+    {
+      "date": "2026.07.03",
+      "title": "DIFUSCO: Graph-based Diffusion Solvers for Combinatorial Optimization",
+      "speaker": "하서현",
+      "summary": "본 세미나는 NP-Complete로 분류되는 Combinatorial Optimization(CO) 문제를 그래프 기반 Diffusion Model을 도입하여 해결하는 ‘DIFUSCO’ Framework의 핵심 아이디어와 방법론을 다룬다.\nDIFUSCO는 TSP, MIS와 같은 문제를 경로나 해 집합 자체를 직접 생성하는 방식으로 접근하지 않는다. 대신, 문제의 해를 Edge 또는 Node의 선택 여부를 나타내는 Binary Vector로 재정의한다. 이를 통해 순열(Permutation) 구조에 직접 Noise를 주입할 때 발생하는 어려움을 피하고, Diffusion Model의 Iterative Refinement 구조를 CO 문제에 자연스럽게 적용한다. 핵심은 그래프 자체를 생성하는 것이 아니라, 좋은 해를 구성할 가능성이 높은 Edge/Node 선택 구조를 학습한다는 점이다.\n또한 DIFUSCO는 Diffusion Model이 생성한 결과를 바로 Final Solution으로 사용하지 않고, Edge/Node별 Confidence를 나타내는 Heatmap으로 변환한 뒤 Greedy Decoding, 2-Opt와 같은 Decoding/Search 기법과 결합한다. 이는 Neural Network이 좋은 Prior를 제공하고, Decoder/Search가 Feasibility를 처리하는 Hybrid 구조로 해석할 수 있다.\n결과적으로 DIFUSCO는 검증된 Benchmark에서 기존 Solver들을 크게 능가하는 성능을 보이며, 대규모 인스턴스에 대해 뛰어난 일반화 능력을 입증하였다. 이를 통해 DIFUSCO는 Diffusion Model이 단순 이미지 생성 모델을 넘어, CO 문제에서 고품질 해 구조를 효과적으로 학습할 수 있음을 보여준 주요 사례로 남았다.",
+      "keywords": [
+        "Diffusion",
+        "Optimization"
+      ]
+    },
+    {
+      "date": "2026.06.08",
+      "title": "Reliable High-Dimensional Bayesian Optimization for Combinatorial and Mixed Spaces",
+      "speaker": "이지혜",
+      "summary": "본 세미나는 조합형 및 혼합형 입력 공간에서 기존 Bayesian Optimization 방법들이 고차원 탐색 시 성능이 급격히 저하되는 문제를 다룬 Bounce 알고리즘을 소개한다.\n블랙박스 최적화 문제는 목적함수의 내부 구조를 알 수 없고 평가 비용이 높기 때문에, surrogate model을 활용하여 최소한의 평가 횟수로 최적해를 탐색하는 Bayesian Optimization(BO)에 대한 연구가 활발히 진행되고 있다. \n본 논문은 기존 BO가 고차원 조합 공간에서 성능이 저하되는 원인으로, 탐색 공간의 크기가 변수 수에 따라 지수적으로 증가함에 따라 surrogate model이 충분한 관측 데이터 없이 넓은 고차원 공간을 직접 탐색해야 하는 문제를 지적한다.\n이를 해결하기 위해, 저차원 embedding에서 출발하여 탐색이 수렴할 때마다 점진적으로 차원을 확장하는 새로운 알고리즘인 Bounce를 제안한다. Bounce는 입력 변수를 bin으로 묶어 저차원 공간에서 탐색을 시작하고, 이전 단계의 관측 데이터를 폐기하지 않는 중nested subspace 구조와 무작위 셔플링을 통해 구조 편향을 제거하며, 연속형과 조합형 변수에 대해 각각 유클리드 거리와 해밍 거리 기반의 Trust Region을 독립적으로 동적 관리한다. 그 결과 고차원 이진·범주형·혼합형 벤치마크에서 기존 방법들에 비해 최적화 성능이 크게 향상되었음을 보인다.",
+      "keywords": [
+        "Surrogate Modeling"
+      ]
+    },
+    {
+      "date": "2026.05.29",
+      "title": "3D Gaussian Splatting",
+      "speaker": "고은성",
+      "summary": "해당 발표는 3D Gaussian Splatting(3DGS)의 기본 개념, 전체 동작 과정, 학습 원리 및 활용 가능성에 대해 전반적으로 다루었다.\n3DGS는 3D 장면을 수많은 3D Gaussian의 집합으로 표현하는 방식이다. 위치, 색상, 투명도, 크기, 회전 등의 정보를 가진 Gaussian을 이용해 장면을 명시적으로 표현한다는 특징이 있다. 또한 기존 방식들에 비해 렌더링 속도와 성능 측면에서 우수한 결과를 보여 최근 많은 관심을 받고 있다.\n3DGS의 입력은 다시점 이미지, 각 이미지에 대응되는 카메라 파라미터, 그리고 SfM 기반 초기 point cloud이다. 초기 point cloud를 기준으로 Gaussian을 생성하고, 렌더링 결과와 실제 이미지를 비교하며 Gaussian의 파라미터를 최적화한다. 최종 출력은 학습된 3D Gaussian들의 집합이며, 이를 통해 3D 장면을 표현한다.\n마지막으로 3DGS의 활용 측면에서는 빠른 실시간 렌더링이 가능하다는 장점을 바탕으로 3D 장면 재구성, 디지털트윈, 로봇 시뮬레이션, 가상환경 구축 등에 활용될 수 있음을 알아보았다. 또한 SuGaR, Gaussian Grouping과 같은 후속 기술을 통해 3DGS 결과를 mesh로 변환하거나 특정 객체를 분리·편집하는 방향으로 확장될 수 있다는 점도 함께 살펴보았다.",
+      "keywords": [
+        "Computer Vision"
+      ]
+    },
+    {
+      "date": "2026.04.06",
+      "title": "Training Agents Inside of Scalable World Models(Dreamer v4)",
+      "speaker": "김민재",
+      "summary": "Dreamer는 에이전트가 상호작용한 실제 세계의 데이터를 토대로, 에이전트가 이해하는 내부적 세계를 구축하고, 그 속에서 강화학습을 하며 정책을 개선하는 알고리즘이다. 기존 Dreamer를 비롯한 많은 강화학습 알고리즘은 실제 세계와 상호작용하는 과정이 필요하며, 그에 따라 추가적인 컴퓨터 계산 비용을 요구한다. 강화학습에서 이뤄지는 실제 세계와의 상호작용이 인명적, 자산적 피해를 일으킬 수도 있으며, 동시에 매번 학습시마다 직접 데이터를 수집해야하는 번거로움을 동반한다.\nDreamer 4는 오프라인 데이터셋인 VPT Contractor dataset를 활용해, 마인크래프트 환경의 WM을 제작하고, 제작한 WM안에서만 강화학습을 진행한다. 결과적으로 실제 세계와 상호작용 없이 특정 테스크를 수행하는 에이전트를 만들 수 있게 된다. Dreamer 4는 다양한 분야에 적용 가능한 프레임워크를 제시하였으며, 로봇환경에서 제어가 가능한 WM을 만듬으로써 범용적 사용 가능성을 제시한다.",
+      "keywords": [
+        "Reinforcement Learning",
+        "World Models"
+      ]
+    },
+    {
+      "date": "2026.04.03",
+      "title": "PokemonGold RL",
+      "speaker": "홍세민",
+      "summary": "본 세미나는 과거 동아리에서의 프로젝트 수행 방법과 진행 과정, 문제점, 해결 방안 그리고 성과에 대해서 간단히 소개하는 세미나이다. 또한, 앞으로 진행될 프로젝트에 관하여 발생 가능한 문제점이 어떤 시퀀스를 가지는 지 구체적으로 소개하여 지향해야 할 올바른 방향에 대해 점검하는 내용을 담았다. ",
+      "keywords": [
+        "Reinforcement Learning"
+      ]
+    },
+    {
+      "date": "2026.03.30",
+      "title": "Flow Matching",
+      "speaker": "이창주",
+      "summary": "생성형 model의 전반적인 구조 및 내용 소개. 그 중에서 flow 계열의 normalizing flow, continuous normalizing flow. 그리고 CNF의 단점을 해결한 flow matching에 대해 소개한다.\nflow matching은 노이즈에서 데이터로 변화하는 probability path를 직접 설계하고, 이를 regression으로 효과적으로 학습 할 수 있도록 한다. 이 덕분에 CNF의 느린 학습(ODE 필요)에서 벗어나, 강력하고 효과적인 생성형 모델의 학습을 가능케 한다",
+      "keywords": [
+        "Diffusion",
+        "Generative AI",
+        "Flow Matching"
+      ]
+    },
+    {
+      "date": "2026.03.16",
+      "title": "Constrained Diffusion Model",
+      "speaker": "최호진",
+      "summary": "Diffusion Model을 간단하게 remind하고 기존 Diffusion은 좋은 샘플을 잘 만들뿐인 것이지 원하는 제약조건을 만족 시킬 것인가에 대한 다양한 논문들을 소개한다. Diffusion Model이 좋은 샘플을 생성하는 것을 넘어 원하는 제약조건까지 만족하는 샘플을 어떻게 만들 것인가?라는 문제를 다룬다. 이를 위해 제약조건을 diffusion 모델 안에 넣는 대표적인 세 가지 축을 소개한다. \n첫째, 학습 단계에서 제약을 반영하는 방법으로, dual training이나 constraint-aware loss처럼 모델이 처음부터 제약을 고려한 분포를 학습하도록 만드는 접근을 살펴본다. \n둘째, 샘플링 단계에서 제약을 보정하는 방법으로, projection, posterior sampling, manifold constraint처럼 생성 과정 도중 제약 위반을 줄이거나 feasible set으로 유도하는 방식들을 소개한다. \n셋째, 데이터나 공간 구조 자체에 제약을 내장하는 방법으로, Riemannian manifold 기반 diffusion, unknown constraint를 데이터 분포로 대체하는 방식, 그리고 그래프 구조를 직접 복원하는 DIFUSCO와 같은 사례를 통해 암묵적 제약 표현의 가능성을 설명한다.\n최종적으로 constrained diffusion을 단순히 조건을 붙인 diffusion이 아니라, 제약을 학습 단계에 둘지, 샘플링 단계에 둘지, 혹은 아예 데이터 표현과 공간 구조 안에 내장할지를 설계하는 문제로 바라본다. 이를 통해 각 방법론이 가지는 장단점, 즉 분포 수준의 제약 반영, 샘플 수준의 강한 보정, 그리고 구조적 제약 내재화라는 서로 다른 관점을 비교하고, 앞으로 diffusion 기반 최적화나 생성 모델을 실제 문제에 적용할 때 어떤 방식이 적절할지 고민해본다.",
+      "keywords": [
+        "Diffusion"
+      ]
+    },
+    {
       "date": "2026.03.09",
       "title": "ORSO: Accelerating Reward Design via Online Reward Selection and Policy Optimization",
       "speaker": "이창민",

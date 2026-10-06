@@ -56,14 +56,6 @@
       "category": "phd"
     },
     {
-      "image": "assets/people/이창민.jpg",
-      "name": "Chang-Min Lee (이창민)",
-      "affiliation": "",
-      "email": "lak0192@pusan.ac.kr",
-      "researchTopic": "RL, Robotics",
-      "category": "master"
-    },
-    {
       "image": "assets/people/고은성.png",
       "name": "Eun-Seong Ko (고은성)",
       "affiliation": "",
@@ -96,12 +88,28 @@
       "category": "master"
     },
     {
+      "image": "assets/people/홍석기.jpg",
+      "name": "Seok-Gi Hong (홍석기)",
+      "affiliation": "",
+      "email": "hongseokgi00@pusan.ac.kr",
+      "researchTopic": "RL, Digital twin",
+      "category": "master"
+    },
+    {
       "image": "assets/people/김성민.jpg",
       "name": "Seong-Min Kim (김성민)",
       "affiliation": "",
       "email": "dan1626@pusan.ac.kr",
       "researchTopic": "Digital Twin",
-      "category": "undergraduate"
+      "category": "master"
+    },
+    {
+      "image": "assets/people/김범수.png",
+      "name": "Bum-Soo Kim (김범수)",
+      "affiliation": "",
+      "email": "cacaki@pusan.ac.kr",
+      "researchTopic": "RL, Robotics",
+      "category": "master"
     },
     {
       "image": "assets/people/여채언.jpg",
@@ -117,14 +125,6 @@
       "affiliation": "",
       "email": "osm0071@pusan.ac.kr",
       "researchTopic": "RL, Robotics",
-      "category": "undergraduate"
-    },
-    {
-      "image": "assets/people/홍석기.jpg",
-      "name": "Seok-Gi Hong (홍석기)",
-      "affiliation": "",
-      "email": "hongseokgi00@pusan.ac.kr",
-      "researchTopic": "RL, Digital twin",
       "category": "undergraduate"
     },
     {
@@ -144,12 +144,36 @@
       "category": "undergraduate"
     },
     {
-      "image": "assets/people/김범수.png",
-      "name": "Bum-Soo Kim (김범수)",
+      "image": "assets/people/2fd509aeaa03/01.jpg",
+      "name": "Noh-Kwan Woo (노관우)",
+      "category": "undergraduate",
       "affiliation": "",
-      "email": "cacaki@pusan.ac.kr",
-      "researchTopic": "",
-      "category": "undergraduate"
+      "email": "rkw1045@pusan.ac.kr",
+      "researchTopic": "RL, Digital Twin"
+    },
+    {
+      "image": "assets/people/20ccdf63b3bd/01.jpg",
+      "name": "Jun-Su Lee (이준수)",
+      "category": "undergraduate",
+      "affiliation": "",
+      "email": "dlwnstn02@pusan.ac.kr",
+      "researchTopic": "Digital twin, Robotics"
+    },
+    {
+      "image": "assets/people/576cea0fdfeb/01.jpg",
+      "name": "Na-Yeong Lee (이나영)",
+      "category": "undergraduate",
+      "affiliation": "",
+      "email": "nayoung4458@pusan.ac.kr",
+      "researchTopic": "Robotics, Digital Twin Simulation"
+    },
+    {
+      "image": "assets/people/이창민.jpg",
+      "name": "Chang-Min Lee (이창민)",
+      "affiliation": "",
+      "email": "lak0192@pusan.ac.kr",
+      "researchTopic": "RL, Robotics",
+      "category": "alumni"
     },
     {
       "image": "assets/people/김정호.jpg",
