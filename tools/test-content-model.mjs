@@ -284,7 +284,7 @@ test("People contract and migrated data use structured member categories without
       category,
       people.members.filter((person) => person.category === category).length,
     ])),
-    { phd: 4, master: 5, undergraduate: 7, alumni: 3, staff: 0 },
+    { phd: 4, master: 7, undergraduate: 7, alumni: 4, staff: 0 },
   );
   assert.equal("groups" in people, false);
   assert.ok(people.members.every((person) => !("fields" in person)));
@@ -548,7 +548,7 @@ test("migrated Patent records preserve identity and use the v6 field set", () =>
       id: "patent-202603-01",
       title: "강화학습을 이용해 전기차 통합 열관리 시스템을 제어하기 위한 장치",
       applicationDate: "2024.12.06",
-      registrationDate: "2026.03.24",
+      registrationDate: "2026.03.16",
       applicationNumber: "10-2024-0180306",
       registrationNumber: "10-2941109",
       patentMetrics: { jurisdiction: "국내", status: "등록" },
