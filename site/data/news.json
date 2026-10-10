@@ -1,9 +1,19 @@
 {
   "news": [
     {
+      "date": "2026.09",
+      "category": "member",
+      "text": "김성민, 홍석기, 김범수 석사과정 진학  |  이준수, 노관우, 이나영 학부연구생 합류"
+    },
+    {
       "date": "2026.08",
       "category": "publication",
       "text": "김정호, \"CVaR 및 Bayesian Optimization 기반 환경 변화에 강건한 멀티모델 선검출 기법 연구,\" SCIE-Q1 논문 출판"
+    },
+    {
+      "date": "2026.08",
+      "category": "project",
+      "text": "\"R2S2R 기반 VLA-RL 융합 특수목적 로봇 제어기술\" 연구과제 수주 (과기부, 90개월)"
     },
     {
       "date": "2026.08",
