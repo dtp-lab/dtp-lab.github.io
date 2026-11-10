@@ -1,10 +1,182 @@
 {
   "events": [
     {
+      "id": "9b189e7f3e25",
+      "date": "2026.10",
+      "title": "2026년도 연구실 엠티",
+      "description": "천황산 가을등반",
+      "images": [
+        {
+          "src": "assets/gallery/9b189e7f3e25/01.png",
+          "thumbnail": "assets/gallery-thumbs/9b189e7f3e25/01.png",
+          "alt": "2026년도 연구실 엠티",
+          "caption": "",
+          "seq": 1
+        },
+        {
+          "src": "assets/gallery/9b189e7f3e25/02.jpg",
+          "thumbnail": "assets/gallery-thumbs/9b189e7f3e25/02.jpg",
+          "alt": "2026년도 연구실 엠티",
+          "caption": "",
+          "seq": 2
+        },
+        {
+          "src": "assets/gallery/9b189e7f3e25/03.jpg",
+          "thumbnail": "assets/gallery-thumbs/9b189e7f3e25/03.jpg",
+          "alt": "2026년도 연구실 엠티",
+          "caption": "",
+          "seq": 3
+        },
+        {
+          "src": "assets/gallery/9b189e7f3e25/04.jpg",
+          "thumbnail": "assets/gallery-thumbs/9b189e7f3e25/04.jpg",
+          "alt": "2026년도 연구실 엠티",
+          "caption": "",
+          "seq": 4
+        },
+        {
+          "src": "assets/gallery/9b189e7f3e25/05.jpg",
+          "thumbnail": "assets/gallery-thumbs/9b189e7f3e25/05.jpg",
+          "alt": "2026년도 연구실 엠티",
+          "caption": "",
+          "seq": 5
+        },
+        {
+          "src": "assets/gallery/9b189e7f3e25/06.jpg",
+          "thumbnail": "assets/gallery-thumbs/9b189e7f3e25/06.jpg",
+          "alt": "2026년도 연구실 엠티",
+          "caption": "",
+          "seq": 6
+        },
+        {
+          "src": "assets/gallery/9b189e7f3e25/07.jpg",
+          "thumbnail": "assets/gallery-thumbs/9b189e7f3e25/07.jpg",
+          "alt": "2026년도 연구실 엠티",
+          "caption": "",
+          "seq": 7
+        }
+      ]
+    },
+    {
+      "id": "8ba0ba53c50c",
+      "date": "2026.09",
+      "title": "학부 졸업과제 Physical AI 경연 우승",
+      "description": "연구실 학부연구생 팀 (키자니아패밀리 - 여채언, 옥소미, 문여원) ㅊㅋㅊㅋ",
+      "images": [
+        {
+          "src": "assets/gallery/8ba0ba53c50c/01.jpg",
+          "thumbnail": "assets/gallery-thumbs/8ba0ba53c50c/01.jpg",
+          "alt": "학부 졸업과제 Physical AI 경연 우승",
+          "caption": "",
+          "seq": 1
+        },
+        {
+          "src": "assets/gallery/8ba0ba53c50c/02.jpg",
+          "thumbnail": "assets/gallery-thumbs/8ba0ba53c50c/02.jpg",
+          "alt": "학부 졸업과제 Physical AI 경연 우승",
+          "caption": "",
+          "seq": 2
+        },
+        {
+          "src": "assets/gallery/8ba0ba53c50c/03.jpg",
+          "thumbnail": "assets/gallery-thumbs/8ba0ba53c50c/03.jpg",
+          "alt": "학부 졸업과제 Physical AI 경연 우승",
+          "caption": "",
+          "seq": 3
+        },
+        {
+          "src": "assets/gallery/8ba0ba53c50c/04.jpg",
+          "thumbnail": "assets/gallery-thumbs/8ba0ba53c50c/04.jpg",
+          "alt": "학부 졸업과제 Physical AI 경연 우승",
+          "caption": "",
+          "seq": 4
+        },
+        {
+          "src": "assets/gallery/8ba0ba53c50c/05.png",
+          "thumbnail": "assets/gallery-thumbs/8ba0ba53c50c/05.png",
+          "alt": "학부 졸업과제 Physical AI 경연 우승",
+          "caption": "",
+          "seq": 5
+        }
+      ]
+    },
+    {
+      "id": "888823dc4398",
+      "date": "2026.08",
+      "title": "공주대 INFINITY Lab - 부산대 DTPLab 교류회",
+      "description": "비정기 기술교류회",
+      "images": [
+        {
+          "src": "assets/gallery/888823dc4398/01.jpg",
+          "thumbnail": "assets/gallery-thumbs/888823dc4398/01.jpg",
+          "alt": "공주대 INFINITY Lab - 부산대 DTPLab 교류회",
+          "caption": "",
+          "seq": 1
+        },
+        {
+          "src": "assets/gallery/888823dc4398/02.jpg",
+          "thumbnail": "assets/gallery-thumbs/888823dc4398/02.jpg",
+          "alt": "공주대 INFINITY Lab - 부산대 DTPLab 교류회",
+          "caption": "",
+          "seq": 2
+        },
+        {
+          "src": "assets/gallery/888823dc4398/03.jpg",
+          "thumbnail": "assets/gallery-thumbs/888823dc4398/03.jpg",
+          "alt": "공주대 INFINITY Lab - 부산대 DTPLab 교류회",
+          "caption": "",
+          "seq": 3
+        }
+      ]
+    },
+    {
+      "id": "b5a7e36de12b",
+      "date": "2026.08",
+      "title": "IWCS-2026 학회 참석",
+      "description": "민재, 창주 참석 @큐슈대학교",
+      "images": [
+        {
+          "src": "assets/gallery/b5a7e36de12b/01.jpg",
+          "thumbnail": "assets/gallery-thumbs/b5a7e36de12b/01.jpg",
+          "alt": "IWCS-2026 학회 참석",
+          "caption": "",
+          "seq": 1
+        },
+        {
+          "src": "assets/gallery/b5a7e36de12b/02.jpg",
+          "thumbnail": "assets/gallery-thumbs/b5a7e36de12b/02.jpg",
+          "alt": "IWCS-2026 학회 참석",
+          "caption": "",
+          "seq": 2
+        },
+        {
+          "src": "assets/gallery/b5a7e36de12b/03.jpg",
+          "thumbnail": "assets/gallery-thumbs/b5a7e36de12b/03.jpg",
+          "alt": "IWCS-2026 학회 참석",
+          "caption": "",
+          "seq": 3
+        },
+        {
+          "src": "assets/gallery/b5a7e36de12b/04.jpg",
+          "thumbnail": "assets/gallery-thumbs/b5a7e36de12b/04.jpg",
+          "alt": "IWCS-2026 학회 참석",
+          "caption": "",
+          "seq": 4
+        },
+        {
+          "src": "assets/gallery/b5a7e36de12b/05.jpg",
+          "thumbnail": "assets/gallery-thumbs/b5a7e36de12b/05.jpg",
+          "alt": "IWCS-2026 학회 참석",
+          "caption": "",
+          "seq": 5
+        }
+      ]
+    },
+    {
       "id": "600855c471e9",
       "date": "2026.08",
       "title": "ICPR-2026 학회 참석",
-      "description": "은성 혼자 포스터 세션 발표하려 다녀옴",
+      "description": "은성 혼자 포스터 세션 발표하려 다녀옴 @프랑스 리옹",
       "images": [
         {
           "src": "assets/gallery/600855c471e9/01.jpg",
@@ -222,8 +394,8 @@
     },
     {
       "date": "2026.02",
-      "title": "한양대 ERICA 초청강연 참석",
-      "description": "디지털트윈과 피지컬AI에 대한 기술 및 연구분야 소개",
+      "title": "한양대 ERICA 초청강연",
+      "description": "김원석 책임교수, 디지털트윈과 피지컬AI에 대한 기술 및 연구분야 소개",
       "images": [
         {
           "src": "assets/gallery/24b0b0c4da67/01.jpg",

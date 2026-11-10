@@ -1,6 +1,68 @@
 {
   "items": [
     {
+      "id": "pub-2026-record-8",
+      "type": "journal",
+      "journalMetrics": {
+        "indexing": "SCIE",
+        "quartile": "Q1",
+        "award": ""
+      },
+      "publishedAt": "2026.11",
+      "title": "Computationally Efficient Vessel-Level Placement of Irregular Shipbuilding Blocks under Practical Loading Constraints",
+      "authors": [
+        {
+          "name": "Chang-Min Lee",
+          "isLabMember": true,
+          "isFirstAuthor": true,
+          "isCorrespondingAuthor": false
+        },
+        {
+          "name": "Uy-Yoon Park",
+          "isLabMember": false,
+          "isFirstAuthor": false,
+          "isCorrespondingAuthor": false
+        },
+        {
+          "name": "Seong-Min Hong",
+          "isLabMember": false,
+          "isFirstAuthor": false,
+          "isCorrespondingAuthor": false
+        },
+        {
+          "name": "Seong-Ho Jang",
+          "isLabMember": false,
+          "isFirstAuthor": false,
+          "isCorrespondingAuthor": false
+        },
+        {
+          "name": "Woo-Yong Lee",
+          "isLabMember": false,
+          "isFirstAuthor": false,
+          "isCorrespondingAuthor": false
+        },
+        {
+          "name": "Byeong-Woo Yoo",
+          "isLabMember": false,
+          "isFirstAuthor": false,
+          "isCorrespondingAuthor": false
+        },
+        {
+          "name": "Won-Suk Kim",
+          "isLabMember": true,
+          "isFirstAuthor": false,
+          "isCorrespondingAuthor": true
+        }
+      ],
+      "venue": "Computers & Industrial Engineering",
+      "details": "",
+      "keywords": [
+        "Optimization"
+      ],
+      "doi": "",
+      "links": []
+    },
+    {
       "id": "pub-2026-record-3",
       "type": "journal",
       "journalMetrics": {
@@ -171,44 +233,6 @@
       }
     },
     {
-      "id": "journal-202512-03",
-      "type": "journal",
-      "publishedAt": "2026.01",
-      "title": "Rehandling-aware stowage planning for RoRo ships using exclusive subgraph modeling and affinity-based cargo ordering",
-      "authors": [
-        {
-          "name": "Chang-Min Lee",
-          "isLabMember": true,
-          "isFirstAuthor": true,
-          "isCorrespondingAuthor": false
-        },
-        {
-          "name": "Hoon Lee",
-          "isLabMember": false,
-          "isFirstAuthor": false,
-          "isCorrespondingAuthor": false
-        },
-        {
-          "name": "Won-Suk Kim",
-          "isLabMember": true,
-          "isFirstAuthor": false,
-          "isCorrespondingAuthor": true
-        }
-      ],
-      "venue": "Scientific Reports",
-      "details": "Vol 16/1-16",
-      "keywords": [
-        "Optimization"
-      ],
-      "doi": "",
-      "links": [],
-      "journalMetrics": {
-        "indexing": "SCIE",
-        "quartile": "Q1",
-        "award": ""
-      }
-    },
-    {
       "id": "journal-202601-02",
       "type": "journal",
       "publishedAt": "2026.01",
@@ -256,6 +280,44 @@
       "journalMetrics": {
         "indexing": "SCIE",
         "quartile": "Q2",
+        "award": ""
+      }
+    },
+    {
+      "id": "journal-202512-03",
+      "type": "journal",
+      "publishedAt": "2025.12",
+      "title": "Rehandling-aware stowage planning for RoRo ships using exclusive subgraph modeling and affinity-based cargo ordering",
+      "authors": [
+        {
+          "name": "Chang-Min Lee",
+          "isLabMember": true,
+          "isFirstAuthor": true,
+          "isCorrespondingAuthor": false
+        },
+        {
+          "name": "Hoon Lee",
+          "isLabMember": false,
+          "isFirstAuthor": false,
+          "isCorrespondingAuthor": false
+        },
+        {
+          "name": "Won-Suk Kim",
+          "isLabMember": true,
+          "isFirstAuthor": false,
+          "isCorrespondingAuthor": true
+        }
+      ],
+      "venue": "Scientific Reports",
+      "details": "Vol 16/1-16",
+      "keywords": [
+        "Optimization"
+      ],
+      "doi": "",
+      "links": [],
+      "journalMetrics": {
+        "indexing": "SCIE",
+        "quartile": "Q1",
         "award": ""
       }
     },
@@ -1495,6 +1557,50 @@
         "quartile": "해당없음",
         "award": ""
       }
+    },
+    {
+      "id": "pub-2026-record-9",
+      "type": "conference",
+      "conferenceMetrics": {
+        "conferenceType": "국내",
+        "bk21": "해당없음",
+        "kiise": "해당없음"
+      },
+      "publishedAt": "2026.11",
+      "title": "A Hierarchical Agent with an LLM Planner and Reinforcement-Learned Skills for Long-Horizon Composite Tasks in Pokémon Red ",
+      "authors": [
+        {
+          "name": "Min-Jae Kim",
+          "isLabMember": true,
+          "isFirstAuthor": true,
+          "isCorrespondingAuthor": false
+        },
+        {
+          "name": "Se-Min Hong",
+          "isLabMember": true,
+          "isFirstAuthor": false,
+          "isCorrespondingAuthor": false
+        },
+        {
+          "name": "Tae-Ho Yun",
+          "isLabMember": true,
+          "isFirstAuthor": false,
+          "isCorrespondingAuthor": false
+        },
+        {
+          "name": "Won-Suk Kim",
+          "isLabMember": true,
+          "isFirstAuthor": false,
+          "isCorrespondingAuthor": false
+        }
+      ],
+      "venue": "2026 한국멀티미디어학회 추계학술발표대회",
+      "details": "",
+      "keywords": [
+        "AI Agent"
+      ],
+      "doi": "",
+      "links": []
     },
     {
       "id": "pub-2026-record-6",
