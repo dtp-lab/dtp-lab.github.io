@@ -1,5 +1,7 @@
 import assert from "node:assert/strict";
+import { spawnSync } from "node:child_process";
 import fs from "node:fs";
+import os from "node:os";
 import path from "node:path";
 import test from "node:test";
 import vm from "node:vm";
@@ -8,6 +10,12 @@ import {
   normalizePublicationRecord,
   validateContent,
 } from "./content-model.mjs";
+import {
+  createGalleryFixture,
+  createPeopleFixture,
+  createProjectsFixture,
+  validateFixture,
+} from "./fixtures/content-model.mjs";
 
 const siteDir = path.resolve("site");
 
@@ -130,165 +138,115 @@ test("Gallery events use unique IDs and paired, resolvable original/thumbnail pa
 });
 
 test("Gallery validation accepts reordered numeric stems and numbering gaps", () => {
-  const gallery = JSON.parse(fs.readFileSync(path.join(siteDir, "data", "gallery.json"), "utf8"));
-  const eventIndex = 0;
-  const reordered = structuredClone(gallery);
-  const eventId = reordered.events[eventIndex].id;
-  const fixtureImages = ["01", "03", "04", "02"].map((stem) => ({
-    src: `assets/gallery/${eventId}/${stem}.jpg`,
-    thumbnail: `assets/gallery-thumbs/${eventId}/${stem}.jpg`,
-    alt: `Synthetic Gallery image ${stem}`,
-  }));
-  const virtualAssets = fixtureImages.flatMap((image) => [image.src, image.thumbnail]);
-  reordered.events[eventIndex].images = fixtureImages;
-  assert.deepEqual(
-    reordered.events[eventIndex].images.map((image) => path.parse(image.src).name),
-    ["01", "03", "04", "02"],
-  );
-  let result = validateContent({ siteDir, overrides: { "gallery.json": reordered }, virtualAssets });
-  assert.equal(result.ok, true, result.errors.join("\n"));
-
-  const gapped = structuredClone(reordered);
-  gapped.events[eventIndex].images = gapped.events[eventIndex].images.slice(0, 2);
-  assert.deepEqual(gapped.events[eventIndex].images.map((image) => path.parse(image.src).name), ["01", "03"]);
-  result = validateContent({ siteDir, overrides: { "gallery.json": gapped }, virtualAssets });
-  assert.equal(result.ok, true, result.errors.join("\n"));
+  for (const stems of [["01", "03", "04", "02"], ["01", "03"]]) {
+    const gallery = createGalleryFixture(stems);
+    const snapshot = structuredClone(gallery);
+    const result = validateFixture({ "gallery.json": gallery });
+    assert.equal(result.ok, true, result.errors.join("\n"));
+    assert.deepEqual(gallery, snapshot);
+    assert.deepEqual(gallery.events[0].images.map((image) => path.parse(image.src).name), stems);
+  }
 });
 
 test("Gallery validation rejects mismatched stems, event folders, extensions, and duplicate paths", () => {
-  const gallery = JSON.parse(fs.readFileSync(path.join(siteDir, "data", "gallery.json"), "utf8"));
-  const eventIndex = gallery.events.findIndex((event) => event.images.length >= 2);
-  assert.notEqual(eventIndex, -1);
-
-  const mismatchedStem = structuredClone(gallery);
-  mismatchedStem.events[eventIndex].images[0].thumbnail = mismatchedStem.events[eventIndex].images[0].thumbnail
-    .replace(/([0-9]+)(\.[^.]+)$/, "99$2");
-  let result = validateContent({ siteDir, overrides: { "gallery.json": mismatchedStem } });
-  assert.equal(result.ok, false);
-  assert.ok(result.errors.some((error) => error.includes("numeric stems must match")));
-
-  const wrongFolder = structuredClone(gallery);
-  wrongFolder.events[eventIndex].images[0].src = wrongFolder.events[eventIndex].images[0].src
-    .replace(wrongFolder.events[eventIndex].id, "000000000000");
-  result = validateContent({ siteDir, overrides: { "gallery.json": wrongFolder } });
-  assert.equal(result.ok, false);
-  assert.ok(result.errors.some((error) => error.includes("assets/gallery/<event-id>/<number>.ext")));
-
-  const wrongExtension = structuredClone(gallery);
-  const nonPngImageIndex = wrongExtension.events[eventIndex].images.findIndex((image) => path.extname(image.thumbnail) !== ".png");
-  assert.notEqual(nonPngImageIndex, -1);
-  wrongExtension.events[eventIndex].images[nonPngImageIndex].thumbnail = wrongExtension.events[eventIndex].images[nonPngImageIndex].thumbnail
-    .replace(/\.[^.]+$/, ".png");
-  result = validateContent({ siteDir, overrides: { "gallery.json": wrongExtension } });
-  assert.equal(result.ok, false);
-  assert.ok(result.errors.some((error) => error.includes("extensions must match")));
-
-  const duplicate = structuredClone(gallery);
-  duplicate.events[eventIndex].images[1].src = duplicate.events[eventIndex].images[0].src;
-  result = validateContent({ siteDir, overrides: { "gallery.json": duplicate } });
-  assert.equal(result.ok, false);
-  assert.ok(result.errors.some((error) => error.includes("duplicate Gallery asset path")));
-
-  const zeroStem = structuredClone(gallery);
-  for (const key of ["src", "thumbnail"]) {
-    zeroStem.events[eventIndex].images[0][key] = zeroStem.events[eventIndex].images[0][key].replace(/([0-9]+)(\.[^.]+)$/, "00$2");
+  const gallery = createGalleryFixture();
+  const checkInvalid = (mutate, expectedError) => {
+    const document = structuredClone(gallery);
+    mutate(document.events[0]);
+    const snapshot = structuredClone(document);
+    const result = validateFixture({ "gallery.json": document });
+    assert.equal(result.ok, false);
+    assert.ok(result.errors.some((error) => error.includes(expectedError)), result.errors.join("\n"));
+    assert.deepEqual(document, snapshot);
+  };
+  checkInvalid((event) => {
+    event.images[0].thumbnail = `assets/gallery-thumbs/${event.id}/99.jpg`;
+  }, "numeric stems must match");
+  checkInvalid((event) => {
+    event.images[0].src = "assets/gallery/000000000000/01.jpg";
+  }, "assets/gallery/<event-id>/<number>.ext");
+  checkInvalid((event) => {
+    event.images[0].thumbnail = `assets/gallery-thumbs/${event.id}/01.png`;
+  }, "extensions must match");
+  checkInvalid((event) => {
+    event.images[1].src = event.images[0].src;
+  }, "duplicate Gallery asset path");
+  for (const stem of ["00", "1", "0001"]) {
+    checkInvalid((event) => {
+      event.images[0].src = `assets/gallery/${event.id}/${stem}.jpg`;
+      event.images[0].thumbnail = `assets/gallery-thumbs/${event.id}/${stem}.jpg`;
+    }, "<number>.ext");
   }
-  result = validateContent({ siteDir, overrides: { "gallery.json": zeroStem } });
-  assert.equal(result.ok, false);
-  assert.ok(result.errors.some((error) => error.includes("<number>.ext")));
-
-  for (const invalidStem of ["1", "0001"]) {
-    const invalidPadding = structuredClone(gallery);
-    for (const key of ["src", "thumbnail"]) {
-      invalidPadding.events[eventIndex].images[0][key] = invalidPadding.events[eventIndex].images[0][key]
-        .replace(/([0-9]+)(\.[^.]+)$/, `${invalidStem}$2`);
-    }
-    result = validateContent({ siteDir, overrides: { "gallery.json": invalidPadding } });
-    assert.equal(result.ok, false, `${invalidStem} must not be accepted as a canonical numeric stem`);
-    assert.ok(result.errors.some((error) => error.includes("<number>.ext")));
-  }
-
-  const duplicateStem = structuredClone(gallery);
-  const firstExtension = path.extname(duplicateStem.events[eventIndex].images[0].src);
-  const alternateExtension = firstExtension === ".png" ? ".jpg" : ".png";
-  duplicateStem.events[eventIndex].images[1].src = `assets/gallery/${duplicateStem.events[eventIndex].id}/01${alternateExtension}`;
-  duplicateStem.events[eventIndex].images[1].thumbnail = `assets/gallery-thumbs/${duplicateStem.events[eventIndex].id}/01${alternateExtension}`;
-  result = validateContent({ siteDir, overrides: { "gallery.json": duplicateStem } });
-  assert.equal(result.ok, false);
-  assert.ok(result.errors.some((error) => error.includes("duplicate Gallery numeric stem")));
+  checkInvalid((event) => {
+    event.images[1].src = `assets/gallery/${event.id}/01.png`;
+    event.images[1].thumbnail = `assets/gallery-thumbs/${event.id}/01.png`;
+  }, "duplicate Gallery numeric stem");
 });
 
-test("Gallery and Projects accept complete seq permutations and reject invalid or partial sequences without mutation", () => {
-  const gallery = JSON.parse(fs.readFileSync(path.join(siteDir, "data", "gallery.json"), "utf8"));
-  const projects = JSON.parse(fs.readFileSync(path.join(siteDir, "data", "projects.json"), "utf8"));
-  const cases = [
-    {
-      file: "gallery.json",
-      document: gallery,
-      images: (document) => document.events.find((event) => event.images.length === 3).images,
-    },
-    {
-      file: "projects.json",
-      document: projects,
-      images: (document) => document.projects.find((project) => project.images?.length === 3).images,
-    },
-  ];
-  const invalidSequences = [
-    { label: "duplicate", values: [1, 1, 3] },
-    { label: "zero", values: [0, 2, 3] },
-    { label: "negative", values: [-1, 2, 3] },
-    { label: "decimal", values: [1.5, 2, 3] },
-    { label: "string", values: ["1", 2, 3] },
-    { label: "partial", values: [1, undefined, 3] },
-    { label: "gap", values: [1, 3, 4] },
-  ];
+const imageFixtures = [
+  { file: "gallery.json", create: createGalleryFixture, images: (document) => document.events[0].images },
+  { file: "projects.json", create: createProjectsFixture, images: (document) => document.projects[0].images },
+];
+const imagePaths = (images) => images.map(({ src, thumbnail }) => ({ src, thumbnail }));
+const checkImageFixture = (fixture, document, expectedError) => {
+  const snapshot = structuredClone(document);
+  const paths = imagePaths(fixture.images(document));
+  const result = validateFixture({ [fixture.file]: document });
+  assert.equal(result.ok, !expectedError, result.errors.join("\n"));
+  if (expectedError) assert.ok(result.errors.some((error) => error.includes(expectedError)), result.errors.join("\n"));
+  assert.deepEqual(document, snapshot, "validation must preserve the entire input");
+  assert.deepEqual(imagePaths(fixture.images(document)), paths, "validation must preserve original and thumbnail paths in order");
+};
 
-  for (const fixture of cases) {
-    const unsequenced = structuredClone(fixture.document);
-    const unsequencedSnapshot = structuredClone(unsequenced);
-    let result = validateContent({ siteDir, overrides: { [fixture.file]: unsequenced } });
-    assert.equal(result.ok, true, `${fixture.file} without seq must remain valid: ${result.errors.join("\n")}`);
-    assert.deepEqual(unsequenced, unsequencedSnapshot);
-
-    const valid = structuredClone(fixture.document);
-    fixture.images(valid).forEach((image, index) => { image.seq = [2, 1, 3][index]; });
-    const validSnapshot = structuredClone(valid);
-    const validPaths = fixture.images(valid).map((image) => image.src);
-    result = validateContent({ siteDir, overrides: { [fixture.file]: valid } });
-    assert.equal(result.ok, true, `${fixture.file} complete seq must be valid: ${result.errors.join("\n")}`);
-    assert.deepEqual(valid, validSnapshot);
-    assert.deepEqual(fixture.images(valid).map((image) => image.src), validPaths);
-
-    for (const invalid of invalidSequences) {
-      const document = structuredClone(fixture.document);
-      fixture.images(document).forEach((image, index) => {
-        const value = invalid.values[index];
-        if (value !== undefined) image.seq = value;
+for (const fixture of imageFixtures) {
+  test(`${fixture.file} accepts fallback and complete seq permutations and rejects invalid sequences without mutation`, async (t) => {
+    const cases = [
+      { label: "all seq absent", values: [undefined, undefined, undefined] },
+      { label: "complete permutation", values: [2, 1, 3] },
+      { label: "partial", values: [1, undefined, 3], error: "seq must be present on every image" },
+      { label: "duplicate", values: [1, 1, 3], error: "seq values must be unique" },
+      { label: "zero", values: [0, 2, 3], error: "positive integer required" },
+      { label: "negative", values: [-1, 2, 3], error: "positive integer required" },
+      { label: "decimal", values: [1.5, 2, 3], error: "positive integer required" },
+      { label: "string", values: ["1", 2, 3], error: "positive integer required" },
+      { label: "gap", values: [1, 3, 4], error: "seq must be contiguous" },
+    ];
+    for (const scenario of cases) {
+      await t.test(scenario.label, () => {
+        const document = fixture.create();
+        const images = fixture.images(document);
+        // Start with existing seq to catch regressions where omission leaves a stale value.
+        images.forEach((image, index) => { image.seq = index + 1; });
+        images.forEach((image, index) => {
+          const value = scenario.values[index];
+          if (value === undefined) delete image.seq;
+          else image.seq = value;
+          assert.equal(Object.hasOwn(image, "seq"), value !== undefined);
+        });
+        checkImageFixture(fixture, document, scenario.error);
       });
-      const snapshot = structuredClone(document);
-      result = validateContent({ siteDir, overrides: { [fixture.file]: document } });
-      assert.equal(result.ok, false, `${fixture.file} must reject ${invalid.label} seq`);
-      assert.ok(result.errors.some((error) => error.includes("seq")), result.errors.join("\n"));
-      assert.deepEqual(document, snapshot);
     }
-  }
-});
+  });
 
-test("People contract and migrated data use structured member categories without losing records", () => {
-  const people = JSON.parse(fs.readFileSync(path.join(siteDir, "data", "people.json"), "utf8"));
-  assert.equal(people.professor.name, "Won-Suk Kim, Ph.D.");
-  assert.equal(people.professor.career.length, 3);
-  // assert.equal(people.members.length, 19);
-  assert.deepEqual(
-    Object.fromEntries(["phd", "master", "undergraduate", "alumni", "staff"].map((category) => [
-      category,
-      people.members.filter((person) => person.category === category).length,
-    ])),
-    { phd: 4, master: 7, undergraduate: 7, alumni: 4, staff: 0 },
-  );
-  assert.equal("groups" in people, false);
-  assert.ok(people.members.every((person) => !("fields" in person)));
+  test(`${fixture.file} validation supports different image counts and array orders`, () => {
+    for (const stems of [[], ["04"], ["03", "01"], ["01", "02", "03", "04"], ["04", "03", "02", "01"]]) {
+      const document = fixture.create(stems);
+      const images = fixture.images(document);
+      assert.ok(images.every((image) => !Object.hasOwn(image, "seq")));
+      checkImageFixture(fixture, document);
+      // Valid reverse sequence is independent of both array order and filename numbering.
+      images.forEach((image, index) => { image.seq = images.length - index; });
+      checkImageFixture(fixture, document);
+      if (images.length > 1) {
+        delete images[1].seq;
+        assert.equal(Object.hasOwn(images[1], "seq"), false);
+        checkImageFixture(fixture, document, "seq must be present on every image");
+      }
+    }
+  });
+}
 
+test("People contract exposes structured member fields and allowed categories", () => {
   const fields = contentContract.files.people.fields;
   const members = fields.find((field) => field.name === "members");
   assert.deepEqual(
@@ -301,6 +259,120 @@ test("People contract and migrated data use structured member categories without
   );
 });
 
+test("People migration preserves every record and field in a fixed legacy fixture", (t) => {
+  const temporaryDirectory = path.resolve(os.tmpdir());
+  const migrationRoot = fs.mkdtempSync(path.join(temporaryDirectory, "website-people-migration-"));
+  t.after(() => {
+    assert.equal(path.dirname(migrationRoot), temporaryDirectory);
+    assert.ok(path.basename(migrationRoot).startsWith("website-people-migration-"));
+    fs.rmSync(migrationRoot, { recursive: true, force: true });
+  });
+  const dataDirectory = path.join(migrationRoot, "site", "data");
+  const migrationScript = path.join(migrationRoot, "tools", "migrate-studio-content-v3.mjs");
+  fs.mkdirSync(dataDirectory, { recursive: true });
+  fs.mkdirSync(path.dirname(migrationScript), { recursive: true });
+  // The migration resolves its data directory from import.meta.url, not cwd.
+  fs.copyFileSync(path.resolve("tools", "migrate-studio-content-v3.mjs"), migrationScript);
+  const legacy = {
+    page: { kicker: "Team", title: "People", subtitle: "Fixture members" },
+    groups: {
+      professor: [{
+        name: "Fixture Professor", image: "",
+        fields: {
+          affiliation: "Fixture University", "e-mail": "professor@example.test",
+          research_topic: "Simulation", office: "Room 101", "tel.": "000-0000",
+          "2020_Present": "Professor", "2018_2019": "Researcher",
+        },
+      }],
+      phd: [{
+        name: "Fixture Doctoral Member", image: "",
+        fields: { affiliation: "Doctoral Program", email: "phd@example.test", researchTopic: "Robotics" },
+      }],
+      ms: [
+        { name: "Fixture Master A", image: "", fields: { affiliation: "Master Program", "e-mail": "master-a@example.test", research_topic: "Control" } },
+        { name: "Fixture Master B", image: "", fields: { affiliation: "Master Program", email: "master-b@example.test", researchTopic: "Planning" } },
+      ],
+      undergrad: [{ name: "Fixture Undergraduate", image: "", fields: { affiliation: "Undergraduate Program", email: "undergraduate@example.test", researchTopic: "Sensors" } }],
+      alumni: [{ name: "Fixture Alumnus", image: "", fields: {} }],
+    },
+  };
+  const sourceSnapshot = structuredClone(legacy);
+  fs.writeFileSync(path.join(dataDirectory, "people.json"), JSON.stringify(legacy));
+  fs.writeFileSync(path.join(dataDirectory, "publications.json"), JSON.stringify({ items: [] }));
+  const execution = spawnSync(process.execPath, [migrationScript], { cwd: migrationRoot, encoding: "utf8" });
+  assert.equal(execution.status, 0, execution.error?.message || execution.stderr || execution.stdout);
+  const migrated = JSON.parse(fs.readFileSync(path.join(dataDirectory, "people.json"), "utf8"));
+  assert.deepEqual(migrated, {
+    page: { kicker: "Team", title: "People", subtitle: "Fixture members" },
+    professor: {
+      name: "Fixture Professor", image: "", affiliation: "Fixture University",
+      email: "professor@example.test", researchTopic: "Simulation", office: "Room 101", telephone: "000-0000",
+      career: [{ period: "2020 Present", role: "Professor" }, { period: "2018 2019", role: "Researcher" }],
+    },
+    members: [
+      { name: "Fixture Doctoral Member", image: "", affiliation: "Doctoral Program", email: "phd@example.test", researchTopic: "Robotics", category: "phd" },
+      { name: "Fixture Master A", image: "", affiliation: "Master Program", email: "master-a@example.test", researchTopic: "Control", category: "master" },
+      { name: "Fixture Master B", image: "", affiliation: "Master Program", email: "master-b@example.test", researchTopic: "Planning", category: "master" },
+      { name: "Fixture Undergraduate", image: "", affiliation: "Undergraduate Program", email: "undergraduate@example.test", researchTopic: "Sensors", category: "undergraduate" },
+      { name: "Fixture Alumnus", image: "", affiliation: "", email: "", researchTopic: "", category: "alumni" },
+    ],
+  });
+  assert.deepEqual(legacy, sourceSnapshot);
+  const result = validateFixture({ "people.json": migrated });
+  assert.equal(result.ok, true, result.errors.join("\n"));
+});
+
+test("People validation allows member additions, deletions, reordering, and an empty list", async (t) => {
+  const variations = [
+    { label: "all allowed categories", change: () => {} },
+    { label: "addition", change: (people) => { people.members.push({ name: "Added Fixture Member", category: "staff", image: "", affiliation: "", email: "", researchTopic: "" }); } },
+    { label: "deletion", change: (people) => { people.members.splice(1, 1); } },
+    { label: "reordering", change: (people) => { people.members.reverse(); } },
+    { label: "empty list", change: (people) => { people.members = []; } },
+  ];
+  for (const variation of variations) {
+    await t.test(variation.label, () => {
+      const people = createPeopleFixture();
+      variation.change(people);
+      const snapshot = structuredClone(people);
+      const result = validateFixture({ "people.json": people });
+      assert.equal(result.ok, true, result.errors.join("\n"));
+      assert.deepEqual(people, snapshot);
+    });
+  }
+});
+
+test("People validation still rejects invalid required fields, categories, and legacy fields", async (t) => {
+  const invalidCases = [
+    { label: "missing professor name", change: (people) => { delete people.professor.name; }, error: "people.professor.name" },
+    { label: "missing career period", change: (people) => { people.professor.career = [{ role: "Professor" }]; }, error: "people.professor.career[0].period" },
+    { label: "missing members list", change: (people) => { delete people.members; }, error: "people.members: list required" },
+    { label: "missing member name", change: (people) => { delete people.members[0].name; }, error: "people.members[0].name" },
+    { label: "blank member name", change: (people) => { people.members[0].name = " "; }, error: "people.members[0].name" },
+    { label: "missing category", change: (people) => { delete people.members[0].category; }, error: "people.members[0].category" },
+    { label: "unsupported category", change: (people) => { people.members[0].category = "visitor"; }, error: "people.members[0].category" },
+    { label: "invalid affiliation type", change: (people) => { people.members[0].affiliation = {}; }, error: "people.members[0].affiliation" },
+    { label: "invalid email type", change: (people) => { people.members[0].email = 123; }, error: "people.members[0].email" },
+    { label: "invalid research topic type", change: (people) => { people.members[0].researchTopic = []; }, error: "people.members[0].researchTopic" },
+    { label: "legacy groups", change: (people) => { people.groups = {}; }, error: "people.groups" },
+    ...["fields", "group", "notes"].flatMap((field) => [
+      { label: `legacy member ${field}`, change: (people) => { people.members[0][field] = "legacy"; }, error: `people.members[0].${field}` },
+      { label: `legacy professor ${field}`, change: (people) => { people.professor[field] = "legacy"; }, error: `people.professor.${field}` },
+    ]),
+  ];
+  for (const invalid of invalidCases) {
+    await t.test(invalid.label, () => {
+      const people = createPeopleFixture();
+      invalid.change(people);
+      const snapshot = structuredClone(people);
+      const result = validateFixture({ "people.json": people });
+      assert.equal(result.ok, false, invalid.label);
+      assert.ok(result.errors.some((error) => error.includes(invalid.error)), result.errors.join("\n"));
+      assert.deepEqual(people, snapshot);
+    });
+  }
+});
+
 test("current repository content passes the reusable validator", () => {
   const result = validateContent({ siteDir });
   assert.equal(result.ok, true, result.errors.join("\n"));
@@ -309,20 +381,26 @@ test("current repository content passes the reusable validator", () => {
 test("draft overrides are validated without changing disk files", () => {
   const file = path.join(siteDir, "data", "projects.json");
   const original = fs.readFileSync(file, "utf8");
-  const draft = JSON.parse(original);
+  const draft = createProjectsFixture();
+  draft.projects.push({ ...structuredClone(draft.projects[0]), id: "second-project" });
+  const valid = validateFixture({ "projects.json": draft }, { siteDir });
+  assert.equal(valid.ok, true, valid.errors.join("\n"));
   draft.projects[1].id = draft.projects[0].id;
-  const result = validateContent({ siteDir, overrides: { "projects.json": draft } });
+  const snapshot = structuredClone(draft);
+  const result = validateFixture({ "projects.json": draft }, { siteDir });
   assert.equal(result.ok, false);
   assert.ok(result.errors.some((error) => error.includes("duplicate")));
+  assert.deepEqual(draft, snapshot);
   assert.equal(fs.readFileSync(file, "utf8"), original);
 });
 
 test("custom keywords are accepted and removed private metadata is rejected", () => {
-  const projects = JSON.parse(fs.readFileSync(path.join(siteDir, "data", "projects.json"), "utf8"));
+  const projects = createProjectsFixture();
   projects.projects[0].keywords = ["새 연구 키워드"];
-  assert.equal(validateContent({ siteDir, overrides: { "projects.json": projects } }).ok, true);
+  const valid = validateFixture({ "projects.json": projects });
+  assert.equal(valid.ok, true, valid.errors.join("\n"));
   projects.projects[0].budget = { amount: "1", unit: "원" };
-  const result = validateContent({ siteDir, overrides: { "projects.json": projects } });
+  const result = validateFixture({ "projects.json": projects });
   assert.equal(result.ok, false);
   assert.ok(result.errors.some((error) => error.includes("budget")));
 });
