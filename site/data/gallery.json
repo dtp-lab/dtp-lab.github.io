@@ -1,6 +1,49 @@
 {
   "events": [
     {
+      "id": "b6f275fdd95b",
+      "date": "2026.11",
+      "title": "과기부 남철기 국장 - DTPLab 연구실 방문",
+      "description": "2026 ICT 고급인재양성사업 공동 현판증정식 행사 후, 과기부 국장님과 IITP 단장님 등 내빈분들께서 우리 연구실 방문",
+      "images": [
+        {
+          "src": "assets/gallery/b6f275fdd95b/01.jpg",
+          "thumbnail": "assets/gallery-thumbs/b6f275fdd95b/01.jpg",
+          "alt": "과기부 남철기 국장 - DTPLab 연구실 방문",
+          "caption": "",
+          "seq": 1
+        },
+        {
+          "src": "assets/gallery/b6f275fdd95b/02.jpg",
+          "thumbnail": "assets/gallery-thumbs/b6f275fdd95b/02.jpg",
+          "alt": "과기부 남철기 국장 - DTPLab 연구실 방문",
+          "caption": "",
+          "seq": 2
+        },
+        {
+          "src": "assets/gallery/b6f275fdd95b/03.jpg",
+          "thumbnail": "assets/gallery-thumbs/b6f275fdd95b/03.jpg",
+          "alt": "과기부 남철기 국장 - DTPLab 연구실 방문",
+          "caption": "",
+          "seq": 3
+        },
+        {
+          "src": "assets/gallery/b6f275fdd95b/04.jpg",
+          "thumbnail": "assets/gallery-thumbs/b6f275fdd95b/04.jpg",
+          "alt": "과기부 남철기 국장 - DTPLab 연구실 방문",
+          "caption": "",
+          "seq": 4
+        },
+        {
+          "src": "assets/gallery/b6f275fdd95b/05.jpg",
+          "thumbnail": "assets/gallery-thumbs/b6f275fdd95b/05.jpg",
+          "alt": "과기부 남철기 국장 - DTPLab 연구실 방문",
+          "caption": "",
+          "seq": 5
+        }
+      ]
+    },
+    {
       "id": "9b189e7f3e25",
       "date": "2026.10",
       "title": "2026년도 연구실 엠티",
